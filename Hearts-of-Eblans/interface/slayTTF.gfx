@@ -1,0 +1,14 @@
+spriteTypes = {	
+    spriteType = {
+    	name = "GFX_slay_button_icon"
+    	texturefile = "gfx/interface/slayButton.dds"
+    }
+    spriteType = {
+    	name = "GFX_slay_back"
+    	texturefile = "gfx/interface/slayBack.dds"
+    }
+    spriteType = {
+    	name = "GFX_slay_panel_button"
+    	texturefile = "gfx/interface/slayPanelButton.dds"
+    }
+}

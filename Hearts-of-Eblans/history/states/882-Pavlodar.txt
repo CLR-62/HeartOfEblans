@@ -9,8 +9,8 @@ state = {
 	}
 
 	history = {
-		owner = ZUS
-		add_core_of = KAZ
+		owner = LID
+		add_core_of = LID
 		buildings = {
 			infrastructure = 2
 

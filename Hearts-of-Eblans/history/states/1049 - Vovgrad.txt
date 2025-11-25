@@ -1,0 +1,27 @@
+state={
+	id=1049
+	name="STATE_1049"
+	resources={
+		coal = 2 #initial distribution
+	}
+
+	history={
+		owner = BTK
+		add_core_of = BTK
+		buildings = {
+			infrastructure = 3
+		}
+		victory_points = {
+			6521 = 5
+		}
+	}
+
+	provinces={
+		6521
+	}
+	manpower = 93000
+	buildings_max_level_factor = 1.000
+	state_category = town
+
+	local_supplies=0.0 
+}

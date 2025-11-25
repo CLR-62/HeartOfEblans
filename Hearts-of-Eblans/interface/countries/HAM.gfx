@@ -1,0 +1,151 @@
+SpriteTypes = {
+spriteType = {
+		name = "GFX_HAM_ppsl_icon"
+		texturefile = "gfx/interface/custom_gui/HAM/ppsl_icon.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_HAM_coleader_frame"
+		texturefile = "gfx/interface/custom_gui/HAM/coleader_frame.dds"
+	}
+
+	spriteType = {
+		name = "GFX_HAM_director_frame"
+		texturefile = "gfx/interface/custom_gui/HAM/director_frame.dds"
+	}
+
+	spriteType = {
+		name = "GFX_HAM_star_portraits"
+		texturefile = "gfx/interface/custom_gui/HAM/star_portraits_framed.dds"
+        noOfFrames = 3
+	}
+
+	spriteType = {
+		name = "GFX_HAM_star_clan_members"
+		texturefile = "gfx/interface/custom_gui/HAM/clan_members_framed.dds"
+        noOfFrames = 7
+	}
+
+	progressbartype = {
+		name = "GFX_HAM_siloviki_progressbar"
+		textureFile1 = "gfx/interface/custom_gui/HAM/HAM_siloviki_progress_full.png"
+		textureFile2 = "gfx/interface/custom_gui/HAM/HAM_siloviki_progress_empty.png"
+		size = { x = 432 y = 70 }
+		effectFile = "gfx/FX/progress.lua"
+	} 
+
+	spriteType = {
+		name = "GFX_HAM_opposition_texticon_1"
+		texturefile = "gfx/texticons/HAM_star_opposition_1.dds"
+        legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HAM_opposition_texticon_2"
+		texturefile = "gfx/texticons/HAM_star_opposition_2.dds"
+        legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HAM_opposition_texticon_3"
+		texturefile = "gfx/texticons/HAM_star_opposition_3.dds"
+        legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HAM_new_star_advisor_texticon"
+		texturefile = "gfx/texticons/new_star_advisor.dds"
+        legacy_lazy_load = no
+	}
+
+
+
+	spriteType = {
+		name = "GFX_HAM_decision_opposition_newadvisor"
+		texturefile = "gfx/interface/decisions/icons/HAM_opposition_newadvisor.dds"
+	}
+	spriteType = {
+		name = "GFX_HAM_decision_cat_national_projects"
+		texturefile = "gfx/interface/decisions/icons/HAM_national_projects_cat_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_HAM_decision_national_project"
+		texturefile = "gfx/interface/decisions/icons/HAM_national_projects.dds"
+	}
+	spriteType = {
+		name = "GFX_HAM_new_national_project_texticon"
+		texturefile = "gfx/texticons/new_natproj_texticon.dds"
+	}
+	spriteType = {
+		name = "GFX_HAM_new_national_project_decision_banner"
+		texturefile = "gfx/interface/decisions/ham_national_projects_banner.dds"
+	}
+
+
+	#PORTRAITS
+	spriteType = {
+		name = "GFX_portrait_kamil_big"
+		texturefile = "gfx/leaders/HAM/kamilbig.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_kamil_small"
+		texturefile = "gfx/leaders/HAM/kamilsmall.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_lera_simka_big"
+		texturefile = "gfx/leaders/HAM/simkabig.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_lera_simka_small"
+		texturefile = "gfx/leaders/HAM/simkasmall.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_aminakikido_big"
+		texturefile = "gfx/leaders/HAM/amina_kikido.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_aminakikido_small"
+		texturefile = "gfx/leaders/HAM/amina_kikido_small.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_dava_big"
+		texturefile = "gfx/leaders/HAM/dava.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_dava_small"
+		texturefile = "gfx/leaders/HAM/dava_small.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_knyazeva_big"
+		texturefile = "gfx/leaders/HAM/knyazeva.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_knyazeva_small"
+		texturefile = "gfx/leaders/HAM/knyazeva_small.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_filimonova_big"
+		texturefile = "gfx/leaders/HAM/filimonova.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_filimonova_small"
+		texturefile = "gfx/leaders/HAM/filimonova_small.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_amirchik_big"
+		texturefile = "gfx/leaders/HAM/amirchik.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_amirchik_small"
+		texturefile = "gfx/leaders/HAM/amirchik_small.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_irinamairko_big"
+		texturefile = "gfx/leaders/HAM/irina_star.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_irinamairko_small"
+		texturefile = "gfx/leaders/HAM/irina_small.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_nekrasova_big"
+		texturefile = "gfx/leaders/HAM/nekrasova.dds"
+	}
+}	

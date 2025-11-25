@@ -14,7 +14,7 @@ state = {
 		victory_points = {
 			105 1 
 		}
-		owner = ZUS
+		owner = MNY
 		buildings = {
 			infrastructure = 1
 			12530 = {
@@ -23,7 +23,7 @@ state = {
 
 		}
 		#add_core_of = RAB
-		add_core_of = NEN
+		add_core_of = MNY
 	}
 
 	provinces = {

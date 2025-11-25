@@ -1,0 +1,24 @@
+state={
+	id=1047
+	name="STATE_1047"
+	resources={
+		coal = 3 #initial distribution
+	}
+
+	history={
+		owner = LAG
+		add_core_of = LAG
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces={
+		6431 6460 6483 9468 11479 536
+	}
+	manpower = 324120
+	buildings_max_level_factor = 1.000
+	state_category = town
+
+	local_supplies=0.0 
+}

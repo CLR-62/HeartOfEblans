@@ -1,0 +1,18 @@
+on_actions = {
+	on_startup = {
+        effect = {
+            every_country = {
+				limit ={
+					OR = {
+						original_tag = PYA
+						original_tag = GON
+						original_tag = HAM
+						original_tag = CHB
+					}
+				}
+                set_variable = { selected_album = -1 }
+                set_variable = { selected_track = -1 }
+			}
+        }
+    }
+}

@@ -6,10 +6,11 @@ state={
 		oil=6.000
 	}
 	provinces={
-		1334 1406 4215 4261 4265 4311 4383 7281 7328 7373 10185 10224 10256 12200 
+		1334 1406 4215 4261 4265 4311 4383 7281 7328 7373 10185 10224 10256 12200 10196 7401 4411
 	}
 	history={
-		owner = ZUS
+		owner = LID
+		add_core_of = LID
 		buildings = {
 			infrastructure = 3 #was: 5
 		}

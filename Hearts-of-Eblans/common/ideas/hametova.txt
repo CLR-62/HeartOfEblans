@@ -1,0 +1,411 @@
+ideas = {
+
+	country = {
+	
+		HAM_ham_doctrine = {
+            picture = ARG_war_division
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                war_support_factor = 0.03
+                stability_factor = 0.02
+                army_core_defence_factor = 0.03
+                army_core_attack_factor = 0.02
+            }
+        }
+
+        HAM_new_defense_system = {
+            picture = generic_fortify_the_borders
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                production_speed_bunker_factor = 0.05
+                army_core_defence_factor = 0.05
+                consumer_goods_factor = -0.02
+            }
+        }
+
+        HAM_organize_milanas_guardian = {
+            picture = AFG_adopt_nufus
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                max_planning_factor = 0.05
+                army_morale_factor = 0.02
+            }
+        }
+
+        HAM_eastern_funds = {
+            picture = PER_fund_state_intelligence_idea
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                production_speed_buildings_factor = 0.03
+                production_factory_max_efficiency_factor = 0.03
+                consumer_goods_factor = -0.02
+            }
+        }
+
+        HAM_opposition_started = {
+            picture = EST_democratic_opposition
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                drift_defence_factor = -0.2
+                democratic_drift = 0.05
+                stability_factor = -0.02
+            }
+        }
+
+        HAM_researches_boost = {
+            picture = jap_duplicate_research
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                hypecratia_drift = -0.04
+                democratic_drift = 0.03
+                research_speed_factor = 0.03
+            }
+        }
+
+        HAM_small_network = {
+            picture = DEN_flyvevabnet_3
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                resistance_growth_on_our_occupied_states = -0.05
+                democratic_drift = 0.02
+            }
+        }
+
+        HAM_small_network_blocked = {
+            picture = DEN_flyvevabnet_1
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                
+            }
+        }
+
+        HAM_massive_arrests = {
+            picture = generic_prisoner
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                stability_factor = 0.03
+                war_support_factor = -0.02
+            }
+        }
+
+        HAM_internet_blocking = {
+            picture = generic_democracy_banned
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                hypecratia_drift = 0.03
+                political_power_factor = -0.05
+                faction_trade_opinion_factor = -0.4
+                guarantee_cost = 0.3
+                lend_lease_tension = 0.2
+                opinion_gain_monthly_factor = -0.05
+                stability_factor = -0.05
+                war_support_factor = -0.1
+                democratic_drift = -0.05
+            }
+        }
+
+        HAM_star_finance = {
+            picture = PER_fund_state_intelligence_idea
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                democratic_drift = 0.03
+                political_power_factor = 0.05
+                political_power_cost_factor = -0.05
+            }
+        }
+        
+        
+        HAM_shit_conveyour_idea = {
+            picture = HAM_shit_conveyour
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                hypecratia_drift = 0.05
+                stability_factor = 0.05
+                production_factory_max_efficiency_factor = 0.05
+                production_lack_of_resource_penalty_factor = -0.05
+
+                production_factory_efficiency_gain_factor = -0.03
+                line_change_production_efficiency_factor = -0.05
+                license_production_speed = -0.03
+            }
+        }
+
+        HAM_reformed_police = {
+            picture = generic_secret_police
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                enemy_operative_capture_chance_factor = 0.20
+				resistance_damage_to_garrison = -0.20
+				drift_defence_factor = 0.01
+            }
+        }
+
+        HAM_organized_fso = {
+            picture = generic_secret_police
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                enemy_operative_capture_chance_factor = 0.28
+				resistance_damage_to_garrison = -0.28
+				drift_defence_factor = 0.05
+            }
+        }
+
+        HAM_subordination_above_all_idea = {
+            picture = POL_ideology_drift_defence
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                monthly_population = 0.02
+                local_resources_factor = 0.02
+                consumer_goods_factor = -0.01
+                industrial_capacity_factory = 0.01
+            }
+        }
+
+        HAM_promivka_mozgov_idea = {
+            picture = POL_ideology_drift_defence
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                monthly_population = 0.02
+                local_resources_factor = 0.02
+                consumer_goods_factor = -0.01
+                industrial_capacity_factory = 0.01
+                stability_factor = 0.02
+                war_support_factor = 0.02
+                production_speed_buildings_factor = 0.02
+            }
+        }
+
+
+        HAM_superlikes_expropriation_idea = {
+            picture = HAM_superlikes_icon
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                political_power_factor = 0.05
+                line_change_production_efficiency_factor = 0.05
+                consumer_goods_factor = 0.05
+                industrial_capacity_factory = 0.03
+                supply_node_range = 0.05
+            }
+        }
+
+
+        HAM_organisation_assist_idea = {
+            picture = generic_political_support
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                political_power_factor = -0.03
+                hypecratia_drift = -0.02
+                fascism_drift = 0.01
+                democratic_drift = 0.01
+            }
+        }
+
+        HAM_hamway_star_opposition_1_weak_idea = {
+            picture = HAM_star_opp_picture
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                
+            }
+        }
+
+        HAM_hamway_star_opposition_1_medium_idea = {
+            picture = HAM_star_opp_picture
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                
+            }
+        }
+
+        HAM_hamway_star_opposition_1_strenght_idea = {
+            picture = HAM_star_opp_picture
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+                
+            }
+        }
+
+
+        HAM_hamway_star_opposition_2_weak_idea = {
+            picture = HAM_star_opp_picture
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+
+            }
+        }
+
+        HAM_hamway_star_opposition_2_medium_idea = {
+            picture = HAM_star_opp_picture
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+
+            }
+        }
+
+        HAM_hamway_star_opposition_2_strenght_idea = {
+            picture = HAM_star_opp_picture
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+
+            }
+        }
+
+
+
+        HAM_hamway_star_opposition_3_weak_idea = {
+            picture = HAM_star_opp_picture
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+
+            }
+        }
+
+        HAM_hamway_star_opposition_3_medium_idea = {
+            picture = HAM_star_opp_picture
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+
+            }
+        }
+
+        HAM_hamway_star_opposition_3_strenght_idea = {
+            picture = HAM_star_opp_picture
+            allowed = { original_tag = HAM }
+            
+            modifier = { 
+
+            }
+        }
+    }
+
+    hidden_ideas = {
+        HAM_amirchik_buff = {
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+
+			modifier = {
+				political_power_gain = -0.1
+
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+			}
+		}
+
+        HAM_filimonova_buff = {
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+
+			modifier = {
+				political_power_gain = -0.1
+
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+			}
+		}
+
+        HAM_mairko_buff = {
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+
+			modifier = {
+				political_power_gain = -0.1
+
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+			}
+		}
+
+
+        HAM_betsy_buff = {
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+
+			modifier = {
+				political_power_gain = -0.1
+
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+			}
+		}
+
+        HAM_vikishow_buff = {
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+
+			modifier = {
+				political_power_gain = -0.1
+
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+			}
+		}
+
+        HAM_lokel_buff = {
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+
+			modifier = {
+				political_power_gain = -0.1
+
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+			}
+		}
+    }
+}
+

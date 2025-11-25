@@ -63,7 +63,7 @@ characters = {
            idea_token = lin_night
            cost = 100
            allowed = { original_tag = CHB NOT = { has_government = communism } } # Optional, doesn't change anything.
-           traits = { ponilub }
+           traits = { disepticonmilitarist }
        }
     }
 

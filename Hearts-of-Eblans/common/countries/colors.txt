@@ -11,6 +11,18 @@ MST = {
 	color = rgb { 227 200 138 }
 	color_ui = rgb { 227 200 138 }
 }
+MNY = {
+	color = rgb { 62 184 79 }
+	color_ui = rgb { 62 184 79 }
+}
+SEX = {
+	color = rgb { 80 86 89 }
+	color_ui = rgb { 80 86 89 }
+}
+LID = {
+	color = rgb { 189 74 212 }
+	color_ui = rgb { 189 74 212 }
+}
 SBG = {
 	color = rgb { 171 171 171 }
 	color_ui = rgb { 171 171 171 }

@@ -18,7 +18,6 @@ state={
 			arms_factory = 2
 			industrial_complex = 2
 			air_base = 6
-
 		}
 		add_core_of = GON
 		add_core_of = SUT

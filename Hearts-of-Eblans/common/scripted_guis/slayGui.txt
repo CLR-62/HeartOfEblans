@@ -1,0 +1,55 @@
+scripted_gui = {
+
+	slay_open = {
+		context_type = player_context
+
+		window_name = "slay_panel_open"
+
+		parent_window_token = top_bar
+
+		visible = {
+			has_country_flag = slay_2024_started
+		}
+
+		effects = {
+			open_slay_click = {
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = slay_showed } } }
+					ROOT = { set_country_flag = slay_showed }
+				}
+				else = {
+					ROOT = { clr_country_flag = slay_showed }
+				}
+			}
+		}
+		triggers = {
+			open_slay_click_enabled = {
+				always = yes
+			}
+		}
+	}
+
+	slay_panel = {
+		context_type = player_context
+
+		window_name = "slay_panel"
+
+		visible = {
+			ROOT = { has_country_flag = slay_showed }
+		}
+
+		effects = {
+			close_slay_button_click = {
+				if = {
+					limit = { ROOT = { has_country_flag = slay_showed } }
+					ROOT = { clr_country_flag = slay_showed }
+				}
+			}
+		}
+		triggers = {
+			close_slay_button_click_enabled = {
+				always = yes
+			}
+		}
+	}
+}

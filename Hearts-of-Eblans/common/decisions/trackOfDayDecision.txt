@@ -1,0 +1,715 @@
+
+#        ALBUMS/TRACKS ID
+#   PYA:
+#   0 - pya_1000lifes - 1000 Zhizney
+#   1 - pya_supernova - Supernova
+#   2 - pya_golovolomka - Golovolomka
+#   3 - pya_superpupernova - Superpupernova
+#   4 - pya_zmishare - Zmi Share
+#   5 - pya_vredniesoveti - Vrednie Soveti
+#   
+
+
+
+
+
+
+
+
+trackOfDay_cat = {
+
+	###############
+	##1000 ЖИЗНЕЙ##
+	###############
+
+	PYA_music_0_clown_decision = {
+        # 1000 Жизней - Клоун
+		icon = GFX_tod_decision_pya_1000lifes
+		
+		fire_only_once = yes
+		days_remove = 90
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+				
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 0
+            	}
+			}
+		}
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 0}
+			set_variable = { selected_track = 0}
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	PYA_music_0_buggati_decision = {
+        # 1000 Жизней - Клоун
+		icon = GFX_tod_decision_pya_1000lifes
+		
+		fire_only_once = yes
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+				
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 0
+            	}
+			}
+		}
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 0 }
+			set_variable = { selected_track = 1 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	
+	PYA_music_0_otso_decision = {
+        # 1000 Жизней - Клоун
+		icon = GFX_tod_decision_pya_1000lifes
+		
+		fire_only_once = yes
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+				
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 0
+            	}
+			}
+		}
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 0 }
+			set_variable = { selected_track = 2 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	###############
+	## СУПЕРНОВА ##
+	###############
+
+    PYA_music_1_longisland_decision = {
+        # Supernova - Лонг Айленд
+		icon = GFX_tod_decision_pya_supernova
+		
+		fire_only_once = yes
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+				
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 1
+            	}
+			}
+		}
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 1 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+    
+	
+	PYA_music_1_mersi_decision = {
+        # Supernova - Лонг Айленд
+		icon = GFX_tod_decision_pya_supernova
+		
+		fire_only_once = yes
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+				
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 1
+            	}
+			}
+		}
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 1 }
+			set_variable = { selected_track = 1 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+
+	PYA_music_1_cleopatra_decision = {
+        # Supernova - Лонг Айленд
+		icon = GFX_tod_decision_pya_supernova
+		
+		fire_only_once = yes
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+				
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 1
+            	}
+			}
+		}
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 1 }
+			set_variable = { selected_track = 2 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+
+	#################
+	## GOLOVOLOMKA ##
+	#################
+
+	PYA_music_2_thanksboss_decision = {
+		icon = GFX_tod_decision_pya_golovolomka
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 2
+            	}
+			}
+		}
+
+		modifier = {
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 2 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	
+	PYA_music_2_fublya_decision = {
+		icon = GFX_tod_decision_pya_golovolomka
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 2
+            	}
+			}
+		}
+
+		modifier = {
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 2 }
+			set_variable = { selected_track = 1 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+
+	######################
+	## SUPER PUPER NOVA ##
+	######################
+
+	PYA_music_3_repit_decision = {
+		icon = GFX_tod_decision_pya_superpupernova
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 3
+            	}
+			}
+		}
+
+		modifier = {
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 3 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	PYA_music_3_xxl_decision = {
+		icon = GFX_tod_decision_pya_superpupernova
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 3
+            	}
+			}
+		}
+
+		modifier = {
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 3 }
+			set_variable = { selected_track = 1 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	PYA_music_3_tonirovaniy_shigul_decision = {
+		icon = GFX_tod_decision_pya_superpupernova
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 3
+            	}
+			}
+		}
+
+		modifier = {
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 3 }
+			set_variable = { selected_track = 2 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+
+	###############
+	## ZMI SHARE ##
+	###############
+
+	PYA_music_4_zmishare_decision = {
+		icon = GFX_tod_decision_pya_zmishare
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = PYA
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 3
+            	}
+			}
+		}
+
+		modifier = {
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 4 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	####################
+	## VREDNIE SOVETI ## -- 5 album
+	####################
+
+
+	###############
+	## CRASH HAM ##
+	###############
+
+	ham_music_6_crash_decision = {
+		icon = GFX_tod_decision_ham_crash
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = HAM
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 6
+            	}
+			}
+		}
+
+		modifier = {
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 6 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	ham_music_7_chikibriki_decision = {
+		icon = GFX_tod_decision_ham_chikibriki
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = HAM
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 7
+            	}
+			}
+		}
+
+		modifier = {
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 7 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	
+}

@@ -1,0 +1,833 @@
+weak_star_popularity_increase = {
+
+	random_list = {
+        40 = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.02
+            }
+        }
+        35 = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.03
+            }
+        }
+        25 = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.04
+            }
+        }
+    }
+
+}
+
+medium_star_popularity_increase = {
+
+	random_list = {
+        40 = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.05
+            }
+        }
+        35 = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.06
+            }
+        }
+        25 = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.07
+            }
+        }
+    }
+}
+
+strong_star_popularity_increase = {
+
+	random_list = {
+        40 = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.08
+            }
+        }
+        35 = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.09
+            }
+        }
+        25 = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.1
+            }
+        }
+    }
+
+}
+
+
+weak_siloviki_increase = {
+
+    
+
+	    random_list = {
+            40 = {
+                add_to_variable = { HAM_STAR_siloviki_interes = 2 }
+            }
+            35 = {
+                add_to_variable = { HAM_STAR_siloviki_interes = 3 }
+            }
+            25 = {
+                add_to_variable = { HAM_STAR_siloviki_interes = 4 }
+            }
+        }
+
+        clamp_variable = {
+            var = HAM_STAR_siloviki_interes
+            min = 0
+            max = 100
+        }
+
+        check_siloviki_events = yes
+
+}
+
+medium_siloviki_increase = {
+
+	random_list = {
+        40 = {
+            add_to_variable = { HAM_STAR_siloviki_interes = 5 }
+        }
+        35 = {
+            add_to_variable = { HAM_STAR_siloviki_interes = 6 }
+        }
+        25 = {
+            add_to_variable = { HAM_STAR_siloviki_interes = 7 }
+        }
+    }
+
+    clamp_variable = {
+        var = HAM_STAR_siloviki_interes
+        min = 0
+        max = 100
+    }
+
+    check_siloviki_events = yes
+
+}
+
+strong_siloviki_increase = {
+
+	random_list = {
+        40 = {
+            add_to_variable = { HAM_STAR_siloviki_interes = 8 }
+        }
+        35 = {
+            add_to_variable = { HAM_STAR_siloviki_interes = 9 }
+        }
+        25 = {
+            add_to_variable = { HAM_STAR_siloviki_interes = 10 }
+        }
+    }
+
+    clamp_variable = {
+        var = HAM_STAR_siloviki_interes
+        min = 0
+        max = 100
+    }
+
+    check_siloviki_events = yes
+
+}
+
+check_siloviki_events = {
+
+}
+
+
+
+star_opposition_ideas_change_state = {
+
+    if = {
+        limit = { check_variable = { star_opposition_ideas_new_state = 3}}
+
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_2_weak_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_2_weak_idea
+                add_idea = HAM_hamway_star_opposition_3_weak_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_2_medium_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_2_medium_idea
+                add_idea = HAM_hamway_star_opposition_3_medium_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_2_strenght_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_2_strenght_idea
+                add_idea = HAM_hamway_star_opposition_3_strenght_idea
+            }
+        }
+        
+
+
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_1_weak_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_1_weak_idea
+                add_idea = HAM_hamway_star_opposition_3_weak_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_1_medium_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_1_medium_idea
+                add_idea = HAM_hamway_star_opposition_3_medium_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_1_strenght_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_1_strenght_idea
+                add_idea = HAM_hamway_star_opposition_3_strenght_idea
+            }
+        }
+
+        
+    }
+
+	if = {
+        limit = { check_variable = { star_opposition_ideas_new_state = 2}}
+
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_3_weak_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_3_weak_idea
+                add_idea = HAM_hamway_star_opposition_2_weak_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_3_medium_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_3_medium_idea
+                add_idea = HAM_hamway_star_opposition_2_medium_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_3_strenght_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_3_strenght_idea
+                add_idea = HAM_hamway_star_opposition_2_strenght_idea
+            }
+        }
+        
+
+
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_1_weak_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_1_weak_idea
+                add_idea = HAM_hamway_star_opposition_2_weak_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_1_medium_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_1_medium_idea
+                add_idea = HAM_hamway_star_opposition_2_medium_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_1_strenght_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_1_strenght_idea
+                add_idea = HAM_hamway_star_opposition_2_strenght_idea
+            }
+        }
+
+        
+    }
+
+	if = {
+        limit = { check_variable = { star_opposition_ideas_new_state = 1}}
+
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_2_weak_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_2_weak_idea
+                add_idea = HAM_hamway_star_opposition_1_weak_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_2_medium_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_2_medium_idea
+                add_idea = HAM_hamway_star_opposition_1_medium_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_2_strenght_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_2_strenght_idea
+                add_idea = HAM_hamway_star_opposition_1_strenght_idea
+            }
+        }
+
+
+
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_3_weak_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_3_weak_idea
+                add_idea = HAM_hamway_star_opposition_1_weak_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_3_medium_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_3_medium_idea
+                add_idea = HAM_hamway_star_opposition_1_medium_idea
+            }
+        }
+        if = {
+            limit = {
+                has_idea = HAM_hamway_star_opposition_3_strenght_idea
+            }
+            swap_ideas = {
+                remove_idea = HAM_hamway_star_opposition_3_strenght_idea
+                add_idea = HAM_hamway_star_opposition_1_strenght_idea
+            }
+        }
+
+        
+    }
+
+
+    set_variable = { star_opposition_ideas_new_state = 0 }
+}
+
+star_opposition_ideas_increase_activity = {
+
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_2_medium_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_2_medium_idea
+            add_idea = HAM_hamway_star_opposition_2_strenght_idea
+        }
+    }
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_2_weak_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_2_weak_idea
+            add_idea = HAM_hamway_star_opposition_2_medium_idea
+        }
+    }
+    
+
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_3_medium_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_3_medium_idea
+            add_idea = HAM_hamway_star_opposition_3_strenght_idea
+        }
+    }
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_3_weak_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_3_weak_idea
+            add_idea = HAM_hamway_star_opposition_3_medium_idea
+        }
+    }
+    
+    
+
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_1_medium_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_1_medium_idea
+            add_idea = HAM_hamway_star_opposition_1_strenght_idea
+        }
+    }
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_1_weak_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_1_weak_idea
+            add_idea = HAM_hamway_star_opposition_1_medium_idea
+        }
+    }
+    
+    
+
+}
+
+star_opposition_set_advisor_betsy = {
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_lefthand = 1 }
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+        }
+        set_variable = { HAM_STAR_lefthand = 7 }
+        add_ideas = HAM_betsy_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+        }
+        set_variable = { HAM_STAR_righthand = 7 }
+        add_ideas = HAM_betsy_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                check_variable = { HAM_STAR_lefthand = 1 }
+        }
+        set_variable = { HAM_STAR_lefthand = 7 }
+        add_ideas = HAM_betsy_buff
+    }
+
+    if = {
+        limit = {
+            AND = {
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+            }
+        }
+
+        if = {
+            limit = {
+                #IF RIGHT
+                check_variable = { HAM_STAR_lastside = 2 }
+            }
+            star_opposition_clear_left_advisor = yes
+            set_variable = { HAM_STAR_lefthand = 7 }
+            set_variable = { HAM_STAR_lastside = 1 }
+            add_ideas = HAM_betsy_buff
+        }
+        else = { #if left
+            star_opposition_clear_right_advisor = yes
+            set_variable = { HAM_STAR_righthand = 7 }
+            set_variable = { HAM_STAR_lastside = 2 }
+            add_ideas = HAM_betsy_buff
+        }
+    }
+}
+
+star_opposition_set_advisor_lokel = {
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_lefthand = 1 }
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+        }
+        set_variable = { HAM_STAR_lefthand = 6 }
+        add_ideas = HAM_lokel_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+        }
+        set_variable = { HAM_STAR_righthand = 6 }
+        add_ideas = HAM_lokel_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                check_variable = { HAM_STAR_lefthand = 1 }
+        }
+        set_variable = { HAM_STAR_lefthand = 6 }
+        add_ideas = HAM_lokel_buff
+    }
+
+    if = {
+        limit = {
+            AND = {
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+            }
+        }
+
+        if = {
+            limit = {
+                #IF RIGHT
+                check_variable = { HAM_STAR_lastside = 2 }
+            }
+            star_opposition_clear_left_advisor = yes
+            set_variable = { HAM_STAR_lefthand = 6 }
+            set_variable = { HAM_STAR_lastside = 1 }
+            add_ideas = HAM_lokel_buff
+        }
+        else = { #if left
+            star_opposition_clear_right_advisor = yes
+            set_variable = { HAM_STAR_righthand = 6 }
+            set_variable = { HAM_STAR_lastside = 2 }
+            add_ideas = HAM_lokel_buff
+        }
+    }
+}
+
+star_opposition_set_advisor_vikishow = {
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_lefthand = 1 }
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+        }
+        set_variable = { HAM_STAR_lefthand = 5 }
+        add_ideas = HAM_vikishow_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+        }
+        set_variable = { HAM_STAR_righthand = 5 }
+        add_ideas = HAM_vikishow_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                check_variable = { HAM_STAR_lefthand = 1 }
+        }
+        set_variable = { HAM_STAR_lefthand = 5 }
+        add_ideas = HAM_vikishow_buff
+    }
+
+    if = {
+        limit = {
+            AND = {
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+            }
+        }
+
+        if = {
+            limit = {
+                #IF RIGHT
+                check_variable = { HAM_STAR_lastside = 2 }
+            }
+            star_opposition_clear_left_advisor = yes
+            set_variable = { HAM_STAR_lefthand = 5 }
+            set_variable = { HAM_STAR_lastside = 1 }
+            add_ideas = HAM_vikishow_buff
+        }
+        else = { #if left
+            star_opposition_clear_right_advisor = yes
+            set_variable = { HAM_STAR_righthand = 5 }
+            set_variable = { HAM_STAR_lastside = 2 }
+            add_ideas = HAM_vikishow_buff
+        }
+    }
+}
+
+star_opposition_set_advisor_amirchik = {
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_lefthand = 1 }
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+        }
+        set_variable = { HAM_STAR_lefthand = 4 }
+        add_ideas = HAM_amirchik_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+        }
+        set_variable = { HAM_STAR_righthand = 4 }
+        add_ideas = HAM_amirchik_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                check_variable = { HAM_STAR_lefthand = 1 }
+        }
+        set_variable = { HAM_STAR_lefthand = 4 }
+        add_ideas = HAM_amirchik_buff
+    }
+
+    if = {
+        limit = {
+            AND = {
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+            }
+        }
+
+        if = {
+            limit = {
+                #IF RIGHT
+                check_variable = { HAM_STAR_lastside = 2 }
+            }
+            star_opposition_clear_left_advisor = yes
+            set_variable = { HAM_STAR_lefthand = 4 }
+            set_variable = { HAM_STAR_lastside = 1 }
+            add_ideas = HAM_amirchik_buff
+        }
+        else = { #if left
+            star_opposition_clear_right_advisor = yes
+            set_variable = { HAM_STAR_righthand = 4 }
+            set_variable = { HAM_STAR_lastside = 2 }
+            add_ideas = HAM_amirchik_buff
+        }
+    }
+}
+
+star_opposition_set_advisor_irinamairko = {
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_lefthand = 1 }
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+        }
+        set_variable = { HAM_STAR_lefthand = 3 }
+        add_ideas = HAM_mairko_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+        }
+        set_variable = { HAM_STAR_righthand = 3 }
+        add_ideas = HAM_mairko_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                check_variable = { HAM_STAR_lefthand = 1 }
+        }
+        set_variable = { HAM_STAR_lefthand = 3 }
+        add_ideas = HAM_mairko_buff
+    }
+
+    if = {
+        limit = {
+            AND = {
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+            }
+        }
+
+        if = {
+            limit = {
+                #IF RIGHT
+                check_variable = { HAM_STAR_lastside = 2 }
+            }
+            star_opposition_clear_left_advisor = yes
+            set_variable = { HAM_STAR_lefthand = 3 }
+            set_variable = { HAM_STAR_lastside = 1 }
+            add_ideas = HAM_mairko_buff
+        }
+        else = { #if left
+            star_opposition_clear_right_advisor = yes
+            set_variable = { HAM_STAR_righthand = 3 }
+            set_variable = { HAM_STAR_lastside = 2 }
+            add_ideas = HAM_mairko_buff
+        }
+    }
+}
+
+
+star_opposition_set_advisor_filimonova = {
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_lefthand = 1 }
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+        }
+        set_variable = { HAM_STAR_lefthand = 2 }
+        add_ideas = HAM_filimonova_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+        }
+        set_variable = { HAM_STAR_righthand = 2 }
+        add_ideas = HAM_filimonova_buff
+    }
+
+    if = {
+        limit = {
+                check_variable = { HAM_STAR_righthand = 1 }
+                check_variable = { HAM_STAR_lefthand = 1 }
+        }
+        set_variable = { HAM_STAR_lefthand = 2 }
+        add_ideas = HAM_filimonova_buff
+    }
+
+    if = {
+        limit = {
+            AND = {
+                NOT = { check_variable = { HAM_STAR_righthand = 1 } }
+                NOT = { check_variable = { HAM_STAR_lefthand = 1 } }
+            }
+        }
+
+        if = {
+            limit = {
+                #IF RIGHT
+                check_variable = { HAM_STAR_lastside = 2 }
+            }
+            star_opposition_clear_left_advisor = yes
+            set_variable = { HAM_STAR_lefthand = 2 }
+            set_variable = { HAM_STAR_lastside = 1 }
+            add_ideas = HAM_filimonova_buff
+        }
+        else = { #if left
+            star_opposition_clear_right_advisor = yes
+            set_variable = { HAM_STAR_righthand = 2 }
+            set_variable = { HAM_STAR_lastside = 2 }
+            add_ideas = HAM_filimonova_buff
+        }
+    }
+}
+
+star_opposition_clear_left_advisor = {
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_lefthand = 2 }
+        }
+        remove_ideas = HAM_filimonova_buff
+    }
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_lefthand = 3 }
+        }
+        remove_ideas = HAM_mairko_buff
+    }
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_lefthand = 4 }
+        }
+        remove_ideas = HAM_amirchik_buff
+    }
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_lefthand = 5 }
+        }
+        remove_ideas = HAM_vikishow_buff
+    }
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_lefthand = 6 }
+        }
+        remove_ideas = HAM_lokel_buff
+    }
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_lefthand = 7 }
+        }
+        remove_ideas = HAM_betsy_buff
+    }
+
+    set_variable = { HAM_STAR_lefthand = 1 }
+}
+
+star_opposition_clear_right_advisor = {
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_righthand = 2 }
+        }
+        remove_ideas = HAM_filimonova_buff
+    }
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_righthand = 3 }
+        }
+        remove_ideas = HAM_mairko_buff
+    }
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_righthand = 4 }
+        }
+        remove_ideas = HAM_amirchik_buff
+    }
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_righthand = 5 }
+        }
+        remove_ideas = HAM_vikishow_buff
+    }
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_righthand = 6 }
+        }
+        remove_ideas = HAM_lokel_buff
+    }
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_righthand = 7 }
+        }
+        remove_ideas = HAM_betsy_buff
+    }
+
+    set_variable = { HAM_STAR_righthand = 1 }
+}

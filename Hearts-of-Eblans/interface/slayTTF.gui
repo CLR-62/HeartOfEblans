@@ -1,0 +1,75 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "slay_panel_open"
+		position = { x = 1350 y = 10 }
+
+		buttonType = {
+			name = "open_slay"
+			quadTextureSprite = "GFX_slay_button_icon"
+			position = { x = 0 y = 0 }
+			pdx_tooltip = "Панель премии SLAY 2024"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+	}
+
+	containerWindowType = {
+		name = "slay_panel"
+		position = { x = 0 y = 0 }
+        size = { width = 550 height = 400}
+        orientation = center
+        origo = center
+        moveable = yes
+        fade_time = 100
+        click_to_front = no
+        clipping = no
+
+        background = {
+            name = "Background"
+            quadTextureSprite = "GFX_slay_back"
+        }
+
+        buttonType = {
+			name = "close_slay_button"
+			quadTextureSprite = "GFX_closebutton"
+			position = { x = 530 y = 0 }
+			pdx_tooltip = "Закрыть"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+
+        buttonType = {
+			name = "slay_king_button"
+			quadTextureSprite = "GFX_slay_panel_button"
+			position = { x = 41 y = 250 }
+            font = "hoi_24header"			
+			text = "Slay King"
+			pdx_tooltip = "Номинация Slay King"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+
+        buttonType = {
+			name = "slay_queen_button"
+			quadTextureSprite = "GFX_slay_panel_button"
+			position = { x = 182 y = 250 }
+            font = "hoi_24header"			
+			text = "Slay Queen"
+			pdx_tooltip = "Номинация Slay Queen"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+
+        buttonType = {
+			name = "slay_mem_button"
+			quadTextureSprite = "GFX_slay_panel_button"
+			position = { x = 323 y = 250 }
+            font = "hoi_24header"			
+			text = "Slay Мем"
+			pdx_tooltip = "Номинация Slay Человек-мем"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+	}
+}

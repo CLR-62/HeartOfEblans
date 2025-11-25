@@ -3,7 +3,20 @@ capital = 202
 oob = "ROM_1936"
 set_naval_oob = "ROM_1936_naval"
 
+recruit_character = ham_kamil_kikido
+recruit_character = ham_lera_simka
+recruit_character = ham_amina_kikido
+recruit_character = ham_dava
+recruit_character = ham_nastya_knyzeva
+recruit_character = ham_filimonova
+recruit_character = ham_amirchik
+recruit_character = ham_star_mom
+recruit_character = ham_nekrasova
+
+
 set_research_slots = 3
+
+set_country_flag = generic_trackofday_flag
 
 set_autonomy = {
 	target = CVD
@@ -108,9 +121,9 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Милана Хаметова"
+	name = "Милана Стар"
 	desc = "POLITICS_PRINCE_PAUL_DESC"
-	picture = "hametova_democratic.dds"
+	picture = "star.dds"
 	
 	ideology = liberalism
 	traits = {
@@ -132,11 +145,11 @@ create_country_leader = {
 #hype_in_likee
 
 set_popularities = {
-	democratic = 1
-	fascism = 1
-	communism = 1
-	neutrality = 1
-	hypecratia = 96
+	democratic = 10
+	fascism = 11
+	communism = 4
+	neutrality = 12
+	hypecratia = 63
 }
 
 

@@ -1,0 +1,88 @@
+guiTypes = {
+containerWindowType = {
+		name = "Star_opposition_window"
+		position = { x = 50 y = 50 }
+		size = { width = 100% height= 370 }
+		instantTextBoxType = {
+			name ="Star_opposition_title"
+			position = { x = 10 y = 0 }
+			font = "hoi_24header"
+			text = "star_opposition_title_text"
+			format = center
+			maxHeight = 40
+			maxWidth = 470
+		}
+		
+		iconType = {
+			name = "Director_portrait"
+			position = { x = 185 y = 55 }
+			spriteType = "GFX_HAM_star_portraits"
+			scale = 0.73
+			pdx_tooltip = HAM_star_status_tooltip
+		}	
+
+		iconType = {
+			name = "Director_frame"
+			position = { x = 160 y = 35 }
+			spriteType = "GFX_HAM_director_frame"
+			scale = 1.3
+			pdx_tooltip = HAM_star_status_tooltip
+		}
+
+		iconType = {
+			name = "LeftHand_portrait"
+			position = { x = 50 y = 105 }
+			spriteType = "GFX_HAM_star_clan_members"
+			pdx_tooltip = HAM_star_lefthand_tooltip
+			scale = 0.6
+		}		
+
+		iconType = {
+			name = "LeftHand_frame"
+			position = { x = 25 y = 85 }
+			spriteType = "GFX_HAM_coleader_frame"
+			pdx_tooltip = HAM_star_lefthand_tooltip
+			scale = 1.1
+		}	
+
+		iconType = {
+			name = "RightHand_portrait"
+			position = { x = 345 y = 105 }
+			spriteType = "GFX_HAM_star_clan_members"
+			pdx_tooltip = HAM_star_righthand_tooltip
+			scale = 0.6
+		}
+		
+		iconType = {
+			name = "RightHand_frame"
+			position = { x = 320 y = 85 }
+			spriteType = "GFX_HAM_coleader_frame"
+			pdx_tooltip = HAM_star_righthand_tooltip
+			scale = 1.1
+		}	
+		
+		#iconType = {
+		#	name = "PPSL_icon"
+		#	position = { x = 205 y = 180 }
+		#	spriteType = "GFX_HAM_ppsl_icon"
+		#	scale = 0.25
+		#}
+
+        instantTextBoxType = {
+			name ="Star_opposition_popularity"
+			position = { x = 120 y = 235 }
+			font = "hoi_24header"
+			text = "star_opposition_popularity_text"
+			format = center
+			maxHeight = 20
+			maxWidth = 240
+		}
+
+		iconType = {
+			name = "HAM_star_siloviki_progressbar"
+			position = { x = 35 y = 270 }
+			spriteType = "GFX_HAM_siloviki_progressbar"
+			pdx_tooltip = HAM_STAR_siloviki_interes_tt
+		}
+	}
+}

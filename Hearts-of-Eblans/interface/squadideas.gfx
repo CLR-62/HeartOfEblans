@@ -24,7 +24,7 @@ spriteTypes = {
 	spriteType = {
         name = "GFX_idea_mafia_corr"
         texturefile = "gfx/interface/ideas/laws/idea_cor_5.png"
-    }  	
+    } 
 	
 	
 	spriteType = {
@@ -115,6 +115,11 @@ spriteTypes = {
         name = "GFX_idea_bezmoderov"
         texturefile = "gfx/interface/ideas/bezmoderov.dds"
     }  
+
+    spriteType = {
+        name = "GFX_idea_HAM_shit_conveyour"
+        texturefile = "gfx/interface/ideas/HAM_shit_conveyour.dds"
+    }  
 	
     spriteType = {
         name = "GFX_vitaliy_jr_small"
@@ -158,9 +163,30 @@ spriteTypes = {
     }
 
     spriteType = {
+		name = "GFX_idea_HAM_star_opp_picture"
+		texturefile = "gfx/interface/ideas/HAM_ppsl.dds"
+	}
+
+    spriteType = {
+		name = "GFX_idea_HAM_superlikes_icon"
+		texturefile = "gfx/interface/ideas/HAM_superlikes_idea.dds"
+	}
+
+    spriteType = {
+		name = "GFX_idea_HAM_likee_baykot"
+		texturefile = "gfx/interface/ideas/HAM_likee_baykot_idea.dds"
+	}
+
+    spriteType = {
         name = "GFX_idea_BTK_squadgaz"
         texturefile = "gfx/interface/ideas/squadgaz.dds"
     }
+
+    spriteType = {
+		name = "GFX_new_polit_advisor"
+		texturefile = "gfx/texticons/new_polit_advisor.dds"
+		legacy_lazy_load = no
+	}
 
 	
     spriteType = {

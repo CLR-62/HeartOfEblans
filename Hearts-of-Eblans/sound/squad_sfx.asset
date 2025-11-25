@@ -1,0 +1,7 @@
+soundeffect = {
+	name = "tod_set_sound_sfx"
+	volume = 0.75
+	sounds = {
+		sound = "tod_set_sound"
+	}
+}

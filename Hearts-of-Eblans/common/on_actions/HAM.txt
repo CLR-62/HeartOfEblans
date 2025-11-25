@@ -1,0 +1,31 @@
+on_actions = {
+	on_startup = {
+        effect = {
+			HAM = {
+				set_variable = { HAM_STAR_status = 1 }
+				set_variable = { HAM_STAR_siloviki_interes = 0 }
+				set_variable = { HAM_STAR_lefthand = 1 }
+				set_variable = { HAM_STAR_righthand = 1 }
+				
+			}
+        }
+    }
+
+    on_daily_HAM = {
+        effect = {
+                if = {
+                    limit = {
+                        has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+                    }
+                    subtract_from_variable = { HAM_STAR_COOLDOWN = 1 }
+
+                    if = {
+                        limit = {
+                            check_variable = { HAM_STAR_COOLDOWN < 1 }
+                        }
+                        clr_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+                    }
+                }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-version="1.2.7"
+version="1.3"
 tags={
 	"National Focuses"
 	"Sound"
@@ -8,9 +8,10 @@ tags={
 	"Ideologies"
 	"Graphics"
 }
-name="Hearts of Eblans 1.2.7"
+name="Hearts of Eblans 1.3"
 picture="thumbnail.png"
 replace_path="gfx/loadingscreens"
 replace_path="common/bookmarks"
+replace_path="history/states"
 supported_version="1.16.*"
 remote_file_id="3392330604"

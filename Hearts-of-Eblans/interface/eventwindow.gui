@@ -360,7 +360,7 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "Title"
 				position = { x = 14 y = 70 }
-				font = "hoi4_typewriter22"
+				font = "hoi_20bs"
 				borderSize = {x = 0 y = 0}
 				text = "Title text here!"	
 				maxWidth = 551
@@ -398,6 +398,7 @@ guiTypes = {
 					name = "leader"
 					position = { x = 33 y = 4 }
 					spriteType = "GFX_leader_unknown"
+					alwaystransparent = yes
 					scale = 0.85
 				}
 

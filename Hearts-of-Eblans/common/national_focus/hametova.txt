@@ -3,30 +3,214 @@ focus_tree = {
 	
 	country = {
 		factor = 0
+		modifier = {
+			add = 100
+			tag = HAM
+		}
 	}
 	default = no
 
 	continuous_focus_position = { x = 200 y = 1700 }
 
+	#OPPOSITION
+	
+	focus = {
+		id = ham_star_opposition_start
+		icon = GFX_goal_HAM_star_opposition
+		x = -3
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = ham_hametova_second_term }
+		relative_position_id = ham_hametova_second_term
+		mutually_exclusive = { focus = ham_new_military_doctrine }
+
+		completion_reward = {
+			add_ideas = HAM_opposition_started
+    		add_war_support = -0.02
+    		#start_decision_category = HAM_opposition_ops
+    		country_event = { id = hametova.5 days = 1 } # запускает линейку оппозиции
+        }
+    }
+
+	focus = {
+		id = ham_star_undependent_researches
+		icon = GFX_goal_HAM_independent_researches
+		x = 0
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_star_opposition_start
+		prerequisite = { focus = ham_star_opposition_start }
+
+		completion_reward = {
+			add_ideas = HAM_researches_boost
+    		add_political_power = 50
+			weak_star_popularity_increase = yes
+        }
+    }
+
+	focus = {
+		id = ham_star_supporters_net
+		icon = GFX_goal_HAM_opposition_network
+		x = -1
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_star_undependent_researches
+		prerequisite = { focus = ham_star_undependent_researches }
+
+		completion_reward = {
+		    
+		    add_political_power = 75
+		    add_operative_slot = 1
+		}
+    }
+
+	focus = {
+		id = ham_star_call_for_raises
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		x = 1
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_star_undependent_researches
+		prerequisite = { focus = ham_star_undependent_researches }
+
+		completion_reward = {
+    		add_political_power = 100
+    		add_stability = -0.04
+    		add_war_support = -0.02
+    		country_event = { id = hametova.4 days = 2 } # митинги на улицах
+		}
+    }
+
+	focus = {
+		id = ham_star_supporters_arrests
+		icon = GFX_focus_RAJ_seven_shackles
+		x = -1
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_star_call_for_raises
+		prerequisite = { focus = ham_star_call_for_raises focus = ham_star_supporters_net }
+
+		completion_reward = {
+		    add_political_power = 50
+		    add_timed_idea = { idea = HAM_massive_arrests days = 210 }
+		    add_named_threat = { threat = 3 name = ham_star_supporters_arrests_threat }
+		    decrease_media_law = yes
+		}
+    }
+
+	focus = {
+		id = ham_star_money_raise
+		icon = GFX_focus_generic_monetary_union
+		x = 1
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_star_supporters_arrests
+		prerequisite = { focus = ham_star_supporters_arrests }
+
+		completion_reward = {
+			add_timed_idea = { idea = HAM_star_finance days = 360 }
+    		add_political_power = 75
+        }
+    }
+
+	focus = {
+		id = ham_star_internet_compain
+		icon = GFX_goal_generic_internet_world
+		x = -1
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_star_supporters_arrests
+		prerequisite = { focus = ham_star_supporters_arrests }
+
+		completion_reward = {
+			add_timed_idea = { idea = HAM_star_global_campaign days = 240 }
+    		add_political_power = 50
+    		add_tech_bonus = {
+       			 name = HAM_cyber_bonus
+        		bonus = 0.5
+        		uses = 1
+        		category = encryption_tech
+    		}
+
+			country_event = { id = hametova.6 hours = 3 }
+        }
+    }
+
+	focus = {
+		id = ham_star_bypassing_blocks
+		icon = GFX_goal_HAM_bypass_blocks
+		x = 0
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_star_internet_compain
+		prerequisite = { focus = ham_star_internet_compain }
+
+		completion_reward = {
+        }
+    }
+
+	focus = {
+		id = ham_star_national_headquarters_network
+		icon = GFX_goal_HAM_opposition_network_2
+		x = 1
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_star_bypassing_blocks
+		prerequisite = { focus = ham_star_bypassing_blocks }
+		prerequisite = { focus = ham_star_money_raise}
+
+		completion_reward = {
+			add_research_slot = 1
+    		add_timed_idea = { idea = HAM_vpn_network days = 540 }
+        }
+    }
+
+	focus = {
+		id = ham_star_question_about_future
+		icon = GFX_goal_HAM_star_future
+		x = 0
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_star_national_headquarters_network
+		prerequisite = { focus = ham_star_national_headquarters_network }
+
+		completion_reward = {
+    		add_command_power = 25
+    		add_political_power = 100
+        }
+    }
+
+
 	#HAMETOVA
 	
 	focus = {
 		id = ham_hametova_second_term
-		icon = GFX_goal_unknown
+		icon = GFX_goal_HAM_second_term
 		x = 10
 		y = 0
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
+			country_event = { id = hametova.1 hours = 2 }
         }
     }
 
 	##MUSIC
 	focus = {
 		id = ham_reform_program
-		icon = GFX_goal_unknown
-		x = 5
+		icon = GFX_focus_AUS_lawmaking_leniency
+		x = 7
 		y = 1
 		cost = 10
 		prerequisite = { focus = ham_hametova_second_term }
@@ -34,40 +218,16 @@ focus_tree = {
 		relative_position_id = ham_hametova_second_term
 
 		completion_reward = {
+			add_ideas = HAM_second_term
+    add_political_power = 150
+    start_decision_category = HAM_government_program
+    country_event = { id = hametova.1 days = 1 } # инаугурация
         }
     }
 
 	focus = {
 		id = ham_content_reforms
-		icon = GFX_goal_unknown
-		x = -2
-		y = 1
-		cost = 10
-		prerequisite = { focus = ham_reform_program }
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		relative_position_id = ham_reform_program
-
-		completion_reward = {
-        }
-    }
-
-	focus = {
-		id = ham_content_reforms
-		icon = GFX_goal_unknown
-		x = -2
-		y = 1
-		cost = 10
-		prerequisite = { focus = ham_reform_program }
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		relative_position_id = ham_reform_program
-
-		completion_reward = {
-        }
-    }
-
-	focus = {
-		id = ham_content_reforms
-		icon = GFX_goal_unknown
+		icon = GFX_goal_HAM_content_reform
 		x = -3
 		y = 1
 		cost = 10
@@ -76,6 +236,8 @@ focus_tree = {
 		relative_position_id = ham_reform_program
 
 		completion_reward = {
+			add_ideas = HAM_reform_program
+    add_political_power = 75
         }
     }
 
@@ -91,6 +253,8 @@ focus_tree = {
 		relative_position_id = ham_content_reforms
 
 		completion_reward = {
+			add_timed_idea = { idea = HAM_content_review days = 365 }
+    add_political_power = 50
         }
     }
 
@@ -105,12 +269,15 @@ focus_tree = {
 		relative_position_id = ham_bolee_adult_content
 
 		completion_reward = {
+			swap_ideas = { remove_idea = HAM_content_review add_idea = HAM_mature_pivot }
+    add_stability = -0.02
+    add_war_support = 0.02
         }
     }
 
 	focus = {
 		id = ham_endless_detstvo
-		icon = GFX_goal_unknown
+		icon = GFX_goal_HAM_endless_detstvo
 		x = -2
 		y = 1
 		cost = 10
@@ -120,13 +287,16 @@ focus_tree = {
 		relative_position_id = ham_content_reforms
 
 		completion_reward = {
+			swap_ideas = { remove_idea = HAM_content_review add_idea = HAM_family_friendly }
+    add_stability = 0.03
+    add_war_support = -0.01
         }
     }
 
 
 	focus = {
 		id = ham_continue_shit_conveir
-		icon = GFX_goal_unknown
+		icon = GFX_goal_HAM_poop_conveyour
 		x = 0
 		y = 1
 		cost = 10
@@ -135,12 +305,14 @@ focus_tree = {
 		relative_position_id = ham_endless_detstvo
 
 		completion_reward = {
+			add_ideas = HAM_content_factory
+    add_research_speed_factor = 0.02
         }
     }
 
 	focus = {
 		id = ham_superlikes_expropriation
-		icon = GFX_goal_unknown
+		icon = GFX_goal_HAM_superlike_expropriation
 		x = -2
 		y = 1
 		cost = 10
@@ -149,6 +321,9 @@ focus_tree = {
 		relative_position_id = ham_continue_shit_conveir
 
 		completion_reward = {
+			add_timed_idea = { idea = HAM_superlike_tax days = 450 }
+    add_political_power = 100
+    custom_effect_tooltip = HAM_tt_superlike_tax
         }
     }
 
@@ -163,6 +338,9 @@ focus_tree = {
 		relative_position_id = ham_continue_shit_conveir
 
 		completion_reward = {
+			add_stability = 0.02
+    		add_political_power = 35
+    		country_event = { id = hametova.101 days = 1 } # фан-ивенты -> лайкметр
         }
     }
 
@@ -177,6 +355,9 @@ focus_tree = {
 		relative_position_id = ham_shodki_s_fanatami
 
 		completion_reward = {
+			add_timed_idea = { idea = HAM_advert_push days = 360 }
+    add_timed_idea = { idea = HAM_budget_boost days = 360 }
+    add_political_power = 50
         }
     }
 
@@ -191,6 +372,7 @@ focus_tree = {
 		relative_position_id = ham_reform_program
 
 		completion_reward = {
+			add_timed_idea = { idea = HAM_music_board days = 720 }
         }
     }
 
@@ -206,6 +388,8 @@ focus_tree = {
 		relative_position_id = ham_music_reforms
 
 		completion_reward = {
+			add_ideas = HAM_real_vocal_push
+    add_research_bonus = { name = HAM_vocal_studios uses = 1 bonus = 0.5 category = electronics }
         }
     }
 
@@ -221,21 +405,8 @@ focus_tree = {
 		relative_position_id = ham_music_reforms
 
 		completion_reward = {
-        }
-    }
-
-	focus = {
-		id = ham_autotune
-		icon = GFX_goal_unknown
-		x = 1
-		y = 1
-		cost = 10
-		mutually_exclusive = { focus = ham_real_vokal }
-		prerequisite = { focus = ham_music_reforms }
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		relative_position_id = ham_music_reforms
-
-		completion_reward = {
+			add_ideas = HAM_autotune_push
+    add_research_bonus = { name = HAM_auto_plugins uses = 1 bonus = 0.5 category = electronics }
         }
     }
 
@@ -251,6 +422,11 @@ focus_tree = {
 		relative_position_id = ham_reform_program
 
 		completion_reward = {
+			add_ideas = HAM_collab_policy
+    add_opinion_modifier = { target = CHB modifier = CHB_music_collab }
+    add_opinion_modifier = { target = STI modifier = CHB_music_collab }
+    add_opinion_modifier = { target = DRE modifier = CHB_music_collab }
+
         }
     }
 
@@ -265,6 +441,9 @@ focus_tree = {
 		relative_position_id = ham_politica_of_collaborations
 
 		completion_reward = {
+			add_political_power = 75
+    add_stability = 0.01
+    add_timed_idea = { idea = HAM_stream_hype days = 180 }
         }
     }
 
@@ -335,65 +514,72 @@ focus_tree = {
 
 	focus = {
 		id = ham_new_military_doctrine
-		icon = GFX_goal_unknown
-		x = -6
+		icon = GFX_goal_HAM_ham_military_doctrine
+		x = -7
 		y = 1
 		cost = 10
 		prerequisite = { focus = ham_hametova_second_term }
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		relative_position_id = ham_hametova_second_term
+		mutually_exclusive = { focus = ham_star_opposition_start }
 
 		completion_reward = {
+			add_ideas = HAM_ham_doctrine
         }
     }
 
 	focus = {
 		id = ham_organize_milanas_guardians
-		icon = GFX_goal_unknown
-		x = -4
+		icon = GFX_focus_AFG_royal_guard
+		x = 1
 		y = 1
 		cost = 10
-		prerequisite = { focus = ham_hametova_second_term }
+		prerequisite = { focus = ham_new_military_doctrine }
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		relative_position_id = ham_hametova_second_term
+		relative_position_id = ham_new_military_doctrine
 
 		completion_reward = {
+			add_timed_idea = { idea = HAM_organize_milanas_guardian days = 240 }
         }
     }
 
 	focus = {
 		id = ham_new_defense_system
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_defence
 		x = -1
 		y = 1
 		cost = 10
-		prerequisite = { focus = ham_organize_milanas_guardians }
 		prerequisite = { focus = ham_new_military_doctrine }
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		relative_position_id = ham_organize_milanas_guardians
+		relative_position_id = ham_new_military_doctrine
 
 		completion_reward = {
+			add_ideas = HAM_new_defense_system
         }
     }
 
 	focus = {
 		id = ham_gain_palata_support
-		icon = GFX_goal_unknown
-		x = -1
+		icon = GFX_focus_generic_improve_the_administration
+		x = 1
 		y = 1
 		cost = 10
 		prerequisite = { focus = ham_new_defense_system }
+		prerequisite = { focus = ham_organize_milanas_guardians }
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		relative_position_id = ham_new_defense_system
 
 		completion_reward = {
+			add_stability = 0.05
+			war_support_factor = 0.03
+			increase_corruption_law = yes
         }
     }
 
 	focus = {
 		id = ham_arrest_milana_star
-		icon = GFX_goal_unknown
-		x = 0
+		icon = GFX_goal_HAM_arrest_star
+		x = -1
 		y = 1
 		cost = 10
 		prerequisite = { focus = ham_gain_palata_support }
@@ -401,26 +587,28 @@ focus_tree = {
 		relative_position_id = ham_gain_palata_support
 
 		completion_reward = {
+			country_event = { id = hametova.2 days = 1 }
         }
     }
 
 	focus = {
 		id = ham_help_from_eastern_guys
-		icon = GFX_goal_unknown
-		x = 2
+		icon = GFX_goal_HAM_eastern_friends
+		x = 1
 		y = 1
 		cost = 10
-		prerequisite = { focus = ham_new_defense_system }
+		prerequisite = { focus = ham_gain_palata_support }
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		relative_position_id = ham_gain_palata_support
 
 		completion_reward = {
+			add_ideas = HAM_eastern_funds
         }
     }
 
 	focus = {
 		id = ham_prepare_for_third_term
-		icon = GFX_goal_unknown
+		icon = GFX_goal_HAM_third_term
 		x = -1
 		y = 1
 		cost = 10
@@ -429,6 +617,7 @@ focus_tree = {
 		relative_position_id = ham_help_from_eastern_guys
 
 		completion_reward = {
+			
         }
     }
 
@@ -439,7 +628,7 @@ focus_tree = {
 		id = ham_likers_election
 		icon = GFX_goal_unknown
 		x = 0
-		y = 9
+		y = 10
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		relative_position_id = ham_hametova_second_term
@@ -452,7 +641,7 @@ focus_tree = {
 	focus = {
 		id = ham_milana_star_government
 		icon = GFX_goal_unknown
-		x = 5
+		x = 3
 		y = 1
 		cost = 10
 		prerequisite = { focus = ham_likers_election }
@@ -466,7 +655,7 @@ focus_tree = {
 	focus = {
 		id = ham_milana_hametova_third_term
 		icon = GFX_goal_unknown
-		x = 0
+		x = -3
 		y = 1
 		cost = 10
 		prerequisite = { focus = ham_likers_election }
@@ -477,17 +666,208 @@ focus_tree = {
         }
     }
 
+
+	###ARMY
+
 	focus = {
-		id = ham_milana_necrasova_government
-		icon = GFX_goal_unknown
-		x = -5
-		y = 1
+		id = ham_old_army_memories
+		icon = GFX_goal_generic_army_doctrines
+		x = 17
+		y = 0
 		cost = 10
-		prerequisite = { focus = ham_likers_election }
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		relative_position_id = ham_likers_election
+		relative_position_id = ham_hametova_second_term
 
 		completion_reward = {
+			add_ideas = HAM_old_army_memory
+    add_army_experience = 25
+        }
+    }
+
+	focus = {
+		id = ham_continue_weapon_development
+		icon = GFX_goal_unknown
+		x = -2
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_old_army_memories
+		prerequisite = { focus = ham_old_army_memories }
+
+		completion_reward = {
+			 add_timed_idea = { idea = HAM_weapon_dev days = 540 }
+    add_research_bonus = { name = HAM_weapons uses = 2 bonus = 0.5 category = infantry_weapons }
+        }
+    }
+
+	focus = {
+		id = ham_continue_new_breakthroughs
+		icon = GFX_goal_unknown
+		x = 2
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_old_army_memories
+		prerequisite = { focus = ham_old_army_memories }
+
+		completion_reward = {
+	add_timed_idea = { idea = HAM_breakthroughs days = 540 }
+    add_research_bonus = { name = HAM_doctrine uses = 2 bonus = 0.5 category = land_doctrine }
+        }
+    }
+
+	focus = {
+		id = ham_blitzkrieg_doctrine
+		icon = GFX_goal_unknown
+		x = -1
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_continue_new_breakthroughs
+		prerequisite = { focus = ham_continue_new_breakthroughs }
+		mutually_exclusive = { focus = ham_massive_offensive_doctrine }
+
+		completion_reward = {
+			 add_ideas = HAM_blitz_doctrine
+    add_research_bonus = { name = HAM_mobile_armor uses = 1 bonus = 0.75 category = armor }
+        }
+    }
+
+	focus = {
+		id = ham_massive_offensive_doctrine
+		icon = GFX_goal_unknown
+		x = 1
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_continue_weapon_development
+		prerequisite = { focus = ham_continue_weapon_development }
+		mutually_exclusive = { focus = ham_blitzkrieg_doctrine }
+
+		completion_reward = {
+			add_ideas = HAM_mass_offense
+    add_research_bonus = { name = HAM_artillery_uses uses = 1 bonus = 0.75 category = artillery }
+
+        }
+    }
+
+	focus = {
+		id = ham_panzer_development
+		icon = GFX_goal_unknown
+		x = 1
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_blitzkrieg_doctrine
+		prerequisite = { focus = ham_blitzkrieg_doctrine }
+
+		completion_reward = {
+			
+        }
+    }
+
+	focus = {
+		id = ham_mechanized_infantry
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_panzer_development
+		prerequisite = { focus = ham_panzer_development }
+
+		completion_reward = {
+        }
+    }
+
+	focus = {
+		id = ham_manpower_saving
+		icon = GFX_goal_unknown
+		x = 2
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_panzer_development
+		prerequisite = { focus = ham_panzer_development }
+
+		completion_reward = {
+        }
+    }
+
+	focus = {
+		id = ham_grand_defense_system
+		icon = GFX_goal_unknown
+		x = -1
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_massive_offensive_doctrine
+		prerequisite = { focus = ham_massive_offensive_doctrine }
+
+		completion_reward = {
+        }
+    }
+
+	focus = {
+		id = ham_support_equipment
+		icon = GFX_goal_unknown
+		x = -2
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_grand_defense_system
+		prerequisite = { focus = ham_grand_defense_system }
+
+		completion_reward = {
+        }
+    }
+
+focus = {
+		id = ham_improved_artilery_tacticks
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_grand_defense_system
+		prerequisite = { focus = ham_grand_defense_system }
+
+		completion_reward = {
+        }
+    }
+
+	focus = {
+		id = ham_command_network
+		icon = GFX_goal_unknown
+		x = -1
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_blitzkrieg_doctrine
+		prerequisite = { focus = ham_blitzkrieg_doctrine focus = ham_massive_offensive_doctrine }
+
+		completion_reward = {
+			add_ideas = HAM_command_net
+    add_command_power = 35
+        }
+    }
+
+	focus = {
+		id = ham_restore_cavalry_polki
+		icon = GFX_goal_unknown
+		x = 0
+		y = 1
+		cost = 10
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		relative_position_id = ham_command_network
+		prerequisite = { focus = ham_command_network }
+
+		completion_reward = {
+			add_ideas = HAM_cavalry_polki
+    random_owned_controlled_state = {
+        limit = { free_building_slots = { building = infrastructure size > 0 } }
+        add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+    }
         }
     }
 }

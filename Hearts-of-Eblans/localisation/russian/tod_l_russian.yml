@@ -1,0 +1,65 @@
+﻿l_russian:
+  tod_trackofday_title: "§YТрек дня§!"
+  none: "Не выбрано"
+  pya_1000lifes: "1000 Жизней"
+  pya_supernova: "Супернова"
+  pya_golovolomka: "Головоломка"
+  pya_superpupernova: "Супер пупер нова"
+  pya_zmishare: "Жми Share"
+  pya_vredniesoveti: "Вредные советы"
+  pya_clown: "Клоун"
+  pya_bugati: "Bugatti"
+  pya_otso: "OTSO-SITY"
+  pya_longisland: "Лонг Айленд"
+  pya_mersi: "Мерси"
+  pya_cleopatra: "Клеопатра"
+  pya_thanksboss: "Спасибо босс"
+  pya_fublya: "Фубля"
+  pya_repit: "Репит"
+  pya_xxl: "XXL"
+  pya_tonirovaniy_shigul: "Тонированный жигуль"
+  pya_zmishare_track: "Жми Share"
+  pya_casino: "Казино"
+  ham_crash: "Краш"
+  ham_chikibriki: "Чики-Брики"
+
+
+  tod_will_be_unlocked: "£GFX_music_disk_texticon Будет открыт альбом §Y$ALBUM$§!"
+
+  trackOfDay_cat: "Трек дня"
+
+
+
+
+  PYA_music_0_clown_decision: "Выбрать: §YКлоун§!"
+  PYA_music_0_buggati_decision: "Выбрать: §YBugatti§!"
+  PYA_music_0_otso_decision: "Выбрать: §YOTSO CITY§!"
+
+  PYA_music_1_longisland_decision: "Выбрать: §YЛонг Айленд§!"
+  PYA_music_1_mersi_decision: "Выбрать: §YМерси§!"
+  PYA_music_1_cleopatra_decision: "Выбрать: §YКлеопатра§!"
+
+  PYA_music_2_thanksboss_decision: "Выбрать: §YСпасибо босс§!"
+  PYA_music_2_fublya_decision: "Выбрать: §YФубля§!"
+
+  PYA_music_3_repit_decision: "Выбрать: §YРепит§!"
+  PYA_music_3_xxl_decision: "Выбрать: §YXXL§!"
+  PYA_music_3_tonirovaniy_shigul_decision: "Выбрать: §YТонированный жигуль§!"
+
+  PYA_music_4_zmishare_decision: "Выбрать: §YЖми Share§!"
+
+  ham_music_6_crash_decision: "Выбрать: §YКраш§!"
+  ham_music_7_chikibriki_decision: "Выбрать: §YЧики-Брики§!"
+
+  PYA_musical_effort: "Развитие музыки"
+  PYA_thousand_lifes: "Выпустить «1000 Жизней»"
+  PYA_supernova_album: "Выпустить «Supernova»"
+  PYA_golovolomka_album: "Выпустить «Головоломка»"
+  PYA_superpupernova_album: "Выпустить «Super puper nova»"
+  PYA_zmishare_album: "Выпустить «Жми Share»"
+
+
+
+
+  ham_unlock_crash_track: "Выпустить «Краш»"
+  ham_unlock_chikibriki_track: "Выпустить «Чики-Брики»"

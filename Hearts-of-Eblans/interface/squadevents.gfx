@@ -39,6 +39,27 @@ spriteTypes = {
 		name = "GFX_report_event_reign_of_shabani"
 		texturefile = "gfx/event_pictures/reign_of_shabani.dds"
 	}
+
+	spriteType = {
+		name = "GFX_report_event_blogema"
+		texturefile = "gfx/event_pictures/blogema.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_botsbug"
+		texturefile = "gfx/event_pictures/botsbug.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_hambtk_coop"
+		texturefile = "gfx/event_pictures/ham_btk_coop.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_report_event_neNekrasova"
+		texturefile = "gfx/event_pictures/neNekrasova.dds"
+	}
 	
 	spriteType = {
 		name = "GFX_report_event_svo_nehvatka"

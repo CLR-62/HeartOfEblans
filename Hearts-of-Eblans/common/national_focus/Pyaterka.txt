@@ -1037,4 +1037,141 @@ focus_tree = {
 		y = 10
 		#нужны определенные земли для формирования страны и изменится цвет страны
 	}
+
+
+	focus = {
+		id = PYA_musical_effort
+		icon = GFX_goal_generic_music_effort
+		cost = 10
+
+		relative_position_id = PYA_begin_new_prime
+
+		completion_reward = {
+
+		}
+		x = 15
+		y = 0
+	}
+
+	focus = {
+		id = PYA_thousand_lifes
+		icon = GFX_goal_PYA_1000lifes
+		cost = 10
+
+		relative_position_id = PYA_musical_effort
+		prerequisite = { focus = PYA_musical_effort }
+
+		completion_reward = {
+
+			custom_effect_tooltip = {
+				localization_key = tod_will_be_unlocked
+				ALBUM = "pya_1000lifes"
+			}
+
+			add_to_array = {
+    			array = opennedAlbums
+    			value = 0
+			}
+		}
+		x = 0
+		y = 1
+	}
+
+	focus = {
+		id = PYA_supernova_album
+		icon = GFX_goal_PYA_supernova
+		cost = 10
+
+		relative_position_id = PYA_thousand_lifes
+		prerequisite = { focus = PYA_thousand_lifes }
+
+		completion_reward = {
+
+			custom_effect_tooltip = {
+				localization_key = tod_will_be_unlocked
+				ALBUM = "pya_supernova"
+			}
+
+			add_to_array = {
+    			array = opennedAlbums
+    			value = 1
+			}
+		}
+		x = -1
+		y = 1
+	}
+
+	focus = {
+		id = PYA_golovolomka_album
+		icon = GFX_goal_PYA_golovolomka
+		cost = 10
+
+		relative_position_id = PYA_thousand_lifes
+		prerequisite = { focus = PYA_thousand_lifes }
+
+		completion_reward = {
+
+			custom_effect_tooltip = {
+				localization_key = tod_will_be_unlocked
+				ALBUM = "pya_golovolomka"
+			}
+
+			add_to_array = {
+    			array = opennedAlbums
+    			value = 2
+			}
+		}
+		x = 1
+		y = 1
+	}
+
+	focus = {
+		id = PYA_superpupernova_album
+		icon = GFX_goal_PYA_spn
+		cost = 10
+
+		relative_position_id = PYA_golovolomka_album
+		prerequisite = { focus = PYA_golovolomka_album }
+		prerequisite = { focus = PYA_supernova_album }
+
+		completion_reward = {
+
+			custom_effect_tooltip = {
+				localization_key = tod_will_be_unlocked
+				ALBUM = "pya_superpupernova"
+			}
+
+			add_to_array = {
+    			array = opennedAlbums
+    			value = 3
+			}
+		}
+		x = -1
+		y = 1
+	}
+
+
+	focus = {
+		id = PYA_zmishare_album
+		icon = GFX_goal_PYA_zmishare
+		cost = 10
+
+		relative_position_id = PYA_superpupernova_album
+		prerequisite = { focus = PYA_superpupernova_album }
+
+		completion_reward = {
+
+			custom_effect_tooltip = {
+				localization_key = tod_will_be_unlocked
+				ALBUM = "pya_zmishare"
+			}
+
+			add_to_array = {
+    			array = opennedAlbums
+    			value = 4
+			}
+		}
+		x = 0
+		y = 1
+	}
 }

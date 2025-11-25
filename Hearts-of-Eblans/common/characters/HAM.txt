@@ -1,0 +1,328 @@
+#IDEAS
+#Камыль, Некрасова, Лера симка, Амина тендерли бае, Девка кикидо хз как звать, Дава, Амирчик(для стар), Настя князева, какая-то марьяна локель, Филимонова(тоже для Стар), Мама стар(возможно), Кузя из универа(папа стар).
+
+characters = {
+	ham_kamil_kikido = {
+		name = "Камиль Кикидо"
+		portraits={
+			civilian={
+				large=GFX_portrait_kamil_big
+				small=GFX_portrait_kamil_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = ham_kamil_kikido
+			allowed = {
+                AND = {
+					has_completed_focus = ham_endless_detstvo
+				    has_government = hypecratia
+                    NOT = {
+                        has_completed_focus = ham_more_adult
+                    }
+                }
+			}	
+			traits  = {
+				hypecratia_booster
+			}	
+			cost = 100
+		}
+
+        corps_commander = {
+			traits = { media_personality politically_connected }
+            skill = 2
+            attack_skill = 2
+            defense_skill = 1
+            planning_skill = 1
+            logistics_skill = 1
+            legacy_id = -1
+			visible = { 
+				original_tag = HAM
+				has_government = hypecratia
+				has_completed_focus = ham_endless_detstvo
+				NOT = {
+                    has_completed_focus = ham_more_adult
+                }
+			}
+        }
+	}
+
+	ham_lera_simka = {
+		name = "Лера Симка"
+		portraits = {
+			army = {
+				small = GFX_portrait_lera_simka_small
+				large = GFX_portrait_lera_simka_big
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = ham_lera_simka
+			allowed = {
+				AND = {
+				    has_government = hypecratia
+                    NOT = {
+                        has_completed_focus = ham_more_adult
+                    }
+					has_completed_focus = ham_sovet_vernih
+                }
+			}	
+			traits  = {
+				
+			}	
+			cost = 65
+		}
+
+        corps_commander = {
+			traits = { media_personality }
+            skill = 1
+            attack_skill = 1
+            defense_skill = 2
+            planning_skill = 1
+            logistics_skill = 2
+            legacy_id = -1
+			visible = { 
+				original_tag = HAM
+				has_government = hypecratia
+				NOT = {
+                    has_completed_focus = ham_more_adult
+                }
+				has_completed_focus = ham_sovet_vernih
+			}
+        }
+	}
+
+    ham_amina_kikido = {
+		name = "Амина Кикидо"
+		portraits = {
+			army = {
+				small = GFX_portrait_aminakikido_small
+				large = GFX_portrait_aminakikido_big
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = ham_amina_kikido
+			allowed = {
+				AND = {
+				    has_government = hypecratia
+                    has_completed_focus = ham_endless_detstvo
+                }
+			}	
+			traits  = {
+				
+			}	
+			cost = 65
+		}
+	}
+
+    ham_dava = {
+		name = "Дава"
+		portraits = {
+			army = {
+				small = GFX_portrait_dava_small
+				large = GFX_portrait_dava_big
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = ham_dava
+			allowed = {
+				
+			}	
+			available = {
+				NOT = { has_country_flag = ham_dava_disable }
+				has_government = hypecratia
+			}
+			traits  = {
+				producer
+				hypecratia_booster
+			}	
+			cost = 150
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = ham_dava_army
+            ledger = army
+			allowed = {
+                original_tag = HAM
+				has_government = hypecratia
+			}	
+			traits  = {
+                army_chief_reform_2
+			}	
+			cost = 150
+		}
+
+        field_marshal = {
+			traits = { fast_planner }
+            skill = 2
+            attack_skill = 2
+            defense_skill = 2
+            planning_skill = 2
+            logistics_skill = 1
+            legacy_id = -1
+			visible = { original_tag = HAM has_government = hypecratia }
+       }
+	}
+
+    ham_nastya_knyzeva = {
+		name = "Настя Князева"
+		portraits = {
+			army = {
+				small = GFX_portrait_knyazeva_small
+				large = GFX_portrait_knyazeva_big
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = ham_nastya_knyzeva
+			allowed = {
+				AND = {
+				    has_government = hypecratia
+                    has_completed_focus = ham_sovet_vernih
+                }
+			}	
+			traits  = {
+				
+			}	
+			cost = 65
+		}
+	}
+
+    ham_filimonova = {
+		name = "Милана Филимонова"
+		portraits = {
+			army = {
+				small = GFX_portrait_filimonova_small
+				large = GFX_portrait_filimonova_big
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = ham_filimonova
+			allowed = {
+				has_completed_focus = ham_opposition_rise
+			}	
+			traits  = {
+				
+			}	
+			cost = 65
+		}
+	}
+
+    ham_amirchik = {
+		name = "Amirchik"
+		portraits = {
+			army = {
+				small = GFX_portrait_amirchik_small
+				large = GFX_portrait_amirchik_big
+			}
+		}
+		
+		corps_commander = {
+			traits = { media_personality trait_reckless }
+            skill = 2
+            attack_skill = 2
+            defense_skill = 2
+            planning_skill = 2
+            logistics_skill = 1
+            legacy_id = -1
+			visible = { 
+				has_completed_focus = ham_opposition_rise
+			}
+        }
+	}
+
+    ham_star_mom = {
+		name = "Ирина Маирко"
+		portraits = {
+			army = {
+				small = GFX_portrait_irinamairko_small
+				large = GFX_portrait_irinamairko_big
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = ham_star_mom
+			allowed = {
+				has_completed_focus = ham_opposition_rise
+			}	
+			traits  = {
+				producer
+			}	
+			cost = 65
+		}
+	}
+
+    ham_tenderly = {
+		name = "Амина Тендерли"
+		portraits = {
+			army = {
+				small = GFX_portrait_tenderly_small
+				large = GFX_portrait_tenderly_big
+			}
+		}
+		
+		corps_commander = {
+			traits = { media_personality trait_reckless }
+            skill = 2
+            attack_skill = 1
+            defense_skill = 2
+            planning_skill = 2
+            logistics_skill = 2
+            legacy_id = -1
+			visible = { 
+				has_completed_focus = ham_more_adult
+			}
+        }
+	}
+
+    ham_nekrasova = {
+		name = "Милана Некрасова"
+		portraits = {
+			army = {
+				small = GFX_portrait_GON_necrasova_small
+				large = GFX_portrait_nekrasova_big
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = ham_nekrasova
+			allowed = {
+				OR = {
+					has_completed_focus = ham_more_adult
+					has_completed_focus = ham_opposition_rise
+				}
+			}
+			available = {
+				NOT = { has_country_flag = ham_nekrasova_disable }
+			}
+			traits  = {
+				
+			}	
+			cost = 65
+		}
+
+		corps_commander = {
+			traits = {  }
+            skill = 1
+            attack_skill = 1
+            defense_skill = 1
+            planning_skill = 1
+            logistics_skill = 1
+            legacy_id = -1
+			visible = { 
+				always = no
+			}
+        }
+	}
+}

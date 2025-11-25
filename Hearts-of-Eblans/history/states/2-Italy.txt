@@ -2,12 +2,13 @@ state={
 	id=2
 	name="STATE_2"
 	provinces={
-		923 6862 9794 11751 11846 11882 
+		923 6862 9794 11751 11846 11882 9904
 	}
 	history = {
 		owner = ZOL
 		victory_points = {
 			11751 3 
+			9904 5 
 		}
 		buildings = {
 			infrastructure = 4 #was: 8

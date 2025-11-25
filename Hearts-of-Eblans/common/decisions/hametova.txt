@@ -1,0 +1,691 @@
+hametova_opposition_category = {
+	set_new_advisor_betsy = {
+		icon = GFX_HAM_decision_opposition_newadvisor
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			always = yes
+		}
+		cost = 150
+
+		available = {
+			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			has_completed_focus = ham_achieve_poleznie_svyazi
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = {
+				localization_key = HAM_star_setadvisor
+				ADVISOR = "HAM_betsy_buff"
+			}
+
+			star_opposition_set_advisor_betsy = yes
+			add_to_variable = { HAM_STAR_ADD_ADVISOR = 1}
+
+			if = {
+				limit = {
+					check_variable = { HAM_STAR_ADD_ADVISOR > 1}
+				}
+				set_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+				set_variable = { HAM_STAR_COOLDOWN = 125 }
+			}
+			
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+
+	set_new_advisor_lokel = {
+		icon = GFX_HAM_decision_opposition_newadvisor
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			always = yes
+		}
+		cost = 150
+
+		available = {
+			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			has_completed_focus = ham_otdel_deystviy
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = {
+				localization_key = HAM_star_setadvisor
+				ADVISOR = "HAM_lokel_buff"
+			}
+
+			star_opposition_set_advisor_lokel = yes
+			add_to_variable = { HAM_STAR_ADD_ADVISOR = 1}
+
+			if = {
+				limit = {
+					check_variable = { HAM_STAR_ADD_ADVISOR > 1}
+				}
+				set_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+				set_variable = { HAM_STAR_COOLDOWN = 125 }
+			}
+			
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+
+	set_new_advisor_vikishow = {
+		icon = GFX_HAM_decision_opposition_newadvisor
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			always = yes
+		}
+		cost = 150
+
+		available = {
+			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			has_completed_focus = ham_achieve_poleznie_svyazi
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = {
+				localization_key = HAM_star_setadvisor
+				ADVISOR = "HAM_vikishow_buff"
+			}
+
+			star_opposition_set_advisor_vikishow = yes
+			add_to_variable = { HAM_STAR_ADD_ADVISOR = 1}
+
+			if = {
+				limit = {
+					check_variable = { HAM_STAR_ADD_ADVISOR > 1}
+				}
+				set_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+				set_variable = { HAM_STAR_COOLDOWN = 125 }
+			}
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+
+	set_new_advisor_amirchik = {
+		icon = GFX_HAM_decision_opposition_newadvisor
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			always = yes
+		}
+		cost = 150
+
+		available = {
+			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			has_completed_focus = ham_otdel_deystviy
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = {
+				localization_key = HAM_star_setadvisor
+				ADVISOR = "HAM_amirchik_buff"
+			}
+
+			star_opposition_set_advisor_amirchik = yes
+			add_to_variable = { HAM_STAR_ADD_ADVISOR = 1}
+
+			if = {
+				limit = {
+					check_variable = { HAM_STAR_ADD_ADVISOR > 1}
+				}
+				set_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+				set_variable = { HAM_STAR_COOLDOWN = 125 }
+			}
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+
+	set_new_advisor_irinamairko = {
+		icon = GFX_HAM_decision_opposition_newadvisor
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			always = yes
+		}
+		cost = 150
+
+		available = {
+			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = {
+				localization_key = HAM_star_setadvisor
+				ADVISOR = "HAM_mairko_buff"
+			}
+
+			star_opposition_set_advisor_irinamairko = yes
+			add_to_variable = { HAM_STAR_ADD_ADVISOR = 1}
+
+			if = {
+				limit = {
+					check_variable = { HAM_STAR_ADD_ADVISOR > 1}
+				}
+				set_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+				set_variable = { HAM_STAR_COOLDOWN = 125 }
+			}
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+
+
+	set_new_advisor_filimonova = {
+		icon = GFX_HAM_decision_opposition_newadvisor
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			always = yes
+		}
+		cost = 150
+
+		available = {
+			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = {
+				localization_key = HAM_star_setadvisor
+				ADVISOR = "HAM_filimonova_buff"
+			}
+
+			star_opposition_set_advisor_filimonova = yes
+			add_to_variable = { HAM_STAR_ADD_ADVISOR = 1}
+
+			if = {
+				limit = {
+					check_variable = { HAM_STAR_ADD_ADVISOR > 1}
+				}
+				set_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+				set_variable = { HAM_STAR_COOLDOWN = 125 }
+			}
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+}
+
+hametova_work_opposition_category = {
+	star_standart_exposure = {
+		icon = GFX_decision_SWI_swiss_democratic_tradition_campaign
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			has_completed_focus = ham_otdel_rassledovaniy
+		}
+		days_remove = 25
+		cost = 100
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		custom_cost_text = STI_pact_cost
+
+		available = {
+			NOT  = { has_country_flag = HAM_STAR_ALREADY_DOING }
+		}
+
+		complete_effect = {
+			set_country_flag = HAM_STAR_ALREADY_DOING
+		}
+
+
+		remove_effect = {
+			clr_country_flag = HAM_STAR_ALREADY_DOING
+			custom_effect_tooltip = weak_star_popularity_increase_tt
+
+			custom_effect_tooltip = siloviki_interes_increase_chance_tt
+
+			hidden_effect = {
+				weak_star_popularity_increase = yes
+        		add_command_power = -20
+				random_list = {
+				60 = {
+
+				}
+				40 = {
+					weak_siloviki_increase = yes
+				}
+				}
+    		}
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+
+	star_organisation_assist = {
+		icon = GFX_decision_SWI_no_elected_president
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			has_completed_focus = ham_assist_with_organisation
+		}
+		days_remove = 25
+		cost = 50
+
+		available = {
+			NOT  = { has_country_flag = HAM_STAR_ALREADY_DOING }
+		}
+
+		complete_effect = {
+			set_country_flag = HAM_STAR_ALREADY_DOING
+		}
+
+
+		remove_effect = {
+			clr_country_flag = HAM_STAR_ALREADY_DOING
+			custom_effect_tooltip = weak_star_popularity_increase_tt
+
+			custom_effect_tooltip = siloviki_interes_increase_chance_tt
+
+			hidden_effect = {
+				weak_star_popularity_increase = yes
+				random_list = {
+					60 = {
+						weak_siloviki_increase = yes
+					}
+					40 = {
+
+					}
+				}
+    		}
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+
+	form_supporters_net = {
+		icon = GFX_decision_generic_political_discourse
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			has_completed_focus = ham_national_shtabi
+		}
+		days_remove = 45
+		fire_only_once = yes
+		cost = 150
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		custom_cost_text = decision_cost_civ_factory_3
+
+		available = {
+			NOT  = { has_country_flag = HAM_STAR_ALREADY_DOING }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = HAM_STAR_ALREADY_DOING
+		}
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			clr_country_flag = HAM_STAR_ALREADY_DOING
+			custom_effect_tooltip = weak_star_popularity_increase_tt
+
+			add_ideas = HAM_small_network
+
+			custom_effect_tooltip = siloviki_interes_increase_chance_tt
+
+			hidden_effect = {
+				weak_star_popularity_increase = yes
+				random_list = {
+					70 = {
+						medium_siloviki_increase = yes
+					}
+					30 = {
+						strong_siloviki_increase = yes
+					}
+				}
+			}
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+
+
+	likee_to_tiktok_change = {
+		icon = GFX_decision_generic_political_discourse
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			has_completed_focus = ham_za_polnotseniy_kontent
+		}
+		days_remove = 30
+		cost = 0
+		custom_cost_trigger = {
+			command_power > 19
+		}
+		custom_cost_text = STI_pact_cost
+
+		available = {
+			NOT  = { has_country_flag = HAM_STAR_ALREADY_DOING }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = HAM_STAR_ALREADY_DOING
+		}
+
+		remove_effect = {
+			clr_country_flag = HAM_STAR_ALREADY_DOING
+			custom_effect_tooltip = weak_star_popularity_increase_tt
+
+			custom_effect_tooltip = siloviki_interes_increase_chance_tt
+
+			hidden_effect = {
+				weak_star_popularity_increase = yes
+
+				random_list = {
+					35 = {
+						country_event = { id = hametova.21 days = 3 }
+					}
+					65 = {
+						country_event = { id = hametova.22 days = 3 }
+						strong_siloviki_increase = yes
+					}
+				}
+			}
+
+			add_command_power = -20
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+
+
+	block_bypassing = {
+		icon = GFX_decision_generic_coastal_fortification
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			has_idea = HAM_internet_blocking
+		}
+		days_remove = 45
+		cost = 100
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		custom_cost_text = decision_cost_civ_factory_3
+
+		fire_only_once = yes
+
+		available = {
+			NOT  = { has_country_flag = HAM_STAR_ALREADY_DOING }
+		}
+
+		complete_effect = {
+			set_country_flag = HAM_STAR_ALREADY_DOING
+		}
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			clr_country_flag = HAM_STAR_ALREADY_DOING
+
+			if = {
+				limit = {
+					has_idea = HAM_small_network_blocked
+				}
+				swap_ideas = {
+					add_idea = HAM_small_network
+					remove_idea = HAM_small_network_blocked
+				}
+			}
+
+			remove_ideas = HAM_internet_blocking
+
+			custom_effect_tooltip = {
+        		localization_key = medium_star_popularity_increase_tt
+				medium_star_popularity_increase = yes
+			}
+
+			custom_effect_tooltip = {
+				localization_key = siloviki_interes_increase_chance_tt
+
+				random_list = {
+					60 = {
+						weak_siloviki_increase = yes
+					}
+					40 = {
+						medium_siloviki_increase = yes
+					}
+				}
+			}
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+}
+
+hametova_national_projects_category = {
+	nat_proj_infrastructure = {
+		icon = GFX_HAM_decision_national_project
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			has_completed_focus = ham_greater_union
+		}
+		days_remove = 210
+		cost = 250
+
+		available = {
+			has_government = hypecratia
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.04
+			production_speed_infrastructure_factor = 0.1
+			production_speed_air_base_factor = 0.05
+			production_speed_naval_base_factor = 0.05
+		}
+
+		complete_effect = {
+			
+		}
+
+
+		remove_effect = {
+			add_stability = 0.03
+			add_political_power = -100
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+
+	nat_proj_uroki = {
+		icon = GFX_HAM_decision_national_project
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			has_completed_focus = ham_greater_union
+		}
+		days_remove = 365
+		cost = 250
+
+		available = {
+			has_government = hypecratia
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.02
+			political_power_factor = 0.03
+			research_speed_factor = 0.05
+		}
+
+		complete_effect = {
+			
+		}
+
+
+		remove_effect = {
+			add_stability = 0.02
+			add_political_power = -100
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+
+
+	nat_proj_prom = {
+		icon = GFX_HAM_decision_national_project
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			has_completed_focus = ham_greater_union
+		}
+		days_remove = 365
+		cost = 250
+
+		available = {
+			has_government = hypecratia
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.02
+			political_power_factor = -0.05
+			production_speed_industrial_complex_factor = 0.08
+			production_speed_arms_factory_factor = 0.05
+		}
+
+		complete_effect = {
+			
+		}
+
+
+		remove_effect = {
+			add_stability = 0.03
+			add_war_support = 0.02
+			add_political_power = -100
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+	nat_proj_bolnizi = {
+		icon = GFX_HAM_decision_national_project
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			has_completed_focus = ham_superlikes_expropriation
+		}
+		days_remove = 365
+		cost = 250
+
+		available = {
+			has_government = hypecratia
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.02
+			political_power_factor = -0.05
+			production_speed_industrial_complex_factor = 0.08
+			production_speed_arms_factory_factor = 0.05
+		}
+
+		complete_effect = {
+			
+		}
+
+
+		remove_effect = {
+			add_stability = 0.03
+			add_war_support = 0.02
+			add_political_power = -100
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+	nat_proj_national_concerts = {
+		icon = GFX_HAM_decision_national_project
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		visible = {
+			has_completed_focus = ham_progov_mitings
+		}
+		days_remove = 210
+		cost = 250
+
+		available = {
+			has_government = hypecratia
+		}
+
+		modifier = {
+			hypecratia_drift = 0.05
+			drift_defence_factor = 0.15
+			weekly_casualties_war_support = 0.003
+		}
+
+		complete_effect = {
+			
+		}
+
+
+		remove_effect = {
+			add_stability = 0.02
+			add_war_support = 0.01
+			add_political_power = -100
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+}

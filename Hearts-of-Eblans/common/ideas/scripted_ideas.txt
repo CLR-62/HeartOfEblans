@@ -1,0 +1,19 @@
+ideas = {
+    country = {
+		massive_otkrutka = {
+			allowed = {
+				always = no
+			}
+			
+			picture = BEL_the_kings_surrender
+
+			modifier = {
+				production_speed_buildings_factor = -0.1
+				consumer_goods_factor = 0.4
+				monthly_population = -0.03
+                stability_factor = -0.1
+                war_support_factor = -0.1
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+scripted_gui = {
+
+	TOD_decision_gui = {
+		context_type = decision_category
+		window_name = "TrackOfDay_window"
+		visible = {
+			has_country_flag = generic_trackofday_flag
+		}
+		
+		effects = {
+            
+		}
+		
+		properties = {
+			TrackOfDay_picture = {
+				image = "[get_tod_current_picture]_icon"
+			}
+		}
+	}
+}

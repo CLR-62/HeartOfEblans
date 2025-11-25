@@ -462,4 +462,75 @@ news_event = {
 	}
 }
 
+news_event = {
+	id = squad_news.23
+	title = squad_news.23.t
+	desc = squad_news.23.d
+	picture = GFX_report_event_blogema
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = squad_news.23.a #yes
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+news_event = {
+	id = squad_news.24
+	title = squad_news.24.t
+	desc = squad_news.24.d
+	picture = GFX_report_event_botsbug
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = squad_news.24.a #yes
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#BTK HAM COOP STRIM
+news_event = {
+	id = squad_news.25
+	title = squad_news.25.t
+	desc = squad_news.25.d
+	picture = GFX_report_event_hambtk_coop
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = squad_news.25.a #yes
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#HAM ONA VAM NE NEKRASOVA
+news_event = {
+	id = squad_news.26
+	title = squad_news.26.t
+	desc = squad_news.26.d
+	picture = GFX_report_event_neNekrasova
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = squad_news.26.a #yes
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+
 

@@ -1,0 +1,605 @@
+add_namespace = hametova
+
+#Second term of milana
+country_event = {
+	id = hametova.1
+	title = hametova.1.t
+	desc = hametova.1.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.1.a #yes
+		ai_chance = {
+			factor = 55
+		}
+		add_political_power = 100
+	}
+}
+
+#Milana star arrest
+country_event = {
+	id = hametova.2
+	title = hametova.2.t
+	desc = hametova.2.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.2.a #arrest
+		ai_chance = {
+			factor = 55
+		}
+	}
+
+    option = {
+		name = hametova.2.b #deportazia
+		ai_chance = {
+			factor = 55
+		}
+	}
+}
+
+#Undependent researches
+country_event = {
+	id = hametova.3
+	title = hametova.3.t
+	desc = hametova.3.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.3.a
+		ai_chance = {
+			factor = 55
+		}
+	}
+}
+
+#raises
+country_event = {
+	id = hametova.4
+	title = hametova.4.t
+	desc = hametova.4.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.4.a #there is nothing we can do
+		ai_chance = {
+			factor = 55
+		}
+
+		hidden_effect = {
+			country_event = { id = hametova.8 days = 5 }
+		}
+
+		weak_star_popularity_increase = yes
+	}
+}
+
+#milana star raise
+country_event = {
+	id = hametova.5
+	title = hametova.5.t
+	desc = hametova.5.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.5.a #we will support she!
+		ai_chance = {
+			factor = 55
+		}
+
+		set_country_flag = HAM_STAR_OPPOSE_START
+		
+		meduim_star_popularity_increase = yes
+	}
+}
+
+
+#likeHamNadzor blocks
+country_event = {
+	id = hametova.6
+	title = hametova.6.t
+	desc = hametova.6.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.6.a #we will support she!
+		ai_chance = {
+			factor = 55
+		}
+		
+		add_ideas = HAM_internet_blocking
+
+		if = {
+			limit = {
+				has_idea = HAM_small_network
+			}
+			swap_ideas = {
+				add_idea = HAM_small_network_blocked
+				remove_idea = HAM_small_network
+			}
+		}
+
+		increase_media_law = yes
+	}
+}
+
+
+#Supporters net
+country_event = {
+	id = hametova.7
+	title = hametova.7.t
+	desc = hametova.7.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.7.a
+		ai_chance = {
+			factor = 55
+		}
+		
+		add_ideas = HAM_small_network
+	}
+}
+
+
+#Taxes decreasing
+country_event = {
+	id = hametova.8
+	title = hametova.8.t
+	desc = hametova.8.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.8.a
+		ai_chance = {
+			factor = 55
+		}
+		
+		decrease_taxes_law = yes
+	}
+}
+
+#Content reform
+country_event = {
+	id = hametova.9
+	title = hametova.9.t
+	desc = hametova.9.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.9.a
+		ai_chance = {
+			factor = 55
+		}
+		
+		complete_national_focus = ham_endless_detstvo
+	}
+
+	option = {
+		name = hametova.9.b
+		ai_chance = {
+			factor = 55
+		}
+		
+		complete_national_focus = ham_more_adult
+	}
+}
+
+
+#Superlike expropriation
+country_event = {
+	id = hametova.10
+	title = hametova.10.t
+	desc = hametova.10.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.10.a
+		ai_chance = {
+			factor = 55
+		}
+		add_timed_idea = { idea = HAM_superlikes_expropriation_idea days = 365 }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = {
+			localization_key = new_national_project_willbe_unlocked_tt
+			PROJECT = HAM_proj_zdravohranenie
+		}
+	}
+}
+
+#STAR ARREST
+country_event = {
+	id = hametova.11
+	title = hametova.11.t
+	desc = hametova.11.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	#V SIZO
+	option = {
+		name = hametova.11.a
+		ai_chance = {
+			factor = 55
+		}
+		set_variable = { star_opposition_ideas_new_state = 2}
+		star_opposition_ideas_change_state = yes
+	}
+
+	#NAHUY IZ STRANI
+	option = {
+		name = hametova.11.b
+		ai_chance = {
+			factor = 55
+		}
+		
+		set_variable = { star_opposition_ideas_new_state = 3}
+		star_opposition_ideas_change_state = yes
+	}
+}
+
+#Platform change
+country_event = {
+	id = hametova.12
+	title = hametova.12.t
+	desc = hametova.12.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.12.a
+		ai_chance = {
+			factor = 55
+		}
+		set_country_leader_ideology = hypetiktok
+		add_ideas = tiktok_platform
+	}
+}
+
+#BTK coop strim
+country_event = {
+	id = hametova.13
+	title = hametova.13.t
+	desc = hametova.13.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	#Yes we will do stream!
+	option = {
+		name = hametova.13.a
+		ai_chance = {
+			factor = 55
+		}
+
+		news_event = { id = squad_news.25 days = 3 }
+
+		hidden_effect = {
+			diplomatic_relation = {
+				country = HAM
+				relation = non_aggression_pact
+				active = yes
+			}
+			add_popularity = {
+    			ideology = hypecratia
+    			popularity = 0.1
+			}
+
+			HAM = {
+				diplomatic_relation = {
+					country = BTK
+					relation = non_aggression_pact
+					active = yes
+				}
+				add_popularity = {
+    				ideology = fascism
+    				popularity = 0.1
+				}
+			}
+		}
+	}
+
+	#No no no
+	option = {
+		name = hametova.13.b
+		ai_chance = {
+			factor = 55
+		}
+		
+		HAM = {
+			country_event = { id = hametova.14 days = 2 }
+		}
+
+	}
+}
+
+#BTK otkaz
+country_event = {
+	id = hametova.14
+	title = hametova.14.t
+	desc = hametova.14.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	#fuck
+	option = {
+		name = hametova.14.a
+		ai_chance = {
+			factor = 55
+		}
+		
+	}
+}
+
+#Falsification fight
+country_event = {
+	id = hametova.15
+	title = hametova.15.t
+	desc = hametova.15.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	#fuck
+	option = {
+		name = hametova.15.a
+		ai_chance = {
+			factor = 55
+		}
+		add_popularity = {
+			ideology = hypecratia
+			popularity = -0.1
+		}
+		add_stability = -0.03
+
+		
+	}
+}
+
+#Corruption fight
+country_event = {
+	id = hametova.16
+	title = hametova.16.t
+	desc = hametova.16.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	#
+	option = {
+		name = hametova.16.a
+		ai_chance = {
+			factor = 55
+		}
+
+		custom_effect_tooltip = siloviki_interes_increase_chance_tt
+
+		hidden_effect = {
+			medium_siloviki_increase = yes
+		}
+
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		
+		add_war_support = -0.03
+		add_stability = -0.02
+		add_political_power = -200
+
+		
+	}
+}
+
+#Ona vam ne nekrasova
+country_event = {
+	id = hametova.17
+	title = hametova.17.t
+	desc = hametova.17.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.17.a
+		ai_chance = {
+			factor = 55
+		}
+
+		custom_effect_tooltip = siloviki_interes_increase_chance_tt
+
+
+		add_stability = -0.02
+		add_war_support = -0.2
+		add_political_power = -300
+
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+
+		hidden_effect = {
+			weak_siloviki_increase = yes
+			random_list = {
+				#Random hametova deystviya tipo likeHamNadzor
+				55 = {
+					#likeHamNadzor
+					country_event = { id = hametova.6 days = 1 }
+				}
+				45 = {
+					#Uvolnenie
+					country_event = { id = hametova.18 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+
+#uvolnenie nekrasovoy
+country_event = {
+	id = hametova.18
+	title = hametova.18.t
+	desc = hametova.18.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	#ignore
+	option = {
+		name = hametova.18.a
+		ai_chance = {
+			factor = 55
+		}
+		add_popularity = {
+			ideology = hypecratia
+			popularity = 0.05
+		}
+		add_stability = 0.03
+
+		retire_character = ham_nekrasova
+	}
+}
+
+
+#STAR WAY ACTIVATING NEKRASOVA
+unit_leader_event = {
+	id = hametova.19
+	title = hametova.19.t
+	desc = hametova.19.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	#ignore
+	option = {
+		name = hametova.19.a
+		ai_chance = {
+			factor = 55
+		}
+		clr_country_flag = ham_nekrasova_disable
+		activate_advisor = ham_nekrasova
+		set_can_be_fired_in_advisor_role = {
+    		character = ham_nekrasova
+			slot = political_advisor
+    		value = no
+		}
+	}
+}
+
+#STAR WAY ACTIVATING DAVA
+unit_leader_event = {
+	id = hametova.20
+	title = hametova.20.t
+	desc = hametova.20.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.20.a
+		ai_chance = {
+			factor = 55
+		}
+		clr_country_flag = ham_dava_disable
+		activate_advisor = ham_dava
+		set_can_be_fired_in_advisor_role = {
+    		character = ham_dava
+			slot = political_advisor
+    		value = no
+		}
+	}
+}
+
+#HAMETOVA AGREED TO CHANGE
+country_event = {
+	id = hametova.21
+	title = hametova.21.t
+	desc = hametova.21.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.21.a
+		ai_chance = {
+			factor = 55
+		}
+		set_country_leader_ideology = hypetiktok
+		add_ideas = youtube_platform
+	}
+}
+#HAMETOVA DISAGREED TO CHANGE
+country_event = {
+	id = hametova.22
+	title = hametova.22.t
+	desc = hametova.22.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.22.a
+		ai_chance = {
+			factor = 55
+		}
+
+		custom_effect_tooltip = siloviki_interes_increase_strong_tt
+
+		hidden_effect = {
+			strong_siloviki_increase = yes
+		}
+	}
+}
+
+#COORDINATED PIKETI
+country_event = {
+	id = hametova.23
+	title = hametova.23.t
+	desc = hametova.23.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.23.a
+		ai_chance = {
+			factor = 55
+		}
+
+		custom_effect_tooltip = siloviki_interes_increase_chance_tt
+		hidden_effect = {
+			weak_siloviki_increase = yes
+		}
+
+		add_stability = -0.02
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.03
+		}
+	}
+}

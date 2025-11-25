@@ -1,0 +1,34 @@
+on_actions = {
+    on_daily = {
+        effect = {
+            if = {
+                limit = {
+                    date = 2024.08.20
+                    NOT = { has_global_flag = OTKRUTKA_flag }
+                }
+                news_event = { id = squad_news.24 hour = 4}
+                set_global_flag = OTKRUTKA_flag
+                every_country = {
+				    limit = {
+				    	has_idea = twitch_platform
+				    }
+                    add_ideas = massive_otkrutka
+                }
+            }
+
+            if = {
+                limit = {
+                    date = 2024.09.30
+                    has_global_flag = OTKRUTKA_flag
+                }
+
+                every_country = {
+				    limit = {
+				    	has_idea = massive_otkrutka
+				    }
+                    remove_ideas = massive_otkrutka
+                }
+            }
+        }
+    }
+}

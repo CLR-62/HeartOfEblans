@@ -1,0 +1,88 @@
+SpriteTypes = {
+    spriteType = {
+		name = "GFX_tod_album_none_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/none.png"
+	}	
+
+    spriteType = {
+		name = "GFX_tod_album_pya_1000lifes_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Pyatorka/PYA_1000lifes.png"
+	}	
+
+    spriteType = {
+		name = "GFX_tod_album_pya_supernova_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Pyatorka/PYA_supernova.png"
+	}	
+
+
+    spriteType = {
+		name = "GFX_tod_album_pya_superpupernova_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Pyatorka/PYA_superpuper.png"
+	}	
+    
+	
+	spriteType = {
+		name = "GFX_tod_album_pya_golovolomka_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Pyatorka/PYA_golovolomka.png"
+	}	
+	
+	
+	spriteType = {
+		name = "GFX_tod_album_pya_zmishare_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Pyatorka/PYA_zmishare.png"
+	}
+
+
+	spriteType = {
+		name = "GFX_tod_album_ham_crash_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Hametova/HAM_crush.png"
+	}
+	spriteType = {
+		name = "GFX_tod_album_ham_chikibriki_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Hametova/HAM_chikibriki.png"
+	}
+
+
+	spriteType = {
+		name = "GFX_music_disk_texticon"
+		texturefile = "gfx/texticons/music_disk_texticon.dds"
+		legacy_lazy_load = no
+	}
+
+
+	#DECISION ICONS#
+
+
+	#PYA#
+	spriteType = {
+		name = "GFX_tod_decision_pya_1000lifes"
+		texturefile = "gfx/interface/decisions/icons/PYA_1000lifes.dds"
+	}
+	spriteType = {
+		name = "GFX_tod_decision_pya_supernova"
+		texturefile = "gfx/interface/decisions/icons/PYA_supernova.dds"
+	}
+	spriteType = {
+		name = "GFX_tod_decision_pya_golovolomka"
+		texturefile = "gfx/interface/decisions/icons/PYA_golovolomka.dds"
+	}
+	spriteType = {
+		name = "GFX_tod_decision_pya_superpupernova"
+		texturefile = "gfx/interface/decisions/icons/PYA_superpupernova.dds"
+	}
+	spriteType = {
+		name = "GFX_tod_decision_pya_zmishare"
+		texturefile = "gfx/interface/decisions/icons/PYA_zmishare.dds"
+	}
+
+
+	#HAM#
+	spriteType = {
+		name = "GFX_tod_decision_ham_crash"
+		texturefile = "gfx/interface/decisions/icons/HAM_crash.dds"
+	}
+	spriteType = {
+		name = "GFX_tod_decision_ham_chikibriki"
+		texturefile = "gfx/interface/decisions/icons/HAM_chikibriki.dds"
+	}
+}

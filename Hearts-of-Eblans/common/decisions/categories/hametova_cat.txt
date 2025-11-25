@@ -1,0 +1,41 @@
+hametova_work_opposition_category = {
+
+	icon = GFX_decision_category_border_conflicts
+	allowed = {
+		original_tag = HAM
+	}
+
+	visible = {
+		original_tag = HAM
+		has_country_flag = HAM_star_opposition_way
+	}
+	priority = 148
+}
+hametova_opposition_category = {
+
+	icon = GFX_decision_category_border_conflicts
+	scripted_gui = HAM_star_opposition
+	allowed = {
+		original_tag = HAM
+	}
+
+	visible = {
+		original_tag = HAM
+		has_country_flag = HAM_star_opposition_way
+	}
+	priority = 200
+}
+hametova_national_projects_category = {
+
+	icon = GFX_HAM_decision_cat_national_projects
+	picture = GFX_HAM_new_national_project_decision_banner
+	allowed = {
+		original_tag = HAM
+	}
+
+	visible = {
+		original_tag = HAM
+		has_country_flag = HAM_national_projects
+	}
+	priority = 200
+}

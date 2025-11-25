@@ -1,0 +1,31 @@
+scripted_gui = {
+
+	HAM_star_opposition = {
+		context_type = decision_category
+		window_name = "Star_opposition_window"
+		visible = {
+			always = yes
+		}
+		ai_enabled = {
+			original_tag = HAM
+		}
+		
+		effects = {
+		}
+		
+		properties = {
+			Director_portrait = {
+				frame = HAM_STAR_status
+			}
+			LeftHand_portrait = {
+				frame = HAM_STAR_lefthand
+			}
+			RightHand_portrait = {
+				frame = HAM_STAR_righthand
+			}
+			HAM_star_siloviki_progressbar = {
+				frame = HAM_STAR_siloviki_interes
+			}
+		}
+	}
+}

@@ -23,7 +23,7 @@ spriteTypes = {
 
 	SpriteType = {
 	name = "GFX_goal_SVI_vigilium2"
-	texturefile = "gfx/interface/goals/focus_SVI_vigilium2.dds"			
+	texturefile = "gfx/interface/goals/focus_SVI_vigilium2.dds"	
 	}
 
 	SpriteType = {
@@ -37,13 +37,202 @@ spriteTypes = {
 	}
 
 	SpriteType = {
+	name = "GFX_goal_HAM_second_term"
+	texturefile = "gfx/interface/goals/focus_HAM_second_term.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_arrest_star"
+	texturefile = "gfx/interface/goals/focus_HAM_arrest_star.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_eastern_friends"
+	texturefile = "gfx/interface/goals/focus_HAM_eastern_friends.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_crush_track"
+	texturefile = "gfx/interface/goals/focus_HAM_crush_track.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_chikibriki_track"
+	texturefile = "gfx/interface/goals/focus_HAM_chikibriki_track.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_drake_guaranties"
+	texturefile = "gfx/interface/goals/focus_HAM_drake_guaranties.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_siloviki"
+	texturefile = "gfx/interface/goals/focus_HAM_siloviki.dds"
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_independent_researches"
+	texturefile = "gfx/interface/goals/focus_HAM_independent_researches.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_third_term"
+	texturefile = "gfx/interface/goals/focus_HAM_third_term.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_opposition_network"
+	texturefile = "gfx/interface/goals/focus_HAM_opposition_network.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_bypass_blocks"
+	texturefile = "gfx/interface/goals/focus_HAM_ham_bypass_blocks.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_opposition_network_2"
+	texturefile = "gfx/interface/goals/focus_HAM_opposition_network_2.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_superlike_expropriation"
+	texturefile = "gfx/interface/goals/focus_HAM_superlike_expropriation.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_star_future"
+	texturefile = "gfx/interface/goals/focus_HAM_star_future.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_content_reform"
+	texturefile = "gfx/interface/goals/focus_HAM_content_reform.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_endless_detstvo"
+	texturefile = "gfx/interface/goals/focus_HAM_endless_detstvo.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_poop_conveyour"
+	texturefile = "gfx/interface/goals/focus_HAM_poop_conveyour.dds"			
+	}
+
+	SpriteType = {
 	name = "GFX_goal_PYA_hype"
 	texturefile = "gfx/interface/goals/focus_PYA_hype.dds"			
+	}
+	
+	
+	SpriteType = {
+	name = "GFX_goal_PYA_spn"
+	texturefile = "gfx/interface/goals/focus_PYA_superpupernova.dds"			
+	}
+
+
+	SpriteType = {
+	name = "GFX_goal_PYA_zmishare"
+	texturefile = "gfx/interface/goals/focus_PYA_zmishare.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_research_otdel"
+	texturefile = "gfx/interface/goals/focus_HAM_research_otdel.dds"			
+	}
+	
+	
+	SpriteType = {
+	name = "GFX_goal_HAM_work_otdel"
+	texturefile = "gfx/interface/goals/focus_HAM_work_otdel.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_HAM_tiktok_transfer"
+	texturefile = "gfx/interface/goals/focus_HAM_tiktok_transfer.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_HAM_fight_short_videos"
+	texturefile = "gfx/interface/goals/focus_HAM_fight_short_videos.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_generic_full_content"
+	texturefile = "gfx/interface/goals/focus_generic_full_content.dds"			
+	}
+	
+	
+	SpriteType = {
+	name = "GFX_goal_HAM_polit_help"
+	texturefile = "gfx/interface/goals/focus_HAM_polit_help.dds"			
+	}
+	
+	
+	SpriteType = {
+	name = "GFX_goal_HAM_brat_coop"
+	texturefile = "gfx/interface/goals/focus_HAM_brat_coop.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_fight_brainrot"
+	texturefile = "gfx/interface/goals/focus_HAM_fight_brainrot.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_more_adult"
+	texturefile = "gfx/interface/goals/focus_HAM_more_adult.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_likee_baykot"
+	texturefile = "gfx/interface/goals/focus_HAM_likee_baykot.dds"			
+	}
+
+
+	SpriteType = {
+	name = "GFX_goal_PYA_1000lifes"
+	texturefile = "gfx/interface/goals/focus_PYA_1000lifes.dds"			
+	}
+	
+	
+	SpriteType = {
+	name = "GFX_goal_PYA_supernova"
+	texturefile = "gfx/interface/goals/focus_PYA_supernova.dds"			
+	}
+
+
+	SpriteType = {
+	name = "GFX_goal_PYA_golovolomka"
+	texturefile = "gfx/interface/goals/focus_PYA_golovolomka.dds"			
+	}
+
+
+	SpriteType = {
+	name = "GFX_goal_generic_music_effort"
+	texturefile = "gfx/interface/goals/focus_generic_music_effort.dds"			
 	}
 
 	SpriteType = {
 	name = "GFX_goal_PYA_save_builders"
 	texturefile = "gfx/interface/goals/focus_PYA_save_builders.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_star_opposition"
+	texturefile = "gfx/interface/goals/focus_HAM_star_opposition.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_ona_vam_ne_nekrasova"
+	texturefile = "gfx/interface/goals/focus_HAM_ona_vam_ne_nekrasova.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_ham_military_doctrine"
+	texturefile = "gfx/interface/goals/focus_HAM_ham_military_doctrine.dds"			
 	}
 
 	SpriteType = {
@@ -285,134 +474,8 @@ spriteTypes = {
 	name = "GFX_goal_continuous_armor_production"
 	texturefile = "gfx/interface/goals/goal_continuous_armor_production.dds"			
 	}
+
 	
-	### КАСТОМНЫЕ ФОКУСЫ
-	#пятерка
-	spriteType = {
-		name = "GFX_goal_PYA_42_party"
-		texturefile = "gfx/interface/goals/goal_PYA_42_party.dds"
-		
-	}
-
-	spriteType = {
-		name = "GFX_goal_PYA_mc_maks"
-		texturefile = "gfx/interface/goals/goal_PYA_mc_maks.dds"
-		
-	}
-
-	spriteType = {
-		name = "GFX_goal_PYA_slava_bossu"
-		texturefile = "gfx/interface/goals/goal_PYA_slava_bossu.dds"
-		
-	}
-	spriteType = {
-		name = "GFX_goal_PYA_nax"
-		texturefile = "gfx/interface/goals/goal_PYA_nax.dds"
-	}
-	#Аратосс
-	spriteType = {
-		name = "GFX_ARA_yes_org"
-		texturefile = "gfx/interface/goals/ARA_yes_org.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_stop_const" 
-		texturefile = "gfx/interface/goals/ARA_stop_const.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_restore"
-		texturefile = "gfx/interface/goals/ARA_restore.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_people_republick"
-		texturefile = "gfx/interface/goals/ARA_people_republick.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_path_reich"
-		texturefile = "gfx/interface/goals/ARA_path_reich.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_oppose_dictat"
-		texturefile = "gfx/interface/goals/ARA_oppose_dictat.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_nationla"
-		texturefile = "gfx/interface/goals/ARA_nationla.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_mon_constitusion"
-		texturefile = "gfx/interface/goals/ARA_mon_constitusion.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_help_people"
-		texturefile = "gfx/interface/goals/ARA_help_people.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_form_people"
-		texturefile = "gfx/interface/goals/ARA_form_people.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_dissvolve_monarchy"
-		texturefile = "gfx/interface/goals/ARA_dissvolve_monarchy.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_coronation_mon"
-		texturefile = "gfx/interface/goals/ARA_coronation_mon.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_communist"
-		texturefile = "gfx/interface/goals/ARA_communist.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_ban_comm"
-		texturefile = "gfx/interface/goals/ARA_ban_comm.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_Allow_farright"
-		texturefile = "gfx/interface/goals/ARA_Allow_farright.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_against_fascism"
-		texturefile = "gfx/interface/goals/ARA_against_fascism.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_promote_nationalism"
-		texturefile = "gfx/interface/goals/ARA_promote_nationalism.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_press_freedom"
-		texturefile = "gfx/interface/goals/ARA_press_freedom.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_military_gov"
-		texturefile = "gfx/interface/goals/ARA_military_gov.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_king_support"
-		texturefile = "gfx/interface/goals/ARA_king_support.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_fascism"
-		texturefile = "gfx/interface/goals/ARA_fascism.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_election"
-		texturefile = "gfx/interface/goals/ARA_election.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_democracy"
-		texturefile = "gfx/interface/goals/ARA_democracy.dds"
-	}
-
-	spriteType = {
-		name = "GFX_ARA_abolish_diktat"
-		texturefile = "gfx/interface/goals/ARA_abolish_diktat.dds"
-	}
-	spriteType = {
-		name = "GFX_ARA_ban_org"
-		texturefile = "gfx/interface/goals/ARA_ban_org.dds"
-	}
-
-
 
 	#Братишкин
 	spriteType = {

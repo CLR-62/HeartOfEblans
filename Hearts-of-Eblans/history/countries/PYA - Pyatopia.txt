@@ -21,6 +21,8 @@ recruit_character = PYA_hanov
 recruit_character = PYA_eka
 recruit_character = PYA_oster
 
+set_country_flag = generic_trackofday_flag
+
 set_autonomy = {
 	target = MPK
 	autonomous_state = autonomy_puppet

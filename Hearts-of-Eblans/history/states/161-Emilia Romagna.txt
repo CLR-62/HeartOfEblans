@@ -5,7 +5,7 @@ state={
 		aluminium=9.000
 	}
 	provinces={
-		3773 3976 6606 6790  6985 9752  
+		3773 3976 6606 6790 6985 9752 782 6793
 	}
 	history = {
 		owner = ZOL

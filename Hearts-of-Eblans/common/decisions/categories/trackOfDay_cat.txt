@@ -1,0 +1,14 @@
+trackOfDay_cat = {
+	priority = 150
+	icon = GFX_decision_category_generic_propaganda
+
+	scripted_gui = TOD_decision_gui
+
+	allowed = {
+		has_country_flag = generic_trackofday_flag
+	}
+
+	visible = {
+		has_country_flag = generic_trackofday_flag
+	}
+}

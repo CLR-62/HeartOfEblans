@@ -1,0 +1,114 @@
+defined_text = {
+    name = star_status_tooltip
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_status = 1 }
+        }
+        localization_key = HAM_STAR_status_tooltip_normal
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_status = 2 }
+        }
+        localization_key = HAM_STAR_status_tooltip_arrested
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_status = 3 }
+        }
+        localization_key = HAM_STAR_status_tooltip_deported
+    }
+}
+
+
+defined_text = {
+    name = lefthand_staropp_idea_tooltip
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_lefthand = 1 }
+        }
+        localization_key = "Выбери советника"
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_lefthand = 2 }
+        }
+        localization_key = idea_desc|HAM_filimonova_buff
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_lefthand = 3 }
+        }
+        localization_key = idea_desc|HAM_mairko_buff
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_lefthand = 4 }
+        }
+        localization_key = idea_desc|HAM_amirchik_buff
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_lefthand = 5 }
+        }
+        localization_key = idea_desc|HAM_vikishow_buff
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_lefthand = 6 }
+        }
+        localization_key = idea_desc|HAM_lokel_buff
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_lefthand = 7 }
+        }
+        localization_key = idea_desc|HAM_betsy_buff
+    }
+}
+
+defined_text = {
+    name = righthand_staropp_idea_tooltip
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_righthand = 1 }
+        }
+        localization_key = "Выбери советника"
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_righthand = 2 }
+        }
+        localization_key = idea_desc|HAM_filimonova_buff
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_righthand = 3 }
+        }
+        localization_key = idea_desc|HAM_mairko_buff
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_righthand = 4 }
+        }
+        localization_key = idea_desc|HAM_amirchik_buff
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_righthand = 5 }
+        }
+        localization_key = idea_desc|HAM_vikishow_buff
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_righthand = 6 }
+        }
+        localization_key = idea_desc|HAM_lokel_buff
+    }
+    text = {
+        trigger = {
+            check_variable = { HAM_STAR_righthand = 7 }
+        }
+        localization_key = idea_desc|HAM_betsy_buff
+    }
+}
