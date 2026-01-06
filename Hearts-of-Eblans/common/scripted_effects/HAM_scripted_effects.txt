@@ -1,3 +1,10 @@
+# CREATED BY CLR62 - 2025
+# Licensed under CC BY-NC-SA 4.0 for END USERS only
+# Full license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+# 
+# Paradox Interactive retains all rights to Hearts of Iron IV
+# Available on GitHub and Steam Workshop
+ 
 weak_star_popularity_increase = {
 
 	random_list = {
@@ -830,4 +837,18 @@ star_opposition_clear_right_advisor = {
     }
 
     set_variable = { HAM_STAR_righthand = 1 }
+}
+
+HAM_hametova_elected = {
+    HAM = {
+        set_country_flag = HAM_HAMETOVA_ELECTED
+    }
+}
+
+HAM_star_elected = {
+    HAM = {
+        set_country_flag = HAM_STAR_ELECTED
+
+        clr_country_flag = HAM_star_opposition_way
+    }
 }

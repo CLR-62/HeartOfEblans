@@ -32,4 +32,9 @@ opinion_modifiers = {
 	GON_ham_trade_partner = {
 		value = 25
 	}
+
+	HAM_DRE_friends_opinion = {
+		value = 35
+		decay = 0.25
+	}
 }

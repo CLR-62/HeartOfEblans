@@ -15,4 +15,29 @@ on_actions = {
 			}
         }
     }
+
+	on_daily_CHB = {
+		effect = {
+			if = {
+				limit = {
+					CHB = {
+						NOT = {
+							is_in_array = {
+								array = opennedAlbums
+    							value = 8
+							}
+						}
+					}
+				}
+
+				CHB = {
+					add_to_array = {
+    					array = opennedAlbums
+    					value = 8
+					}
+				}
+
+			}
+		}
+	}
 }

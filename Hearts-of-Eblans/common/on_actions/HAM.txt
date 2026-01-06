@@ -13,19 +13,19 @@ on_actions = {
 
     on_daily_HAM = {
         effect = {
+            if = {
+                limit = {
+                    has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+                }
+                subtract_from_variable = { HAM_STAR_COOLDOWN = 1 }
+
                 if = {
                     limit = {
-                        has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+                        check_variable = { HAM_STAR_COOLDOWN < 1 }
                     }
-                    subtract_from_variable = { HAM_STAR_COOLDOWN = 1 }
-
-                    if = {
-                        limit = {
-                            check_variable = { HAM_STAR_COOLDOWN < 1 }
-                        }
-                        clr_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
-                    }
+                    clr_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
                 }
+            }
         }
     }
 }

@@ -21,3 +21,22 @@ technology_sharing_group = {
 	}
 }
 
+technology_sharing_group = {
+
+	id = ham_gvi_research
+	name = ham_gvi_research_name
+	desc = ham_gvi_research_desc
+	picture = GFX_technology_sharing_default
+
+	research_sharing_per_country_bonus = 0.15
+
+	available = { 
+		AND = {
+			HAM = { 
+				has_completed_focus = ham_buharest_technology_exhibition
+			}
+		}
+	}
+}
+
+

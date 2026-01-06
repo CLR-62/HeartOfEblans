@@ -1389,6 +1389,47 @@ spriteTypes = {
 	texturefile = "gfx/interface/goals/focus_chb_adult_prison.dds"			
 	}	
 	
+	SpriteType = {
+	name = "GFX_goal_HAM_gvin_trade"
+	texturefile = "gfx/interface/goals/focus_HAM_gvin_trade.dds"			
+	}	
+	SpriteType = {
+	name = "GFX_goal_HAM_btk_soyuz"
+	texturefile = "gfx/interface/goals/focus_HAM_btk_soyuz.dds"			
+	}	
+	SpriteType = {
+	name = "GFX_goal_HAM_cvd"
+	texturefile = "gfx/interface/goals/focus_HAM_cvd.dds"			
+	}	
+	SpriteType = {
+	name = "GFX_goal_HAM_lagoda_raspil"
+	texturefile = "gfx/interface/goals/focus_HAM_lagoda_raspil.dds"			
+	}	
+	SpriteType = {
+	name = "GFX_goal_HAM_drake_coop"
+	texturefile = "gfx/interface/goals/focus_HAM_drake_coop.dds"			
+	}	
+	SpriteType = {
+	name = "GFX_goal_HAM_gvin_connection"
+	texturefile = "gfx/interface/goals/focus_HAM_gvin_connection.dds"			
+	}	
+	SpriteType = {
+	name = "GFX_goal_HAM_lagoda_question"
+	texturefile = "gfx/interface/goals/focus_HAM_lagoda_question.dds"			
+	}	
+	SpriteType = {
+	name = "GFX_goal_HAM_svinland_question"
+	texturefile = "gfx/interface/goals/focus_HAM_svinland_question.dds"			
+	}	
+	SpriteType = {
+	name = "GFX_goal_HAM_vovgaz_buy"
+	texturefile = "gfx/interface/goals/focus_HAM_vovgaz_buy.dds"			
+	}	
+	SpriteType = {
+	name = "GFX_goal_HAM_btk_coop_2"
+	texturefile = "gfx/interface/goals/focus_HAM_btk_coop_2.dds"			
+	}	
+	
     SpriteType = {
 	name = "GFX_goal_btk_war"
 	texturefile = "gfx/interface/goals/btk_war.dds"			

@@ -22,6 +22,10 @@
   pya_casino: "Казино"
   ham_crash: "Краш"
   ham_chikibriki: "Чики-Брики"
+  chb_lighthouse: "к маяку вселенной"
+  chb_cheloveyniki: "человейники"
+  chb_globalvipe: "глобальный вайп"
+  chb_whosearch: "который ищет маяк"
 
 
   tod_will_be_unlocked: "£GFX_music_disk_texticon Будет открыт альбом §Y$ALBUM$§!"
@@ -50,6 +54,10 @@
 
   ham_music_6_crash_decision: "Выбрать: §YКраш§!"
   ham_music_7_chikibriki_decision: "Выбрать: §YЧики-Брики§!"
+
+  chb_music_8_cheloveyniki_decision: "Выбрать: §Yчеловейники§!"
+  chb_music_8_globalvipe_decision: "Выбрать: §Yглобальный вайп§!"
+  chb_music_8_whosearch_decision: "Выбрать: §Yкоторый ищет маяк§!"
 
   PYA_musical_effort: "Развитие музыки"
   PYA_thousand_lifes: "Выпустить «1000 Жизней»"

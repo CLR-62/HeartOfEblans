@@ -390,9 +390,6 @@ country_event = {
 		1047 = {
 			transfer_state_to = HAM
 		}
-		1048 = {
-			transfer_state_to = HAM
-		}
 	}
 }
 

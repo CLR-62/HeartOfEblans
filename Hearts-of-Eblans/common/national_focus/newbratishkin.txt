@@ -1,3 +1,10 @@
+# CREATED BY CLR62 - 2025
+# Licensed under CC BY-NC-SA 4.0 for END USERS only
+# Full license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+# 
+# Paradox Interactive retains all rights to Hearts of Iron IV
+# Available on GitHub and Steam Workshop
+ 
 focus_tree = {
 	id = brat
 	country = {
@@ -364,7 +371,10 @@ focus_tree = {
         }
         relative_position_id = BTK_vovdrev
 		completion_reward = {
-            add_ideas = BTK_vovavia_idea
+            custom_effect_tooltip = {
+				localization_key = squad_concert_will_be_oppened
+				CONCERN = "BTK_vovavia_concern"
+			}
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {

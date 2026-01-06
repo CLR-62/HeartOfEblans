@@ -1,4 +1,12 @@
 
+# CREATED BY CLR62 - 2025
+# Licensed under CC BY-NC-SA 4.0 for END USERS only
+# Full license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+# 
+# Paradox Interactive retains all rights to Hearts of Iron IV
+# Available on GitHub and Steam Workshop
+
+
 #        ALBUMS/TRACKS ID
 #   PYA:
 #   0 - pya_1000lifes - 1000 Zhizney
@@ -8,6 +16,12 @@
 #   4 - pya_zmishare - Zmi Share
 #   5 - pya_vredniesoveti - Vrednie Soveti
 #   
+#	HAM:
+#	6 - Crush
+#	7 - Chikibriki
+#	
+#	CHB:
+#	8 - to the lighthouse of the universe
 
 
 
@@ -699,6 +713,152 @@ trackOfDay_cat = {
 			}
 			set_variable = { selected_album = 7 }
 			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+
+	#CHB
+
+
+	chb_music_8_cheloveyniki_decision = {
+		icon = GFX_tod_decision_chb_lighthouse
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = CHB
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 8
+            	}
+			}
+		}
+
+		modifier = {
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 8 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+
+	chb_music_8_globalvipe_decision = {
+		icon = GFX_tod_decision_chb_lighthouse
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = CHB
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 8
+            	}
+			}
+		}
+
+		modifier = {
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 8 }
+			set_variable = { selected_track = 1 }
+		}
+
+		remove_effect = {
+			set_variable = { selected_album = -1 }
+			clr_country_flag = TOD_already_activated
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	chb_music_8_whosearch_decision = {
+		icon = GFX_tod_decision_chb_lighthouse
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = CHB
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 8
+            	}
+			}
+		}
+
+		modifier = {
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 8 }
+			set_variable = { selected_track = 2 }
 		}
 
 		remove_effect = {

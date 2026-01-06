@@ -1,3 +1,10 @@
+# CREATED BY CLR62 - 2025
+# Licensed under CC BY-NC-SA 4.0 for END USERS only
+# Full license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+# 
+# Paradox Interactive retains all rights to Hearts of Iron IV
+# Available on GitHub and Steam Workshop
+ 
 ideas = {
 
 	country = {
@@ -300,6 +307,114 @@ ideas = {
             modifier = { 
 
             }
+        }
+
+
+        HAM_svinland_hypecratia_effort = {
+            picture = prc_low_popular_support3
+            allowed = { original_tag = HAM }
+            
+            cancel = {
+				hypecratia > 0.49
+			}
+
+            modifier = { 
+                hypecratia_drift = 0.1
+                custom_modifier_tooltip = HAM_hypecratia_influence_tt
+            }
+        }
+
+        HAM_antidrake_prepareness = {
+            picture = ARG_war_division
+            allowed = { original_tag = HAM }
+
+            modifier = { 
+                production_cost_industrial_complex_factor = -0.03
+                production_cost_arms_factory_factor = -0.05
+                fuel_gain_factor = 0.03
+            }
+        }
+
+        HAM_BTK_pact_idea = {
+            picture = ARG_raf_cooperation
+            allowed = { always = no }
+
+            modifier = { 
+            }
+        }
+
+        HAM_western_threats_idea = {
+            picture = generic_war_preparation
+            allowed = { always = no }
+
+            modifier = { 
+                army_defence_factor = 0.03
+                army_defence_against_major_factor = 0.05
+                training_time_factor = -0.1
+            }
+        }
+
+        HAM_department_of_war_idea_1 = {
+            picture = chi_war_of_resistance
+            allowed = { always = no }
+
+            modifier = { 
+                decryption_factor = 0.03
+                agency_upgrade_time = -0.03
+                operation_cost = -0.02
+            }
+        }
+
+        HAM_department_of_war_idea_gvin = {
+            picture = chi_war_of_resistance
+            allowed = { always = no }
+
+            modifier = { 
+                decryption_factor = 0.03
+                agency_upgrade_time = -0.03
+                operation_cost = -0.02
+                paratrooper_weight_factor = -0.05
+                air_accidents_factor = -0.05
+            }
+        }
+
+
+        HAM_trading = {
+            picture = FIN_finnish_federation_of_trade_unions_heavy
+            allowed = { always = no }
+
+            removal_cost = -1
+
+			cancel = {
+				has_war_with = HAM
+			}
+
+			on_add = {
+				add_offsite_building = { type = industrial_complex level = 1 }
+				add_offsite_building = { type = dockyard level = 1 }
+			}
+
+			on_remove = {
+				add_offsite_building = { type = industrial_complex level = -1 }
+				add_offsite_building = { type = dockyard level = -1 }
+				if = {
+					limit = {
+						has_opinion_modifier = GER_trading_partners
+					}
+					remove_opinion_modifier = {
+						target = HAM
+						modifier = GER_trading_partners
+					}
+				}
+			}
+
+			targeted_modifier = {
+				tag = HAM
+
+				extra_trade_to_target_factor = 0.05
+                trade_cost_for_target_factor = -0.15
+				custom_modifier_tooltip = GER_german_trade_offshore_tt
+			}
         }
     }
 

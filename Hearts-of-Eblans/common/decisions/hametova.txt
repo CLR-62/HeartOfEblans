@@ -689,3 +689,33 @@ hametova_national_projects_category = {
 		}
     }
 }
+
+hametova_svinland_perevorot_cat = {
+	militarize_partizanov = {
+		icon = GFX_HAM_decision_national_project
+		#picture = GFX_decision_cat_picture_form_greater_greece
+
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = ham_perevorot_svi
+		}
+		days_remove = 45
+		cost = 250
+
+		available = {
+			has_government = hypecratia
+		}
+
+		remove_effect = {
+			SVI = {
+				add_timed_idea = { idea = HAM_svinland_hypecratia_effort days = 410 }
+			}
+		}
+
+	
+		allowed = {
+			original_tag = HAM 
+		}
+    }
+}

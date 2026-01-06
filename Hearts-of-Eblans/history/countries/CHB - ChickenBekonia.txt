@@ -13,6 +13,8 @@ add_ideas = {
 	
 }
 
+set_country_flag = generic_trackofday_flag
+
 # Starting tech
 set_technology = {
  	infantry_weapons = 1

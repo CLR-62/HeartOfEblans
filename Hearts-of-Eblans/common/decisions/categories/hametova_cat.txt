@@ -39,3 +39,18 @@ hametova_national_projects_category = {
 	}
 	priority = 200
 }
+
+hametova_svinland_perevorot_cat = {
+
+	icon = GFX_HAM_decision_cat_national_projects
+	picture = GFX_HAM_new_national_project_decision_banner
+	allowed = {
+		original_tag = HAM
+	}
+
+	visible = {
+		original_tag = HAM
+		has_completed_focus = ham_perevorot_svi
+	}
+	priority = 200
+}

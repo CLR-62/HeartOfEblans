@@ -42,6 +42,12 @@ SpriteTypes = {
 		texturefile = "gfx/interface/custom_gui/TrackOfDay/Hametova/HAM_chikibriki.png"
 	}
 
+	#CHB
+	spriteType = {
+		name = "GFX_tod_album_chb_lighthouse_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Mzlff/CHB_lighthouse.png"
+	}
+
 
 	spriteType = {
 		name = "GFX_music_disk_texticon"
@@ -84,5 +90,12 @@ SpriteTypes = {
 	spriteType = {
 		name = "GFX_tod_decision_ham_chikibriki"
 		texturefile = "gfx/interface/decisions/icons/HAM_chikibriki.dds"
+	}
+
+
+	#CHB
+	spriteType = {
+		name = "GFX_tod_decision_chb_lighthouse"
+		texturefile = "gfx/interface/decisions/icons/CHB_lighthouse.dds"
 	}
 }

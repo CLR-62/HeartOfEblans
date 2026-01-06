@@ -1,4 +1,6 @@
 add_namespace = hametova
+add_namespace = hametova_trade
+add_namespace = hametova_elections
 
 #Second term of milana
 country_event = {
@@ -601,5 +603,580 @@ country_event = {
 			ideology = democratic
 			popularity = 0.03
 		}
+	}
+}
+
+#FULL PRODASHNOST
+country_event = {
+	id = hametova.24
+	title = hametova.24.t
+	desc = hametova.24.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.24.a
+		ai_chance = {
+			factor = 55
+		}
+
+		
+	}
+}
+
+#vovavia_pokupka for btk
+country_event = {
+	id = hametova.25
+	title = hametova.25.t
+	desc = hametova.25.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.25.a #ok
+		ai_chance = {
+			factor = 55
+		}
+
+		HAM = {
+			country_event = { id = hametova.26 days = 2 }
+		}
+	}
+	option = {
+		name = hametova.25.b #no
+		ai_chance = {
+			factor = 55
+		}
+
+		HAM = {
+			country_event = { id = hametova.27 days = 2 }
+		}
+	}
+}
+
+#vovavia_pokupka yes
+country_event = {
+	id = hametova.26
+	title = hametova.26.t
+	desc = hametova.26.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.26.a
+		ai_chance = {
+			factor = 55
+		}
+		BTK = {
+			set_country_flag = VOVAVIA_SOLD
+		}
+
+		custom_effect_tooltip = {
+			localization_key = squad_concert_will_be_oppened
+			CONCERN = "BTK_vovavia_concern"
+		}
+		
+	}
+}
+#vovavia_pokupka no
+country_event = {
+	id = hametova.27
+	title = hametova.27.t
+	desc = hametova.27.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.27.a
+		ai_chance = {
+			factor = 55
+		}
+
+		
+	}
+}
+
+
+#pro89gaz_pokupka for btk
+country_event = {
+	id = hametova.28
+	title = hametova.28.t
+	desc = hametova.28.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.28.a #ok
+		ai_chance = {
+			factor = 55
+		}
+
+		HAM = {
+			country_event = { id = hametova.29 days = 2 }
+		}
+	}
+	option = {
+		name = hametova.28.b #no
+		ai_chance = {
+			factor = 55
+		}
+
+		HAM = {
+			country_event = { id = hametova.30 days = 2 }
+		}
+	}
+}
+
+#pro89gaz_pokupka yes
+country_event = {
+	id = hametova.29
+	title = hametova.29.t
+	desc = hametova.29.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.29.a
+		ai_chance = {
+			factor = 55
+		}
+		BTK = {
+			remove_ideas = BTK_squadgaz_idea
+		}
+		HAM = {
+			add_ideas = BTK_squadgaz_idea
+		}
+	}
+}
+#pro89gaz_pokupka no
+country_event = {
+	id = hametova.30
+	title = hametova.30.t
+	desc = hametova.30.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.30.a
+		ai_chance = {
+			factor = 55
+		}
+	}
+}
+
+
+country_event = {
+	id = hametova.31
+	title = hametova.31.t
+	desc = hametova.31.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.31.a
+		ai_chance = {
+			factor = 55
+		}
+	}
+}
+
+#SVINLAND SVOI V DUMU
+country_event = {
+	id = hametova.32
+	title = hametova.32.t
+	desc = hametova.32.d
+	picture = GFX_report_event_CHL_chillan_earthquake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.32.a
+		ai_chance = {
+			factor = 55
+		}
+	}
+}
+
+#HAM DRE BTK AGreement
+country_event = {
+	id = hametova.33
+	title = hametova.33.t
+	desc = hametova.33.d
+	picture = GFX_report_event_FIN_paasikivi_president
+	
+	is_triggered_only = yes
+	
+	#Okey
+	option = {
+		name = hametova.33.a
+		ai_chance = {
+			factor = 55
+		}
+		BTK = {
+			add_ideas = HAM_BTK_pact_idea
+		}
+	}
+
+	#No
+	option = {
+		name = hametova.33.b
+		ai_chance = {
+			factor = 55
+		}
+		HAM = {
+			country_event = { id = hametova.34 days = 3 }
+		}
+	}
+}
+
+#BTK OTKAZ
+country_event = {
+	id = hametova.34
+	title = hametova.34.t
+	desc = hametova.34.d
+	picture = GFX_report_event_ITA_air_crash
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.34.a
+		ai_chance = {
+			factor = 55
+		}
+	}
+}
+
+
+#DRE ALIANCE
+country_event = {
+	id = hametova.35
+	title = hametova.35.t
+	desc = hametova.35.d
+	picture = GFX_report_event_ITA_air_crash
+	
+	is_triggered_only = yes
+	
+	#YES
+	option = {
+		name = hametova.35.a
+		ai_chance = {
+			factor = 55
+		}
+		HAM = {
+			create_faction = "Хайпо-Европейское объединение"
+			add_ai_strategy = {
+			   type = alliance
+			   id = PREV
+			   value = 500
+			}
+			PREV = {
+				add_ai_strategy = {
+				   type = alliance
+				   id = HAM
+				   value = 500
+				}
+			}
+			add_to_faction = PREV
+		}
+	}
+
+	#NO
+	option = {
+		name = hametova.35.b
+		ai_chance = {
+			factor = 55
+		}
+	}
+}
+
+
+#HAM STAR WESTERN THREATS
+country_event = {
+	id = hametova.36
+	title = hametova.36.t
+	desc = hametova.36.d
+	picture = GFX_report_event_NOR_norway_exile_troops
+	
+	is_triggered_only = yes
+	
+	#YES
+	option = {
+		name = hametova.36.a
+		ai_chance = {
+			factor = 55
+		}
+		add_timed_idea = { idea = HAM_western_threats_idea days = 365 }
+	}
+}
+
+#TRADE
+country_event = { 
+	id = hametova_trade.1
+	title = hametova_trade.1.t
+	desc = hametova_trade.1.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = { #Accepts
+		name = hametova_trade.1.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FROM
+					value > 44
+				}
+			}
+			modifier = {
+				factor = 2
+				industrial_complex < 15
+			}
+		}		
+		effect_tooltip = {
+			ROOT = {
+				add_ideas = HAM_trading
+				add_opinion_modifier = {
+					target = FROM
+					modifier = GER_trading_partners
+				}
+			}
+		}
+		custom_effect_tooltip = war_will_cancel_deal_tt
+		FROM = {
+			country_event = { id = hametova_trade.2 hours = 5 random_hours = 5 }
+		}
+	}
+
+	option = { #Rejects
+		name = hametova_trade.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 15
+				has_opinion = {
+					target = FROM
+					value < -29
+				}
+			}
+			modifier = {
+				add = 15
+				has_opinion = {
+					target = FROM
+					value < -34
+				}
+			}
+			modifier = {
+				add = 20
+				FROM = {
+					has_added_tension_amount > 14
+				}
+			}
+		}		
+		FROM = {
+			country_event = { id = hametova_trade.3 hours = 5 random_hours = 5 }
+		}
+	}
+}
+country_event = { #FROM accepts our trade deal
+	id = hametova_trade.2
+	title = hametova_trade.2.t
+	desc = hametova_trade.2.d
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+
+	option = { #Good!
+		name = hametova_trade.1.a #Intentional 
+		FROM = {
+			add_ideas = HAM_trading
+			add_opinion_modifier = {
+				target = PREV
+				modifier = GER_trading_partners
+			}
+		}
+		custom_effect_tooltip = war_will_cancel_deal_tt
+		#hidden_effect = {
+		#	add_offsite_building = { type = industrial_complex level = 1 }
+		#}
+	}
+}
+country_event = { #FROM rejects our trade deal
+	id = hametova_trade.3
+	title = hametova_trade.3.t
+	desc = hametova_trade.3.d
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+
+	option = { #Too bad for them...
+		name = hametova_trade.3.a	
+	}
+}
+
+
+country_event = { #GVI CONNECTION
+	id = hametova_trade.4
+	title = hametova_trade.4.t
+	desc = hametova_trade.4.d
+	picture = GFX_report_event_DEN_celebration
+
+	is_triggered_only = yes
+
+	option = { #Connect
+		name = hametova_trade.4.a	
+		ai_chance = {
+			base = 3
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FROM
+					value > 44
+				}
+			}
+			modifier = {
+				factor = 2
+				industrial_complex < 15
+			}
+		}		
+		
+		HAM = {
+			puppet = GVI
+
+			set_autonomy = {
+    			target = GVI
+    			autonomous_state = autonomy_dominion
+    			end_wars = no
+    			end_civil_wars = no
+			}
+		}
+
+		
+	}
+	option = { #Rejects
+		name = hametova_trade.4.b
+		ai_chance = {
+			base = 11
+			modifier = {
+				add = 15
+				has_opinion = {
+					target = FROM
+					value < -29
+				}
+			}
+			modifier = {
+				add = 15
+				has_opinion = {
+					target = FROM
+					value < -39
+				}
+			}
+			modifier = {
+				add = 20
+				FROM = {
+					has_added_tension_amount > 14
+				}
+			}
+		}		
+		FROM = {
+			country_event = { id = hametova_trade.5 hours = 5 random_hours = 5 }
+		}
+	}
+}
+
+country_event = { #FROM rejects our trade deal
+	id = hametova_trade.5
+	title = hametova_trade.5.t
+	desc = hametova_trade.5.d
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+
+	option = { #Create wargoal
+		name = hametova_trade.5.a	
+		HAM = {
+			create_wargoal = {
+				target = GVI
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+}
+
+
+
+
+#ELECTIONS
+
+country_event = {
+	id = hametova_elections.1 # PODGOTOVKA K VIBORAM
+	title = hametova_elections.1.t
+	desc = hametova_elections.1.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		HAM = {
+            OR = {
+                focus_progress = {
+                    focus = ham_vibori_vibori
+                    progress > 0.5
+                }
+
+                focus_progress = {
+                    focus = ham_new_doctrine
+                    progress > 0.5
+                }
+            }
+        }
+	}
+
+	option = { 
+		name = hametova_elections.1.a
+	}
+}
+
+
+country_event = {
+	id = hametova_elections.2 # VIBORI ONLY HAMETOVA
+	title = hametova_elections.2.t
+	desc = hametova_elections.2.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = { 
+		name = hametova_elections.2.a #HAMETOVA
+		HAM_hametova_elected = yes
+	}
+}
+
+country_event = {
+	id = hametova_elections.3 # VIBORI HAMETOVA AND STAR
+	title = hametova_elections.3.t
+	desc = hametova_elections.3.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = { 
+		name = hametova_elections.3.a #HAMETOVA
+		HAM_hametova_elected = yes
+	}
+
+	option = { 
+		name = hametova_elections.3.b #HAMETOVA
+		HAM_star_elected = yes
 	}
 }

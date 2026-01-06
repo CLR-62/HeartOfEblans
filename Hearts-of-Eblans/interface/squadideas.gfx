@@ -146,6 +146,10 @@ spriteTypes = {
         name = "GFX_idea_GON_acf"
         texturefile = "gfx/interface/ideas/acf_gon.dds"
     }  
+    spriteType = {
+        name = "GFX_idea_otkrutka"
+        texturefile = "gfx/interface/ideas/otkrutka_idea.dds"
+    }  
 
     spriteType = {
         name = "GFX_idea_hype_world"
@@ -180,6 +184,10 @@ spriteTypes = {
     spriteType = {
         name = "GFX_idea_BTK_squadgaz"
         texturefile = "gfx/interface/ideas/squadgaz.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_BTK_vovavia"
+        texturefile = "gfx/interface/ideas/BTK_vovavia.dds"
     }
 
     spriteType = {

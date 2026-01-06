@@ -1,0 +1,46 @@
+# CREATED BY CLR62 - 2025
+# Licensed under CC BY-NC-SA 4.0 for END USERS only
+# Full license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+# 
+# Paradox Interactive retains all rights to Hearts of Iron IV
+# Available on GitHub and Steam Workshop
+ 
+ideas = {
+    industrial_concern = {
+	
+		BTK_vovavia_concern = {
+			
+			picture = BTK_vovavia
+
+			allowed = {
+                OR = {
+				    AND = {
+                        original_tag = BTK
+                        has_completed_focus = BTK_vovavia
+                        NOT = { has_country_flag = VOVAVIA_SOLD }
+                    }
+                    AND = {
+                        original_tag = HAM
+                        BTK = { has_country_flag = VOVAVIA_SOLD }
+                    }
+                }
+			}
+			
+			cost = 100
+			removal_cost = 30
+			
+			research_bonus = {
+				air_equipment = 0.1
+                mio_cat_all_light_fighter_and_modules = 0.05
+			}
+
+            modifier = {
+				consumer_goods_factor = -0.02
+                production_cost_air_base_factor = -0.05
+                production_cost_anti_air_building_factor = -0.05
+			}
+			
+			traits = { industrial_concern }
+		}
+    }
+}

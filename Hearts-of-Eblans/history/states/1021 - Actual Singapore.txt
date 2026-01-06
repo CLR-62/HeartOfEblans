@@ -13,9 +13,8 @@ state = {
 
 	history = {
 
-		owner = ENG
-		add_core_of = MAL
-		add_core_of = SNG
+		owner = FST
+		add_core_of = FST
 
 		victory_points = {
 			12299 10 # Singapore
