@@ -1,0 +1,80 @@
+# CREATED BY CLR62 - 2025
+# Licensed under CC BY-NC-SA 4.0 for END USERS only
+# Full license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+# 
+# Paradox Interactive retains all rights to Hearts of Iron IV
+# Available on GitHub and Steam Workshop
+
+guiTypes = {
+    containerWindowType = {
+		name = "Freakland_decision_window"
+		position = { x = 50 y = 50 }
+		size = { width = 100% height= 300 }
+		
+		iconType = {
+			name = "Freakland_logo_picture"
+			position = { x = 340 y = -10 }
+			spriteType = "GFX_Freakland_logo"
+			scale = 0.3
+		}
+
+        instantTextBoxType = {
+            name = "freakland_members_list_title"
+            position = { x = 20 y = -5}
+            text = "Члены Фрикленда:"
+            font = hoi_30header
+        }
+
+        gridBoxType = {
+            name = "freakland_server_members_listbox"
+            position = { x = 70 y = 20 }
+            size = { width = 0 height = 0 }
+            slotsize = { width = 100 height = 50 }
+            add_horizontal = no
+            max_slots_vertical = 5
+        }
+
+        instantTextBoxType = {
+            name = "freakland_member_country_name"
+            position = { x = 340 y = 150}
+            text = "Национальный дух:"
+            font = hoi_20bs
+        }
+
+        iconType = {
+			name = "Freakland_idea_picture"
+			position = { x = 373 y = 170 }
+			spriteType = "GFX_idea_PYA_freakland"
+            pdx_tooltip = freakland_idea_tooltip_tt
+            alwaystransparent = no
+			scale = 1.2
+		}
+	}
+
+    containerWindowType = {
+        name = "freakland_members_list_entry"
+        position = { x = 0 y = 0 }
+        size = { width = 0 height = 0 }
+
+        iconType = {
+            name = "freakland_member_flag"
+            quadTextureSprite = "GFX_flag_medium"
+            position = { x = 0 y = 5 }
+        }
+
+        iconType = {
+            name = "freakland_member_flag_border"
+            quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
+            position = { x = -4 y = 0 }
+            alwaystransparent = yes
+            scale = 1.4
+        }
+
+        instantTextBoxType = {
+            name = "freakland_member_country_name"
+            position = { x = 75 y = 15}
+            text = [THIS.GetName]
+            font = hoi_20bs
+        }
+    }
+}

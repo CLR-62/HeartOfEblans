@@ -1303,6 +1303,17 @@ focus = {
 		completion_reward = {
 			army_experience = 25
 			navy_experience = 25
+			if = {
+				limit = {
+					HAM = {
+						NOT = { has_completed_focus = ham_chickenbekonia_production_militarization }
+						has_country_flag = HAM_star_opposition_way
+					}
+				}
+				HAM = {
+					country_event = { id = hametova.76 days = 15 }
+				}
+			}
 		}
 	}
 
@@ -2521,9 +2532,9 @@ focus = {
 	#################
 
 	focus = {
-		id = DRE_secret_rearmament
-		icon = GFX_focus_secret_rearmament
-		x = 39
+		id = DRE_bled_agreement
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 38
 		y = 0
 
 		cost = 10
@@ -2537,61 +2548,95 @@ focus = {
 		}
 
 		bypass = {
-			NOT = {
-				has_idea = DRE_treaty_of_triannon_aat
-			}
-		}
 
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			add_ideas = HUN_secret_rearmament
+			country_event = { id = drek.100 }
 			add_doctrine_cost_reduction = {
 				name = DRE_theoretical_air_efforts
 				cost_reduction = 0.5
 				uses = 1
 				category = air_doctrine
 			}
-			army_experience = 25
-			#custom_effect_tooltip = DRE_secret_rearmament_tt
+			add_doctrine_cost_reduction = {
+				name = DRE_land_doctrine_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			army_experience = 20
 		}
 	}
 
 	focus = {
-		id = DRE_bled_agreement
-		icon = GFX_focus_renounce_the_treaty_of_trianon
-		prerequisite = { focus = DRE_secret_rearmament }
-		x = 0
+		id = DRE_military_expansion
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = DRE_bled_agreement }
+		x = -2
 		y = 1
-		relative_position_id = DRE_secret_rearmament
+		relative_position_id = DRE_bled_agreement
 
 		cost = 10
 
 		ai_will_do = {
-			factor = 20
+			factor = 15
 		}
 
 		available = {
 
 		}
 
-		bypass = {
-			NOT = {
-				has_idea = DRE_treaty_of_triannon_aat
-			}
-		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			remove_ideas = DRE_treaty_of_triannon_aat
-			hidden_effect = {
-				people_support_development_improvement = yes
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_tech_bonus = {
+				name = DRE_military_expansion
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = DRE_war_college
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = DRE_bled_agreement }
+		x = 2
+		y = 1
+		relative_position_id = DRE_bled_agreement
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 15
+		}
+
+		available = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			army_experience = 50
+			add_doctrine_cost_reduction = {
+				name = DRE_war_college
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
 			}
 		}
 	}
@@ -2603,15 +2648,15 @@ focus = {
 	focus = {
 		id = DRE_establish_the_air_force
 		icon = GFX_goal_generic_build_airforce
-		prerequisite = { focus = DRE_bled_agreement }
-		x = -5
-		y = 4
-		relative_position_id = DRE_secret_rearmament
+		prerequisite = { focus = DRE_military_expansion focus = DRE_war_college }
+		x = -4
+		y = 2
+		relative_position_id = DRE_bled_agreement
 
 		cost = 10
 
 		ai_will_do = {
-			factor = 10
+			factor = 15
 		}
 
 		available = {
@@ -2635,18 +2680,65 @@ focus = {
 				uses = 1
 				category = air_doctrine
 			}
+			add_equipment_to_stockpile = {
+				type = fighter_equipment
+				amount = 50
+				producer = DRE
+			}
+		}
+	}
+
+	focus = {
+		id = DRE_air_base_expansion
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = DRE_establish_the_air_force }
+		x = 0
+		y = 1
+		relative_position_id = DRE_establish_the_air_force
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 12
+		}
+
+		available = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = DRE_indigenous_designs
 		icon = GFX_goal_generic_air_production
-		prerequisite = { focus = DRE_establish_the_air_force }
+		prerequisite = { focus = DRE_air_base_expansion }
 		mutually_exclusive = { focus = DRE_license_foreign_designs }
-		mutually_exclusive = { focus = DRE_joint_air_development }
 		x = -2
 		y = 1
-		relative_position_id = DRE_establish_the_air_force
+		relative_position_id = DRE_air_base_expansion
 
 		cost = 10
 
@@ -2673,49 +2765,9 @@ focus = {
 	}
 
 	focus = {
-		id = DRE_heavy_fighter_effort
+		id = DRE_fighter_effort
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = DRE_indigenous_designs }
-		mutually_exclusive = { focus = DRE_light_fighter_effort }
-		x = -3
-		y = 1
-		relative_position_id = DRE_indigenous_designs
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 40
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			add_tech_bonus = {
-				name = DRE_heavy_fighter_effort
-				bonus = 1.0
-				ahead_reduction = 2
-				uses = 1
-				category = cat_heavy_fighter
-			}
-		}
-	}
-
-	focus = {
-		id = DRE_light_fighter_effort
-		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = DRE_indigenous_designs }
-		mutually_exclusive = { focus = DRE_heavy_fighter_effort }
 		x = -1
 		y = 1
 		relative_position_id = DRE_indigenous_designs
@@ -2741,20 +2793,19 @@ focus = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
-				name = DRE_light_fighter_effort
+				name = DRE_fighter_effort
 				bonus = 1.0
 				ahead_reduction = 2
-				uses = 1
+				uses = 2
 				category = light_fighter
 			}
 		}
 	}
 
 	focus = {
-		id = DRE_cas_focus
-		icon = GFX_goal_generic_CAS
+		id = DRE_bomber_effort
+		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = DRE_indigenous_designs }
-		mutually_exclusive = { focus = DRE_tac_focus }
 		x = 1
 		y = 1
 		relative_position_id = DRE_indigenous_designs
@@ -2762,7 +2813,7 @@ focus = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 50
+			factor = 35
 		}
 
 		available = {
@@ -2780,9 +2831,16 @@ focus = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
-				name = DRE_cas_focus
+				name = DRE_bomber_effort
 				bonus = 1.0
 				ahead_reduction = 2
+				uses = 1
+				category = tactical_bomber
+			}
+			add_tech_bonus = {
+				name = DRE_cas_effort
+				bonus = 1.0
+				ahead_reduction = 1
 				uses = 1
 				category = cas_bomber
 			}
@@ -2790,25 +2848,21 @@ focus = {
 	}
 
 	focus = {
-		id = DRE_tac_focus
-		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = DRE_indigenous_designs }
-		mutually_exclusive = { focus = DRE_cas_focus }
-		x = 3
+		id = DRE_air_superiority_doctrine
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = DRE_fighter_effort }
+		prerequisite = { focus = DRE_bomber_effort }
+		x = 0
 		y = 1
-		relative_position_id = DRE_indigenous_designs
+		relative_position_id = DRE_fighter_effort
 
 		cost = 10
 
 		ai_will_do = {
-			factor = 50
+			factor = 25
 		}
 
 		available = {
-
-		}
-
-		bypass = {
 
 		}
 
@@ -2818,12 +2872,12 @@ focus = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_tech_bonus = {
-				name = DRE_tac_focus
-				bonus = 1.0
-				ahead_reduction = 2
-				uses = 1
-				category = tactical_bomber
+			air_experience = 50
+			add_doctrine_cost_reduction = {
+				name = DRE_air_superiority_doctrine
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
 			}
 		}
 	}
@@ -2831,12 +2885,11 @@ focus = {
 	focus = {
 		id = DRE_license_foreign_designs
 		icon = GFX_focus_generic_license_production
-		prerequisite = { focus = DRE_establish_the_air_force }
+		prerequisite = { focus = DRE_air_base_expansion }
 		mutually_exclusive = { focus = DRE_indigenous_designs }
-		mutually_exclusive = { focus = DRE_joint_air_development }
-		x = 4
+		x = 2
 		y = 1
-		relative_position_id = DRE_establish_the_air_force
+		relative_position_id = DRE_air_base_expansion
 
 		cost = 10
 
@@ -2862,17 +2915,17 @@ focus = {
 	}
 
 	focus = {
-		id = DRE_fighter_competition
+		id = DRE_foreign_aircraft_production
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = DRE_license_foreign_designs }
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = DRE_license_foreign_designs
 
 		cost = 10
 
 		ai_will_do = {
-			factor = 50
+			factor = 35
 		}
 
 		available = {
@@ -2887,79 +2940,15 @@ focus = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = DRE_bomber_competition
-		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = DRE_license_foreign_designs }
-		x = 1
-		y = 1
-		relative_position_id = DRE_license_foreign_designs
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 30
-		}
-
-		available = {
-
+			add_tech_bonus = {
+				name = DRE_foreign_aircraft
+				bonus = 0.75
+				uses = 2
+				category = light_fighter
 			}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = DRE_joint_air_development
-		icon = GFX_goal_generic_air_production
-		prerequisite = { focus = DRE_establish_the_air_force }
-		mutually_exclusive = { focus = DRE_license_foreign_designs }
-		mutually_exclusive = { focus = DRE_indigenous_designs }
-		x = 2
-		y = 1
-		relative_position_id = DRE_establish_the_air_force
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 30
-		}
-
-		available = {
-			is_in_faction = yes
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			add_to_tech_sharing_group = DRE_joint_air_development_group
-			every_other_country = {
-				limit = {
-					is_in_faction_with = DRE
-				}
-				add_to_tech_sharing_group = DRE_joint_air_development_group
-			}
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -2970,9 +2959,9 @@ focus = {
 	focus = {
 		id = DRE_army_maneuvers
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = DRE_bled_agreement }
-		x = 7
-		y = 1
+		prerequisite = { focus = DRE_military_expansion focus = DRE_war_college }
+		x = 4
+		y = 2
 		relative_position_id = DRE_bled_agreement
 
 		cost = 10
@@ -2995,13 +2984,109 @@ focus = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			army_experience = 10
+			army_experience = 25
 			add_doctrine_cost_reduction = {
 				name = DRE_army_maneuvers
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
+		}
+	}
+
+	focus = {
+		id = DRE_infantry_weapons_program
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = DRE_army_maneuvers }
+		x = -1
+		y = 1
+		relative_position_id = DRE_army_maneuvers
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = DRE_infantry_weapons_program
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = DRE_artillery_program
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = DRE_army_maneuvers }
+		x = 1
+		y = 1
+		relative_position_id = DRE_army_maneuvers
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = DRE_artillery_program
+				bonus = 1.0
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = DRE_combined_arms_training
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = DRE_infantry_weapons_program }
+		prerequisite = { focus = DRE_artillery_program }
+		x = 0
+		y = 1
+		relative_position_id = DRE_infantry_weapons_program
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_ideas = DRE_glory_to_army_idea
+			army_experience = 25
 		}
 	}
 
@@ -3012,11 +3097,11 @@ focus = {
 	focus = {
 		id = DRE_mobile_focus
 		icon = GFX_goal_generic_cavalry
-		prerequisite = { focus = DRE_army_maneuvers }
+		prerequisite = { focus = DRE_combined_arms_training }
 		mutually_exclusive = { focus = DRE_home_defense }
 		x = -2
 		y = 1
-		relative_position_id = DRE_army_maneuvers
+		relative_position_id = DRE_combined_arms_training
 
 		cost = 10
 
@@ -3041,7 +3126,7 @@ focus = {
 			add_doctrine_cost_reduction = {
 				name = DRE_mobile_focus
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = cat_mobile_warfare
 			}
 		}
@@ -3051,7 +3136,7 @@ focus = {
 		id = DRE_tank_troops_school
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = DRE_mobile_focus }
-		x = -4
+		x = -1
 		y = 1
 		relative_position_id = DRE_mobile_focus
 
@@ -3076,45 +3161,8 @@ focus = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
-				name = DRE_the_botond
+				name = DRE_tank_troops_school
 				bonus = 1.0
-				uses = 1
-				category = motorized_equipment
-			}
-		}
-	}
-
-	focus = {
-		id = DRE_advanced_tanks_research
-		icon = GFX_focus_generic_army_tanks2
-		prerequisite = { focus = DRE_mobile_focus }
-		x = -2
-		y = 1
-		relative_position_id = DRE_mobile_focus
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 60
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			add_tech_bonus = {
-				name = DRE_armored_warfare
-				bonus = 2.0
 				uses = 2
 				category = armor
 			}
@@ -3122,18 +3170,17 @@ focus = {
 	}
 
 	focus = {
-		id = DRE_motorized_logistics
+		id = DRE_motorized_divisions
 		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = DRE_tank_troops_school}
-		prerequisite = { focus = DRE_advanced_tanks_research}
+		prerequisite = { focus = DRE_mobile_focus }
 		x = 1
 		y = 1
-		relative_position_id = DRE_tank_troops_school
+		relative_position_id = DRE_mobile_focus
 
 		cost = 10
 
 		ai_will_do = {
-			factor = 30
+			factor = 50
 		}
 
 		available = {
@@ -3150,50 +3197,66 @@ focus = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-
+			add_tech_bonus = {
+				name = DRE_motorized_divisions
+				bonus = 1.0
+				uses = 1
+				category = motorized_equipment
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 200
+				producer = DRE
+			}
 		}
 	}
 
-	#focus = {
-	#	id = DRE_combined_arms
-	#	icon = GFX_focus_generic_tank_air_support
-	#	prerequisite = { focus = DRE_motorized_logistics}
-	#	prerequisite = { focus = DRE_bomber_competition}
-	#	x = 1
-	#	y = 3
-	#	relative_position_id = DRE_tank_troops_school
-#
-	#	cost = 10
-#
-	#	ai_will_do = {
-	#		factor = 30
-	#	}
-#
-	#	available = {
-#
-	#	}
-#
-	#	bypass = {
-#
-	#	}
-#
-	#	cancel_if_invalid = yes
-	#	continue_if_invalid = no
-	#	available_if_capitulated = no
-#
-	#	search_filters = { FOCUS_FILTER_RESEARCH }
-	#	completion_reward = {
-#
-	#	}
-	#}
+	focus = {
+		id = DRE_blitzkrieg_doctrine
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = DRE_tank_troops_school }
+		prerequisite = { focus = DRE_motorized_divisions }
+		x = 0
+		y = 1
+		relative_position_id = DRE_tank_troops_school
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 45
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas = DRE_real_blitzkrieg
+			add_doctrine_cost_reduction = {
+				name = DRE_blitzkrieg_doctrine
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_mobile_warfare
+			}
+		}
+	}
 
 	focus = {
 		id = DRE_develop_tanks
 		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = DRE_home_defense focus = DRE_mobile_focus }
-		x = 1
+		prerequisite = { focus = DRE_blitzkrieg_doctrine }
+		x = 0
 		y = 1
-		relative_position_id = DRE_mobile_focus
+		relative_position_id = DRE_blitzkrieg_doctrine
 
 		cost = 10
 
@@ -3217,149 +3280,26 @@ focus = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = DRE_develop_tanks
+				bonus = 1.5
 				ahead_reduction = 2
-				uses = 1
+				uses = 2
 				category = armor
 			}
 		}
 	}
 
-	focus = {
-		id = DRE_assault_gun_focus
-		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = DRE_mobile_focus focus = DRE_home_defense }
-		x = 3
-		y = 1
-		relative_position_id = DRE_mobile_focus
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 60
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {
-			add_ideas = DRE_assault_gun_focus
-		}
-	}
-
-	focus = {
-		id = DRE_joint_tank_procurement
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = DRE_mobile_focus focus = DRE_home_defense }
-		x = 2
-		y = 2
-		relative_position_id = DRE_mobile_focus
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 70
-		}
-
-		available = {
-			is_in_faction = yes
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-
-		}
-	}
-
-	#ocus = {
-	#	id = DRE_super_iron_road
-	#	icon = GFX_focus_generic_railroad
-	#	prerequisite = { focus = DRE_joint_tank_procurement }
-	#	x = 2
-	#	y = 1
-	#	relative_position_id = DRE_joint_tank_procurement
-
-	#	cost = 10
-
-	#	ai_will_do = {
-	#		factor = 80
-	#	}
-
-	#	available = {
-
-	#	}
-
-	#	bypass = {
-
-	#	}
-
-	#	cancel_if_invalid = yes
-	#	continue_if_invalid = no
-	#	available_if_capitulated = no
-
-	#	search_filters = { FOCUS_FILTER_RESEARCH }
-	#	completion_reward = {
-	#		add_ideas = DRE_central_railroad
-	#	}
-	#
-
-	focus = {
-		id = DRE_improve_logistics
-		icon = GFX_goal_generic_consumer_goods
-		prerequisite = { focus = DRE_joint_tank_procurement }
-		x = 0
-		y = 1
-		relative_position_id = DRE_joint_tank_procurement
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 80
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			add_ideas = DRE_improved_logistics
-		}
-	}
+	############################
+	##### DEFENSE BRANCH #######
+	############################
 
 	focus = {
 		id = DRE_home_defense
 		icon = GFX_goal_generic_fortify_city
-		prerequisite = { focus = DRE_army_maneuvers }
+		prerequisite = { focus = DRE_combined_arms_training }
 		mutually_exclusive = { focus = DRE_mobile_focus }
 		x = 2
 		y = 1
-		relative_position_id = DRE_army_maneuvers
+		relative_position_id = DRE_combined_arms_training
 
 		cost = 10
 
@@ -3384,15 +3324,54 @@ focus = {
 			add_doctrine_cost_reduction = {
 				name = DRE_home_defense
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = cat_grand_battle_plan
 			}
 		}
 	}
 
 	focus = {
-		id = DRE_danuvia_submachine_guns
-		icon = GFX_goal_generic_small_arms
+		id = DRE_fortification_effort
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = DRE_home_defense }
+		x = -1
+		y = 1
+		relative_position_id = DRE_home_defense
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DRE_anti_tank_doctrine
+		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = DRE_home_defense }
 		x = 1
 		y = 1
@@ -3401,14 +3380,10 @@ focus = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 60
+			factor = 55
 		}
 
 		available = {
-
-		}
-
-		bypass = {
 
 		}
 
@@ -3419,70 +3394,30 @@ focus = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
-				name = DRE_danuvia_submachine_guns
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-			}
-		}
-	}
-
-	focus = {
-		id = DRE_artillery_effort
-		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = DRE_danuvia_submachine_guns }
-		x = 1
-		y = 2
-		relative_position_id = DRE_home_defense
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 50
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			add_tech_bonus = {
-				name = DRE_artillery_effort
+				name = DRE_anti_tank_doctrine
 				bonus = 1.0
 				uses = 2
-				category = artillery
+				category = cat_anti_tank
 			}
 		}
 	}
 
 	focus = {
-		id = DRE_light_infantry_divisions_doctrine
-		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = DRE_danuvia_submachine_guns }
-		x = 3
-		y = 2
-		relative_position_id = DRE_home_defense
+		id = DRE_defensive_mastery
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = DRE_fortification_effort }
+		prerequisite = { focus = DRE_anti_tank_doctrine }
+		x = 0
+		y = 1
+		relative_position_id = DRE_fortification_effort
 
 		cost = 10
 
 		ai_will_do = {
-			factor = 50
+			factor = 45
 		}
 
 		available = {
-
-		}
-
-		bypass = {
 
 		}
 
@@ -3492,84 +3427,31 @@ focus = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			hidden_effect = {
-				if = {
-					limit = { has_tech = tech_engineers }
-					division_template = {
-						name = "Light Division"
-						division_names_group = DRE_INF_01
-						priority = 2
-		
-						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
-							infantry = { x = 0 y = 2 }
-				
-		    	   		 	infantry = { x = 1 y = 0 }
-							infantry = { x = 1 y = 1 }
-							infantry = { x = 1 y = 2 }
-						}
-						support = {
-							recon = { x = 0 y = 0 }
-							artillery = { x = 0 y = 1 }
-							engineer = { x = 0 y = 1 }
-						}
-					}
-					else = {
-						division_template = {
-							name = "Light Division"
-							division_names_group = DRE_INF_01
-							priority = 2
-			
-							regiments = {
-								infantry = { x = 0 y = 0 }
-								infantry = { x = 0 y = 1 }
-								infantry = { x = 0 y = 2 }
-					
-			    	   		 	infantry = { x = 1 y = 0 }
-								infantry = { x = 1 y = 1 }
-								infantry = { x = 1 y = 2 }
-							}
-							support = {
-								recon = { x = 0 y = 0 }
-								artillery = { x = 0 y = 1 }
-								engineer = { x = 0 y = 1 }
-							}
-						}					
-					}
-				}	
-				random_owned_controlled_state = {
-					prioritize = { 43 }
-					limit = { ROOT = { has_full_control_of_state = PREV } }
-					create_unit = {
-						division = "name = \"1. Light Division\" division_template = \"Light Division\" start_experience_factor = 1.0" 
-						owner = DRE
-					}
-				}
+			add_ideas = DRE_all_to_front
+			add_doctrine_cost_reduction = {
+				name = DRE_defensive_mastery
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_grand_battle_plan
 			}
-			hidden_effect = { set_technology = { DRE_light_infantry_tech = 1 } }
 		}
 	}
 
 	focus = {
-		id = DRE_form_parachute_battalions
-		icon = GFX_focus_generic_paratrooper
-		prerequisite = { focus = DRE_light_infantry_divisions_doctrine }
-		x = 3
-		y = 3
-		relative_position_id = DRE_home_defense
+		id = DRE_special_forces_training
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = DRE_defensive_mastery }
+		x = 0
+		y = 1
+		relative_position_id = DRE_defensive_mastery
 
 		cost = 10
 
 		ai_will_do = {
-			factor = 50
+			factor = 40
 		}
 
 		available = {
-
-		}
-
-		bypass = {
 
 		}
 
@@ -3580,8 +3462,14 @@ focus = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
-				name = DRE_form_parachute_battalions
-				bonus = 3.0
+				name = DRE_special_forces
+				bonus = 2.0
+				uses = 1
+				category = mountaineers_tech
+			}
+			add_tech_bonus = {
+				name = DRE_paratroopers
+				bonus = 2.0
 				uses = 1
 				category = para_tech
 			}
@@ -3595,10 +3483,10 @@ focus = {
 	focus = {
 		id = DRE_naval_warfare
 		icon = GFX_goal_generic_build_navy
-		prerequisite = { focus = DRE_secret_rearmament }
-		x = 15
+		prerequisite = { focus = DRE_bled_agreement }
+		x = 10
 		y = 1
-		relative_position_id = DRE_secret_rearmament
+		relative_position_id = DRE_bled_agreement
 
 		cost = 10
 

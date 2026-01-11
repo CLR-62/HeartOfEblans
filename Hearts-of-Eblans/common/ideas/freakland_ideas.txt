@@ -1,0 +1,78 @@
+
+
+ideas = {
+    country = {
+        freakland_start = {
+			allowed = {
+				always = no
+				is_in_array = {
+    		        array = global.freakland_members
+    		        value = THIS.id
+		        }
+			}
+			
+			picture = PYA_freakland
+
+			modifier = {
+				
+			}
+		}
+
+        freakland_rise = {
+			allowed = {
+				always = no
+				is_in_array = {
+    		        array = global.freakland_members
+    		        value = THIS.id
+		        }
+			}
+			
+			picture = PYA_freakland
+
+			modifier = {
+				stability_factor = 0.03
+				war_support_factor = 0.02
+                political_power_factor = 0.03
+			}
+		}
+
+        freakland_rise_2 = {
+			allowed = {
+				always = no
+				is_in_array = {
+    		        array = global.freakland_members
+    		        value = THIS.id
+		        }
+			}
+			
+			picture = PYA_freakland
+
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.04
+                political_power_factor = 0.05
+                army_morale_factor = 0.03
+			}
+		}
+
+        freakland_triumph = {
+			allowed = {
+				always = no
+				is_in_array = {
+    		        array = global.freakland_members
+    		        value = THIS.id
+		        }
+			}
+			
+			picture = PYA_freakland
+
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+                political_power_factor = 0.05
+                army_morale_factor = 0.05
+                research_speed_factor = 0.03
+			}
+		}
+    }
+}

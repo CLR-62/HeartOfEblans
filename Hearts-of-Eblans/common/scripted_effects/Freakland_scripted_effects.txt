@@ -1,0 +1,82 @@
+# CREATED BY CLR62 - 2025
+# Licensed under CC BY-NC-SA 4.0 for END USERS only
+# Full license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+# 
+# Paradox Interactive retains all rights to Hearts of Iron IV
+# Available on GitHub and Steam Workshop
+ 
+country_leaves_freakland = {
+	remove_from_array = {
+        global.freakland_members = THIS.id
+    }
+
+    clear_all_freakland_ideas = yes
+
+    news_event = { id = freakland.7  days = 5 }
+}
+
+clear_all_freakland_ideas = {
+    if = {
+        limit = { has_idea = freakland_start }
+        remove_ideas = freakland_start
+    }
+    if = {
+        limit = { has_idea = freakland_rise }
+        remove_ideas = freakland_rise
+    }
+    if = {
+        limit = { has_idea = freakland_rise_2 }
+        remove_ideas = freakland_rise_2
+    }
+    if = {
+        limit = { has_idea = freakland_triumph }
+        remove_ideas = freakland_triumph
+    }
+}
+
+update_freakland_idea = {
+    clear_all_freakland_ideas = yes
+
+    if = {
+        limit = {
+            check_variable = { global.freakland_level = 1 }
+        }
+        add_ideas = freakland_start
+    }
+    else_if = {
+        limit = {
+            check_variable = { global.freakland_level = 2 }
+        }
+        add_ideas = freakland_rise
+    }
+    else_if = {
+        limit = {
+            check_variable = { global.freakland_level = 3 }
+        }
+        add_ideas = freakland_rise_2
+    }
+    else_if = {
+        limit = {
+            check_variable = { global.freakland_level = 4 }
+        }
+        add_ideas = freakland_triumph
+    }
+}
+
+
+set_freakland_level = {
+    set_variable = { global.freakland_level = THIS.new_freakland_level }
+
+    every_country ={
+        limit = {
+            is_in_array = {
+    		    array = global.freakland_members
+    		    value = THIS.id
+		    }
+        }
+        update_freakland_idea = yes
+    }
+
+    set_variable = { THIS.new_freakland_level = 0 }
+}
+

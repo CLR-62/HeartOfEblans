@@ -20,11 +20,9 @@ on_actions = {
 			if = {
 				limit = { check_variable = { SVI_new_dumas_project < 2 } }
 				add_to_variable = { SVI_new_dumas_project = 1 }
-				log = "1 Added"
 			}
 			else_if = {
 				limit = { check_variable = { SVI_new_dumas_project = 2 } }
-				log = "Else if!"
 				set_variable = { SVI_new_dumas_project = 0 }
 				SVI = {
 					if = {

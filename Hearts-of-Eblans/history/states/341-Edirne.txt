@@ -9,6 +9,10 @@ state= {
 	
 	state_category = town
 
+	resources = {
+		coal = 2
+	}
+
 	history= {
 		owner = FLA
 		victory_points = {

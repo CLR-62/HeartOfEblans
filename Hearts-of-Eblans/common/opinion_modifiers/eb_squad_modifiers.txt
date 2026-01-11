@@ -29,6 +29,16 @@ opinion_modifiers = {
 		value = 10
 	}
 
+	DPN_guardian_of_peace_opinion = {
+		value = 15
+		decay = 0.2
+	}
+
+	DPN_democratic_neighbor = {
+		value = 20
+		decay = 0.1
+	}
+
 	GON_ham_trade_partner = {
 		value = 25
 	}
@@ -36,5 +46,9 @@ opinion_modifiers = {
 	HAM_DRE_friends_opinion = {
 		value = 35
 		decay = 0.25
+	}
+
+	HAM_hypecratia_ally = {
+		value = 100
 	}
 }

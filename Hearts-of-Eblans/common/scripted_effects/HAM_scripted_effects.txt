@@ -155,7 +155,122 @@ strong_siloviki_increase = {
 }
 
 check_siloviki_events = {
+    # При достижении порогов заинтересованности силовики предпринимают действия
+    
+    # Порог 25% - Слежка за активистами
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_siloviki_interes > 24 }
+            NOT = { has_country_flag = HAM_siloviki_stage_1 }
+        }
+        country_event = { id = hametova.70 days = 3 random_days = 5 }
+    }
+    
+    # Порог 40% - Обыски в штабах
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_siloviki_interes > 39 }
+            has_country_flag = HAM_siloviki_stage_1
+            NOT = { has_country_flag = HAM_siloviki_stage_2 }
+        }
 
+        country_event = { id = hametova.71 days = 2 random_days = 4 }
+    }
+    
+    # Порог 55% - Давление на СМИ
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_siloviki_interes > 54 }
+            has_country_flag = HAM_siloviki_stage_2
+            NOT = { has_country_flag = HAM_siloviki_stage_3 }
+        }
+            country_event = { id = hametova.72 days = 2 random_days = 3 }
+    }
+    
+    # Порог 70% - Аресты активистов
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_siloviki_interes > 69 }
+            has_country_flag = HAM_siloviki_stage_3
+            NOT = { has_country_flag = HAM_siloviki_stage_4 }
+        }
+        random_list = {
+            75 = {
+                country_event = { id = hametova.73 days = 1 random_days = 3 }
+            }
+            25 = {
+                # Ничего не происходит
+            }
+        }
+    }
+    
+    # Порог 85% - Попытка ареста Миланы Стар
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_siloviki_interes > 84 }
+            has_country_flag = HAM_siloviki_stage_4
+            NOT = { has_country_flag = HAM_siloviki_stage_5 }
+        }
+            country_event = { id = hametova.74 days = 1 random_days = 2 }
+    }
+    
+    # Порог 95% - Полный разгром оппозиции
+    if = {
+        limit = {
+            check_variable = { HAM_STAR_siloviki_interes > 94 }
+            has_country_flag = HAM_siloviki_stage_5
+            NOT = { has_country_flag = HAM_siloviki_stage_final }
+        }
+        country_event = { id = hametova.75 days = 1 }
+    }
+}
+
+# Эффект для снижения заинтересованности силовиков (можно использовать в событиях)
+reduce_siloviki_interest_weak = {
+    add_to_variable = { HAM_STAR_siloviki_interes = -5 }
+    clamp_variable = {
+        var = HAM_STAR_siloviki_interes
+        min = 0
+        max = 100
+    }
+}
+
+reduce_siloviki_interest_medium = {
+    add_to_variable = { HAM_STAR_siloviki_interes = -10 }
+    clamp_variable = {
+        var = HAM_STAR_siloviki_interes
+        min = 0
+        max = 100
+    }
+}
+
+reduce_siloviki_interest_strong = {
+    add_to_variable = { HAM_STAR_siloviki_interes = -20 }
+    clamp_variable = {
+        var = HAM_STAR_siloviki_interes
+        min = 0
+        max = 100
+    }
+}
+
+star_fire_and_disable_advisors = {
+    star_opposition_clear_left_advisor = yes
+    star_opposition_clear_right_advisor = yes
+	set_variable = { HAM_STAR_ADD_ADVISOR = 0}
+	set_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+    if = {
+        limit = {
+            NOT = {
+                check_variable = { STAR_FIRING_TIME = 0 }
+            }
+        }
+	    set_variable = { HAM_STAR_COOLDOWN = STAR_FIRING_TIME }
+    }
+    else = {
+        set_variable = { HAM_STAR_COOLDOWN = 90 }
+    }
+
+    set_variable = { STAR_FIRING_TIME = 0 }
 }
 
 
@@ -419,9 +534,68 @@ star_opposition_ideas_increase_activity = {
             add_idea = HAM_hamway_star_opposition_1_medium_idea
         }
     }
-    
-    
+}
 
+star_opposition_ideas_decrease_activity = {
+    # Уровень 3 -> понижаем активность
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_3_strenght_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_3_strenght_idea
+            add_idea = HAM_hamway_star_opposition_3_medium_idea
+        }
+    }
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_3_medium_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_3_medium_idea
+            add_idea = HAM_hamway_star_opposition_3_weak_idea
+        }
+    }
+    
+    # Уровень 2 -> понижаем активность
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_2_strenght_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_2_strenght_idea
+            add_idea = HAM_hamway_star_opposition_2_medium_idea
+        }
+    }
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_2_medium_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_2_medium_idea
+            add_idea = HAM_hamway_star_opposition_2_weak_idea
+        }
+    }
+    
+    # Уровень 1 -> понижаем активность
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_1_strenght_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_1_strenght_idea
+            add_idea = HAM_hamway_star_opposition_1_medium_idea
+        }
+    }
+    if = {
+        limit = {
+            has_idea = HAM_hamway_star_opposition_1_medium_idea
+        }
+        swap_ideas = {
+            remove_idea = HAM_hamway_star_opposition_1_medium_idea
+            add_idea = HAM_hamway_star_opposition_1_weak_idea
+        }
+    }
 }
 
 star_opposition_set_advisor_betsy = {
@@ -848,7 +1022,114 @@ HAM_hametova_elected = {
 HAM_star_elected = {
     HAM = {
         set_country_flag = HAM_STAR_ELECTED
-
         clr_country_flag = HAM_star_opposition_way
+        
+        # Смена правительства на демократическое
+        set_politics = {
+            ruling_party = democratic
+            elections_allowed = yes
+        }
+        
+        # Смена лидера на Милану Стар
+        create_country_leader = {
+            name = "Милана Стар"
+            desc = "HAM_milana_star_desc"
+            picture = "gfx/leaders/HAM/star.dds"
+            expire = "1965.1.1"
+            ideology = liberalism
+            traits = {
+                democratic_reformer
+            }
+        }
+        
+        # Бонусы за победу демократии
+        add_stability = 0.1
+        add_political_power = 100
+        
+        # Убрать идеи авторитаризма
+        if = { limit = { has_idea = HAM_siloviki_victory } remove_ideas = HAM_siloviki_victory }
+        if = { limit = { has_idea = HAM_internet_blocking } remove_ideas = HAM_internet_blocking }
+        if = { limit = { has_idea = HAM_organized_fso } remove_ideas = HAM_organized_fso }
+        if = { limit = { has_idea = HAM_reformed_police } remove_ideas = HAM_reformed_police }
+        
+        # Обнулить интерес силовиков - они больше не угроза
+        set_variable = { HAM_STAR_siloviki_interes = 0 }
+        
+        # Сбросить все флаги стадий силовиков
+        clr_country_flag = HAM_siloviki_stage_1
+        clr_country_flag = HAM_siloviki_stage_2
+        clr_country_flag = HAM_siloviki_stage_3
+        clr_country_flag = HAM_siloviki_stage_4
+        clr_country_flag = HAM_siloviki_stage_5
+        clr_country_flag = HAM_siloviki_stage_final
+        
+        # Сбросить кулдаун советников (если был)
+        clr_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN
+        set_variable = { HAM_STAR_COOLDOWN = 0 }
+        
+        # Отключить советников Хаметовой
+        set_country_flag = ham_dava_disable
+        set_country_flag = ham_kamil_disable
+        set_country_flag = ham_lera_simka_disable
+        set_country_flag = ham_amina_kikido_disable
+        set_country_flag = ham_nastya_knyzeva_disable
+        
+        # Убрать советников Хаметовой из правительства
+        if = { limit = { has_idea = ham_dava } remove_ideas = ham_dava }
+        if = { limit = { has_idea = ham_kamil_kikido } remove_ideas = ham_kamil_kikido }
+        if = { limit = { has_idea = ham_lera_simka } remove_ideas = ham_lera_simka }
+        if = { limit = { has_idea = ham_amina_kikido } remove_ideas = ham_amina_kikido }
+        if = { limit = { has_idea = ham_nastya_knyzeva } remove_ideas = ham_nastya_knyzeva }
+        
+        # Разблокировать советников Стар
+        clr_country_flag = ham_nekrasova_disable
+        
+        # Добавить идею победы демократии
+        add_ideas = HAM_democratic_victory
+    }
+}
+
+HAM_hametova_final_victory = {
+    HAM = {
+        set_country_flag = HAM_HAMETOVA_FINAL_VICTORY
+        set_country_flag = HAM_NO_MORE_ELECTIONS
+        
+        # Усиление хайпократии
+        add_popularity = {
+            ideology = hypecratia
+            popularity = 0.1
+        }
+        
+        # Ослабление демократии
+        add_popularity = {
+            ideology = democratic
+            popularity = -0.05
+        }
+        
+        # Удалить все идеи оппозиции после победы
+        if = { limit = { has_idea = HAM_hamway_star_opposition_1_weak_idea } remove_ideas = HAM_hamway_star_opposition_1_weak_idea }
+        if = { limit = { has_idea = HAM_hamway_star_opposition_1_medium_idea } remove_ideas = HAM_hamway_star_opposition_1_medium_idea }
+        if = { limit = { has_idea = HAM_hamway_star_opposition_1_strenght_idea } remove_ideas = HAM_hamway_star_opposition_1_strenght_idea }
+        if = { limit = { has_idea = HAM_hamway_star_opposition_2_weak_idea } remove_ideas = HAM_hamway_star_opposition_2_weak_idea }
+        if = { limit = { has_idea = HAM_hamway_star_opposition_2_medium_idea } remove_ideas = HAM_hamway_star_opposition_2_medium_idea }
+        if = { limit = { has_idea = HAM_hamway_star_opposition_2_strenght_idea } remove_ideas = HAM_hamway_star_opposition_2_strenght_idea }
+        if = { limit = { has_idea = HAM_hamway_star_opposition_3_weak_idea } remove_ideas = HAM_hamway_star_opposition_3_weak_idea }
+        if = { limit = { has_idea = HAM_hamway_star_opposition_3_medium_idea } remove_ideas = HAM_hamway_star_opposition_3_medium_idea }
+        if = { limit = { has_idea = HAM_hamway_star_opposition_3_strenght_idea } remove_ideas = HAM_hamway_star_opposition_3_strenght_idea }
+        
+        # Заблокировать советников Стар
+        set_country_flag = ham_filimonova_disable
+        set_country_flag = ham_star_mom_disable
+        set_country_flag = ham_amirchik_disable
+        set_country_flag = ham_nekrasova_disable
+        
+        # Удалить советников Стар из правительства
+        if = { limit = { has_idea = ham_filimonova } remove_ideas = ham_filimonova }
+        if = { limit = { has_idea = ham_star_mom } remove_ideas = ham_star_mom }
+        if = { limit = { has_idea = ham_nekrasova } remove_ideas = ham_nekrasova }
+        
+        hidden_effect = {
+            country_event = { id = hametova_elections.25 days = 2 }
+        }
     }
 }

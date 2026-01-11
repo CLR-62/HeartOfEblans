@@ -29,6 +29,14 @@ on_actions = {
                     remove_ideas = massive_otkrutka
                 }
             }
+
+            #if = {
+            #    limit = {
+            #        date = 2025.07.20
+            #    }
+#
+            #    news_event = { id = freakland.8 days = 2 }
+            #}
         }
     }
 }

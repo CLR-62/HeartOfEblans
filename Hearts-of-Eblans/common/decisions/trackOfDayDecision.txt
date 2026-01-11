@@ -65,7 +65,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 0}
@@ -112,7 +112,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 0 }
@@ -160,7 +160,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 0 }
@@ -211,7 +211,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 1 }
@@ -259,7 +259,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 1 }
@@ -307,7 +307,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 1 }
@@ -359,7 +359,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 2 }
@@ -407,7 +407,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 2 }
@@ -459,7 +459,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 3 }
@@ -506,7 +506,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 3 }
@@ -553,7 +553,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 3 }
@@ -605,7 +605,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 4 }
@@ -661,7 +661,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 6 }
@@ -708,7 +708,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 7 }
@@ -759,7 +759,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 8 }
@@ -807,7 +807,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 8 }
@@ -854,7 +854,7 @@ trackOfDay_cat = {
 	
 		complete_effect = {
 			hidden_effect = {
-				sound_effect = "tod_set_sound_sfx"
+				scoped_scoped_sound_effect = "tod_set_sound_sfx"
 				set_country_flag = TOD_already_activated
 			}
 			set_variable = { selected_album = 8 }

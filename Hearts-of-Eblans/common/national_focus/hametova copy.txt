@@ -69,6 +69,7 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = HAM_national_projects
 			custom_effect_tooltip = national_projects_willbe_unlocked_tt
+			add_political_power = 50
         }
     }
 
@@ -119,6 +120,8 @@ focus_tree = {
 				localization_key = squad_advisor_will_be_unlocked
 				ADVISOR = "ham_nastya_knyzeva"
 			}
+
+			add_political_power = 50
         }
     }
 
@@ -135,6 +138,10 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = HAM_subordination_above_all_idea
+			custom_effect_tooltip = HAM_opposition_decrease_tt
+			hidden_effect = {
+				star_opposition_ideas_decrease_activity = yes
+			}
         }
     }
 
@@ -154,6 +161,10 @@ focus_tree = {
 				remove_idea = HAM_subordination_above_all_idea
 				add_idea = HAM_promivka_mozgov_idea
 			}
+			custom_effect_tooltip = HAM_opposition_decrease_tt
+			hidden_effect = {
+				star_opposition_ideas_decrease_activity = yes
+			}
         }
     }
 
@@ -170,6 +181,10 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = HAM_reformed_police
+			custom_effect_tooltip = HAM_opposition_decrease_tt
+			hidden_effect = {
+				star_opposition_ideas_decrease_activity = yes
+			}
         }
     }
 
@@ -188,6 +203,11 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = HAM_organized_fso
 				remove_idea = HAM_reformed_police
+			}
+			custom_effect_tooltip = HAM_opposition_decrease_tt
+			hidden_effect = {
+				star_opposition_ideas_decrease_activity = yes
+				star_opposition_ideas_decrease_activity = yes
 			}
         }
     }
@@ -241,6 +261,7 @@ focus_tree = {
 
 		completion_reward = {
 			country_event = { id = hametova.9 hours = 2 }
+			add_political_power = 50
         }
     }
 
@@ -333,7 +354,7 @@ focus_tree = {
 		prerequisite = { focus = ham_content_reform }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.57 hours = 2 }
         }
     }
 
@@ -410,6 +431,10 @@ focus_tree = {
 			custom_effect_tooltip = {
 				localization_key = squad_advisor_will_be_unlocked
 				ADVISOR = "ham_tenderly"
+			}
+			custom_effect_tooltip = HAM_opposition_increase_tt
+			hidden_effect = {
+				star_opposition_ideas_increase_activity = yes
 			}
         }
     }
@@ -494,13 +519,15 @@ focus_tree = {
 		prerequisite = { focus = ham_full_prodashnost focus = ham_change_platform }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			custom_effect_tooltip = HAM_elections_hametova_tt
+			country_event = { id = hametova_elections.20 hours = 2 }
+			set_rule = { can_create_factions = yes }
         }
     }
 
 	focus = {
 		id = ham_east_compaign
-		icon = GFX_goal_HAM_second_term
+		icon = GFX_goal_HAM_eastern_mission
 		x = 7
 		y = 1
 		cost = 10
@@ -510,7 +537,7 @@ focus_tree = {
 		prerequisite = { focus = ham_new_doctrine focus = ham_political_moves }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.41 hours = 2 }
         }
     }
 
@@ -526,7 +553,7 @@ focus_tree = {
 		prerequisite = { focus = ham_east_compaign }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.42 hours = 2 }
         }
     }
 
@@ -542,7 +569,13 @@ focus_tree = {
 		prerequisite = { focus = ham_east_compaign }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			add_ideas = HAM_chernomorsk_fleet_glory
+			navy_experience = 25
+			add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = 20
+				producer = HAM
+			}
         }
     }
 
@@ -558,7 +591,16 @@ focus_tree = {
 		prerequisite = { focus = ham_chernomorsk_float_glory }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			swap_ideas = {
+				remove_idea = HAM_chernomorsk_fleet_glory
+				add_idea = HAM_veteran_seamen
+			}
+			add_tech_bonus = {
+				name = HAM_naval_tech
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
         }
     }
 
@@ -574,14 +616,28 @@ focus_tree = {
 		prerequisite = { focus = ham_reability_old_seamen }
 		prerequisite = { focus = ham_krasnodar_invasion }
 
+		available = {
+			has_war_with = CVD
+			has_country_flag = HAM_cvd_war_prolonged
+		}
+
+		bypass = {
+			NOT = { country_exists = CVD }
+		}
+
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			custom_effect_tooltip = HAM_cvd_annexation_offer_tt
+			hidden_effect = {
+				CVD = {
+					country_event = { id = hametova.81 days = 1 }
+				}
+			}
         }
     }
 
 	focus = {
 		id = ham_krasnodar_invasion
-		icon = GFX_goal_HAM_second_term
+		icon = GFX_goal_HAM_cvadrober_invasion
 		x = 0
 		y = 1
 		cost = 10
@@ -591,13 +647,13 @@ focus_tree = {
 		prerequisite = { focus = ham_cvadroeber_mission }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.43 hours = 2 }
         }
     }
 
 	focus = {
 		id = ham_west_compaign
-		icon = GFX_goal_HAM_second_term
+		icon = GFX_focus_generic_balkan_diplomacy
 		x = -6
 		y = 1
 		cost = 10
@@ -607,7 +663,7 @@ focus_tree = {
 		prerequisite = { focus = ham_new_doctrine }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.44 hours = 2 }
         }
     }
 
@@ -649,7 +705,7 @@ focus_tree = {
 
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
-				CHB = {
+				GVI = {
 					add_ideas = HAM_trading
 					add_opinion_modifier = {
 						target = PREV
@@ -691,7 +747,7 @@ focus_tree = {
 		prerequisite = { focus = ham_west_compaign }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.45 hours = 2 }
         }
     }
 
@@ -794,7 +850,7 @@ focus_tree = {
 		prerequisite = { focus = ham_drake_war_prepare }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.46 hours = 2 }
         }
     }
 
@@ -826,13 +882,13 @@ focus_tree = {
 		prerequisite = { focus = ham_drake_agreement_with_bratishkin focus = ham_drake_prepare_obstrel }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.47 hours = 2 }
         }
     }
 
 	focus = {
 		id = ham_nothern_compaign
-		icon = GFX_goal_HAM_second_term
+		icon = GFX_focus_GER_european_confederation
 		x = 0
 		y = 1
 		cost = 10
@@ -842,7 +898,7 @@ focus_tree = {
 		prerequisite = { focus = ham_new_doctrine }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.48 hours = 2 }
         }
     }
 
@@ -858,7 +914,7 @@ focus_tree = {
 		prerequisite = { focus = ham_nothern_compaign }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.49 hours = 2 }
         }
     }
 
@@ -874,7 +930,7 @@ focus_tree = {
 
 		available = {
 			BTK = {
-				has_comleted_focus = BTK_squadgaz
+				has_completed_focus = BTK_squadgaz
 			}
 		}
 
@@ -897,7 +953,7 @@ focus_tree = {
 		prerequisite = { focus = ham_vovgrad_delegation }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.50 hours = 2 }
         }
     }
 
@@ -912,7 +968,7 @@ focus_tree = {
 
 		available = {
 			BTK = {
-				has_comleted_focus = BTK_vovavia
+				has_completed_focus = BTK_vovavia
 			}
 		}
 
@@ -975,16 +1031,26 @@ focus_tree = {
 		mutually_exclusive = { focus = ham_perevorot_svi }
 
 		available = {
-			SVI = {
-				NOT = {
-					has_country_flag = SVI_destroyed_duma
+			if = {
+				limit = {
+					has_government = democratic
 				}
-				democratic > 0.44
+				SVI = {
+					NOT = {
+						has_country_flag = SVI_destroyed_duma
+					}
+					democratic > 0.44
+				}
+			}
+			else = {
+				SVI = {
+					hypecratia > 0.44
+				}
 			}
 		}
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.60 hours = 2 }
         }
     }
 
@@ -1000,7 +1066,7 @@ focus_tree = {
 		prerequisite = { focus = ham_sklonit_na_storony }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.61 hours = 2 }
         }
     }
 
@@ -1016,9 +1082,13 @@ focus_tree = {
 
 		prerequisite = { focus = ham_svoi_v_dumu }
 
+		available = {
+			has_government = hypecratia
+		}
+
 		completion_reward = {
 			custom_effect_tooltip = {
-				localization_key = hametova_star_decision_willopen_tt
+				localization_key = squad_decision_willopen_tt
 				DECISION_NAME = "militarize_partizanov"
 			}
         }
@@ -1068,12 +1138,18 @@ focus_tree = {
 		completion_reward = {
 			#Unlock typical anticorruption exposure decision
 			custom_effect_tooltip = {
-				localization_key = hametova_star_decision_willopen_tt
+				localization_key = squad_decision_willopen_tt
 				DECISION_NAME = "star_standart_exposure"
 			}
 
+			custom_effect_tooltip = siloviki_interes_increase_chance_tt
+
 			hidden_effect = {
 				ham_nekrasova = { unit_leader_event = { id = hametova.19 days = 25 random_days = 25 } }
+				random = {
+    				chance = 70
+					medium_siloviki_increase = yes
+				}
 			}
         }
     }
@@ -1139,11 +1215,17 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = {
-				localization_key = hametova_star_decision_willopen_tt
+				localization_key = squad_decision_willopen_tt
 				DECISION_NAME = "star_organisation_assist"
 			}
 
 			add_timed_idea = { idea = HAM_organisation_assist_idea days = 175 }
+
+			custom_effect_tooltip = siloviki_interes_increase_chance_tt
+
+			hidden_effect = {
+				weak_siloviki_increase = yes
+			}
         }
     }
 
@@ -1232,7 +1314,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = {
-				localization_key = hametova_star_decision_willopen_tt
+				localization_key = squad_decision_willopen_tt
 				DECISION_NAME = "form_supporters_net"
 			}
         }
@@ -1250,6 +1332,12 @@ focus_tree = {
 
 		completion_reward = {
 			country_event = { id = hametova.23 hours = 2 }
+
+			custom_effect_tooltip = siloviki_interes_increase_chance_tt
+
+			hidden_effect = {
+				medium_siloviki_increase = yes
+			}
         }
     }
 
@@ -1267,6 +1355,12 @@ focus_tree = {
 			add_political_power = 200
 			add_command_power = 20
 			add_stability = 0.03
+
+			custom_effect_tooltip = siloviki_interes_increase_chance_tt
+
+			hidden_effect = {
+				weak_siloviki_increase = yes
+			}
         }
     }
 
@@ -1303,7 +1397,7 @@ focus_tree = {
 		completion_reward = {
 			#likee_to_tiktok_change
 			custom_effect_tooltip = {
-				localization_key = hametova_star_decision_willopen_tt
+				localization_key = squad_decision_willopen_tt
 				DECISION_NAME = "likee_to_tiktok_change"
 			}
         }
@@ -1320,7 +1414,20 @@ focus_tree = {
 		prerequisite = { focus = ham_help_to_politzakluchennie }
 		prerequisite = { focus = ham_ona_vam_ne_nekrasova }
 
+		available = {
+			democratic > 0.25
+			custom_trigger_tooltip = {
+				tooltip = HAM_elections_star_available_tt
+				has_country_flag = HAM_star_opposition_way
+			}
+		}
+
+		bypass = {
+			has_country_flag = HAM_STAR_ELECTED
+		}
+
 		completion_reward = {
+			custom_effect_tooltip = HAM_elections_star_tt
 			country_event = { id = hametova_elections.3 hours = 2 }
         }
     }
@@ -1336,7 +1443,8 @@ focus_tree = {
 		prerequisite = { focus = ham_vibori_vibori }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.59 hours = 2 }
+			set_rule ={ can_create_factions = yes }
         }
     }
 
@@ -1357,7 +1465,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_department_of_war
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_goal_HAM_department_of_war
 		x = 2
 		y = 1
 		cost = 10
@@ -1404,7 +1512,7 @@ focus_tree = {
 		prerequisite = { focus = ham_department_of_war }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.53 hours = 2 }
         }
     }
 
@@ -1419,7 +1527,7 @@ focus_tree = {
 		prerequisite = { focus = ham_lagoda_question }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.54 hours = 2 }
         }
     }
 
@@ -1434,7 +1542,7 @@ focus_tree = {
 		prerequisite = { focus = ham_department_of_war }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.51 hours = 2 }
         }
     }
 
@@ -1445,12 +1553,13 @@ focus_tree = {
 		y = 1
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		allow_branch = { OR = { NOT = { has_country_flag = HAM_DRE_ALSO_PREPARING } NOT = { has_comleted_focus = ham_chickenbekonia_prepare } }}
+		allow_branch = { NOT = { has_country_flag = HAM_DRE_ALSO_PREPARING } }
 		relative_position_id = ham_chickenbekonia_prepare
 		prerequisite = { focus = ham_chickenbekonia_prepare }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			add_ideas = HAM_drake_military_prep
+			add_offsite_building = { type = arms_factory level = 2 }
         }
     }
 
@@ -1465,7 +1574,8 @@ focus_tree = {
 		prerequisite = { focus = ham_chickenbekonia_production_militarization }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			add_ideas = HAM_rapid_mobilization
+			add_manpower = 10000
         }
     }
 
@@ -1480,7 +1590,12 @@ focus_tree = {
 		prerequisite = { focus = ham_chickenbekonia_production_militarization }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			add_ideas = HAM_chickenbekonia_blockade
+			diplomatic_relation = {
+				country = CHB
+				relation = embargo
+				active = yes
+			}
         }
     }
 
@@ -1495,7 +1610,8 @@ focus_tree = {
 		prerequisite = { focus = ham_chickenbekonia_economical_blockade focus = ham_chickenbekonia_rapid_mobilisation }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			add_ideas = HAM_genshtab_organized
+			add_command_power = 50
         }
     }
 
@@ -1510,7 +1626,7 @@ focus_tree = {
 		prerequisite = { focus = ham_chickenbekonia_organize_genshtab }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.52 hours = 2 }
         }
     }
 
@@ -1521,12 +1637,18 @@ focus_tree = {
 		y = 1
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_comleted_focus = ham_chickenbekonia_prepare }
+		allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING }
 		relative_position_id = ham_chickenbekonia_prepare
 		prerequisite = { focus = ham_chickenbekonia_prepare }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			add_ideas = HAM_drake_cooperation_idea
+			DRE = {
+				add_opinion_modifier = {
+					target = HAM
+					modifier = HAM_DRE_friends_opinion
+				}
+			}
         }
     }
 
@@ -1537,12 +1659,14 @@ focus_tree = {
 		y = 1
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_comleted_focus = ham_chickenbekonia_prepare }
+		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_completed_focus = ham_chickenbekonia_prepare }
 		relative_position_id = ham_chickenbekonia_drake_cooperation
 		prerequisite = { focus = ham_chickenbekonia_drake_cooperation }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_war_support = 0.05
         }
     }
 
@@ -1554,12 +1678,14 @@ focus_tree = {
 		y = 1
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_comleted_focus = ham_chickenbekonia_prepare }
+		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_completed_focus = ham_chickenbekonia_prepare }
 		relative_position_id = ham_chickenbekonia_drake_cooperation
 		prerequisite = { focus = ham_chickenbekonia_drake_cooperation }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			add_political_power = 100
+			army_experience = 15
+			add_stability = 0.03
         }
     }
 
@@ -1570,12 +1696,18 @@ focus_tree = {
 		y = 1
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_comleted_focus = ham_chickenbekonia_prepare }
+		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_completed_focus = ham_chickenbekonia_prepare }
 		relative_position_id = ham_genshtab_corruption_inspections
 		prerequisite = { focus = ham_genshtab_corruption_inspections }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			add_ideas = HAM_war_experience_idea
+			add_tech_bonus = {
+				name = HAM_land_doctrine_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
         }
     }
 
@@ -1586,12 +1718,22 @@ focus_tree = {
 		y = 1
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_comleted_focus = ham_chickenbekonia_prepare }
+		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_completed_focus = ham_chickenbekonia_prepare }
 		relative_position_id = ham_industry_mobilisation
 		prerequisite = { focus = ham_industry_mobilisation }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 2000
+				target = DRE
+			}
+			DRE = {
+				add_opinion_modifier = {
+					target = HAM
+					modifier = GER_trading_partners
+				}
+			}
         }
     }
 
@@ -1602,12 +1744,14 @@ focus_tree = {
 		y = 1
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_comleted_focus = ham_chickenbekonia_prepare }
+		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_completed_focus = ham_chickenbekonia_prepare }
 		relative_position_id = ham_drake_postavki_star
 		prerequisite = { focus = ham_drake_postavki_star focus = ham_uchest_opit_velikoy_voyni }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			create_faction = "Хаметовско-Дрековский Альянс"
+			add_to_faction = DRE
+			add_war_support = 0.1
         }
     }
 
@@ -1618,12 +1762,12 @@ focus_tree = {
 		y = 1
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_comleted_focus = ham_chickenbekonia_prepare }
+		#allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING has_completed_focus = ham_chickenbekonia_prepare }
 		relative_position_id = ham_drake_soyuznaya_reshimost
 		prerequisite = { focus = ham_drake_soyuznaya_reshimost }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.62 hours = 2 }
         }
     }
 
@@ -1638,7 +1782,7 @@ focus_tree = {
 		prerequisite = { focus = ham_western_threats }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.55 hours = 2 }
         }
     }
 
@@ -1700,7 +1844,10 @@ focus_tree = {
 		prerequisite = { focus = ham_drekovia_question }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			DRE = {
+				add_timed_idea = { idea = HAM_drekovia_democratic_push days = 250 }
+			}
+			add_political_power = 75
         }
     }
 
@@ -1715,7 +1862,13 @@ focus_tree = {
 		prerequisite = { focus = ham_prepare_for_rise }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			add_ideas = HAM_drake_politicians
+			DRE = {
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.1
+				}
+			}
         }
     }
 
@@ -1730,13 +1883,13 @@ focus_tree = {
 		prerequisite = { focus = ham_prepare_for_rise }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.58 hours = 2 }
         }
     }
 
 	focus = {
 		id = ham_drake_organize_democratic_mitings
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_focus_BEL_v_for_victory
 		x = -1
 		y = 1
 		cost = 10
@@ -1745,7 +1898,14 @@ focus_tree = {
 		prerequisite = { focus = ham_drake_coop_stream focus = ham_drake_our_politicians }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			DRE = {
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.15
+				}
+				add_stability = -0.1
+			}
+			add_political_power = 50
         }
     }
 
@@ -1760,7 +1920,7 @@ focus_tree = {
 		prerequisite = { focus = ham_drake_organize_democratic_mitings }
 
 		completion_reward = {
-			#country_event = { id = hametova.1 hours = 2 }
+			country_event = { id = hametova.56 hours = 2 }
         }
     }
 
@@ -1779,7 +1939,13 @@ focus_tree = {
 		relative_position_id = ham_second_hametova_term
 
 		completion_reward = {
-			
+			add_ideas = HAM_industrial_effort_idea
+			add_tech_bonus = {
+				name = HAM_industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
         }
     }
 }

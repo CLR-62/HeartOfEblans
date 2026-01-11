@@ -4,12 +4,13 @@ hametova_opposition_category = {
 		#picture = GFX_decision_cat_picture_form_greater_greece
 
 		visible = {
-			always = yes
+			NOT = { has_idea = HAM_betsy_buff }
 		}
 		cost = 150
 
 		available = {
-			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_idea = HAM_betsy_buff }
 			has_completed_focus = ham_achieve_poleznie_svyazi
 		}
 
@@ -43,12 +44,13 @@ hametova_opposition_category = {
 		#picture = GFX_decision_cat_picture_form_greater_greece
 
 		visible = {
-			always = yes
+			NOT = { has_idea = HAM_lokel_buff }
 		}
 		cost = 150
 
 		available = {
-			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_idea = HAM_lokel_buff }
 			has_completed_focus = ham_otdel_deystviy
 		}
 
@@ -82,12 +84,13 @@ hametova_opposition_category = {
 		#picture = GFX_decision_cat_picture_form_greater_greece
 
 		visible = {
-			always = yes
+			NOT = { has_idea = HAM_vikishow_buff }
 		}
 		cost = 150
 
 		available = {
-			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_idea = HAM_vikishow_buff }
 			has_completed_focus = ham_achieve_poleznie_svyazi
 		}
 
@@ -120,12 +123,13 @@ hametova_opposition_category = {
 		#picture = GFX_decision_cat_picture_form_greater_greece
 
 		visible = {
-			always = yes
+			NOT = { has_idea = HAM_amirchik_buff }
 		}
 		cost = 150
 
 		available = {
-			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_idea = HAM_amirchik_buff }
 			has_completed_focus = ham_otdel_deystviy
 		}
 
@@ -158,12 +162,13 @@ hametova_opposition_category = {
 		#picture = GFX_decision_cat_picture_form_greater_greece
 
 		visible = {
-			always = yes
+			NOT = { has_idea = HAM_mairko_buff }
 		}
 		cost = 150
 
 		available = {
-			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_idea = HAM_mairko_buff }
 		}
 
 		complete_effect = {
@@ -196,12 +201,13 @@ hametova_opposition_category = {
 		#picture = GFX_decision_cat_picture_form_greater_greece
 
 		visible = {
-			always = yes
+			NOT = { has_idea = HAM_filimonova_buff }
 		}
 		cost = 150
 
 		available = {
-			NOT  = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_country_flag = HAM_STAR_ADVISOR_SET_COOLDOWN }
+			NOT = { has_idea = HAM_filimonova_buff }
 		}
 
 		complete_effect = {
@@ -262,13 +268,9 @@ hametova_work_opposition_category = {
 			hidden_effect = {
 				weak_star_popularity_increase = yes
         		add_command_power = -20
-				random_list = {
-				60 = {
-
-				}
-				40 = {
+				random = {
+					chance = 45
 					weak_siloviki_increase = yes
-				}
 				}
     		}
 		}
@@ -305,14 +307,9 @@ hametova_work_opposition_category = {
 			custom_effect_tooltip = siloviki_interes_increase_chance_tt
 
 			hidden_effect = {
-				weak_star_popularity_increase = yes
-				random_list = {
-					60 = {
-						weak_siloviki_increase = yes
-					}
-					40 = {
-
-					}
+				random = {
+					chance = 70
+					medium_siloviki_increase = yes
 				}
     		}
 		}
@@ -361,12 +358,11 @@ hametova_work_opposition_category = {
 			custom_effect_tooltip = siloviki_interes_increase_chance_tt
 
 			hidden_effect = {
-				weak_star_popularity_increase = yes
 				random_list = {
-					70 = {
+					60 = {
 						medium_siloviki_increase = yes
 					}
-					30 = {
+					40 = {
 						strong_siloviki_increase = yes
 					}
 				}
@@ -479,20 +475,7 @@ hametova_work_opposition_category = {
 
 			custom_effect_tooltip = {
         		localization_key = medium_star_popularity_increase_tt
-				medium_star_popularity_increase = yes
-			}
-
-			custom_effect_tooltip = {
-				localization_key = siloviki_interes_increase_chance_tt
-
-				random_list = {
-					60 = {
-						weak_siloviki_increase = yes
-					}
-					40 = {
-						medium_siloviki_increase = yes
-					}
-				}
+				strong_star_popularity_increase = yes
 			}
 		}
 
@@ -711,6 +694,15 @@ hametova_svinland_perevorot_cat = {
 			SVI = {
 				add_timed_idea = { idea = HAM_svinland_hypecratia_effort days = 410 }
 			}
+
+			if = {
+				limit = {
+					SVI = {
+						has_government = democratic
+					}
+				}
+				news_event = { id = squad_news.28 days = 12 }
+			}
 		}
 
 	
@@ -718,4 +710,44 @@ hametova_svinland_perevorot_cat = {
 			original_tag = HAM 
 		}
     }
+}
+
+hametova_cvd_war_category = {
+	
+	HAM_cvd_war_fiasco_timer = {
+		icon = GFX_decision_generic_military
+		
+		allowed = {
+			original_tag = HAM
+		}
+		
+		available = {
+			always = no
+		}
+		
+		activation = {
+			has_war_with = CVD
+			has_country_flag = HAM_cvd_war_started
+			NOT = { has_country_flag = HAM_cvd_war_prolonged }
+		}
+		
+		cancel_trigger = {
+			OR = {
+				NOT = { has_war_with = CVD }
+				has_country_flag = HAM_cvd_war_prolonged
+			}
+		}
+		
+		days_mission_timeout = 100
+		fire_only_once = yes
+		is_good = no
+		
+		timeout_effect = {
+			set_country_flag = HAM_cvd_war_prolonged
+			country_event = { id = hametova.84 }
+		}
+		
+		complete_effect = {
+		}
+	}
 }

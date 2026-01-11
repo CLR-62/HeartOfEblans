@@ -748,8 +748,24 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas =  PYA_freakland_hype
-			news_event = { id = squad_news.18 days = 2 }
+			news_event = { id = freakland.1 days = 2 }
+			custom_effect_tooltip = new_freakmember_tt
+			hidden_effect = {
+				PYA = {
+            	    add_to_array = {
+            	        array = global.freakland_members
+            	        value = THIS.id
+            	    }
+					country_event = { id = freakland.3 days = 23 }
+            	}
+			}
+
+			set_global_flag = freakland_created
+
+			hidden_effect = {
+				set_variable = { THIS.new_freakland_level = 1 }
+				set_freakland_level = yes
+			}
 		}
 		x = 22
 		y = 6

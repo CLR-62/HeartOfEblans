@@ -1,0 +1,99 @@
+on_actions = {
+    on_daily_PYA = {
+        effect = {
+            if = {
+                limit = {
+                    has_global_flag = freakland_created
+                }
+                add_to_variable = { global.daysAfterFreakland = 1 }
+            }
+
+            if = {
+                limit = {
+                    check_variable = { global.daysAfterFreakland = 150 }
+                    NOT = { has_global_flag = freakland_disolated_flag }
+                    has_global_flag = freakland_created
+                }
+
+                set_global_flag = freakland_disolated_flag
+
+                every_country = {
+				    limit = {
+				    	is_in_array = {
+    		                array = global.freakland_members
+    		                value = THIS.id
+		                }
+				    }
+                    country_event = { id = freakland.2 days = 2 }
+                }
+            }
+
+            if = {
+                limit = {
+                    check_variable = { global.daysAfterFreakland = 80 }
+                    #date = 2023.07.16
+                    NOT = { has_global_flag = freakland_greatwar_flag }
+                    has_global_flag = freakland_created
+                }
+                PYA = {
+                    activate_mission = freakland_grief_crisis_mission
+                }
+                set_global_flag = freakland_greatwar_flag
+                news_event = { id = freakland.10 days = 2 }
+            }
+
+            if = {
+                limit = {
+                    #date = 2023.07.20
+                    check_variable = { global.daysAfterFreakland = 90 }
+                    NOT = { has_global_flag = freakland_triumph_flag }
+                    has_global_flag = freakland_created
+                }
+
+                set_global_flag = freakland_triumph_flag
+
+                hidden_effect = {
+				    set_variable = { THIS.new_freakland_level = 4 }
+				    set_freakland_level = yes
+			    }
+
+                news_event = { id = freakland.9 days = 2 }
+            }
+
+            if = {
+                limit = {
+                    check_variable = { global.daysAfterFreakland = 105 }
+                    NOT = { has_global_flag = freakland_mzlf_disagree }
+                    has_global_flag = freakland_created
+                }
+                set_global_flag = freakland_mzlf_disagree
+
+                news_event = { id = freakland.11 days = 2 }
+            }
+
+            if = {
+                limit = {
+                    check_variable = { global.daysAfterFreakland = 45 }
+                    NOT = { has_global_flag = freakland_mafanya_invitation }
+                    has_global_flag = freakland_created
+                }
+                set_global_flag = freakland_mafanya_invitation
+                PYA = {
+                    news_event = { id = freakland.12 days = 2 }
+                }
+            }
+
+            if = {
+                limit = {
+                    check_variable = { global.daysAfterFreakland = 60 }
+                    NOT = { has_global_flag = freakland_brff_invitation }
+                    has_global_flag = freakland_created
+                }
+                set_global_flag = freakland_brff_invitation
+                PYA = {
+                    news_event = { id = freakland.14 days = 2 }
+                }
+            }
+        }
+    }
+}

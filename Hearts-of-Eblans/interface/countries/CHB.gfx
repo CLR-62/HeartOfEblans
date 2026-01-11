@@ -1,0 +1,6 @@
+spriteTypes = {
+    spriteType = {
+		name = "GFX_decision_CHB_smartiki_header"
+		texturefile = "gfx/interface/custom_gui/CHB/CHB_smartiki.dds"
+	}
+}

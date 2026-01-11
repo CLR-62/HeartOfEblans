@@ -1,0 +1,28 @@
+scripted_gui = {
+
+	freakland_decisions_gui = {
+		context_type = decision_category
+		window_name = "Freakland_decision_window"
+		visible = {
+			original_tag = PYA
+		}
+		
+		effects = {
+            
+		}
+		
+		properties = {
+			freakland_member_flag = {
+				image = [THIS.GetFlag]
+			}
+		}
+
+		dynamic_lists = {
+			freakland_server_members_listbox = {
+				array = global.freakland_members
+				entry_container = freakland_members_list_entry
+				change_scope = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+scripted_gui = {
+
+	CHB_smartiki_header_gui = {
+		context_type = decision_category
+		window_name = "SmartikiGroup_window"
+		visible = {
+			original_tag = CHB
+		}
+		
+		effects = {
+            
+		}
+		
+		properties = {
+
+		}
+	}
+}

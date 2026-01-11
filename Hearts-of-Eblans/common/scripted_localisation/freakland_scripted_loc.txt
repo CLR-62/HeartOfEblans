@@ -1,0 +1,27 @@
+defined_text = {
+    name = get_freakland_idea
+    text = {
+        trigger = {
+            check_variable = { global.freakland_level = 1 }
+        }
+        localization_key = idea_desc|freakland_start
+    }
+    text = {
+        trigger = {
+            check_variable = { global.freakland_level = 2 }
+        }
+        localization_key = idea_desc|freakland_rise
+    }
+    text = {
+        trigger = {
+            check_variable = { global.freakland_level = 3 }
+        }
+        localization_key = idea_desc|freakland_rise_2
+    }
+    text = {
+        trigger = {
+            check_variable = { global.freakland_level = 4 }
+        }
+        localization_key = idea_desc|freakland_triumph
+    }
+}

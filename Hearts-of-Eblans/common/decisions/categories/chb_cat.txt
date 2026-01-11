@@ -10,10 +10,27 @@ CHB_peace_deals_category = {
 
 	visible = {
 		original_tag = CHB
-		CHB = { NOT = { has_country_flag = peace_started }
+		CHB = { NOT = { has_country_flag = peace_started } }
 		DRE = {
 			has_country_flag = SDO_started_chb
 		}
 		has_war_with = DRE
 	}
-}}
+}
+
+CHB_smartiki_category = {
+
+	priority = 100
+	icon = GFX_decision_category_generic_military
+	picture = GFX_decision_category_military
+
+	scripted_gui = CHB_smartiki_header_gui
+
+	allowed = {
+		original_tag = CHB
+	}
+
+	visible = {
+		original_tag = CHB
+	}
+}

@@ -5,6 +5,11 @@ state={
 	manpower = 1317157
 	
 	state_category = town
+
+	resources = {
+		coal = 3
+	}
+
 	history={
 		owner = LID
 		add_core_of = LID

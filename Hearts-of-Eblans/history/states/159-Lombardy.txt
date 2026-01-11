@@ -5,6 +5,10 @@ state = {
 	manpower = 5597704
 	state_category = metropolis
 
+	resources = {
+		coal = 11
+	}
+
 	history = {
 		owner = SLA
 		victory_points = { #Milano

@@ -1,0 +1,77 @@
+# CREATED BY CLR62 - 2025
+# Licensed under CC BY-NC-SA 4.0 for END USERS only
+# Full license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+# 
+# Paradox Interactive retains all rights to Hearts of Iron IV
+# Available on GitHub and Steam Workshop
+
+
+freakland_decisions_category = {
+
+	freakland_grief_crisis_mission = {
+		priority = 10
+
+		icon = GFX_decision_revolt
+
+		#allowed = { always = no }
+
+		visible = {
+			original_tag = PYA
+            has_global_flag = freakland_greatwar_flag
+		}
+
+        available = {
+            always = no
+        }
+
+		days_mission_timeout = 150
+
+		fire_only_once = yes
+
+		cancel_if_not_visible = yes
+
+		is_good = no
+
+		timeout_effect = {
+            news_event = { id = freakland.13 days = 3 }
+		}
+	}
+
+
+	stint_freakland_invite = {
+		icon = eng_trade_unions_support
+		cost = 50
+
+        fire_only_once = yes
+
+        visible = {
+            original_tag = PYA
+        }
+		
+		complete_effect = {
+			GON = {
+                country_event = { id = freakland.5 days = 3}
+            }
+		}
+	}
+
+	leave_freakland = {
+		icon = eng_trade_unions_support
+		cost = 50
+
+        fire_only_once = yes
+
+        visible = {
+            NOT = { original_tag = PYA }
+        }
+		
+		complete_effect = {
+			THIS = {
+                custom_effect_tooltip = leave_freakland_tt
+                hidden_effect = {
+                    country_leaves_freakland = yes
+                }
+            }
+		}
+	}
+}

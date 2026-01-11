@@ -123,7 +123,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Милана Стар"
 	desc = "POLITICS_PRINCE_PAUL_DESC"
-	picture = "star.dds"
+	picture = "gfx/leaders/HAM/star.dds"
 	
 	ideology = liberalism
 	traits = {

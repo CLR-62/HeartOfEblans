@@ -6,6 +6,7 @@ state={
 	}
 	resources={
 		oil=3
+		coal = 3
 	}
 	manpower=364000
 	buildings_max_level_factor=1.000

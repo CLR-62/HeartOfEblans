@@ -22,7 +22,12 @@ characters = {
                         has_completed_focus = ham_more_adult
                     }
                 }
-			}	
+			}
+			available = {
+				NOT = { has_country_flag = ham_kamil_disable }
+				NOT = { has_country_flag = HAM_STAR_ELECTED }
+				has_government = hypecratia
+			}
 			traits  = {
 				hypecratia_booster
 			}	
@@ -41,9 +46,8 @@ characters = {
 				original_tag = HAM
 				has_government = hypecratia
 				has_completed_focus = ham_endless_detstvo
-				NOT = {
-                    has_completed_focus = ham_more_adult
-                }
+				NOT = { has_completed_focus = ham_more_adult }
+				NOT = { has_country_flag = HAM_STAR_ELECTED }
 			}
         }
 	}
@@ -63,14 +67,18 @@ characters = {
 			allowed = {
 				AND = {
 				    has_government = hypecratia
-                    NOT = {
-                        has_completed_focus = ham_more_adult
-                    }
 					has_completed_focus = ham_sovet_vernih
                 }
 			}	
+			available = {
+				has_government = hypecratia
+				NOT = { has_completed_focus = ham_more_adult }
+				has_completed_focus = ham_sovet_vernih
+				NOT = { has_country_flag = ham_lera_simka_disable }
+				NOT = { has_country_flag = HAM_STAR_ELECTED }
+			}
 			traits  = {
-				
+				smooth_talking_charmer
 			}	
 			cost = 65
 		}
@@ -86,10 +94,9 @@ characters = {
 			visible = { 
 				original_tag = HAM
 				has_government = hypecratia
-				NOT = {
-                    has_completed_focus = ham_more_adult
-                }
+				NOT = { has_completed_focus = ham_more_adult }
 				has_completed_focus = ham_sovet_vernih
+				NOT = { has_country_flag = HAM_STAR_ELECTED }
 			}
         }
 	}
@@ -111,9 +118,14 @@ characters = {
 				    has_government = hypecratia
                     has_completed_focus = ham_endless_detstvo
                 }
-			}	
+			}
+			available = {
+				has_government = hypecratia
+				NOT = { has_country_flag = ham_amina_kikido_disable }
+				NOT = { has_country_flag = HAM_STAR_ELECTED }
+			}
 			traits  = {
-				
+				popular_figurehead
 			}	
 			cost = 65
 		}
@@ -136,6 +148,7 @@ characters = {
 			}	
 			available = {
 				NOT = { has_country_flag = ham_dava_disable }
+				NOT = { has_country_flag = HAM_STAR_ELECTED }
 				has_government = hypecratia
 			}
 			traits  = {
@@ -151,7 +164,12 @@ characters = {
 			allowed = {
                 original_tag = HAM
 				has_government = hypecratia
-			}	
+			}
+			available = {
+				NOT = { has_country_flag = ham_dava_disable }
+				NOT = { has_country_flag = HAM_STAR_ELECTED }
+				has_government = hypecratia
+			}
 			traits  = {
                 army_chief_reform_2
 			}	
@@ -166,7 +184,11 @@ characters = {
             planning_skill = 2
             logistics_skill = 1
             legacy_id = -1
-			visible = { original_tag = HAM has_government = hypecratia }
+			visible = { 
+				original_tag = HAM 
+				has_government = hypecratia 
+				NOT = { has_country_flag = HAM_STAR_ELECTED }
+			}
        }
 	}
 
@@ -187,9 +209,14 @@ characters = {
 				    has_government = hypecratia
                     has_completed_focus = ham_sovet_vernih
                 }
-			}	
+			}
+			available = {
+				has_government = hypecratia
+				NOT = { has_country_flag = ham_nastya_knyzeva_disable }
+				NOT = { has_country_flag = HAM_STAR_ELECTED }
+			}
 			traits  = {
-				
+				silent_workhorse
 			}	
 			cost = 65
 		}
@@ -208,10 +235,17 @@ characters = {
 			slot = political_advisor
 			idea_token = ham_filimonova
 			allowed = {
-				has_completed_focus = ham_opposition_rise
-			}	
+				OR = {
+					has_completed_focus = ham_opposition_rise
+					has_country_flag = HAM_STAR_ELECTED
+				}
+			}
+			available = {
+				NOT = { has_country_flag = ham_filimonova_disable }
+				NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+			}
 			traits  = {
-				
+				democratic_reformer
 			}	
 			cost = 65
 		}
@@ -235,7 +269,12 @@ characters = {
             logistics_skill = 1
             legacy_id = -1
 			visible = { 
-				has_completed_focus = ham_opposition_rise
+				OR = {
+					has_completed_focus = ham_opposition_rise
+					has_country_flag = HAM_STAR_ELECTED
+				}
+				NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+				NOT = { has_country_flag = ham_amirchik_disable }
 			}
         }
 	}
@@ -253,8 +292,15 @@ characters = {
 			slot = political_advisor
 			idea_token = ham_star_mom
 			allowed = {
-				has_completed_focus = ham_opposition_rise
-			}	
+				OR = {
+					has_completed_focus = ham_opposition_rise
+					has_country_flag = HAM_STAR_ELECTED
+				}
+			}
+			available = {
+				NOT = { has_country_flag = ham_star_mom_disable }
+				NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+			}
 			traits  = {
 				producer
 			}	
@@ -281,6 +327,8 @@ characters = {
             legacy_id = -1
 			visible = { 
 				has_completed_focus = ham_more_adult
+				NOT = { has_country_flag = HAM_STAR_ELECTED }
+				has_government = hypecratia
 			}
         }
 	}
@@ -301,13 +349,26 @@ characters = {
 				OR = {
 					has_completed_focus = ham_more_adult
 					has_completed_focus = ham_opposition_rise
+					has_country_flag = HAM_STAR_ELECTED
 				}
 			}
 			available = {
 				NOT = { has_country_flag = ham_nekrasova_disable }
+				# Доступна только для одной из сторон
+				OR = {
+					# Если победила Стар - нет ограничений
+					has_country_flag = HAM_STAR_ELECTED
+					# Если идём по пути оппозиции - тоже ок
+					has_completed_focus = ham_opposition_rise
+					# Если идём по взрослому пути Хаметовой и не победила Стар
+					AND = {
+						has_completed_focus = ham_more_adult
+						NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+					}
+				}
 			}
 			traits  = {
-				
+				media_magnate
 			}	
 			cost = 65
 		}

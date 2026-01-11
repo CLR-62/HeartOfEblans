@@ -38,22 +38,6 @@ ideas = {
 			}
 		}
 
-		PYA_freakland_hype = {
-			allowed = {
-				always = no
-				original_tag = PYA
-			}
-			
-			picture = PYA_freakland
-
-			modifier = {
-				army_morale_factor = 0.12
-				production_speed_buildings_factor = 0.05
-				political_power_cost = -0.1
-				stability_weekly = 0.005
-			}
-		}
-
 		PYA_fugabots_subsidies = {
 			allowed = {
 				always = no

@@ -1,0 +1,321 @@
+add_namespace = freakland
+
+#FREAKLAND NOW
+country_event = {
+	id = freakland.2
+	title = freakland.2.t
+	desc = freakland.2.d
+	picture = GFX_freakland_now_event
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.2.a
+		ai_chance = {
+			factor = 90
+		}
+		custom_effect_tooltip = freak_idea_will_change_tt
+	}
+
+	immediate = {
+		hidden_effect = {
+			play_song = "freakland_disolate"
+		}
+	}
+}
+
+
+news_event = {
+	id = freakland.1
+	title = freakland.1.t
+	desc = freakland.1.d
+	picture = GFX_report_event_freakland
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = freakland.1.a #yes
+		ai_chance = {
+			factor = 90
+		}
+		
+	}
+
+	immediate = {
+		hidden_effect = {
+		 play_song = "freakland"
+		}
+	}
+}
+
+country_event = {
+	id = freakland.3
+	title = freakland.3.t
+	desc = freakland.3.d
+	picture = GFX_report_event_mister_pyatorka
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.3.a
+		ai_chance = {
+			factor = 90
+		}
+
+		MPK = {
+            add_to_array = {
+                array = global.freakland_members
+                value = THIS.id
+            }
+			custom_effect_tooltip = new_freakmember_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			hidden_effect = {
+				update_freakland_idea = yes
+			}
+
+			news_event = { id = freakland.4 days = 5 }
+        }
+	}
+}
+
+#NEW FREAKLAND MEMBER
+news_event = {
+	id = freakland.4
+	title = freakland.4.t
+	desc = freakland.4.d
+	picture = GFX_report_event_freakland
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = freakland.4.a #yes
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#freakland invite
+country_event = {
+	id = freakland.5
+	title = freakland.5.t
+	desc = freakland.5.d
+	picture = GFX_report_event_freakland_country
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.5.a
+		ai_chance = {
+			factor = 90
+		}
+
+		THIS = {
+            add_to_array = {
+                array = global.freakland_members
+                value = THIS.id
+            }
+			custom_effect_tooltip = new_freakmember_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = squad_decision_willopen_tt
+				DECISION_NAME = freakland_decisions_category
+			}
+
+			hidden_effect = {
+				update_freakland_idea = yes
+				news_event = { id = freakland.4 days = 5 }
+			}
+        }
+	}
+
+	option = {
+		name = freakland.5.b
+		ai_chance = {
+			factor = 90
+		}
+		PYA = {
+			country_event = { id = freakland.6 days = 4 }
+		}
+	}
+}
+
+#invite denied
+country_event = {
+	id = freakland.6
+	title = freakland.6.t
+	desc = freakland.6.d
+	picture = GFX_report_event_freakland_country
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.6.a
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#LEAVES FREAKLAND
+news_event = {
+	id = freakland.7
+	title = freakland.7.t
+	desc = freakland.7.d
+	picture = GFX_report_event_freakland
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = freakland.7.a #yes
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#Pyatorka tailand
+news_event = {
+	id = freakland.8
+	title = freakland.8.t
+	desc = freakland.8.d
+	picture = GFX_report_event_pyatorka_tailand
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = freakland.8.a #yes
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#Freakland triupmh
+news_event = {
+	id = freakland.9
+	title = freakland.9.t
+	desc = freakland.9.d
+	picture = GFX_report_event_freakland_triump
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = freakland.9.a #yes
+		ai_chance = {
+			factor = 90
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+		 play_song = "freakland_triumph_music"
+		}
+	}
+}
+
+#Great war on Freakland
+news_event = {
+	id = freakland.10
+	title = freakland.10.t
+	desc = freakland.10.d
+	picture = GFX_report_event_freak_war
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = freakland.10.a #yes
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+
+#Mazelof disagree
+news_event = {
+	id = freakland.11
+	title = freakland.11.t
+	desc = freakland.11.d
+	picture = GFX_report_event_mzlf_freakland
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = freakland.11.a #yes
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#MAFANYA NEED
+country_event = {
+	id = freakland.12
+	title = freakland.12.t
+	desc = freakland.12.d
+	picture = GFX_report_event_mafanya_event
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.12.a
+		ai_chance = {
+			factor = 90
+		}
+
+		MNY = {
+			country_event = freakland.5
+        }
+	}
+}
+
+#Grief conference
+news_event = {
+	id = freakland.13
+	title = freakland.13.t
+	desc = freakland.13.d
+	picture = GFX_report_event_freakland_confirence
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = freakland.13.a
+		ai_chance = {
+			factor = 90
+		}
+
+	}
+}
+
+#BRFF need
+country_event = {
+	id = freakland.14
+	title = freakland.14.t
+	desc = freakland.14.d
+	picture = GFX_report_event_brtf_event
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.14.a
+		ai_chance = {
+			factor = 90
+		}
+
+		BTK = {
+			country_event = freakland.5
+        }
+	}
+}
+

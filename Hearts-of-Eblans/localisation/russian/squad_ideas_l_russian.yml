@@ -62,6 +62,8 @@
 
 
  DRE_treaty_of_triannon: "Ебланский договор"
+ DRE_rearmament_momentum: "Импульс перевооружения"
+ DRE_rearmament_momentum_desc: "Наша нация воспрянула духом после отмены унизительных ограничений! Военная промышленность работает на полную мощность, а граждане с энтузиазмом вступают в ряды армии."
  SVI_buster_oposite: "Бустерградовская оппозиция"
  SVI_pacific_army: "Армия пацифистов"
  SVI_diplomatic_country: "Страна - Дипломат"
@@ -390,7 +392,6 @@
  
  PYA_new_music_idea: "Новая музыка"
  PYA_developed_farms_idea: "Развитые фермы"
- PYA_freakland_hype: "Хайп Фрикленда"
  PYA_fugabots_subsidies: "Субсидирование Фугаботов"
  PYA_fugabots_attack: "Атака Фугаботов"
  PYA_42_force_idea: "Форс 42"

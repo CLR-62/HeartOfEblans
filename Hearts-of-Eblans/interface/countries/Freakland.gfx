@@ -1,0 +1,6 @@
+SpriteTypes = {
+    spriteType = {
+		name = "GFX_Freakland_logo"
+		texturefile = "gfx/interface/custom_gui/Freakland/freakland.dds"
+	}	
+}

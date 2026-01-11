@@ -1,4 +1,15 @@
 spriteTypes = {
+
+	frameAnimatedSpriteType = {
+        name = "GFX_freakland_now_event"
+        texturefile = "gfx/event_pictures/test.dds"
+        noOfFrames = 108
+        loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+    }
 	
 	spriteType = {
 		name = "GFX_report_event_picture_GON_1"
@@ -9,10 +20,52 @@ spriteTypes = {
 		name = "GFX_report_event_anschlus_drake"
 		texturefile = "gfx/event_pictures/report_event_anchlus_dreyka.dds"
 	}
+
+
+	spriteType = {
+		name = "GFX_report_event_democracy_threat"
+		texturefile = "gfx/event_pictures/svi_democracy_threat.dds"
+	}
 	
 	spriteType = {
 		name = "GFX_report_event_svo_preparing_begin"
 		texturefile = "gfx/event_pictures/dreyk_ready.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_report_event_pyatorka_tailand"
+		texturefile = "gfx/event_pictures/pyatorka_tailand.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_freak_war"
+		texturefile = "gfx/event_pictures/freak_war.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_mzlf_freakland"
+		texturefile = "gfx/event_pictures/mzlf_freakland.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_freakland_triump"
+		texturefile = "gfx/event_pictures/freakland_triump.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_mafanya_event"
+		texturefile = "gfx/event_pictures/mafanya_event.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_freakland_confirence"
+		texturefile = "gfx/event_pictures/freakland_confirence.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_brtf_event"
+		texturefile = "gfx/event_pictures/brtf_event.dds"
 	}
 
 	spriteType = {
@@ -24,6 +77,16 @@ spriteTypes = {
 		name = "GFX_report_event_stariybog"
 		texturefile = "gfx/event_pictures/pya_stariybog.dds"
 	}	
+
+	spriteType = {
+		name = "GFX_report_event_mister_pyatorka"
+		texturefile = "gfx/event_pictures/mister_pyatorka.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_freakland_country"
+		texturefile = "gfx/event_pictures/freakland.dds"
+	}	
 	
 	spriteType = {
 		name = "GFX_report_event_newhypewave"
@@ -33,6 +96,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_freakland"
 		texturefile = "gfx/event_pictures/pya_freakland.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_report_event_star_deport"
+		texturefile = "gfx/event_pictures/ham_star_deport.dds"
 	}	
 	
 	spriteType = {

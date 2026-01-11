@@ -13,3 +13,230 @@ CHB_peace_deals_category = {
 		}
 	}
 }
+
+#####################################
+### БАТАЛЬОНЫ СМАРТИКОВ ###
+#####################################
+
+CHB_smartiki_category = {
+
+	# Батальон "Смартик-Альфа"
+	CHB_spawn_smartiki_alpha = {
+		icon = generic_army_support
+		cost = 50
+
+		fire_only_once = no
+
+		days_re_enable = 365
+
+		allowed = {
+			original_tag = CHB
+		}
+
+		available = {
+			has_war = yes
+			num_of_military_factories > 5
+		}
+
+		visible = {
+			original_tag = CHB
+		}
+
+		days_remove = 20
+
+		complete_effect = {
+			custom_effect_tooltip = CHB_smartiki_training_tt
+			add_manpower = -1000
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = CHB_smartiki_spawned_tt
+			random_owned_controlled_state = {
+				limit = { 
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+				}
+				create_unit = {
+					division = "name = \"1-й бат. Смартик-Альфа\" division_template = \"Smartiki Battalion\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					owner = CHB
+				}
+			}
+		}
+	}
+
+	# Батальон "Смартик-Браво"
+	CHB_spawn_smartiki_bravo = {
+		icon = generic_army_support
+		cost = 50
+
+		fire_only_once = no
+
+		days_re_enable = 365
+
+		allowed = {
+			original_tag = CHB
+		}
+
+		available = {
+			has_war = yes
+			num_of_military_factories > 5
+		}
+
+		visible = {
+			original_tag = CHB
+		}
+
+		days_remove = 20
+
+		complete_effect = {
+			custom_effect_tooltip = CHB_smartiki_training_tt
+			add_manpower = -1000
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = CHB_smartiki_spawned_tt
+			random_owned_controlled_state = {
+				limit = { 
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+				}
+				create_unit = {
+					division = "name = \"2-й бат. Смартик-Браво\" division_template = \"Smartiki Battalion\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					owner = CHB
+				}
+			}
+		}
+	}
+
+	# Батальон "Смартик-Чарли"
+	CHB_spawn_smartiki_charlie = {
+		icon = generic_army_support
+		cost = 50
+
+		fire_only_once = no
+
+		days_re_enable = 365
+
+		allowed = {
+			original_tag = CHB
+		}
+
+		available = {
+			has_war = yes
+			num_of_military_factories > 8
+		}
+
+		visible = {
+			original_tag = CHB
+		}
+
+		days_remove = 20
+
+		complete_effect = {
+			custom_effect_tooltip = CHB_smartiki_training_tt
+			add_manpower = -1000
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = CHB_smartiki_spawned_tt
+			random_owned_controlled_state = {
+				limit = { 
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+				}
+				create_unit = {
+					division = "name = \"3-й бат. Смартик-Чарли\" division_template = \"Smartiki Battalion\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					owner = CHB
+				}
+			}
+		}
+	}
+
+	# Батальон "Смартик-Дельта"
+	CHB_spawn_smartiki_delta = {
+		icon = generic_army_support
+		cost = 75
+
+		fire_only_once = no
+
+		days_re_enable = 365
+
+		allowed = {
+			original_tag = CHB
+		}
+
+		available = {
+			has_war = yes
+			num_of_military_factories > 10
+		}
+
+		visible = {
+			original_tag = CHB
+		}
+
+		days_remove = 20
+
+		complete_effect = {
+			custom_effect_tooltip = CHB_smartiki_training_tt
+			add_manpower = -1000
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = CHB_smartiki_spawned_tt
+			random_owned_controlled_state = {
+				limit = { 
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+				}
+				create_unit = {
+					division = "name = \"4-й бат. Смартик-Дельта\" division_template = \"Smartiki Battalion\" start_experience_factor = 0.6 start_equipment_factor = 1.0"
+					owner = CHB
+				}
+			}
+		}
+	}
+
+	# Батальон "Смартик-Эхо" (элитный)
+	CHB_spawn_smartiki_echo = {
+		icon = generic_army_support
+		cost = 100
+
+		fire_only_once = no
+
+		days_re_enable = 365
+
+		allowed = {
+			original_tag = CHB
+		}
+
+		available = {
+			has_war = yes
+			num_of_military_factories > 15
+		}
+
+		visible = {
+			original_tag = CHB
+		}
+
+		days_remove = 20
+
+		complete_effect = {
+			custom_effect_tooltip = CHB_smartiki_elite_training_tt
+			add_manpower = -1500
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = CHB_smartiki_elite_spawned_tt
+			random_owned_controlled_state = {
+				limit = { 
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+				}
+				create_unit = {
+					division = "name = \"5-й бат. Смартик-Эхо\" division_template = \"Smartiki Elite\" start_experience_factor = 0.8 start_equipment_factor = 1.0"
+					owner = CHB
+				}
+			}
+		}
+	}
+}

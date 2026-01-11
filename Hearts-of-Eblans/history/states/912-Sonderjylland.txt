@@ -5,6 +5,10 @@ state = {
 	manpower = 418058
 	state_category = rural
 
+	resources = {
+		coal = 2
+	}
+
 	history = {
 		owner = MPK
 		add_core_of = MPK

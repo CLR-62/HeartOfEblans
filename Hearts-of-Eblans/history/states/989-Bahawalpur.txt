@@ -5,6 +5,10 @@ state={
 		10843 10866 12041 12718 12792 12876
 	}
 
+	resources = {
+		coal = 10
+	}
+
 	history={
 		owner = DNL
 		add_core_of = DNL

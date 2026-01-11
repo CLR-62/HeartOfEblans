@@ -4,6 +4,13 @@ state={
 	provinces={
 		6445 9430 11418 11434 11450 9417 11559 585
 	}
+
+	resources = {
+		steel=4 # was: 32.000
+		aluminium=2 # was: 18.000\
+		coal = 4
+		tungsten = 2
+	}
 	
 	history={
 		owner = ROS

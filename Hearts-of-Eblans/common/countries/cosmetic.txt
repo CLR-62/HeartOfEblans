@@ -83,3 +83,8 @@ GON_AFS = {
 	color = rgb { 37 94 97 }
 	color_ui = rgb { 37 94 97 }
 }
+
+SVI_hypecratia_rebels = {
+	color = rgb { 199 63 74 }
+	color_ui = rgb { 199 63 74 }
+}

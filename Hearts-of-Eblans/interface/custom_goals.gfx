@@ -46,6 +46,12 @@ spriteTypes = {
 	texturefile = "gfx/interface/goals/focus_HAM_arrest_star.dds"			
 	}
 
+
+	SpriteType = {
+	name = "GFX_goal_HAM_eastern_mission"
+	texturefile = "gfx/interface/goals/focus_HAM_eastern_mission.dds"			
+	}
+
 	SpriteType = {
 	name = "GFX_goal_HAM_eastern_friends"
 	texturefile = "gfx/interface/goals/focus_HAM_eastern_friends.dds"			
@@ -1406,6 +1412,10 @@ spriteTypes = {
 	texturefile = "gfx/interface/goals/focus_HAM_lagoda_raspil.dds"			
 	}	
 	SpriteType = {
+	name = "GFX_goal_HAM_cvadrober_invasion"
+	texturefile = "gfx/interface/goals/focus_HAM_cvadrober_invasion.dds"			
+	}	
+	SpriteType = {
 	name = "GFX_goal_HAM_drake_coop"
 	texturefile = "gfx/interface/goals/focus_HAM_drake_coop.dds"			
 	}	
@@ -1428,6 +1438,10 @@ spriteTypes = {
 	SpriteType = {
 	name = "GFX_goal_HAM_btk_coop_2"
 	texturefile = "gfx/interface/goals/focus_HAM_btk_coop_2.dds"			
+	}	
+	SpriteType = {
+	name = "GFX_goal_HAM_department_of_war"
+	texturefile = "gfx/interface/goals/focus_HAM_department_of_war.dds"			
 	}	
 	
     SpriteType = {

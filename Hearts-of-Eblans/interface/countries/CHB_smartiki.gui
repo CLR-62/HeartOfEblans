@@ -1,0 +1,21 @@
+# CREATED BY CLR62 - 2025
+# Licensed under CC BY-NC-SA 4.0 for END USERS only
+# Full license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+# 
+# Paradox Interactive retains all rights to Hearts of Iron IV
+# Available on GitHub and Steam Workshop
+
+guiTypes = {
+    containerWindowType = {
+		name = "SmartikiGroup_window"
+		position = { x = 50 y = 50 }
+		size = { width = 100% height= 100 }
+		
+		iconType = {
+			name = "Smartiki_header_picture"
+			position = { x = 5 y = -5 }
+			spriteType = "GFX_decision_CHB_smartiki_header"
+			scale = 1
+		}
+	}
+}

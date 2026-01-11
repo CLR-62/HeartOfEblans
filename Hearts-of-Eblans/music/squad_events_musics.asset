@@ -1,11 +1,22 @@
 music = {
 	name = "SDO_POCHALOS"
-	file = "SquadMusic/sdo_start.ogg"
+	file = "SquadMusic/sdo_start_2.ogg"
 }
 
 music = {
 	name = "mazokgrad_fall"
 	file = "SquadMusic/mazokgrad_fall2.ogg"
+}
+
+
+music = {
+	name = "freakland_disolate"
+	file = "SquadMusic/freakland_disolate.ogg"
+}
+
+music = {
+	name = "democracy_threat"
+	file = "SquadMusic/democracy_threat.ogg"
 }
 
 music = {
@@ -39,6 +50,11 @@ music = {
 music = {
 	name = "freakland"
 	file = "SquadMusic/freakland.ogg"
+}
+
+music = {
+	name = "freakland_triumph_music"
+	file = "SquadMusic/freakland_triumph.ogg"
 }
 
 music = {

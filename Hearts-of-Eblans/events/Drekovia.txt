@@ -1156,6 +1156,65 @@ country_event = {
 	}
 }
 
+#HAMETOVA ASSIST
+country_event = {
+	id = drek.36
+	title = drek.36.t
+	desc = drek.36.d
+	picture = GFX_report_event_DEN_christian_x
+	
+	is_triggered_only = yes
+	
+	#uydom
+	option = {
+		name = drek.36.a
+		ai_chance = {
+			base = 5
+		}
+	}
+}
+
+#############################
+### REARMAMENT EVENT ########
+#############################
+
+# Перевооружение Дрейковии
+country_event = {
+	id = drek.100
+	title = drek.100.t
+	desc = drek.100.d
+	picture = GFX_report_event_german_soldiers
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = drek.100.a
+		ai_chance = {
+			factor = 100
+		}
+		
+		# Убираем ограничивающие нацдухи
+		if = {
+			limit = { has_idea = DRE_treaty_of_triannon_aat }
+			remove_ideas = DRE_treaty_of_triannon_aat
+		}
+		
+		# Повышаем призыв до ограниченного
+		add_ideas = limited_conscription
+		
+		# Бонусы за перевооружение
+		add_war_support = 0.1
+		add_political_power = 50
+		army_experience = 25
+		
+		# Даём временный дух перевооружения
+		add_timed_idea = {
+			idea = DRE_rearmament_momentum
+			days = 365
+		}
+	}
+}
 
 
 ##Vapers for hungary

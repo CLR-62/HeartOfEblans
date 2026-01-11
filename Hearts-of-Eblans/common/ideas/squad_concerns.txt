@@ -12,7 +12,16 @@ ideas = {
 			
 			picture = BTK_vovavia
 
+			# allowed проверяется ОДИН РАЗ при загрузке - только статические проверки!
 			allowed = {
+                OR = {
+                    original_tag = BTK
+                    original_tag = HAM
+                }
+			}
+
+            # available - условия для найма (динамические)
+            available = {
                 OR = {
 				    AND = {
                         original_tag = BTK
@@ -21,10 +30,24 @@ ideas = {
                     }
                     AND = {
                         original_tag = HAM
-                        BTK = { has_country_flag = VOVAVIA_SOLD }
+                        has_country_flag = HAM_bought_vovavia
                     }
                 }
-			}
+            }
+
+            # visible - когда показывать в списке (динамические)
+            visible = {
+                OR = {
+				    AND = {
+                        original_tag = BTK
+                        NOT = { has_country_flag = VOVAVIA_SOLD }
+                    }
+                    AND = {
+                        original_tag = HAM
+                        has_country_flag = HAM_bought_vovavia
+                    }
+                }
+            }
 			
 			cost = 100
 			removal_cost = 30

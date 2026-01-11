@@ -371,28 +371,6 @@ news_event = {
 	}
 }
 
-news_event = {
-	id = squad_news.18
-	title = squad_news.18.t
-	desc = squad_news.18.d
-	picture = GFX_report_event_freakland
-	
-	is_triggered_only = yes
-	major = yes
-	
-	option = {
-		name = squad_news.18.a #yes
-		ai_chance = {
-			factor = 90
-		}
-	}
-
-	immediate = {
-		hidden_effect = {
-		 play_song = "freakland"
-		}
-	}
-}
 
 news_event = {
 	id = squad_news.19
@@ -526,6 +504,48 @@ news_event = {
 	
 	option = {
 		name = squad_news.26.a #yes
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#SVINLAND DEMOCRACY THREAT
+news_event = {
+	id = squad_news.28
+	title = squad_news.28.t
+	desc = squad_news.28.d
+	picture = GFX_report_event_democracy_threat
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = squad_news.28.a
+		ai_chance = {
+			factor = 90
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			play_song = "democracy_threat"
+		}
+	}
+}
+
+#HAMETOVA JOINS SDO
+news_event = {
+	id = squad_news.29
+	title = squad_news.29.t
+	desc = squad_news.29.d
+	picture = GFX_report_event_democracy_threat
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = squad_news.29.a
 		ai_chance = {
 			factor = 90
 		}

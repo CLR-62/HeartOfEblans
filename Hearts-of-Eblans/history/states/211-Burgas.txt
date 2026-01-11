@@ -4,6 +4,10 @@ state={
 	name="STATE_211"
 	manpower = 1358394
 
+	resources = {
+		coal = 4
+	}
+
 
 	state_category = town
 

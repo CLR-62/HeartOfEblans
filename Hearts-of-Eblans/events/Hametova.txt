@@ -1,6 +1,7 @@
 add_namespace = hametova
 add_namespace = hametova_trade
 add_namespace = hametova_elections
+add_namespace = hametova_opposition
 
 #Second term of milana
 country_event = {
@@ -620,8 +621,12 @@ country_event = {
 		ai_chance = {
 			factor = 55
 		}
-
-		
+		add_stability = 0.05
+		add_popularity = {
+			ideology = hypecratia
+			popularity = 0.05
+		}
+		add_ideas = HAM_full_prodashnost_idea
 	}
 }
 
@@ -673,6 +678,8 @@ country_event = {
 		BTK = {
 			set_country_flag = VOVAVIA_SOLD
 		}
+		
+		set_country_flag = HAM_bought_vovavia
 
 		custom_effect_tooltip = {
 			localization_key = squad_concert_will_be_oppened
@@ -772,11 +779,12 @@ country_event = {
 }
 
 
+#SVINLAND QUESTION
 country_event = {
 	id = hametova.31
 	title = hametova.31.t
 	desc = hametova.31.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_generic_diplomacy1
 	
 	is_triggered_only = yes
 	
@@ -785,6 +793,14 @@ country_event = {
 		ai_chance = {
 			factor = 55
 		}
+		add_political_power = 25
+		SVI = {
+			add_opinion_modifier = {
+				target = HAM
+				modifier = HAM_DRE_friends_opinion
+			}
+		}
+		set_country_flag = HAM_svinland_question_started
 	}
 }
 
@@ -793,14 +809,35 @@ country_event = {
 	id = hametova.32
 	title = hametova.32.t
 	desc = hametova.32.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_generic_diplomacy2
 	
 	is_triggered_only = yes
 	
+	#Svinland accepts
 	option = {
 		name = hametova.32.a
 		ai_chance = {
-			factor = 55
+			factor = 70
+		}
+		HAM = {
+			add_political_power = 75
+			SVI = {
+				add_opinion_modifier = {
+					target = HAM
+					modifier = HAM_DRE_friends_opinion
+				}
+			}
+		}
+	}
+	
+	#Svinland refuses
+	option = {
+		name = hametova.32.b
+		ai_chance = {
+			factor = 30
+		}
+		HAM = {
+			add_political_power = -25
 		}
 	}
 }
@@ -850,6 +887,14 @@ country_event = {
 		name = hametova.34.a
 		ai_chance = {
 			factor = 55
+		}
+		add_political_power = -50
+		add_stability = -0.02
+		BTK = {
+			add_opinion_modifier = {
+				target = HAM
+				modifier = embargo
+			}
 		}
 	}
 }
@@ -1117,6 +1162,611 @@ country_event = { #FROM rejects our trade deal
 
 #ELECTIONS
 
+### ПУТЬ МИЛАНЫ СТАР - Демократические выборы ###
+
+# Выборы по пути Стар - игрок выбирает
+country_event = {
+	id = hametova_elections.3 # VIBORI HAMETOVA AND STAR
+	title = hametova_elections.3.t
+	desc = hametova_elections.3.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	# Победа Миланы Стар - доступно если популярность демократов > 35%
+	option = { 
+		name = hametova_elections.3.a
+		trigger = {
+			democratic > 0.35
+		}
+		HAM_star_elected = yes
+		hidden_effect = {
+			country_event = { id = hametova_elections.10 days = 3 }
+		}
+	}
+
+	# Победа Хаметовой (фальсификации)
+	option = { 
+		name = hametova_elections.3.b
+		HAM_hametova_elected = yes
+		add_stability = -0.1
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = { id = hametova_elections.11 days = 5 }
+		}
+	}
+}
+
+# Победа Миланы Стар - новая эра
+country_event = {
+	id = hametova_elections.10
+	title = hametova_elections.10.t
+	desc = hametova_elections.10.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = { 
+		name = hametova_elections.10.a
+		add_political_power = 150
+		add_stability = 0.1
+	}
+}
+
+# Фальсификация выборов - протесты
+country_event = {
+	id = hametova_elections.11
+	title = hametova_elections.11.t
+	desc = hametova_elections.11.d
+	picture = GFX_report_event_generic_riot
+
+	is_triggered_only = yes
+
+	# Жёсткое подавление
+	option = { 
+		name = hametova_elections.11.a
+		add_stability = -0.05
+		add_war_support = -0.03
+		strong_siloviki_increase = yes
+	}
+
+	# Пойти на уступки
+	option = { 
+		name = hametova_elections.11.b
+		add_political_power = -100
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+	}
+}
+
+### ПУТЬ МИЛАНЫ ХАМЕТОВОЙ - Авторитарные выборы ###
+
+# Выборы по пути Хаметовой - риск проигрыша
+country_event = {
+	id = hametova_elections.20
+	title = hametova_elections.20.t
+	desc = hametova_elections.20.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	# Если популярность демократов низкая (< 25%)
+	option = { 
+		name = hametova_elections.20.a
+		trigger = {
+			democratic < 0.25
+		}
+		ai_chance = { factor = 100 }
+		HAM_hametova_final_victory = yes
+	}
+
+	# Если популярность средняя (25-40%)
+	option = { 
+		name = hametova_elections.20.b
+		trigger = {
+			democratic > 0.24
+			democratic < 0.40
+		}
+		ai_chance = { factor = 70 }
+		random_list = {
+			70 = {
+				HAM_hametova_final_victory = yes
+			}
+			30 = {
+				country_event = { id = hametova_elections.21 days = 1 }
+			}
+		}
+	}
+
+	# Если популярность высокая (> 40%)
+	option = { 
+		name = hametova_elections.20.c
+		trigger = {
+			democratic > 0.39
+		}
+		ai_chance = { factor = 40 }
+		random_list = {
+			40 = {
+				HAM_hametova_final_victory = yes
+			}
+			60 = {
+				country_event = { id = hametova_elections.21 days = 1 }
+			}
+		}
+	}
+}
+
+# Хаметова проиграла выборы!
+country_event = {
+	id = hametova_elections.21
+	title = hametova_elections.21.t
+	desc = hametova_elections.21.d
+	picture = GFX_report_event_generic_riot
+
+	is_triggered_only = yes
+
+	# Признать поражение
+	option = { 
+		name = hametova_elections.21.a
+		ai_chance = { factor = 30 }
+		HAM_star_elected = yes
+		hidden_effect = {
+			country_event = { id = hametova_elections.10 days = 3 }
+		}
+	}
+
+	#фальсифицировать!
+	option = { 
+		name = hametova_elections.21.b
+		ai_chance = { factor = 70 }
+		add_stability = -0.15
+		add_war_support = -0.1
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+		HAM_hametova_final_victory = yes
+		hidden_effect = {
+			country_event = { id = hametova_elections.22 days = 3 }
+		}
+	}
+}
+
+# Массовые протесты после фальсификации
+country_event = {
+	id = hametova_elections.22
+	title = hametova_elections.22.t
+	desc = hametova_elections.22.d
+	picture = GFX_report_event_generic_riot
+
+	is_triggered_only = yes
+
+	# Разогнать силой
+	option = { 
+		name = hametova_elections.22.a
+		add_stability = -0.05
+		add_war_support = -0.05
+		hidden_effect = {
+			country_event = { id = hametova_elections.30 days = 7 }
+		}
+	}
+}
+
+# Финальная победа Хаметовой
+country_event = {
+	id = hametova_elections.25
+	title = hametova_elections.25.t
+	desc = hametova_elections.25.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = { 
+		name = hametova_elections.25.a
+		add_stability = 0.05
+		add_popularity = {
+			ideology = hypecratia
+			popularity = 0.15
+		}
+		add_ideas = HAM_eternal_rule
+		hidden_effect = {
+			country_event = { id = hametova_elections.30 days = 14 }
+		}
+	}
+}
+
+### РЕПРЕССИИ ПОСЛЕ ПОБЕДЫ ХАМЕТОВОЙ ###
+
+# Облавы на инакомыслящих
+country_event = {
+	id = hametova_elections.30
+	title = hametova_elections.30.t
+	desc = hametova_elections.30.d
+	picture = GFX_report_event_generic_ruins
+
+	is_triggered_only = yes
+
+	# Массовые аресты
+	option = { 
+		name = hametova_elections.30.a
+		add_stability = 0.03
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
+		add_timed_idea = { idea = HAM_mass_repressions days = 180 }
+		hidden_effect = {
+			country_event = { id = hametova_elections.31 days = 30 }
+		}
+	}
+
+	# Точечные репрессии
+	option = { 
+		name = hametova_elections.30.b
+		add_stability = 0.01
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.02
+		}
+		hidden_effect = {
+			country_event = { id = hametova_elections.31 days = 45 }
+		}
+	}
+}
+
+# Чистка госаппарата
+country_event = {
+	id = hametova_elections.31
+	title = hametova_elections.31.t
+	desc = hametova_elections.31.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { 
+		name = hametova_elections.31.a
+		add_political_power = -50
+		add_popularity = {
+			ideology = hypecratia
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = { id = hametova_elections.32 days = 30 }
+		}
+	}
+}
+
+# Контроль над СМИ
+country_event = {
+	id = hametova_elections.32
+	title = hametova_elections.32.t
+	desc = hametova_elections.32.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { 
+		name = hametova_elections.32.a
+		# Используем закон о СМИ из _domestic_idea.txt
+		add_ideas = only_gov_media
+		add_stability = 0.05
+	}
+}
+
+### СОБЫТИЯ МЕХАНИКИ ОППОЗИЦИИ ДЛЯ ПУТИ ХАМЕТОВОЙ ###
+
+# Оппозиция набирает силу (случайное при активности strenght на уровне 1-2)
+country_event = {
+	id = hametova_opposition.1
+	title = hametova_opposition.1.t
+	desc = hametova_opposition.1.d
+	picture = GFX_report_event_generic_riot
+
+	trigger = {
+		tag = HAM
+		NOT = { has_country_flag = HAM_star_opposition_way }
+		NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+		OR = {
+			has_idea = HAM_hamway_star_opposition_1_strenght_idea
+			has_idea = HAM_hamway_star_opposition_2_strenght_idea
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 45
+		modifier = {
+			factor = 0.7
+			democratic > 0.2
+		}
+	}
+
+	# Жёсткие меры - понизить активность
+	option = { 
+		name = hametova_opposition.1.a
+		add_political_power = -50
+		add_stability = -0.02
+		star_opposition_ideas_decrease_activity = yes
+	}
+
+	# Игнорировать - повысить активность
+	option = { 
+		name = hametova_opposition.1.b
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.02
+		}
+		star_opposition_ideas_increase_activity = yes
+	}
+}
+
+# Оппозиция становится массовой (случайное при уровне 3 и высокой активности)
+country_event = {
+	id = hametova_opposition.2
+	title = hametova_opposition.2.t
+	desc = hametova_opposition.2.d
+	picture = GFX_report_event_generic_riot
+
+	trigger = {
+		tag = HAM
+		NOT = { has_country_flag = HAM_star_opposition_way }
+		NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+		has_idea = HAM_hamway_star_opposition_3_strenght_idea
+	}
+
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			factor = 0.5
+			democratic > 0.3
+		}
+	}
+
+	# Репрессии
+	option = { 
+		name = hametova_opposition.2.a
+		add_political_power = -100
+		add_stability = -0.05
+		add_war_support = -0.02
+		star_opposition_ideas_decrease_activity = yes
+		set_variable = { star_opposition_ideas_new_state = 2 }
+		star_opposition_ideas_change_state = yes
+	}
+
+	# Частичные уступки
+	option = { 
+		name = hametova_opposition.2.b
+		add_political_power = -25
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.03
+		}
+		star_opposition_ideas_decrease_activity = yes
+	}
+
+	# Игнорировать - усиливает оппозицию ещё больше
+	option = { 
+		name = hametova_opposition.2.c
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		star_opposition_ideas_increase_activity = yes
+	}
+}
+
+# Рост популярности оппозиции
+country_event = {
+	id = hametova_opposition.6
+	title = hametova_opposition.6.t
+	desc = hametova_opposition.6.d
+	picture = GFX_report_event_generic_read_write
+
+	trigger = {
+		tag = HAM
+		NOT = { has_country_flag = HAM_star_opposition_way }
+		NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+		OR = {
+			has_idea = HAM_hamway_star_opposition_1_weak_idea
+			has_idea = HAM_hamway_star_opposition_1_medium_idea
+			has_idea = HAM_hamway_star_opposition_2_weak_idea
+			has_idea = HAM_hamway_star_opposition_2_medium_idea
+			has_idea = HAM_hamway_star_opposition_3_weak_idea
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 70
+		modifier = {
+			factor = 0.6
+			democratic > 0.15
+		}
+		modifier = {
+			factor = 0.7
+			NOT = { has_idea = pro_gov_media }
+			NOT = { has_idea = only_gov_media }
+		}
+	}
+
+	# Усилить пропаганду
+	option = { 
+		name = hametova_opposition.6.a
+		add_political_power = -30
+	}
+
+	# Ничего не делать
+	option = { 
+		name = hametova_opposition.6.b
+		star_opposition_ideas_increase_activity = yes
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.01
+		}
+	}
+}
+
+# Протесты оппозиции
+country_event = {
+	id = hametova_opposition.3
+	title = hametova_opposition.3.t
+	desc = hametova_opposition.3.d
+	picture = GFX_report_event_generic_riot
+
+	trigger = {
+		tag = HAM
+		NOT = { has_country_flag = HAM_star_opposition_way }
+		NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+		OR = {
+			has_idea = HAM_hamway_star_opposition_2_strenght_idea
+			has_idea = HAM_hamway_star_opposition_3_medium_idea
+			has_idea = HAM_hamway_star_opposition_3_strenght_idea
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 60
+		modifier = {
+			factor = 0.5
+			has_idea = HAM_hamway_star_opposition_3_strenght_idea
+		}
+	}
+
+	# Разогнать силой
+	option = { 
+		name = hametova_opposition.3.a
+		add_stability = -0.03
+		add_political_power = -30
+		star_opposition_ideas_decrease_activity = yes
+	}
+
+	# Позволить мирный протест
+	option = { 
+		name = hametova_opposition.3.b
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.02
+		}
+	}
+}
+
+# Забастовки на предприятиях
+country_event = {
+	id = hametova_opposition.4
+	title = hametova_opposition.4.t
+	desc = hametova_opposition.4.d
+	picture = GFX_report_event_generic_factory
+
+	trigger = {
+		tag = HAM
+		NOT = { has_country_flag = HAM_star_opposition_way }
+		NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+		OR = {
+			has_idea = HAM_hamway_star_opposition_3_medium_idea
+			has_idea = HAM_hamway_star_opposition_3_strenght_idea
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 75
+		modifier = {
+			factor = 0.6
+			has_idea = HAM_hamway_star_opposition_3_strenght_idea
+		}
+	}
+
+	# Уволить забастовщиков
+	option = { 
+		name = hametova_opposition.4.a
+		add_timed_idea = { idea = HAM_strike_aftermath days = 60 }
+		star_opposition_ideas_decrease_activity = yes
+	}
+
+	# Повысить зарплаты
+	option = { 
+		name = hametova_opposition.4.b
+		add_political_power = -75
+		add_stability = 0.02
+		star_opposition_ideas_decrease_activity = yes
+		star_opposition_ideas_decrease_activity = yes
+	}
+}
+
+# СМИ критикуют власть
+country_event = {
+	id = hametova_opposition.5
+	title = hametova_opposition.5.t
+	desc = hametova_opposition.5.d
+	picture = GFX_report_event_generic_read_write
+
+	trigger = {
+		tag = HAM
+		NOT = { has_country_flag = HAM_star_opposition_way }
+		NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+		NOT = { has_idea = only_gov_media }
+		NOT = { has_idea = pro_gov_media }
+		OR = {
+			has_idea = HAM_hamway_star_opposition_2_medium_idea
+			has_idea = HAM_hamway_star_opposition_2_strenght_idea
+			has_idea = HAM_hamway_star_opposition_3_weak_idea
+			has_idea = HAM_hamway_star_opposition_3_medium_idea
+			has_idea = HAM_hamway_star_opposition_3_strenght_idea
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 45
+	}
+
+	# Закрыть СМИ
+	option = { 
+		name = hametova_opposition.5.a
+		add_ideas = pro_gov_media
+		add_stability = -0.02
+		star_opposition_ideas_decrease_activity = yes
+	}
+
+	# Игнорировать
+	option = { 
+		name = hametova_opposition.5.b
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.03
+		}
+		star_opposition_ideas_increase_activity = yes
+	}
+}
+
+# Финальное торжество Хаметовой
+country_event = {
+	id = hametova_opposition.10
+	title = hametova_opposition.10.t
+	desc = hametova_opposition.10.d
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	option = { 
+		name = hametova_opposition.10.a
+		add_political_power = 200
+		add_war_support = 0.1
+		custom_effect_tooltip = HAM_opposition_crushed_forever_tt
+		# Нафик оппоцизию
+		if = { limit = { has_idea = HAM_hamway_star_opposition_1_weak_idea } remove_ideas = HAM_hamway_star_opposition_1_weak_idea }
+		if = { limit = { has_idea = HAM_hamway_star_opposition_1_medium_idea } remove_ideas = HAM_hamway_star_opposition_1_medium_idea }
+		if = { limit = { has_idea = HAM_hamway_star_opposition_1_strenght_idea } remove_ideas = HAM_hamway_star_opposition_1_strenght_idea }
+		if = { limit = { has_idea = HAM_hamway_star_opposition_2_weak_idea } remove_ideas = HAM_hamway_star_opposition_2_weak_idea }
+		if = { limit = { has_idea = HAM_hamway_star_opposition_2_medium_idea } remove_ideas = HAM_hamway_star_opposition_2_medium_idea }
+		if = { limit = { has_idea = HAM_hamway_star_opposition_2_strenght_idea } remove_ideas = HAM_hamway_star_opposition_2_strenght_idea }
+		if = { limit = { has_idea = HAM_hamway_star_opposition_3_weak_idea } remove_ideas = HAM_hamway_star_opposition_3_weak_idea }
+		if = { limit = { has_idea = HAM_hamway_star_opposition_3_medium_idea } remove_ideas = HAM_hamway_star_opposition_3_medium_idea }
+		if = { limit = { has_idea = HAM_hamway_star_opposition_3_strenght_idea } remove_ideas = HAM_hamway_star_opposition_3_strenght_idea }
+	}
+}
+
 country_event = {
 	id = hametova_elections.1 # PODGOTOVKA K VIBORAM
 	title = hametova_elections.1.t
@@ -1147,7 +1797,6 @@ country_event = {
 	}
 }
 
-
 country_event = {
 	id = hametova_elections.2 # VIBORI ONLY HAMETOVA
 	title = hametova_elections.2.t
@@ -1162,21 +1811,996 @@ country_event = {
 	}
 }
 
+### NEW MILITARY CAMPAIGN EVENTS ###
+
+#New Military Doctrine Event
 country_event = {
-	id = hametova_elections.3 # VIBORI HAMETOVA AND STAR
-	title = hametova_elections.3.t
-	desc = hametova_elections.3.d
-	picture = GFX_report_event_election_vote
-
+	id = hametova.40
+	title = hametova.40.t
+	desc = hametova.40.d
+	picture = GFX_report_event_generic_military_parade
+	
 	is_triggered_only = yes
+	
+	option = {
+		name = hametova.40.a
+		ai_chance = { factor = 55 }
+		add_ideas = HAM_new_military_doctrine
+		army_experience = 25
+	}
+}
 
-	option = { 
-		name = hametova_elections.3.a #HAMETOVA
-		HAM_hametova_elected = yes
+#Eastern Campaign Launch
+country_event = {
+	id = hametova.41
+	title = hametova.41.t
+	desc = hametova.41.d
+	picture = GFX_report_event_generic_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.41.a
+		ai_chance = { factor = 55 }
+		add_timed_idea = {idea = HAM_eastern_campaign_preparation days = 250 }
+		add_war_support = 0.05
+	}
+}
+
+#Cvadroeber Mission
+country_event = {
+	id = hametova.42
+	title = hametova.42.t
+	desc = hametova.42.d
+	picture = GFX_report_event_generic_diplomacy1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.42.a
+		ai_chance = { factor = 55 }
+		add_political_power = 75
+		CVD = {
+			add_opinion_modifier = {
+				target = HAM
+				modifier = HAM_DRE_friends_opinion
+			}
+		}
+	}
+}
+
+#Krasnodar Invasion Preparation
+country_event = {
+	id = hametova.43
+	title = hametova.43.t
+	desc = hametova.43.d
+	picture = GFX_report_event_generic_military_parade
+	
+	is_triggered_only = yes
+	
+	#Full invasion
+	option = {
+		name = hametova.43.a
+		ai_chance = { factor = 55 }
+		create_wargoal = {
+			target = CVD
+			type = annex_everything
+		}
+		set_country_flag = HAM_cvd_war_started
+		hidden_effect = {
+			country_event = { id = hametova.80 days = 150 }
+		}
+	}
+	
+	#Puppet them
+	option = {
+		name = hametova.43.b
+		ai_chance = { factor = 45 }
+		create_wargoal = {
+			target = CVD
+			type = puppet_wargoal_focus
+		}
+		set_country_flag = HAM_cvd_war_started
+		hidden_effect = {
+			country_event = { id = hametova.80 days = 150 }
+		}
+	}
+}
+
+#Hidden event - check if CVD war is prolonged (150 days)
+country_event = {
+	id = hametova.80
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_war_with = CVD
+		has_country_flag = HAM_cvd_war_started
+	}
+	
+	immediate = {
+		set_country_flag = HAM_cvd_war_prolonged
+	}
+	
+	option = {
+		name = hametova.80.a
+	}
+}
+
+#CVD Annexation Offer
+country_event = {
+	id = hametova.81
+	title = hametova.81.t
+	desc = hametova.81.d
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	#Accept annexation - surrender
+	option = {
+		name = hametova.81.a
+		ai_chance = { 
+			factor = 40
+			modifier = {
+				factor = 3
+				surrender_progress > 0.3
+			}
+			modifier = {
+				factor = 2
+				num_of_controlled_states < 3
+			}
+			modifier = {
+				factor = 0.1
+				surrender_progress < 0.1
+			}
+		}
+		
+		HAM = {
+			country_event = { id = hametova.82 days = 1 }
+		}
+		
+		custom_effect_tooltip = HAM_cvd_annexation_accept_tt
+	}
+	
+	#Refuse - fight to the end
+	option = {
+		name = hametova.81.b
+		ai_chance = { 
+			factor = 60
+			modifier = {
+				factor = 0.2
+				surrender_progress > 0.5
+			}
+			modifier = {
+				factor = 2
+				surrender_progress < 0.2
+			}
+			modifier = {
+				factor = 2
+				num_of_controlled_states > 4
+			}
+		}
+		
+		HAM = {
+			country_event = { id = hametova.83 days = 1 }
+		}
+		
+		add_war_support = 0.15
+		add_stability = -0.1
+	}
+}
+
+#HAM receives news - CVD accepted annexation
+country_event = {
+	id = hametova.82
+	title = hametova.82.t
+	desc = hametova.82.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.82.a
+		
+		annex_country = {
+			target = CVD
+			transfer_troops = yes
+		}
+		
+		add_political_power = 150
+		add_war_support = 0.1
+		
+		clr_country_flag = HAM_cvd_war_started
+		clr_country_flag = HAM_cvd_war_prolonged
+	}
+}
+
+#HAM receives news - CVD refused annexation
+country_event = {
+	id = hametova.83
+	title = hametova.83.t
+	desc = hametova.83.d
+	picture = GFX_report_event_generic_military_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.83.a
+		
+		add_war_support = 0.05
+		army_experience = 25
+		
+		custom_effect_tooltip = HAM_cvd_must_win_by_force_tt
+	}
+}
+
+#CVD War Prolonged - Fiasco event
+country_event = {
+	id = hametova.84
+	title = hametova.84.t
+	desc = hametova.84.d
+	picture = GFX_report_event_generic_ruins
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.84.a
+		
+		add_stability = -0.1
+		add_war_support = -0.05
+		add_political_power = -50
+		
+		add_timed_idea = {
+			idea = HAM_cvd_war_exhaustion
+			days = 180
+		}
+		
+		custom_effect_tooltip = HAM_cvd_fiasco_annexation_available_tt
+	}
+	
+	option = {
+		name = hametova.84.b
+		
+		add_war_support = 0.1
+		army_experience = 15
+		
+		add_timed_idea = {
+			idea = HAM_cvd_total_war
+			days = 120
+		}
+	}
+}
+
+#West Campaign Start
+country_event = {
+	id = hametova.44
+	title = hametova.44.t
+	desc = hametova.44.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.44.a
+		ai_chance = { factor = 55 }
+		add_ideas = HAM_western_campaign_idea
+		add_political_power = 50
+	}
+}
+
+#Drake Processing
+country_event = {
+	id = hametova.45
+	title = hametova.45.t
+	desc = hametova.45.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.45.a
+		ai_chance = { factor = 55 }
+		add_tech_bonus = {
+			name = HAM_drake_tech_bonus
+			bonus = 0.5
+			uses = 2
+			category = industry
+		}
+	}
+}
+
+#Drake Obstrel Preparation
+country_event = {
+	id = hametova.46
+	title = hametova.46.t
+	desc = hametova.46.d
+	picture = GFX_report_event_generic_air_raid
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.46.a
+		ai_chance = { factor = 55 }
+		air_experience = 25
+		add_equipment_to_stockpile = {
+			type = fighter_equipment
+			amount = 50
+			producer = HAM
+		}
+	}
+}
+
+#Drake Provocation
+country_event = {
+	id = hametova.47
+	title = hametova.47.t
+	desc = hametova.47.d
+	picture = GFX_report_event_generic_bombing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.47.a
+		ai_chance = { factor = 55 }
+		create_wargoal = {
+			target = DRE
+			type = annex_everything
+		}
+		add_war_support = 0.1
+	}
+}
+
+#Northern Campaign Start
+country_event = {
+	id = hametova.48
+	title = hametova.48.t
+	desc = hametova.48.d
+	picture = GFX_report_event_generic_diplomacy2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.48.a
+		ai_chance = { factor = 55 }
+		add_ideas = HAM_northern_campaign_idea
+	}
+}
+
+#Vovgrad Delegation
+country_event = {
+	id = hametova.49
+	title = hametova.49.t
+	desc = hametova.49.d
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.49.a
+		ai_chance = { factor = 55 }
+		BTK = {
+			add_opinion_modifier = {
+				target = HAM
+				modifier = HAM_DRE_friends_opinion
+			}
+		}
+		add_political_power = 50
+	}
+}
+
+#Second Coop Stream with BTK
+country_event = {
+	id = hametova.50
+	title = hametova.50.t
+	desc = hametova.50.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.50.a
+		ai_chance = { factor = 55 }
+		add_ideas = HAM_btk_coop_benefits
+		BTK = {
+			add_opinion_modifier = {
+				target = HAM
+				modifier = GER_trading_partners
+			}
+		}
+	}
+}
+
+#Chickenbekonia Preparation
+country_event = {
+	id = hametova.51
+	title = hametova.51.t
+	desc = hametova.51.d
+	picture = GFX_report_event_generic_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.51.a
+		ai_chance = { factor = 55 }
+		add_ideas = HAM_chickenbekonia_preparation
+		add_war_support = 0.05
+	}
+}
+
+#Chickenbekonia Provocation
+country_event = {
+	id = hametova.52
+	title = hametova.52.t
+	desc = hametova.52.d
+	picture = GFX_report_event_generic_battle
+	
+	is_triggered_only = yes
+	
+	#Full war
+	option = {
+		name = hametova.52.a
+		ai_chance = { factor = 55 }
+		create_wargoal = {
+			target = CHB
+			type = annex_everything
+		}
+		add_war_support = 0.1
+	}
+	
+	#Limited operation
+	option = {
+		name = hametova.52.b
+		ai_chance = { factor = 45 }
+		create_wargoal = {
+			target = CHB
+			type = take_state_focus
+		}
+	}
+}
+
+#Lagoda Question
+country_event = {
+	id = hametova.53
+	title = hametova.53.t
+	desc = hametova.53.d
+	picture = GFX_report_event_generic_diplomacy3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.53.a
+		ai_chance = { factor = 55 }
+		add_ideas = HAM_lagoda_influence
+		LAG = {
+			add_opinion_modifier = {
+				target = HAM
+				modifier = HAM_DRE_friends_opinion
+			}
+		}
+	}
+}
+
+#Lagoda Raspil
+country_event = {
+	id = hametova.54
+	title = hametova.54.t
+	desc = hametova.54.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.54.a
+		ai_chance = { factor = 55 }
+		add_ideas = HAM_lagoda_raspil
+		add_political_power = -100
+	}
+}
+
+#Drekovia Question
+country_event = {
+	id = hametova.55
+	title = hametova.55.t
+	desc = hametova.55.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.55.a
+		ai_chance = { factor = 55 }
+		set_country_flag = HAM_drekovia_question_started
+		add_political_power = 50
+	}
+}
+
+#Drake Democratic Rise
+country_event = {
+	id = hametova.56
+	title = hametova.56.t
+	desc = hametova.56.d
+	picture = GFX_report_event_generic_riot
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.56.a
+		ai_chance = { factor = 55 }
+		DRE = {
+			start_civil_war = {
+				ideology = democratic
+				size = 0.4
+			}
+		}
+	}
+}
+
+#Music Reform
+country_event = {
+	id = hametova.57
+	title = hametova.57.t
+	desc = hametova.57.d
+	picture = GFX_report_event_gathering_protests
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.57.a
+		ai_chance = { factor = 55 }
+		add_ideas = HAM_music_reform_idea
+		add_stability = 0.03
+	}
+}
+
+#Drake Coop Stream
+country_event = {
+	id = hametova.58
+	title = hametova.58.t
+	desc = hametova.58.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.58.a
+		ai_chance = { factor = 55 }
+		DRE = {
+			add_opinion_modifier = {
+				target = HAM
+				modifier = GER_trading_partners
+			}
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+	}
+}
+
+#Political Moves
+country_event = {
+	id = hametova.59
+	title = hametova.59.t
+	desc = hametova.59.d
+	picture = GFX_report_event_generic_diplomacy1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.59.a
+		ai_chance = { factor = 55 }
+		add_political_power = 150
+		add_stability = 0.05
+	}
+}
+
+#Svinland Sklonit na storony
+country_event = {
+	id = hametova.60
+	title = hametova.60.t
+	desc = hametova.60.d
+	picture = GFX_report_event_generic_diplomacy2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.60.a
+		ai_chance = { factor = 55 }
+		add_ideas = HAM_svinland_influence
+		SVI = {
+			add_opinion_modifier = {
+				target = HAM
+				modifier = HAM_DRE_friends_opinion
+			}
+		}
+	}
+}
+
+#Tech Collaboration with Svinland
+country_event = {
+	id = hametova.61
+	title = hametova.61.t
+	desc = hametova.61.d
+	picture = GFX_report_event_generic_research_lab
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.61.a
+		ai_chance = { factor = 55 }
+		add_tech_bonus = {
+			name = HAM_svi_tech_bonus
+			bonus = 0.5
+			uses = 2
+			category = electronics
+		}
+		add_research_slot = 1
+	}
+}
+
+#Drake Full Ready
+country_event = {
+	id = hametova.62
+	title = hametova.62.t
+	desc = hametova.62.d
+	picture = GFX_report_event_generic_military_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.62.a
+		ai_chance = { factor = 55 }
+		add_ideas = HAM_full_war_readiness
+		add_war_support = 0.1
+		army_experience = 25
+	}
+}
+
+
+### SILOVIKI EVENTS ###
+
+# Силовики начинают слежку за активистами
+country_event = {
+	id = hametova.70
+	title = hametova.70.t
+	desc = hametova.70.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	# Игнор
+	option = {
+		name = hametova.70.a
+		ai_chance = { factor = 60 }
+		set_country_flag = HAM_siloviki_stage_1
+		add_stability = -0.02
+		custom_effect_tooltip = HAM_siloviki_watching_tt
+	}
+	
+	# Приостановить активность
+	option = {
+		name = hametova.70.b
+		ai_chance = { factor = 40 }
+		set_country_flag = HAM_siloviki_stage_1
+		reduce_siloviki_interest_weak = yes
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.15
+		}
+		custom_effect_tooltip = HAM_siloviki_reduced_tt
+	}
+}
+
+# Обыски в штабах оппозиции
+country_event = {
+	id = hametova.71
+	title = hametova.71.t
+	desc = hametova.71.d
+	picture = GFX_report_event_generic_ruins
+	
+	is_triggered_only = yes
+	
+	# протест
+	option = {
+		name = hametova.71.a
+		ai_chance = { factor = 50 }
+		set_country_flag = HAM_siloviki_stage_2
+		add_stability = -0.03
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.02
+		}
+		medium_siloviki_increase = yes
+		custom_effect_tooltip = HAM_siloviki_protest_tt
+	}
+	
+	#в подполье
+	option = {
+		name = hametova.71.b
+		ai_chance = { factor = 50 }
+		set_country_flag = HAM_siloviki_stage_2
+		reduce_siloviki_interest_medium = yes
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.08
+		}
+
+
+		set_variable = { STAR_FIRING_TIME = 90 }
+		star_fire_and_disable_advisors = yes
+		custom_effect_tooltip = {
+    		localization_key = HAM_fires_and_disable_tt
+    		DISABLE_TIME = 90
+		}
+
+		custom_effect_tooltip = HAM_siloviki_underground_tt
+	}
+}
+
+# Давление на СМИ
+country_event = {
+	id = hametova.72
+	title = hametova.72.t
+	desc = hametova.72.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	# Продолжать
+	option = {
+		name = hametova.72.a
+		ai_chance = { factor = 45 }
+		set_country_flag = HAM_siloviki_stage_3
+		add_stability = -0.02
+		add_political_power = -50
+		hidden_effect = {
+			strong_siloviki_increase = yes
+			custom_effect_tooltip = HAM_siloviki_media_continue_tt
+		}
+	}
+	
+	# Перейти на другие
+	option = {
+		name = hametova.72.b
+		ai_chance = { factor = 55 }
+		set_country_flag = HAM_siloviki_stage_3
+		reduce_siloviki_interest_weak = yes
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
+		custom_effect_tooltip = HAM_siloviki_media_abroad_tt
+	}
+}
+
+# Массовые аресты
+country_event = {
+	id = hametova.73
+	title = hametova.73.t
+	desc = hametova.73.d
+	picture = GFX_report_event_generic_riot
+	
+	is_triggered_only = yes
+	
+	#протесты
+	option = {
+		name = hametova.73.a
+		ai_chance = { factor = 40 }
+		set_country_flag = HAM_siloviki_stage_4
+		add_stability = -0.05
+		add_war_support = -0.03
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		strong_siloviki_increase = yes
+		custom_effect_tooltip = HAM_siloviki_mass_protest_tt
+	}
+	
+	# ЭвАкУаЦиЯ ВиуВиуВиу
+	option = {
+		name = hametova.73.b
+		ai_chance = { factor = 60 }
+		set_country_flag = HAM_siloviki_stage_4
+		reduce_siloviki_interest_medium = yes
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
+
+		set_variable = { STAR_FIRING_TIME = 180 }
+		star_fire_and_disable_advisors = yes
+		custom_effect_tooltip = {
+    		localization_key = HAM_fires_and_disable_tt
+    		DISABLE_TIME = 180
+		}
+
+		add_political_power = -100
+		custom_effect_tooltip = HAM_siloviki_evacuate_tt
+	}
+}
+
+# Попытка ареста Миланы Стар
+country_event = {
+	id = hametova.74
+	title = hametova.74.t
+	desc = hametova.74.d
+	picture = GFX_report_event_generic_diplomacy3
+	
+	is_triggered_only = yes
+	
+	# Милана скрывается за границей
+	option = {
+		name = hametova.74.a
+		ai_chance = { factor = 70 }
+		trigger = {
+			NOT = { has_idea = HAM_hamway_star_opposition_3_weak_idea }
+			NOT = { has_idea = HAM_hamway_star_opposition_3_medium_idea }
+			NOT = { has_idea = HAM_hamway_star_opposition_3_strenght_idea }
+		}
+		set_country_flag = HAM_siloviki_stage_5
+		set_variable = { star_opposition_ideas_new_state = 3 }
+		set_variable = { HAM_STAR_status = 3 }
+		star_opposition_ideas_change_state = yes
+		reduce_siloviki_interest_strong = yes
+		add_stability = -0.03
+		custom_effect_tooltip = HAM_star_fled_abroad_tt
+	}
+	
+	# Милана арестована
+	option = {
+		name = hametova.74.b
+		ai_chance = { factor = 30 }
+		trigger = {
+			NOT = { has_idea = HAM_hamway_star_opposition_2_weak_idea }
+			NOT = { has_idea = HAM_hamway_star_opposition_2_medium_idea }
+			NOT = { has_idea = HAM_hamway_star_opposition_2_strenght_idea }
+		}
+		set_country_flag = HAM_siloviki_stage_5
+		set_variable = { star_opposition_ideas_new_state = 2 }
+		set_variable = { HAM_STAR_status = 2 }
+		star_opposition_ideas_change_state = yes
+		add_stability = -0.05
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
+		custom_effect_tooltip = HAM_star_arrested_tt
+	}
+	
+	# Она уже за границей
+	option = {
+		name = hametova.74.c
+		ai_chance = { factor = 100 }
+		trigger = {
+			OR = {
+				has_idea = HAM_hamway_star_opposition_3_weak_idea
+				has_idea = HAM_hamway_star_opposition_3_medium_idea
+				has_idea = HAM_hamway_star_opposition_3_strenght_idea
+				check_variable = { HAM_STAR_status = 3 }
+			}
+		}
+		set_country_flag = HAM_siloviki_stage_5
+		reduce_siloviki_interest_medium = yes
+		add_political_power = 50
+		custom_effect_tooltip = HAM_star_already_abroad_tt
+	}
+}
+
+# Полный разгром оппозиции
+country_event = {
+	id = hametova.75
+	title = hametova.75.t
+	desc = hametova.75.d
+	picture = GFX_report_event_generic_ruins
+	
+	is_triggered_only = yes
+	
+	# Оппозиция уничтожена
+	option = {
+		name = hametova.75.a
+		ai_chance = { factor = 100 }
+		set_country_flag = HAM_siloviki_stage_final
+		add_stability = 0.05
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.15
+		}
+		add_popularity = {
+			ideology = hypecratia
+			popularity = 0.1
+		}
+		
+		if = { limit = { has_idea = HAM_opposition_started } remove_ideas = HAM_opposition_started }
+		if = { limit = { has_idea = HAM_small_network } remove_ideas = HAM_small_network }
+		if = { limit = { has_idea = HAM_small_network_blocked } remove_ideas = HAM_small_network_blocked }
+		if = { limit = { has_idea = HAM_researches_boost } remove_ideas = HAM_researches_boost }
+		
+		add_ideas = HAM_siloviki_victory
+		
+		custom_effect_tooltip = HAM_opposition_destroyed_tt
+	}
+}
+
+# Дрейк начинает готовится к СДО
+country_event = {
+	id = hametova.76
+	title = hametova.76.t
+	desc = hametova.76.d
+	picture = GFX_report_event_AUS_military_march
+	
+	is_triggered_only = yes
+	
+	# Перейти на ветку совместки
+	option = {
+		name = hametova.76.a
+		ai_chance = { factor = 100 }
+		custom_effect_tooltip = hametova.76.atooltip
+		
+		hidden_effect = {
+			set_country_flag = HAM_DRE_ALSO_PREPARING
+			mark_focus_tree_layout_dirty = yes
+			DRE = {
+				country_event = { id = drek.36 days = 21 }
+				add_ai_strategy = {
+			   		type = alliance
+			   		id = DRE
+			   		value = 100
+				}
+			}
+
+			add_ai_strategy = {
+			   type = alliance
+			   id = HAM
+			   value = 100
+			}
+
+		}
 	}
 
-	option = { 
-		name = hametova_elections.3.b #HAMETOVA
-		HAM_star_elected = yes
+	# Не переходить
+	option = {
+		name = hametova.76.b
+		ai_chance = { factor = 100 }
+		add_war_support = 0.03
+	}
+}
+
+# Дрейк начинает СДО
+country_event = {
+	id = hametova.77
+	title = hametova.77.t
+	desc = hametova.77.d
+	picture = GFX_report_event_AUS_military_march
+	
+	is_triggered_only = yes
+	
+	# Вступить
+	option = {
+		name = hametova.77.a
+		ai_chance = { factor = 100 }
+		custom_effect_tooltip = hametova.77.atooltip
+		
+		declare_war_on = CHB
+	}
+
+	# Не вступать - предать
+	option = {
+		name = hametova.77.b
+		ai_chance = { factor = 100 }
+		DRE = {
+			add_ai_strategy = {
+				   type = alliance
+				   id = HAM
+				   value = -1000
+			}
+		}
+
+		add_ai_strategy = {
+			type = alliance
+			id = DRE
+			value = -200
+		}
 	}
 }

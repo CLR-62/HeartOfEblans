@@ -4,6 +4,7 @@ state = {
 
 	resources = {
 		chromium = 12.000 #added due to portugal setup
+		coal = 6
 	}
 
 	manpower = 3197719

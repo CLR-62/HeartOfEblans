@@ -1087,3 +1087,192 @@ country_event = {
 		release_on_controlled = BUS
 	}
 }
+
+####################################
+# HYPECRATIA INFLUENCE FROM HAM
+####################################
+
+#Hypecrats demand power
+country_event = {
+	id = svin.40
+	title = svin.40.t
+	desc = svin.40.d
+	picture = GFX_report_event_generic_riot
+
+	fire_only_once = yes
+
+	trigger = {
+		original_tag = SVI
+		has_idea = HAM_svinland_hypecratia_effort
+		hypecratia > 0.49
+		NOT = { has_country_flag = SVI_hypecratia_crisis_resolved }
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = SVI_hypecratia_crisis_resolved
+		}
+	}
+
+	#Accept - become Hypecrat Dominion of HAM
+	option = {
+		name = svin.40.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 2
+				hypecratia > 0.6
+			}
+		}
+		
+		remove_ideas = HAM_svinland_hypecratia_effort
+		
+		set_politics = {
+			ruling_party = hypecratia
+			elections_allowed = no
+		}
+		
+		add_popularity = {
+			ideology = hypecratia
+			popularity = 0.15
+		}
+		
+		add_stability = 0.1
+		
+		HAM = {
+			country_event = { id = svin.41 days = 1 }
+		}
+		
+		set_country_flag = SVI_hypecratia_accepted
+	}
+
+	#Refuse - Civil War
+	option = {
+		name = svin.40.b
+		ai_chance = {
+			factor = 60
+		}
+		
+		remove_ideas = HAM_svinland_hypecratia_effort
+		
+		add_stability = -0.2
+		add_war_support = 0.1
+		
+		hidden_effect = {
+			start_civil_war = {
+				ideology = hypecratia
+				size = 0.35
+				capital = 210
+				states = {
+					210
+				}
+			}
+			random_other_country = {
+				limit = {
+					original_tag = SVI
+					has_government = hypecratia
+				}
+				set_cosmetic_tag = SVI_hypecratia_rebels
+			}
+		}
+		
+		HAM = {
+			country_event = { id = svin.42 days = 1 }
+		}
+		
+		set_country_flag = SVI_hypecratia_civil_war
+	}
+}
+
+#HAM receives news - Svinland accepted
+country_event = {
+	id = svin.41
+	title = svin.41.t
+	desc = svin.41.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = svin.41.a
+		ai_chance = {
+			factor = 100
+		}
+		
+		add_political_power = 100
+		
+		SVI = {
+			add_autonomy_ratio = {
+				value = -0.5
+				localization = SVI_hypecratia_influence
+			}
+		}
+		
+		puppet = SVI
+		
+		add_opinion_modifier = {
+			target = SVI
+			modifier = HAM_hypecratia_ally
+		}
+		
+		SVI = {
+			add_opinion_modifier = {
+				target = HAM
+				modifier = HAM_hypecratia_ally
+			}
+		}
+	}
+}
+
+#HAM receives news - Svinland refused, civil war
+country_event = {
+	id = svin.42
+	title = svin.42.t
+	desc = svin.42.d
+	picture = GFX_report_event_generic_civil_war
+
+	is_triggered_only = yes
+
+	option = {
+		name = svin.42.a
+		ai_chance = {
+			factor = 70
+		}
+		
+		#Support the rebels
+		random_other_country = {
+			limit = {
+				original_tag = SVI
+				has_government = hypecratia
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = HAM
+			}
+			add_manpower = 5000
+		}
+		
+		add_political_power = -50
+		
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = SVI
+		}
+	}
+
+	#Stay out of it
+	option = {
+		name = svin.42.b
+		ai_chance = {
+			factor = 30
+		}
+		
+		add_political_power = 25
+		add_stability = -0.05
+	}
+}
