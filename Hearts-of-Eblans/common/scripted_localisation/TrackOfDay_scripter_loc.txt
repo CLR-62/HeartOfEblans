@@ -60,6 +60,12 @@ defined_text = {
         }
         localization_key = "GFX_tod_album_chb_lighthouse"
     }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 9 }
+        }
+        localization_key = "GFX_tod_album_chb_anemone"
+    }
 }
 
 #        ALBUMS/TRACKS ID
@@ -133,6 +139,12 @@ defined_text = {
             check_variable = { selected_album = 8 }
         }
         localization_key = "chb_lighthouse"
+    }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 9 }
+        }
+        localization_key = "chb_anemone"
     }
 }
 
@@ -269,5 +281,19 @@ defined_text = {
             AND = { check_variable = {  selected_album = 8 } check_variable = {  selected_track = 2 } }
         }
         localization_key = "chb_whosearch"
+    }
+
+
+    text = {
+        trigger = {
+            AND = { check_variable = {  selected_album = 9 } check_variable = {  selected_track = 0 } }
+        }
+        localization_key = "chb_monopolarity"
+    }
+    text = {
+        trigger = {
+            AND = { check_variable = {  selected_album = 9 } check_variable = {  selected_track = 1 } }
+        }
+        localization_key = "chb_moles"
     }
 }

@@ -1,0 +1,117 @@
+add_namespace = SDO_event
+
+# White Peace Proposal (Triggered by CHB)
+country_event = {
+	id = SDO_event.1
+	title = SDO_event.1.t
+	desc = SDO_event.1.d
+	picture = GFX_report_event_diplomatic_propose
+
+	is_triggered_only = yes
+
+	# Accept
+	option = {
+		name = SDO_event.1.a
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 2
+				has_war_support < 0.3
+			}
+			modifier = {
+				factor = 0.5
+				has_war_support > 0.7
+			}
+		}
+		CHB = { white_peace = DRE }
+		custom_effect_tooltip = CHB_SDO_white_peace_tt
+	}
+
+	# Refuse
+	option = {
+		name = SDO_event.1.b
+		ai_will_do = {
+			base = 50
+		}
+		CHB = {
+			add_political_power = 50
+		}
+		custom_notification = {
+			type = peace_talks_failed
+			parent = CHB
+		}
+	}
+}
+
+# Reparations and Demilitarization Proposal
+country_event = {
+	id = SDO_event.2
+	title = SDO_event.2.t
+	desc = SDO_event.2.d
+	picture = GFX_report_event_reparations
+
+	is_triggered_only = yes
+
+	# Accept
+	option = {
+		name = SDO_event.2.a
+		ai_will_do = {
+			base = 30
+			modifier = {
+				factor = 3
+				check_variable = { var = global.SDO_peace_progress value > 0.85 }
+			}
+		}
+		add_timed_idea = { idea = DRE_devastated_by_war days = 730 }
+		transfer_state = 155
+		white_peace = CHB
+		custom_effect_tooltip = CHB_SDO_reparations_tt
+	}
+
+	# Refuse
+	option = {
+		name = SDO_event.2.b
+		ai_will_do = {
+			base = 70
+		}
+		CHB = {
+			add_political_power = 100
+		}
+	}
+}
+
+# Final Capitulation Proposal
+country_event = {
+	id = SDO_event.3
+	title = SDO_event.3.t
+	desc = SDO_event.3.d
+	picture = GFX_report_event_victory
+
+	is_triggered_only = yes
+
+	# Accept
+	option = {
+		name = SDO_event.3.a
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 10
+				check_variable = { var = global.SDO_peace_progress value > 0.95 }
+			}
+		}
+		set_politics = { ruling_party = democratic }
+		white_peace = CHB
+		custom_effect_tooltip = CHB_SDO_final_victory_tt
+	}
+
+	# Refuse (Last Stand)
+	option = {
+		name = SDO_event.3.b
+		ai_will_do = {
+			base = 90
+		}
+		# No effect on progress
+		add_war_support = 0.1
+		add_stability = 0.1
+	}
+}

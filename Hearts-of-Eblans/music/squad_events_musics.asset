@@ -25,6 +25,21 @@ music = {
 }
 
 music = {
+	name = "daevoomatiz"
+	file = "SquadMusic/daevoomatiz.ogg"
+}
+
+music = {
+	name = "indeykin_dom"
+	file = "SquadMusic/indeykin_dom.ogg"
+}
+
+music = {
+	name = "sobaka_bustera"
+	file = "SquadMusic/sobaka_bustera.ogg"
+}
+
+music = {
 	name = "blitzkrieg_zabuksoval"
 	file = "SquadMusic/blitzkrieg_zabuksoval.ogg"
 }

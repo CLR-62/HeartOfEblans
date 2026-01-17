@@ -1,4 +1,4 @@
-capital = 1021
+capital = 1049
 
 oob = "BTK_1936"
 starting_train_buffer = 2
@@ -9,6 +9,7 @@ recruit_character =kulina_advisor
 
 add_ideas = {
 	BTK_bad_government
+	BTK_legacy_of_collapse
 	slay_2023_king
 	BTK_army_0
 	BTK_dead_economy1
@@ -102,7 +103,7 @@ create_country_leader = {
 	desc = "POLITICS_PRINCE_PAUL_DESC"
 	picture = "bratishkin_fas.dds"
 	
-	ideology = gen_nazism
+	ideology = falangism
 	traits = {
 		#
 	}

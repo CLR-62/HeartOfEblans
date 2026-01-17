@@ -32,6 +32,21 @@ spriteTypes = {
 	}
 
 	SpriteType = {
+	name = "GFX_goal_HAM_economy_block"
+	texturefile = "gfx/interface/goals/focus_HAM_economy_block.dds"	
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_chb_provokation"
+	texturefile = "gfx/interface/goals/focus_HAM_chb_provokation.dds"
+	}
+
+	SpriteType = {
+	name = "GFX_goal_HAM_drake_coop_svo"
+	texturefile = "gfx/interface/goals/focus_HAM_drake_coop_svo.dds"
+	}
+
+	SpriteType = {
 	name = "GFX_goal_PYA_prime"
 	texturefile = "gfx/interface/goals/focus_PYA_prime.dds"			
 	}
@@ -39,6 +54,11 @@ spriteTypes = {
 	SpriteType = {
 	name = "GFX_goal_HAM_second_term"
 	texturefile = "gfx/interface/goals/focus_HAM_second_term.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_goal_CHB_smartiki"
+	texturefile = "gfx/interface/goals/focus_CHB_smartiki.dds"			
 	}
 
 	SpriteType = {
@@ -873,6 +893,10 @@ spriteTypes = {
 	SpriteType = {
 	name = "GFX_goal_CHB_fascism_path"
 	texturefile = "gfx/interface/goals/focus_CHB_fascism_path.dds"			
+	}
+	SpriteType = {
+	name = "GFX_goal_CHB_anemone"
+	texturefile = "gfx/interface/goals/focus_CHB_anemone.dds"			
 	}
 
 	SpriteType = {

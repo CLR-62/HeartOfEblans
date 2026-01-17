@@ -1,0 +1,81 @@
+guiTypes = {
+	containerWindowType = {
+		name = "CHB_SDO_gui_container"
+		position = { x = 0 y = 0 }
+		size = { width = 500 height = 320 }
+
+		# Leader Chicken-Bekonia (Mazeloff)
+		iconType = {
+			name = "CHB_leader_portrait"
+			spriteType = "GFX_portrait_CHB_mzlff"
+			position = { x = 50 y = 10 }
+			scale = 0.75
+			pdx_tooltip = "CHB_SDO_mazeloff_tooltip"
+		}
+		
+		iconType = {
+			name = "CHB_leader_frame"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 43 y = 2 }
+			scale = 0.75
+			alwaystransparent = yes
+		}
+
+		# Leader Drekovia (Drake)
+		iconType = {
+			name = "DRE_leader_portrait"
+			spriteType = "GFX_portrait_DRE_drake"
+			position = { x = 330 y = 10 }
+			scale = 0.75
+			pdx_tooltip = "CHB_SDO_drake_tooltip"
+		}
+		
+		iconType = {
+			name = "DRE_leader_frame"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 323 y = 2 }
+			scale = 0.75
+			alwaystransparent = yes
+		}
+
+		# Versus Text
+		instantTextBoxType = {
+			name = "SDO_versus_text"
+			position = { x = 180 y = 80 }
+			font = "hoi_36header"
+			text = "SDO_versus_text_key"
+			maxWidth = 140
+			maxHeight = 40
+			format = center
+		}
+
+		# Progress Bar (Centered at 50)
+		iconType = {
+			name = "SDO_progress_bar"
+			spriteType = "GFX_SDO_progress_bar"
+			position = { x = 50 y = 180 }
+		}
+
+		# Progress Value %
+		instantTextBoxType = {
+			name = "SDO_progress_text"
+			position = { x = 50 y = 215 }
+			font = "hoi_18mbs"
+			text = "CHB_SDO_progress_value"
+			maxWidth = 400
+			maxHeight = 20
+			format = center
+		}
+
+		# Status Description (Centered at 50, moved up from 300)
+		instantTextBoxType = {
+			name = "SDO_status_text"
+			position = { x = 50 y = 250 }
+			font = "hoi_18mbs"
+			text = "CHB_SDO_status_desc"
+			maxWidth = 400
+			maxHeight = 60
+			format = center
+		}
+	}
+}

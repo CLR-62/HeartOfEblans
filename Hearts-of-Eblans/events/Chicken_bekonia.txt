@@ -826,3 +826,106 @@ country_event = {
 		name = chicken.29.a
 	}	
 }
+
+#Smartiki group
+country_event = {
+	id = chicken.30
+	title = chicken.30.t
+	desc = chicken.30.d
+	picture = GFX_report_event_smartiki_group
+	
+	is_triggered_only = yes
+	
+	#Real
+	option = {
+		name = chicken.30.a
+		set_country_flag = CHB_SMARTIKI_OPENED
+		custom_effect_tooltip = {
+			localization_key = squad_decision_willopen_tt
+			DECISION_NAME = "CHB_smartiki_category"
+		}
+	}	
+}
+
+# Industry Crisis Chain
+# Event: Economy Overheating
+country_event = {
+	id = chicken.34
+	title = chicken.34.t
+	desc = chicken.34.d
+	picture = GFX_report_event_axis_triumph
+
+	is_triggered_only = yes
+
+	option = {
+		name = chicken.34.a
+		add_ideas = CHB_overheated_economy
+		set_country_flag = CHB_economy_overheating_active
+	}
+}
+
+# Event: Workers Strike
+country_event = {
+	id = chicken.35
+	title = chicken.35.t
+	desc = chicken.35.d
+	picture = GFX_report_event_industrial_accident
+
+	trigger = {
+		has_country_flag = CHB_economy_overheating_active
+		has_idea = CHB_overheated_economy
+	}
+	
+	mean_time_to_happen = { days = 60 }
+
+	option = {
+		name = chicken.35.a # Intervene
+		add_political_power = -100
+		add_stability = 0.05
+		custom_effect_tooltip = CHB_intervention_success_tt
+		set_country_flag = CHB_crisis_handled_partially
+	}
+	
+	option = {
+		name = chicken.35.b # Do nothing
+		add_stability = -0.10
+		swap_ideas = {
+			remove_idea = CHB_overheated_economy
+			add_idea = CHB_economic_strain
+		}
+	}
+}
+
+# Event: Final Crisis Stage
+country_event = {
+	id = chicken.36
+	title = chicken.36.t
+	desc = chicken.36.d
+	picture = GFX_report_event_building_destruction
+
+	trigger = {
+		has_idea = CHB_economic_strain
+		NOT = { has_country_flag = CHB_crisis_resolved }
+	}
+	
+	mean_time_to_happen = { days = 90 }
+
+	option = {
+		name = chicken.36.a # Desperate measures
+		add_political_power = -200
+		add_stability = -0.05
+		swap_ideas = {
+			remove_idea = CHB_economic_strain
+			add_idea = CHB_reformed_industry # Recovered but changed
+		}
+		set_country_flag = CHB_crisis_resolved
+	}
+	
+	option = {
+		name = chicken.36.b # Total Collapse
+		swap_ideas = {
+			remove_idea = CHB_economic_strain
+			add_idea = CHB_economic_collapse
+		}
+	}
+}

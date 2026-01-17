@@ -1,6 +1,6 @@
 ﻿l_russian:
  VICTORY_POINTS_TOOLTIP: "§G$NAME$§! победных очков = §Y$POINTS$§!"
- VICTORY_POINTS_6521: "Вовбург"
+ VICTORY_POINTS_6521: "Вовград"
  VICTORY_POINTS_692: "Джозден"
  VICTORY_POINTS_6469: "Эссен"
  VICTORY_POINTS_9347: "Гамбург"
@@ -1276,6 +1276,7 @@
  VICTORY_POINTS_1614: "Нукус"
  VICTORY_POINTS_7597: "Кызыл-Орда"
  VICTORY_POINTS_7341: "Актобе"
+ VICTORY_POINTS_341: "Бустерград"
  VICTORY_POINTS_1517: "Мангыстау"
  VICTORY_POINTS_185: "Курессааре"
  VICTORY_POINTS_6222: "Елгава"

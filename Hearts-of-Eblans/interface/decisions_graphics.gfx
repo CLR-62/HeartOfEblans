@@ -27,6 +27,15 @@ spriteTypes = {
 		name = "GFX_decision_BTK_parl"
 		texturefile = "gfx/interface/ideas/BTK_parl_dec.dds"
 	}
+
+	spriteType = {
+		name = "GFX_decision_CHB_elitesmart"
+		texturefile = "gfx/interface/decisions/icons/CHB_elitesmart.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_CHB_simplesmart"
+		texturefile = "gfx/interface/decisions/icons/CHB_simplesmart.dds"
+	}
 	
 	spriteType = {
 		name = "GFX_decision_eblan_empire"

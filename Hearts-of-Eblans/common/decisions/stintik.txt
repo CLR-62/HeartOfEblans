@@ -56,8 +56,6 @@ form_STI_empire_cat = {
 				controls_state = 25
 				controls_state = 31
 				controls_state = 22
-				controls_state = 1044
-				controls_state = 1043
 
 			}
 			custom_trigger_tooltip = {
@@ -65,12 +63,9 @@ form_STI_empire_cat = {
 				
 
 				# Devochki
-				controls_state = 1045
 				controls_state = 23
-				controls_state = 1046
 				controls_state = 24
 				controls_state = 33
-				controls_state = 1050
 				controls_state = 26
 				controls_state = 27
 				controls_state = 20
@@ -126,15 +121,10 @@ form_STI_empire_cat = {
 				state = 25
 				state = 31
 				state = 22
-				state = 1044
-				state = 1043
 
-				state = 1045
 				state = 23
-				state = 1046
 				state = 24
 				state = 33
-				state = 1050
 				state = 26
 				state = 27
 				state = 20
@@ -181,28 +171,13 @@ form_STI_empire_cat = {
 			26 = {
 				add_core_of = ROOT
 			}
-			1050 = {
-				add_core_of = ROOT
-			}
 			33 = {
 				add_core_of = ROOT
 			}
 			24 = {
 				add_core_of = ROOT
 			}
-			1046 = {
-				add_core_of = ROOT
-			}
 			23 = {
-				add_core_of = ROOT
-			}
-			1045 = {
-				add_core_of = ROOT
-			}
-			1043 = {
-				add_core_of = ROOT
-			}
-			1044 = {
 				add_core_of = ROOT
 			}
 			22 = {

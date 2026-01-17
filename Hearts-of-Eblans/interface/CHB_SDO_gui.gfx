@@ -1,0 +1,28 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_SDO_gui_bg"
+		texturefile = "gfx/interface/sdo_gui_bg.dds" # I'll assume a background exists or use a generic one
+	}
+
+	spriteType = {
+		name = "GFX_portrait_CHB_mzlff"
+		texturefile = "gfx/leaders/CHB/mzlff.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_DRE_drake"
+		texturefile = "gfx/leaders/DRE/drake.dds"
+	}
+
+	# Progress Bar
+	progressbartype = {
+		name = "GFX_SDO_progress_bar"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/fort_progress_bar.dds" # Using generic bar
+		textureFile2 = "gfx/interface/fort_progress_bar_bg.dds"
+		size = { x = 400 y = 30 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+}

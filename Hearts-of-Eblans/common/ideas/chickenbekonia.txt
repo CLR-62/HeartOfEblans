@@ -960,27 +960,144 @@ ideas = {
 			}
 		}
 		
+		# --- Industrial Modernization Spirits ---
 		
-		
-		
-		YUG_kotikyvlasti = {
-			
-			picture = kotyvlasti
-			
-			#on_add = {
-            #    add_popularity = {
-            #        ideology = communism
-            #        popularity = 0.05
-            #    }
-            #}
-
+		CHB_outdated_industry = {
+			picture = generic_goods_red_bonus
+			allowed = { original_tag = CHB always = no }
 			removal_cost = -1
-			
 			modifier = {
-				stability_factor = 0.1
-				join_faction_tension = -0.20
-				#political_power_gain = 0.06
-				communism_drift = 0.005
+				production_factory_efficiency_gain_factor = -0.10
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+
+		# Structural Assessment Path
+		CHB_industrial_audit_started = {
+			picture = generic_license_production
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+
+		CHB_bureaucracy_optimized = {
+			picture = generic_pp_unity_bonus
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.03
+			}
+		}
+
+		CHB_reformed_industry = {
+			picture = generic_production_bonus
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.10
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		# Industry Renaissance Path
+		CHB_industrial_rush = {
+			picture = generic_improved_industries
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.20
+				production_speed_industrial_complex_factor = 0.20
+				industrial_capacity_factory = 0.15
+				stability_factor = -0.05
+			}
+		}
+
+		CHB_overheated_economy = {
+			picture = generic_economic_crisis
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.10
+				stability_factor = -0.10
+				production_factory_efficiency_gain_factor = -0.15
+			}
+		}
+
+		CHB_economic_strain = {
+			picture = generic_strike
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.20
+				stability_factor = -0.20
+				political_power_factor = -0.15
+			}
+		}
+
+		CHB_economic_collapse = {
+			picture = generic_economic_crisis
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.40
+				stability_factor = -0.30
+				industrial_capacity_factory = -0.20
+			}
+		}
+
+		CHB_stabilized_renaissance = {
+			picture = generic_research_bonus
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.15
+				industrial_capacity_factory = 0.10
+				stability_factor = 0.05
+			}
+		}
+
+		CHB_emergency_measures_active = {
+			picture = generic_pp_unity_bonus
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = -0.05
+			}
+		}
+
+		CHB_foreign_investments = {
+			picture = generic_invest_infrastructure
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.10
+				consumer_goods_factor = -0.05
+			}
+		}
+		CHB_emergency_measures_active = {
+			picture = generic_pp_unity_bonus
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = -0.05
+			}
+		}
+
+		CHB_foreign_investments = {
+			picture = generic_invest_infrastructure
+			allowed = { original_tag = CHB always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.10
+				consumer_goods_factor = -0.05
 			}
 		}
 	}

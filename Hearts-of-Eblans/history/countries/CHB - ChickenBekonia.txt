@@ -1,4 +1,4 @@
-capital = 1027
+capital = 107
 
 oob = "YUG_1936"
 set_naval_oob = "YUG_1936_naval"
@@ -10,7 +10,7 @@ set_war_support = 0.21
 
 add_ideas = { 
 	CHB_hungary_problem
-	
+	CHB_outdated_industry
 }
 
 set_country_flag = generic_trackofday_flag

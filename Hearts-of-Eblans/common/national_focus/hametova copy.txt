@@ -543,7 +543,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_cvadroeber_mission
-		icon = GFX_goal_HAM_second_term
+		icon = GFX_goal_generic_military_deal
 		x = 1
 		y = 1
 		cost = 10
@@ -698,7 +698,7 @@ focus_tree = {
 		prerequisite = { focus = ham_buharest_technology_exhibition }
 
 		completion_reward = {
-			CHB = {
+			GVI = {
 				country_event = { id = hametova_trade.1 days = 2 }
 			}
 
@@ -872,7 +872,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_drake_provokation
-		icon = GFX_focus_generic_supply_line
+		icon = GFX_focus_SMB_mountain_guns
 		x = 1
 		y = 1
 		cost = 10
@@ -1020,7 +1020,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_sklonit_na_storony
-		icon = GFX_goal_HAM_second_term
+		icon = GFX_focus_generic_surrender
 		x = 1
 		y = 1
 		cost = 10
@@ -1056,7 +1056,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_tech_colaboration
-		icon = GFX_goal_HAM_second_term
+		icon = GFX_goal_tfv_generic_tech_sharing
 		x = 0
 		y = 1
 		cost = 10
@@ -1512,7 +1512,7 @@ focus_tree = {
 		prerequisite = { focus = ham_department_of_war }
 
 		completion_reward = {
-			country_event = { id = hametova.53 hours = 2 }
+			custom_effect_tooltip = in_development
         }
     }
 
@@ -1527,7 +1527,7 @@ focus_tree = {
 		prerequisite = { focus = ham_lagoda_question }
 
 		completion_reward = {
-			country_event = { id = hametova.54 hours = 2 }
+			custom_effect_tooltip = in_development
         }
     }
 
@@ -1548,7 +1548,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_chickenbekonia_production_militarization
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_focus_CHL_domestic_production_of_the_willys_mb
 		x = 0
 		y = 1
 		cost = 10
@@ -1565,7 +1565,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_chickenbekonia_rapid_mobilisation
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_focus_AUS_raid_military_storages
 		x = -1
 		y = 1
 		cost = 10
@@ -1581,7 +1581,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_chickenbekonia_economical_blockade
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_goal_HAM_economy_block
 		x = 1
 		y = 1
 		cost = 10
@@ -1601,7 +1601,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_chickenbekonia_organize_genshtab
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_focus_CONGO_congolese_generals
 		x = -1
 		y = 1
 		cost = 10
@@ -1617,7 +1617,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_chickenbekonia_provokation
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_goal_HAM_chb_provokation
 		x = 0
 		y = 1
 		cost = 10
@@ -1632,12 +1632,12 @@ focus_tree = {
 
 	focus = {
 		id = ham_chickenbekonia_drake_cooperation
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_goal_HAM_drake_coop_svo
 		x = 0
 		y = 1
 		cost = 10
 		search_filters = {  FOCUS_FILTER_RESEARCH }
-		allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING }
+		allow_branch = { has_country_flag = HAM_DRE_ALSO_PREPARING NOT = { has_completed_focus = ham_chickenbekonia_production_militarization } }
 		relative_position_id = ham_chickenbekonia_prepare
 		prerequisite = { focus = ham_chickenbekonia_prepare }
 
@@ -1654,7 +1654,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_industry_mobilisation
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_focus_generic_military_industry
 		x = -1
 		y = 1
 		cost = 10
@@ -1673,7 +1673,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_genshtab_corruption_inspections
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_focus_ARG_crackdown_on_corruption
 		x = 1
 		y = 1
 		cost = 10
@@ -1691,7 +1691,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_uchest_opit_velikoy_voyni
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_focus_generic_air_defense
 		x = 0
 		y = 1
 		cost = 10
@@ -1713,7 +1713,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_drake_postavki_star
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_focus_generic_supply_line
 		x = 0
 		y = 1
 		cost = 10
@@ -1739,7 +1739,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_drake_soyuznaya_reshimost
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_focus_GER_customs_union
 		x = 1
 		y = 1
 		cost = 10
@@ -1757,7 +1757,7 @@ focus_tree = {
 
 	focus = {
 		id = ham_drake_full_ready
-		icon = GFX_goal_HAM_star_future
+		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
 		x = 0
 		y = 1
 		cost = 10
@@ -1929,23 +1929,23 @@ focus_tree = {
 
 	####INDUSTRIAL
 
-	focus = {
-		id = ham_industrial_effort
-		icon = GFX_goal_HAM_second_term
-		x = 15
-		y = 0
-		cost = 10
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		relative_position_id = ham_second_hametova_term
-
-		completion_reward = {
-			add_ideas = HAM_industrial_effort_idea
-			add_tech_bonus = {
-				name = HAM_industrial_bonus
-				bonus = 0.5
-				uses = 2
-				category = industry
-			}
-        }
-    }
+	#focus = {
+	#	id = ham_industrial_effort
+	#	icon = GFX_goal_HAM_second_term
+	#	x = 15
+	#	y = 0
+	#	cost = 10
+	#	search_filters = {  FOCUS_FILTER_RESEARCH }
+	#	relative_position_id = ham_second_hametova_term
+#
+	#	completion_reward = {
+	#		add_ideas = HAM_industrial_effort_idea
+	#		add_tech_bonus = {
+	#			name = HAM_industrial_bonus
+	#			bonus = 0.5
+	#			uses = 2
+	#			category = industry
+	#		}
+    #    }
+    #}
 }

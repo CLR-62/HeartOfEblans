@@ -22,12 +22,12 @@ CHB_smartiki_category = {
 
 	# Батальон "Смартик-Альфа"
 	CHB_spawn_smartiki_alpha = {
-		icon = generic_army_support
+		icon = CHB_simplesmart
 		cost = 50
 
 		fire_only_once = no
 
-		days_re_enable = 365
+		days_re_enable = 200
 
 		allowed = {
 			original_tag = CHB
@@ -66,12 +66,12 @@ CHB_smartiki_category = {
 
 	# Батальон "Смартик-Браво"
 	CHB_spawn_smartiki_bravo = {
-		icon = generic_army_support
+		icon = CHB_simplesmart
 		cost = 50
 
 		fire_only_once = no
 
-		days_re_enable = 365
+		days_re_enable = 200
 
 		allowed = {
 			original_tag = CHB
@@ -110,12 +110,12 @@ CHB_smartiki_category = {
 
 	# Батальон "Смартик-Чарли"
 	CHB_spawn_smartiki_charlie = {
-		icon = generic_army_support
+		icon = CHB_simplesmart
 		cost = 50
 
 		fire_only_once = no
 
-		days_re_enable = 365
+		days_re_enable = 200
 
 		allowed = {
 			original_tag = CHB
@@ -154,12 +154,12 @@ CHB_smartiki_category = {
 
 	# Батальон "Смартик-Дельта"
 	CHB_spawn_smartiki_delta = {
-		icon = generic_army_support
-		cost = 75
+		icon = CHB_simplesmart
+		cost = 50
 
 		fire_only_once = no
 
-		days_re_enable = 365
+		days_re_enable = 200
 
 		allowed = {
 			original_tag = CHB
@@ -196,14 +196,13 @@ CHB_smartiki_category = {
 		}
 	}
 
-	# Батальон "Смартик-Эхо" (элитный)
 	CHB_spawn_smartiki_echo = {
-		icon = generic_army_support
+		icon = CHB_elitesmart
 		cost = 100
 
 		fire_only_once = no
 
-		days_re_enable = 365
+		days_re_enable = 200
 
 		allowed = {
 			original_tag = CHB
@@ -234,6 +233,91 @@ CHB_smartiki_category = {
 				}
 				create_unit = {
 					division = "name = \"5-й бат. Смартик-Эхо\" division_template = \"Smartiki Elite\" start_experience_factor = 0.8 start_equipment_factor = 1.0"
+					owner = CHB
+				}
+			}
+		}
+	}
+	CHB_spawn_smartiki_foxtrot = {
+		icon = CHB_elitesmart
+		cost = 100
+
+		fire_only_once = no
+
+		days_re_enable = 200
+
+		allowed = {
+			original_tag = CHB
+		}
+
+		available = {
+			has_war = yes
+			num_of_military_factories > 15
+		}
+
+		visible = {
+			original_tag = CHB
+		}
+
+		days_remove = 20
+
+		complete_effect = {
+			custom_effect_tooltip = CHB_smartiki_elite_training_tt
+			add_manpower = -1500
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = CHB_smartiki_elite_spawned_tt
+			random_owned_controlled_state = {
+				limit = { 
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+				}
+				create_unit = {
+					division = "name = \"6-й бат. Смартик-Фокстрот\" division_template = \"Smartiki Elite\" start_experience_factor = 0.8 start_equipment_factor = 1.0"
+					owner = CHB
+				}
+			}
+		}
+	}
+
+	CHB_spawn_smartiki_kilo = {
+		icon = CHB_elitesmart
+		cost = 100
+
+		fire_only_once = no
+
+		days_re_enable = 200
+
+		allowed = {
+			original_tag = CHB
+		}
+
+		available = {
+			has_war = yes
+			num_of_military_factories > 15
+		}
+
+		visible = {
+			original_tag = CHB
+		}
+
+		days_remove = 20
+
+		complete_effect = {
+			custom_effect_tooltip = CHB_smartiki_elite_training_tt
+			add_manpower = -1500
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = CHB_smartiki_elite_spawned_tt
+			random_owned_controlled_state = {
+				limit = { 
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+				}
+				create_unit = {
+					division = "name = \"7-й бат. Смартик-Кило\" division_template = \"Smartiki Elite\" start_experience_factor = 0.8 start_equipment_factor = 1.0"
 					owner = CHB
 				}
 			}

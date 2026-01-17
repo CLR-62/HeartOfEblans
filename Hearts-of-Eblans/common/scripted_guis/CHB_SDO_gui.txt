@@ -1,0 +1,23 @@
+scripted_gui = {
+	CHB_SDO_gui_container = {
+		window_name = "CHB_SDO_gui_container"
+		context_type = decision_category
+		
+		visible = {
+			OR = {
+				AND = {
+					tag = CHB
+					has_war_with = DRE
+				}
+				AND = {
+					tag = DRE
+					has_war_with = CHB
+				}
+			}
+		}
+
+		properties = {
+			SDO_progress_bar = global.SDO_peace_progress
+		}
+	}
+}

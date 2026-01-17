@@ -1,3 +1,26 @@
 on_actions = {
-
+	on_war = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							tag = CHB
+							receiver = DRE
+						}
+						AND = {
+							tag = DRE
+							receiver = CHB
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_global_flag = global_SDO_initialized } }
+					set_global_flag = global_SDO_initialized
+					set_variable = { global.SDO_peace_progress = 0.05 }
+					set_variable = { global.SDO_friction = 0.001 } # Reduced base friction
+				}
+			}
+		}
+	}
 }

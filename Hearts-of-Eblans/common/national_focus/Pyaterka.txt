@@ -1084,6 +1084,10 @@ focus_tree = {
 		relative_position_id = PYA_musical_effort
 		prerequisite = { focus = PYA_musical_effort }
 
+		available = {
+			date > 2024.02.02
+		}
+
 		completion_reward = {
 
 			custom_effect_tooltip = {
@@ -1108,6 +1112,10 @@ focus_tree = {
 		relative_position_id = PYA_thousand_lifes
 		prerequisite = { focus = PYA_thousand_lifes }
 
+		available = {
+			date > 2024.09.20
+		}
+
 		completion_reward = {
 
 			custom_effect_tooltip = {
@@ -1131,6 +1139,10 @@ focus_tree = {
 
 		relative_position_id = PYA_thousand_lifes
 		prerequisite = { focus = PYA_thousand_lifes }
+
+		available = {
+			date > 2024.10.29
+		}
 
 		completion_reward = {
 
@@ -1157,6 +1169,10 @@ focus_tree = {
 		prerequisite = { focus = PYA_golovolomka_album }
 		prerequisite = { focus = PYA_supernova_album }
 
+		available = {
+			date > 2025.07.25
+		}
+
 		completion_reward = {
 
 			custom_effect_tooltip = {
@@ -1181,6 +1197,10 @@ focus_tree = {
 
 		relative_position_id = PYA_superpupernova_album
 		prerequisite = { focus = PYA_superpupernova_album }
+
+		available = {
+			date > 2025.09.30
+		}
 
 		completion_reward = {
 

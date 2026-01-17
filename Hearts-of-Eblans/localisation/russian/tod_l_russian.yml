@@ -26,13 +26,17 @@
   chb_cheloveyniki: "человейники"
   chb_globalvipe: "глобальный вайп"
   chb_whosearch: "который ищет маяк"
+  chb_anemone: "ANEMONE"
+  chb_monopolarity: "однополярности"
+  chb_moles: "родинки"
 
 
   tod_will_be_unlocked: "£GFX_music_disk_texticon Будет открыт альбом §Y$ALBUM$§!"
 
   trackOfDay_cat: "Трек дня"
 
-
+  tod_disabled_for: "Будет активно через §Y[?THIS.tod_cooldown]§! дней"
+  TOD_already_activated: "Трек дня уже выбран"
 
 
   PYA_music_0_clown_decision: "Выбрать: §YКлоун§!"
@@ -58,6 +62,9 @@
   chb_music_8_cheloveyniki_decision: "Выбрать: §Yчеловейники§!"
   chb_music_8_globalvipe_decision: "Выбрать: §Yглобальный вайп§!"
   chb_music_8_whosearch_decision: "Выбрать: §Yкоторый ищет маяк§!"
+
+  chb_music_9_monopolarity_decision: "Выбрать: §Yоднополярности§!"
+  chb_music_9_moles_decision: "Выбрать: §Yродинки§!"
 
   PYA_musical_effort: "Развитие музыки"
   PYA_thousand_lifes: "Выпустить «1000 Жизней»"

@@ -151,7 +151,7 @@ create_country_leader = {
 	desc = "POLITICS_PRINCE_PAUL_DESC"
 	picture = "aratoss.dds"
 	
-	ideology = fascism_ideology
+	ideology = nazism
 	traits = {
 		#
 	}

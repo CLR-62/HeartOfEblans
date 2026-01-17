@@ -16,8 +16,8 @@ ARA_OF = {
 	color_ui = rgb { 120 25 8 }
 }
 BTK_89 = {
-	color = rgb { 89 65 169 }
-	color_ui = rgb { 89 65 169 }
+	color = rgb { 128 36 0 }
+	color_ui = rgb { 128 36 0 }
 }
 ARA_OF = {
 	color = rgb { 120 25 8 }

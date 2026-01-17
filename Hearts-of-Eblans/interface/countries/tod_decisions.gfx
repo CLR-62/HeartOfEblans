@@ -48,6 +48,11 @@ SpriteTypes = {
 		texturefile = "gfx/interface/custom_gui/TrackOfDay/Mzlff/CHB_lighthouse.png"
 	}
 
+	spriteType = {
+		name = "GFX_tod_album_chb_anemone_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Mzlff/CHB_anemone.png"
+	}
+
 
 	spriteType = {
 		name = "GFX_music_disk_texticon"
@@ -97,5 +102,9 @@ SpriteTypes = {
 	spriteType = {
 		name = "GFX_tod_decision_chb_lighthouse"
 		texturefile = "gfx/interface/decisions/icons/CHB_lighthouse.dds"
+	}
+	spriteType = {
+		name = "GFX_tod_decision_chb_anemone"
+		texturefile = "gfx/interface/decisions/icons/CHB_anemone.dds"
 	}
 }

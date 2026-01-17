@@ -14,7 +14,7 @@ set_research_slots = 3
 recruit_character = universal_hype_dip
 
 add_ideas = {
-	DPN_accumulated_problems
+	
 }
 
 # Starting tech
@@ -107,13 +107,13 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Великий Конгресс"
-	desc = "DPN_GREAT_CONGRESS_DESC"
-	picture = "dpn_congress.dds"
+	name = "Диппинс"
+	desc = "POLITICS_PRINCE_PAUL_DESC"
+	picture = "dip.dds"
 	
 	ideology = liberalism
 	traits = {
-		
+		#
 	}
 }
 
@@ -136,5 +136,4 @@ set_popularities = {
 	neutrality = 5
 	hypecratia = 24
 }
-
 

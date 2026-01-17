@@ -39,7 +39,6 @@ form_Greater_sla_cat = {
 				# Devochki
 				controls_state = 158
 				controls_state = 161
-				controls_state = 1038
 			}
 		}
 		
@@ -55,7 +54,6 @@ form_Greater_sla_cat = {
 				state = 847
 				state = 158
 				state = 161
-				state = 1038
 			}
 			highlight_color_while_active = 3
 			highlight_color_before_active = 2
@@ -79,7 +77,6 @@ form_Greater_sla_cat = {
 
 				158 = { add_core_of = ROOT }
 				161 = { add_core_of = ROOT }
-				1038 = { add_core_of = ROOT }
 			}
 
 			mark_focus_tree_layout_dirty = yes

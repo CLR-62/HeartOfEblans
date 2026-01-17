@@ -1,0 +1,5 @@
+clear_tod_track = {
+    set_variable = { selected_album = -1 }
+	clr_country_flag = TOD_already_activated
+    set_variable = { THIS.tod_cooldown = 30 }
+}

@@ -735,5 +735,174 @@ ideas = {
 				political_power_gain = 0.5
 			}
 		}
+		
+		# NEW SPIRITS
+		BTK_legacy_of_collapse = {
+			removal_cost = -1
+			picture = generic_disjointed_gov 
+			modifier = {
+				production_speed_buildings_factor = -0.15
+				production_factory_efficiency_gain_factor = -0.10
+				political_power_gain = -0.10
+			}
+		}
+		
+		BTK_revanchism = {
+			removal_cost = -1
+			picture = generic_totalitarianism_rising
+			modifier = {
+				war_support_factor = 0.10
+				army_attack_factor = 0.05
+				justify_war_goal_time = -0.1
+			}
+		}
+		
+		# ===== РАСШИРЕННЫЙ КОНТЕНТ =====
+		
+		# Временные идеи для экономического восстановления
+		BTK_emergency_measures = {
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				consumer_goods_factor = 0.05
+				political_power_gain = -0.15
+			}
+		}
+		
+		# Пропаганда и мобилизация
+		BTK_propaganda_campaign = {
+			removal_cost = -1
+			picture = generic_war_preparation
+			modifier = {
+				war_support_weekly = 0.005
+				stability_weekly = 0.002
+				fascism_drift = 0.02
+			}
+		}
+		
+		# Иностранный легион (добровольцы из других стран сквада)
+		BTK_foreign_volunteers = {
+			removal_cost = -1
+			picture = generic_volunteer_expedition_bonus
+			modifier = {
+				weekly_manpower = 500
+				army_org_factor = 0.05
+				experience_gain_army = 0.05
+			}
+		}
+		
+		# Экономическое чудо (финальный дух экономической ветки)
+		BTK_economic_miracle = {
+			removal_cost = -1
+			picture = generic_goods_red
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_speed_buildings_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.08
+				industrial_capacity_factory = 0.05
+			}
+		}
+		
+		# Объединённый Сквад (финал воссоединения)
+		BTK_united_squad = {
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				stability_factor = 0.08
+				war_support_factor = 0.08
+				political_power_gain = 0.15
+				army_morale_factor = 0.05
+				research_speed_factor = 0.03
+			}
+		}
+		
+		# Модернизация армии
+		BTK_modern_army = {
+			removal_cost = -1
+			picture = generic_infantry_bonus
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_speed_factor = 0.03
+				planning_speed = 0.05
+			}
+		}
+		
+		# Патриотическое воспитание
+		BTK_patriotic_education = {
+			removal_cost = -1
+			picture = generic_democratic_support
+			modifier = {
+				drift_defence_factor = 0.25
+				conscription = 0.02
+				army_core_defence_factor = 0.10
+			}
+		}
+		
+		# Торговые соглашения
+		BTK_trade_agreements = {
+			removal_cost = -1
+			picture = generic_trade
+			modifier = {
+				trade_opinion_factor = 0.25
+				production_speed_buildings_factor = 0.05
+				min_export = -0.05
+			}
+		}
+		
+		# Научный прорыв
+		BTK_scientific_breakthrough = {
+			removal_cost = -1
+			picture = generic_research_bonus
+			modifier = {
+				research_speed_factor = 0.10
+			}
+		}
+		
+		# Мобилизационная экономика
+		BTK_mobilized_economy = {
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+				conversion_cost_civ_to_mil_factor = -0.20
+				industrial_capacity_factory = 0.10
+			}
+		}
+		
+		# Экспорт продовольствия
+		BTK_food_export_deals = {
+			removal_cost = -1
+			picture = generic_trade
+			modifier = {
+				trade_opinion_factor = 0.15
+				consumer_goods_factor = -0.03
+				political_power_gain = 0.10
+			}
+		}
+		
+		# Шпионская сеть
+		BTK_spy_network = {
+			removal_cost = -1
+			picture = generic_intel_bonus
+			modifier = {
+				intel_network_gain = 0.20
+				crypto_strength = 1
+				decryption_power = 25
+			}
+		}
+		
+		# Крутейшая армия
+		BTK_cool_army = {
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				army_attack_factor = 0.08
+				army_defence_factor = 0.08
+				army_org_factor = 0.05
+				experience_gain_army = 0.05
+			}
+		}
 	}	
 }

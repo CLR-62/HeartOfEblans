@@ -22,7 +22,7 @@ form_BTK_89_cat = {
 				controls_state = 63
 				controls_state = 68
 				controls_state = 64
-				controls_state = 1021
+				controls_state = 1049
 				controls_state = 65
 				controls_state = 66
 				controls_state = 67
@@ -50,7 +50,6 @@ form_BTK_89_cat = {
 				# Devochki
 				controls_state = 57
 				controls_state = 59
-				controls_state = 1022
 				controls_state = 56
 				controls_state = 42
 				controls_state = 51
@@ -63,7 +62,6 @@ form_BTK_89_cat = {
 
 				#jojohf
 				controls_state = 54
-				controls_state = 1020
 				controls_state = 53
 				controls_state = 52
 				controls_state = 50
@@ -80,7 +78,6 @@ form_BTK_89_cat = {
 				state = 63
 				state = 68
 				state = 64
-				state = 1021
 				state = 65
 				state = 66
 				state = 67
@@ -97,7 +94,6 @@ form_BTK_89_cat = {
 				
 				state = 57
 				state = 59
-				state = 1022
 				state = 56
 				state = 42
 				state = 51
@@ -106,10 +102,10 @@ form_BTK_89_cat = {
 				state = 978
 				
 				state = 54
-				state = 1020
 				state = 53
 				state = 52
 				state = 50
+				state = 1049
 			}
 			highlight_color_while_active = 3
 			highlight_color_before_active = 2

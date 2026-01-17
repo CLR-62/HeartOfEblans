@@ -30,6 +30,16 @@ on_actions = {
                 }
             }
 
+            if = {
+                limit = {
+                    date = 2025.05.22
+                    NOT = { has_global_flag = INDEYKIN_DOM }
+                }
+
+                set_country_flag = INDEYKIN_DOM
+                news_event = squad_news.31
+            }
+
             #if = {
             #    limit = {
             #        date = 2025.07.20

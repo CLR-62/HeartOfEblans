@@ -1,0 +1,16 @@
+DRE_SDO_management_cat = {
+	priority = 150
+	icon = GFX_decision_category_border_conflicts
+
+	allowed = {
+		original_tag = DRE
+	}
+
+	visible = {
+		has_war_with = CHB
+		# DRE sees this as soon as war starts
+	}
+
+	# DRE also sees the confrontation GUI
+	scripted_gui = CHB_SDO_gui_container
+}

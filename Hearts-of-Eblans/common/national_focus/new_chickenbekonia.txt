@@ -1156,6 +1156,50 @@ focus_tree = {
 	}
 
 
+
+
+	focus = {
+		id = chb_musical_effort
+		icon = GFX_goal_generic_music_effort
+		cost = 10
+
+		relative_position_id = chb_policits_effort
+
+		completion_reward = {
+
+		}
+		x = 11
+		y = 0
+	}
+	
+	focus = {
+		id = chb_anemone
+		icon = GFX_goal_CHB_anemone
+		cost = 10
+
+		relative_position_id = chb_musical_effort
+		prerequisite = { focus = chb_musical_effort }
+
+		available = {
+			date > 2023.04.21
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = tod_will_be_unlocked
+				ALBUM = "chb_anemone"
+			}
+
+			add_to_array = {
+    			array = opennedAlbums
+    			value = 9
+			}
+		}
+		x = 0
+		y = 1
+	}
+
+
 	################################
 	######REARMAMENT FOCUSES########
 	################################
@@ -1168,9 +1212,28 @@ focus_tree = {
   			add_political_power = 25
   			country_event = { id = chicken.28 }
 		}
-		x = 16
+		x = 19
 		y = 0
 		relative_position_id = chb_policits_effort
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = chb_smartiks_industry
+		icon = GFX_goal_CHB_smartiki
+		cost = 10
+		prerequisite = { focus = chb_economic_vector_of_the_nation }
+		completion_reward = {
+			country_event = { id = chicken.30 days = 3 }
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				unlock_military_industrial_organization = SMARTIKI_GROUP_organization
+			}
+		}
+		x = 0
+		y = 2
+		relative_position_id = chb_economic_vector_of_the_nation
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -1182,17 +1245,13 @@ focus_tree = {
 		mutually_exclusive = { focus = chb_industry_renisance }
 		cost = 10
 
-		available = {
-			always = no
-		}
-
 		ai_will_do = {
 			factor = 50
 		}
 
 		completion_reward = {
   			add_political_power = 50
-  			add_timed_idea = { idea = CHB_production_audit days = 720 }
+			add_ideas = CHB_industrial_audit_started
 		}
 		x = -3
 		y = 1
@@ -1207,8 +1266,10 @@ focus_tree = {
 		prerequisite = { focus = chb_structural_assessment_of_production }
 		cost = 10
 		completion_reward = {
-  			add_stability = 0.03
-  			add_political_power = 25
+  			add_stability = 0.05
+  			add_political_power = 50
+			add_ideas = CHB_bureaucracy_optimized
+			decrease_corruption_law = yes
 		}
 		x = 1
 		y = 1
@@ -1421,10 +1482,9 @@ focus_tree = {
 		prerequisite = { focus = chb_industry_coordination }
 		cost = 10
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = CHB_rational_mobilization
-				add_idea = CHB_sustainable_defense_economy
-			}
+			remove_ideas = CHB_outdated_industry
+			remove_ideas = CHB_industrial_audit_started
+			add_ideas = CHB_reformed_industry
 			add_stability = 0.05
 		}
 		x = 1
@@ -1457,11 +1517,8 @@ focus_tree = {
 		id = chb_industry_renisance
 		icon = GFX_focus_AUS_disregard_the_treaties
 		prerequisite = { focus = chb_economic_vector_of_the_nation }
-		mutually_exclusive = { focus = chb_structural_assessment_of_production}
+		mutually_exclusive = { focus = chb_structural_assessment_of_production }
 		cost = 10
-		available = {
-			always = no
-		}
 
 		completion_reward = {
 			if = {
@@ -1469,18 +1526,16 @@ focus_tree = {
 					limit = {
 						is_controlled_by = ROOT
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
-						type = arms_factory
-						level = 1
+						type = industrial_complex
+						level = 2
 						instant_build = yes
 					}
 				}
 			}
-			add_timed_idea = {
-				idea = CHB_industrial_renaissance
-				days = 1230
-			}
+			add_ideas = CHB_industrial_rush
+			add_stability = -0.05
 		}
 		x = 3
 		y = 1
@@ -1525,9 +1580,14 @@ focus_tree = {
 		prerequisite = { focus = chb_industry_renisance }
 		cost = 10
 		completion_reward = {
-  			add_political_power = 50
+			remove_ideas = CHB_outdated_industry
+  			add_political_power = 75
 			add_ideas = CHB_centralized_defense_sector
-  			add_stability = -0.03
+  			add_stability = -0.05
+			hidden_effect = {
+				# Trigger the crisis chain
+				country_event = { id = chicken.34 days = 300 random_days = 60 }
+			}
 		}
 		x = -1
 		y = 1

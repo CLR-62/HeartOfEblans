@@ -16,6 +16,20 @@ on_actions = {
         }
     }
 
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					THIS = {
+						has_country_flag = generic_trackofday_flag
+					}
+					check_variable = { THIS.tod_cooldown > 0 }
+				}
+				subtract_from_variable = { THIS.tod_cooldown = 1 }
+			}
+		}
+	}
+
 	on_daily_CHB = {
 		effect = {
 			if = {

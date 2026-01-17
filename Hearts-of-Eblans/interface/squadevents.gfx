@@ -32,10 +32,35 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/dreyk_ready.dds"
 	}
 
+	spriteType = {
+		name = "GFX_report_event_indeykin_dom"
+		texturefile = "gfx/event_pictures/indeykin_dom.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_sobaki_bustera"
+		texturefile = "gfx/event_pictures/sobaki_bustera.dds"
+	}
+
 
 	spriteType = {
 		name = "GFX_report_event_pyatorka_tailand"
 		texturefile = "gfx/event_pictures/pyatorka_tailand.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_star_sdo"
+		texturefile = "gfx/event_pictures/star_sdo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_smarts_incident"
+		texturefile = "gfx/event_pictures/smarts_incident.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_smartiki_group"
+		texturefile = "gfx/event_pictures/smartiki_group.dds"
 	}
 
 	spriteType = {

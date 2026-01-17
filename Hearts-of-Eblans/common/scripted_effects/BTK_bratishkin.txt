@@ -5,46 +5,104 @@
 # Paradox Interactive retains all rights to Hearts of Iron IV
 # Available on GitHub and Steam Workshop
  
+# Механика поддержки Братишкина
+# Чем больше фокусов - тем выше поддержка лидера
+# BRATISHKIN SUPPORT MAX - 250 (замедленный рост)
+
 modify_bratishkin_support = {
-	#BRATISHKIN SUPPORT MAX - 160
+	# Level 1: Отсутствующая поддержка (0-49)
 	if = {
-		limit = { AND = { check_variable = { bratishkin_support > 0} has_idea = BTK_bad_government } }
+		limit = { 
+			AND = { 
+				check_variable = { bratishkin_support > 0 } 
+				has_idea = BTK_bad_government 
+			} 
+		}
 		swap_ideas = {
 			remove_idea = BTK_bad_government
 			add_idea = BTK_vladimir_bratishkin_1 
 		}
 	}
 
+	# Level 2: Слабая поддержка (50-99)
 	if = {
-		limit = { AND = { check_variable = { bratishkin_support > 39} has_idea = BTK_vladimir_bratishkin_1 } }
+		limit = { 
+			AND = { 
+				check_variable = { bratishkin_support > 49 } 
+				has_idea = BTK_vladimir_bratishkin_1 
+			} 
+		}
 		swap_ideas = {
 			remove_idea = BTK_vladimir_bratishkin_1
 			add_idea = BTK_vladimir_bratishkin_2 
 		}
+		country_event = { id = btk.210 days = 5 }
 	}
 
-
+	# Level 3: Умеренная поддержка (100-149)
 	if = {
-		limit = { AND = { check_variable = { bratishkin_support > 79} has_idea = BTK_vladimir_bratishkin_2 } }
+		limit = { 
+			AND = { 
+				check_variable = { bratishkin_support > 99 } 
+				has_idea = BTK_vladimir_bratishkin_2 
+			} 
+		}
 		swap_ideas = {
 			remove_idea = BTK_vladimir_bratishkin_2
 			add_idea = BTK_vladimir_bratishkin_3
 		}
+		add_stability = 0.03
+		country_event = { id = btk.211 days = 5 }
 	}
 
+	# Level 4: Массовая поддержка (150-199)
 	if = {
-		limit = { AND = { check_variable = { bratishkin_support > 119 } has_idea = BTK_vladimir_bratishkin_3 } }
+		limit = { 
+			AND = { 
+				check_variable = { bratishkin_support > 149 } 
+				has_idea = BTK_vladimir_bratishkin_3 
+			} 
+		}
 		swap_ideas = {
 			remove_idea = BTK_vladimir_bratishkin_3
 			add_idea = BTK_vladimir_bratishkin_4
 		}
+		add_political_power = 25
+		add_stability = 0.03
+		country_event = { id = btk.212 days = 5 }
 	}
 
+	# Level 5: Максимальная поддержка (200+)
 	if = {
-		limit = { AND = { check_variable = { bratishkin_support > 159 } has_idea = BTK_vladimir_bratishkin_4 } }
+		limit = { 
+			AND = { 
+				check_variable = { bratishkin_support > 199 } 
+				has_idea = BTK_vladimir_bratishkin_4 
+			} 
+		}
 		swap_ideas = {
 			remove_idea = BTK_vladimir_bratishkin_4
 			add_idea = BTK_vladimir_bratishkin_5
 		}
+		add_political_power = 50
+		add_stability = 0.05
+		add_war_support = 0.05
+		country_event = { id = btk.213 days = 5 }
 	}
+}
+
+# Эффект для добавления поддержки с проверкой (уменьшенные значения)
+add_bratishkin_support_small = {
+	add_to_variable = { bratishkin_support = 3 }
+	modify_bratishkin_support = yes
+}
+
+add_bratishkin_support_medium = {
+	add_to_variable = { bratishkin_support = 5 }
+	modify_bratishkin_support = yes
+}
+
+add_bratishkin_support_large = {
+	add_to_variable = { bratishkin_support = 8 }
+	modify_bratishkin_support = yes
 }

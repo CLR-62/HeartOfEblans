@@ -1,0 +1,42 @@
+ideas = {
+	country = {
+		CHB_SDO_counter_propaganda_spirit = {
+			picture = generic_propaganda
+			allowed = {
+				original_tag = CHB
+			}
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = -0.1
+			}
+		}
+
+		DRE_devastated_by_war = {
+			picture = generic_war_preparation
+			allowed = {
+				original_tag = DRE
+			}
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = -0.3
+				consumer_goods_factor = 0.2
+				stability_factor = -0.2
+			}
+		}
+
+		CHB_SDO_negotiation_stall_spirit = {
+			picture = generic_un_intervention
+			allowed = {
+				original_tag = CHB
+			}
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+			}
+		}
+	}
+}

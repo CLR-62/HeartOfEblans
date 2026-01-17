@@ -1,0 +1,92 @@
+DRE_SDO_management_cat = {
+
+	# Humanitarian Aid for "Liberated" Territories
+	# Increases war support, decreases peace progress gain for CHB
+	DRE_SDO_humanitarian_aid = {
+		icon = GFX_decision_generic_nationalism
+		cost = 50
+		available = {
+			has_political_power > 50
+		}
+		visible = {
+			has_war_with = CHB
+		}
+		complete_effect = {
+			add_war_support = 0.05
+			subtract_from_variable = { global.SDO_peace_progress = 0.05 }
+			custom_effect_tooltip = DRE_SDO_humanitarian_aid_tt
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	# Show Mock Readiness for Compromise
+	# Increases friction (daily peace decay for CHB)
+	DRE_SDO_mock_readiness = {
+		icon = GFX_decision_generic_diplomacy
+		cost = 75
+		available = {
+			has_political_power > 75
+		}
+		visible = {
+			has_war_with = CHB
+		}
+		complete_effect = {
+			subtract_from_variable = { global.SDO_peace_progress = 0.03 }
+			add_political_power = 50
+			custom_effect_tooltip = DRE_SDO_mock_readiness_tt
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	# Proposal for "Neutral Zone" Negotiations
+	# Freezes peace progress for 60 days (simulates stalling)
+	DRE_SDO_neutral_zone_proposal = {
+		icon = GFX_decision_generic_agree
+		cost = 100
+		days_remove = 60
+		available = {
+			has_political_power > 100
+		}
+		visible = {
+			has_war_with = CHB
+		}
+		modifier = {
+			political_power_gain = -0.2
+		}
+		complete_effect = {
+			CHB = {
+				add_timed_idea = { idea = CHB_SDO_negotiation_stall_spirit days = 60 }
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	# Identify "Nationalist Elements" (Pacification)
+	# Reduces resistance in occupied CHB states
+	DRE_SDO_pacification_campaign = {
+		icon = GFX_decision_generic_police
+		cost = 50
+		available = {
+			has_political_power > 50
+		}
+		visible = {
+			has_war_with = CHB
+			any_controlled_state = {
+				is_core_of = CHB
+				NOT = { is_core_of = ROOT }
+			}
+		}
+		complete_effect = {
+			every_controlled_state = {
+				limit = {
+					is_core_of = CHB
+					NOT = { is_core_of = ROOT }
+				}
+				add_resistance = -10
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	}
+}

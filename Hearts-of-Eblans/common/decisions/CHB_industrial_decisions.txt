@@ -1,0 +1,91 @@
+CHB_industrial_crisis_category = {
+	name = CHB_industrial_crisis_category
+	icon = GFX_decision_category_generic_industrial_growth
+	
+	visible = {
+		OR = {
+			has_idea = CHB_overheated_economy
+			has_idea = CHB_economic_strain
+			has_idea = CHB_economic_collapse
+		}
+	}
+
+	CHB_emergency_economic_measures = {
+		name = CHB_emergency_economic_measures
+		icon = GFX_decision_generic_modernize_industry
+		
+		available = {
+			has_political_power > 100
+		}
+		
+		cost = 100
+		
+		fire_only_once = no
+		
+		days_remove = 90
+		
+		modifier = {
+			stability_weekly = 0.002
+			political_power_factor = -0.1
+		}
+		
+		complete_effect = {
+			add_ideas = CHB_emergency_measures_active
+		}
+		
+		remove_effect = {
+			remove_ideas = CHB_emergency_measures_active
+		}
+	}
+
+	CHB_subsidize_failing_factories = {
+		name = CHB_subsidize_failing_factories
+		icon = GFX_decision_generic_invest_infrastructure
+		
+		available = {
+			has_political_power > 50
+		}
+		
+		visible = {
+			OR = {
+				has_idea = CHB_economic_strain
+				has_idea = CHB_economic_collapse
+			}
+		}
+		
+		cost = 50
+		
+		fire_only_once = no
+		
+		days_remove = 180
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+			industrial_capacity_factory = 0.05
+		}
+		
+		complete_effect = {
+			add_stability = 0.05
+		}
+	}
+
+	CHB_foreign_investment_round = {
+		name = CHB_foreign_investment_round
+		icon = GFX_decision_generic_foreign_capital
+		
+		available = {
+			has_political_power > 75
+		}
+		
+		cost = 75
+		
+		fire_only_once = yes
+		
+		days_remove = 365
+		
+		complete_effect = {
+			add_ideas = CHB_foreign_investments
+			set_country_flag = CHB_crisis_resolved
+		}
+	}
+}

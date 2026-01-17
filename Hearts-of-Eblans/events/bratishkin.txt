@@ -1,4 +1,416 @@
 add_namespace = btk
+
+# --- NEW EVENTS FOR 89 REICH IMPROVEMENTS ---
+
+# 100: Path Decision (Concept of Restoration) - Actually fired by focus, provides context
+country_event = {
+	id = btk.100
+	title = btk.100.t
+	desc = btk.100.d
+	picture = GFX_report_event_picture_BTK_4
+	is_triggered_only = yes
+	
+	option = {
+		name = btk.100.a # Iron Fist
+		set_country_flag = BTK_iron_fist_path_chosen
+		ai_chance = { factor = 10 }
+	}
+	
+	option = {
+		name = btk.100.b # Velvet Reunion
+		set_country_flag = BTK_velvet_path_chosen
+		ai_chance = { factor = 90 }
+	}
+}
+
+# 101: Shadowkek Annexation Offer (Sent to SHD)
+country_event = {
+	id = btk.101
+	title = btk.101.t
+	desc = btk.101.d
+	picture = GFX_report_event_picture_BTK_4
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = btk.101.a
+		BTK = {
+			country_event = { id = btk.105 } # Success event for BTK
+			annex_country = { target = SHD transfer_troops = yes }
+		}
+	}
+	
+	option = { # Refuse
+		name = btk.101.b
+		BTK = {
+			country_event = { id = btk.106 } # Failure event for BTK
+			create_wargoal = { target = SHD type = annex_everything }
+		}
+	}
+}
+
+# 102: Gensuha Annexation Offer (Sent to GNS)
+country_event = {
+	id = btk.102
+	title = btk.102.t
+	desc = btk.102.d
+	picture = GFX_report_event_picture_BTK_4
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = btk.102.a
+		BTK = {
+			country_event = { id = btk.105 }
+			annex_country = { target = GNS transfer_troops = yes }
+		}
+	}
+	
+	option = { # Refuse
+		name = btk.102.b
+		BTK = {
+			country_event = { id = btk.106 }
+			create_wargoal = { target = GNS type = annex_everything }
+		}
+	}
+}
+
+# 103: Gaechka Annexation Offer (Sent to GCH)
+country_event = {
+	id = btk.103
+	title = btk.103.t
+	desc = btk.103.d
+	picture = GFX_report_event_picture_BTK_4
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = btk.103.a
+		BTK = {
+			country_event = { id = btk.105 }
+			annex_country = { target = GCH transfer_troops = yes }
+		}
+	}
+	
+	option = { # Refuse
+		name = btk.103.b
+		BTK = {
+			country_event = { id = btk.106 }
+			create_wargoal = { target = GCH type = annex_everything }
+		}
+	}
+}
+
+# 104: Jojo Annexation Offer (Sent to JHF)
+country_event = {
+	id = btk.104
+	title = btk.104.t
+	desc = btk.104.d
+	picture = GFX_report_event_picture_BTK_4
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = btk.104.a
+		BTK = {
+			country_event = { id = btk.105 }
+			annex_country = { target = JHF transfer_troops = yes }
+		}
+	}
+	
+	option = { # Refuse
+		name = btk.104.b
+		BTK = {
+			country_event = { id = btk.106 }
+			create_wargoal = { target = JHF type = annex_everything }
+		}
+	}
+}
+
+# 105: Diplomatic Success (Fires for BTK)
+country_event = {
+	id = btk.105
+	title = btk.105.t
+	desc = btk.105.d
+	picture = GFX_report_event_picture_BTK_5
+	is_triggered_only = yes
+	
+	option = {
+		name = btk.105.a
+		add_political_power = 50
+		add_stability = 0.05
+	}
+}
+
+# 106: Diplomatic Failure (Fires for BTK)
+country_event = {
+	id = btk.106
+	title = btk.106.t
+	desc = btk.106.d
+	picture = GFX_report_event_picture_BTK_1
+	is_triggered_only = yes
+	
+	option = {
+		name = btk.106.a
+		add_war_support = 0.05
+	}
+}
+
+# ===== НОВЫЕ ИВЕНТЫ (by AI) =====
+
+# 200: Экономический выбор - Пропаганда или Инвестиции
+country_event = {
+	id = btk.200
+	title = btk.200.t
+	desc = btk.200.d
+	picture = GFX_report_event_picture_BTK_1
+	is_triggered_only = yes
+	
+	option = { # Пропаганда
+		name = btk.200.a
+		add_ideas = BTK_propaganda_campaign
+		add_stability = 0.05
+		ai_chance = { factor = 50 }
+	}
+	
+	option = { # Инвестиции
+		name = btk.200.b
+		add_ideas = BTK_trade_agreements
+		add_political_power = 75
+		ai_chance = { factor = 50 }
+	}
+}
+
+# 201: Иностранные добровольцы хотят помочь
+country_event = {
+	id = btk.201
+	title = btk.201.t
+	desc = btk.201.d
+	picture = GFX_report_event_picture_BTK_3
+	is_triggered_only = yes
+	
+	option = { # Принять
+		name = btk.201.a
+		add_ideas = BTK_foreign_volunteers
+		add_manpower = 5000
+		ai_chance = { factor = 80 }
+	}
+	
+	option = { # Отказаться (сохранить чистоту армии)
+		name = btk.201.b
+		add_war_support = 0.03
+		add_stability = 0.02
+		ai_chance = { factor = 20 }
+	}
+}
+
+# 202: Промышленный кризис - нужен выбор
+country_event = {
+	id = btk.202
+	title = btk.202.t
+	desc = btk.202.d
+	picture = GFX_report_event_picture_BTK_1
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { # Чрезвычайные меры
+		name = btk.202.a
+		add_timed_idea = {
+			idea = BTK_emergency_measures
+			days = 365
+		}
+		add_stability = -0.05
+		ai_chance = { factor = 70 }
+	}
+	
+	option = { # Терпение и постепенное восстановление
+		name = btk.202.b
+		add_political_power = 100
+		add_stability = 0.05
+		ai_chance = { factor = 30 }
+	}
+}
+
+# 203: Научный прорыв!
+country_event = {
+	id = btk.203
+	title = btk.203.t
+	desc = btk.203.d
+	picture = GFX_report_event_picture_BTK_5
+	is_triggered_only = yes
+	
+	option = {
+		name = btk.203.a
+		add_tech_bonus = {
+			name = BTK_research_bonus
+			bonus = 0.5
+			uses = 1
+			category = electronics
+		}
+		add_political_power = 50
+	}
+}
+
+# 204: Патриотическое движение
+country_event = {
+	id = btk.204
+	title = btk.204.t
+	desc = btk.204.d
+	picture = GFX_report_event_picture_BTK_4
+	is_triggered_only = yes
+	
+	option = { # Поддержать
+		name = btk.204.a
+		add_stability = 0.05
+		add_war_support = 0.03
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.03
+		}
+		ai_chance = { factor = 70 }
+	}
+	
+	option = { # Дистанцироваться
+		name = btk.204.b
+		add_stability = 0.02
+		ai_chance = { factor = 30 }
+	}
+}
+
+# 205: Воссоединение завершено! (Триггерится после захвата всех)
+country_event = {
+	id = btk.205
+	title = btk.205.t
+	desc = btk.205.d
+	picture = GFX_report_event_picture_BTK_5
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = btk.205.a
+		add_stability = 0.10
+		add_war_support = 0.10
+		add_political_power = 100
+		set_country_flag = BTK_unification_complete
+	}
+}
+
+# 206: Модернизация армии завершена
+country_event = {
+	id = btk.206
+	title = btk.206.t
+	desc = btk.206.d
+	picture = GFX_report_event_picture_BTK_4
+	is_triggered_only = yes
+	
+	option = {
+		name = btk.206.a
+		army_experience = 25
+		add_command_power = 50
+	}
+}
+
+# 207: Экономическое чудо
+country_event = {
+	id = btk.207
+	title = btk.207.t
+	desc = btk.207.d
+	picture = GFX_report_event_picture_BTK_5
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = btk.207.a
+		add_political_power = 100
+		add_stability = 0.05
+	}
+}
+
+# 208: Выбор экономической модели
+country_event = {
+	id = btk.208
+	title = btk.208.t
+	desc = btk.208.d
+	picture = GFX_report_event_picture_BTK_1
+	is_triggered_only = yes
+	
+	option = { # Военная экономика
+		name = btk.208.a
+		add_ideas = BTK_mobilized_economy
+		add_war_support = 0.10
+		ai_chance = { factor = 40 }
+	}
+	
+	option = { # Гражданское развитие
+		name = btk.208.b
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 60 }
+	}
+}
+
+# ===== СОБЫТИЯ УРОВНЕЙ ПОДДЕРЖКИ =====
+
+# 210: Поддержка растёт (Level 2)
+country_event = {
+	id = btk.210
+	title = btk.210.t
+	desc = btk.210.d
+	picture = GFX_report_event_picture_BTK_4
+	is_triggered_only = yes
+	
+	option = {
+		name = btk.210.a
+		add_political_power = 25
+	}
+}
+
+# 211: Умеренная поддержка (Level 3)
+country_event = {
+	id = btk.211
+	title = btk.211.t
+	desc = btk.211.d
+	picture = GFX_report_event_picture_BTK_5
+	is_triggered_only = yes
+	
+	option = {
+		name = btk.211.a
+		add_political_power = 50
+	}
+}
+
+# 212: Массовая поддержка (Level 4)
+country_event = {
+	id = btk.212
+	title = btk.212.t
+	desc = btk.212.d
+	picture = GFX_report_event_picture_BTK_5
+	is_triggered_only = yes
+	
+	option = {
+		name = btk.212.a
+		add_war_support = 0.05
+	}
+}
+
+# 213: Абсолютная поддержка (Level 5)
+country_event = {
+	id = btk.213
+	title = btk.213.t
+	desc = btk.213.d
+	picture = GFX_report_event_picture_BTK_5
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = btk.213.a
+		add_stability = 0.05
+		add_war_support = 0.05
+		add_political_power = 100
+	}
+}
 #КОнтент для других стран
 country_event = {
 	id = btk.21
