@@ -9,6 +9,7 @@ state = {
 
 		owner = SHD
 		add_core_of = SHD
+		add_core_of = BTK
 
 		victory_points = {
 			3288 3 # Klaipeda/Memel

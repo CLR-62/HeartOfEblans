@@ -2540,7 +2540,7 @@ focus = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 20
+			factor = 40
 		}
 
 		available = {

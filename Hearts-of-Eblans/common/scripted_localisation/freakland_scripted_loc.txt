@@ -24,4 +24,34 @@ defined_text = {
         }
         localization_key = idea_desc|freakland_triumph
     }
+    text = {
+        trigger = {
+            check_variable = { global.freakland_level = 5 }
+        }
+        localization_key = idea_desc|freakland_slowlyDrop
+    }
+    text = {
+        trigger = {
+            check_variable = { global.freakland_level = 6 }
+        }
+        localization_key = idea_desc|freakland_emptiness
+    }
+    text = {
+        trigger = {
+            check_variable = { global.freakland_level = 7 }
+        }
+        localization_key = idea_desc|freakland_wrongDecisions
+    }
+    text = {
+        trigger = {
+            check_variable = { global.freakland_level = 8 }
+        }
+        localization_key = idea_desc|freakland_decay
+    }
+    text = {
+        trigger = {
+            check_variable = { global.freakland_level = 9 }
+        }
+        localization_key = idea_desc|freakland_decay2
+    }
 }

@@ -7,6 +7,9 @@ state = {
 	history = {
 		owner = MPK
 		add_core_of = MPK
+		victory_points = {
+			6361 1
+		}
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1

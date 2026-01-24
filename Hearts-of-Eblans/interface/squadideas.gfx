@@ -125,6 +125,10 @@ spriteTypes = {
         name = "GFX_vitaliy_jr_small"
         texturefile = "gfx/interface/ideas/vitaliy_jr_small.dds"
     }  
+    spriteType = {
+        name = "GFX_chb_bogdan"
+        texturefile = "gfx/interface/ideas/chb_bogdan.dds"
+    }  
 	
     spriteType = {
         name = "GFX_idea_slay_2023"
@@ -794,6 +798,14 @@ spriteTypes = {
 	spriteType = {
         name = "GFX_idea_ARA_gos_apparat"
         texturefile = "gfx/interface/ideas/ARA_gos_apparat.dds"
+    }  	
+	spriteType = {
+        name = "GFX_idea_CAC_fishburger_problem"
+        texturefile = "gfx/interface/ideas/fishburger_problem.dds"
+    }  	
+	spriteType = {
+        name = "GFX_idea_MEL_interpol"
+        texturefile = "gfx/interface/ideas/MEL_interpol.dds"
     }  	
 	
 	spriteType = {

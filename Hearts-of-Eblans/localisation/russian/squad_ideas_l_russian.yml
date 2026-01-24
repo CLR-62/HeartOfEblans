@@ -386,8 +386,8 @@
  fascism_intervention_idea: "Вмешательство в мировую политику"
 
 
- 
- 
+  JHF_national_dislocated_economy: "Парализованная экономика"
+  JHF_national_dislocated_economy_desc: "Страна находится в глубочайшем кризисе. Государственный аппарат не функционирует, промышленность стоит, а армия деморализована отсутствием снабжения и четкого руководства."
  SVI_svintogon_1: "Свинтогон"
  SVI_svintogon_2: "Свинтогон"
  SVI_svintogon_3_supply: "Свинтогон"
@@ -434,6 +434,20 @@
  PYA_villagers_restrictions_idea: "Жители без ограничений"
  PYA_lab_idea: "Секретная лаборатория Отсо"
  PYA_sp_dawn_idea: "Расцвет СП"
+
+ freakland_start: "Зарождение ФрикЛенда"
+ freakland_rise: "Подъём ФрикЛенда"
+ freakland_rise_2: "Подъём ФрикЛенда"
+ freakland_triumph: "Триумф ФрикЛенда"
+ freakland_slowlyDrop: "Умеренное падение популярности ФрикЛенда"
+ freakland_emptiness: "Пустота на ФрикЛенде"
+ freakland_rebirth: "Перерождение ФрикЛенда"
+ freakland_wrongDecisions: "Неправильные решения на ФрикЛенде"
+ freakland_decay: "Падение ФрикЛенда"
+ freakland_decay2: "Падение ФрикЛенда"
+
+ CAC_fishburger_problem_idea: "Фишбургерная проблема"
+ interpol_melstroy: "Я заперт на этом острове из-за Интерпола..."
 
 
  

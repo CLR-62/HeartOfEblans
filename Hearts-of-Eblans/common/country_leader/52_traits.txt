@@ -437,4 +437,4 @@ leader_traits = {
 		}
 	}
 
-	
+}

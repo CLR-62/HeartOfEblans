@@ -50,6 +50,7 @@ CHB_smartiki_category = {
 		}
 
 		remove_effect = {
+			set_country_flag = CHB_SMARIK_SPAWNED
 			custom_effect_tooltip = CHB_smartiki_spawned_tt
 			random_owned_controlled_state = {
 				limit = { 
@@ -94,6 +95,7 @@ CHB_smartiki_category = {
 		}
 
 		remove_effect = {
+			set_country_flag = CHB_SMARIK_SPAWNED
 			custom_effect_tooltip = CHB_smartiki_spawned_tt
 			random_owned_controlled_state = {
 				limit = { 
@@ -138,6 +140,7 @@ CHB_smartiki_category = {
 		}
 
 		remove_effect = {
+			set_country_flag = CHB_SMARIK_SPAWNED
 			custom_effect_tooltip = CHB_smartiki_spawned_tt
 			random_owned_controlled_state = {
 				limit = { 
@@ -182,6 +185,7 @@ CHB_smartiki_category = {
 		}
 
 		remove_effect = {
+			set_country_flag = CHB_SMARIK_SPAWNED
 			custom_effect_tooltip = CHB_smartiki_spawned_tt
 			random_owned_controlled_state = {
 				limit = { 
@@ -225,6 +229,7 @@ CHB_smartiki_category = {
 		}
 
 		remove_effect = {
+			set_country_flag = CHB_SMARIK_SPAWNED
 			custom_effect_tooltip = CHB_smartiki_elite_spawned_tt
 			random_owned_controlled_state = {
 				limit = { 
@@ -267,6 +272,7 @@ CHB_smartiki_category = {
 		}
 
 		remove_effect = {
+			set_country_flag = CHB_SMARIK_SPAWNED
 			custom_effect_tooltip = CHB_smartiki_elite_spawned_tt
 			random_owned_controlled_state = {
 				limit = { 
@@ -310,6 +316,7 @@ CHB_smartiki_category = {
 		}
 
 		remove_effect = {
+			set_country_flag = CHB_SMARIK_SPAWNED
 			custom_effect_tooltip = CHB_smartiki_elite_spawned_tt
 			random_owned_controlled_state = {
 				limit = { 

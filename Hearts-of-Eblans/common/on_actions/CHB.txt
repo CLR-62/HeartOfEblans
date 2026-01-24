@@ -1,0 +1,29 @@
+on_actions = {
+	on_daily_CHB = {
+		effect = {
+			if = {
+				limit = {
+					tag = CHB
+					casualties_k > 300
+					NOT = { has_country_flag = CHB_shukov_casualty_event_fired }
+					any_unit_leader = {
+						is_character = Shukov
+						is_assigned = yes
+					}
+				}
+				country_event = { id = chicken.100 }
+				set_country_flag = CHB_shukov_casualty_event_fired
+			}
+		}
+		if = {
+			limit = {
+				tag = CHB
+				has_country_flag = CHB_SMARIK_SPAWNED
+				NOT = { has_country_flag = CHB_INCEDENT_SMART }
+				has_war = yes
+			}
+			set_country_flag = CHB_INCEDENT_SMART
+			news_event = { id = squad_news.30 days = 10 }
+		}
+	}
+}

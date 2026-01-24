@@ -26,10 +26,72 @@ spriteTypes = {
 		name = "GFX_report_event_democracy_threat"
 		texturefile = "gfx/event_pictures/svi_democracy_threat.dds"
 	}
+
+	spriteType = {
+		name = "GFX_report_event_freakland_new_player"
+		texturefile = "gfx/event_pictures/freakland_new_player.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_report_event_freakland_superpower"
+		texturefile = "gfx/event_pictures/freakland_superpower.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_superlikes"
+		texturefile = "gfx/event_pictures/superlikes.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_freakland_superpower_weaning"
+		texturefile = "gfx/event_pictures/freakland_superpower_weaning.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_generic_siloviki"
+		texturefile = "gfx/event_pictures/generic_siloviki.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_internet_block"
+		texturefile = "gfx/event_pictures/internet_block.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_jumper_passed"
+		texturefile = "gfx/event_pictures/jumper_passed.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_cvadrobers"
+		texturefile = "gfx/event_pictures/cvadrobers.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_freakland_end_is_near"
+		texturefile = "gfx/event_pictures/freakland_end_is_near.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_freakland_dying"
+		texturefile = "gfx/event_pictures/freakland_dying.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_freakland_closed"
+		texturefile = "gfx/event_pictures/freakland_closed.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_chicken_shukov"
+		texturefile = "gfx/event_pictures/chicken_shukov.dds"
+	}
 	
 	spriteType = {
 		name = "GFX_report_event_svo_preparing_begin"
 		texturefile = "gfx/event_pictures/dreyk_ready.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_cheater_kicked"
+		texturefile = "gfx/event_pictures/cheater_kicked.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_mpk_cheater"
+		texturefile = "gfx/event_pictures/mpk_cheater.dds"
 	}
 
 	spriteType = {
@@ -126,6 +188,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_star_deport"
 		texturefile = "gfx/event_pictures/ham_star_deport.dds"
+	}	
+	spriteType = {
+		name = "GFX_report_event_milana_hametova"
+		texturefile = "gfx/event_pictures/milana_hametova.dds"
 	}	
 	
 	spriteType = {

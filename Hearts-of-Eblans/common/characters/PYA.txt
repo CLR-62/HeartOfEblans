@@ -173,7 +173,7 @@ characters = {
 			}
 			traits = {
 				DEN_fascist_militarist
-				SWI_fascist
+				fascist_demagogue
 			}
 			available = {
 				has_completed_focus = PYA_the_main_fascist

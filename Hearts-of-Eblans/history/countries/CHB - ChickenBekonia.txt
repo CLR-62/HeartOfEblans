@@ -11,6 +11,7 @@ set_war_support = 0.21
 add_ideas = { 
 	CHB_hungary_problem
 	CHB_outdated_industry
+	twitch_platform
 }
 
 set_country_flag = generic_trackofday_flag
@@ -70,6 +71,8 @@ recruit_character = miramestinchortt
 recruit_character = filinnn
 recruit_character = lin_night
 recruit_character = Shukov
+recruit_character = jumper_cube
+recruit_character = bogdan_tsymbal
 
 set_convoys = 20
 

@@ -12,7 +12,6 @@ state={
 		}
 		add_core_of = SVI
 		add_core_of = KIS
-
 	}
 
 	provinces={

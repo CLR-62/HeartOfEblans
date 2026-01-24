@@ -236,13 +236,21 @@ characters = {
 			idea_token = ham_filimonova
 			allowed = {
 				OR = {
-					has_completed_focus = ham_opposition_rise
-					has_country_flag = HAM_STAR_ELECTED
+					AND = {
+						original_tag = HAM
+						OR = {
+							has_completed_focus = ham_opposition_rise
+							has_country_flag = HAM_STAR_ELECTED
+						}
+					}
 				}
 			}
 			available = {
-				NOT = { has_country_flag = ham_filimonova_disable }
-				NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+				if = {
+					limit = { original_tag = HAM }
+					NOT = { has_country_flag = ham_filimonova_disable }
+					NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+				}
 			}
 			traits  = {
 				democratic_reformer
@@ -270,10 +278,15 @@ characters = {
             legacy_id = -1
 			visible = { 
 				OR = {
-					has_completed_focus = ham_opposition_rise
-					has_country_flag = HAM_STAR_ELECTED
+					AND = {
+						original_tag = HAM
+						OR = {
+							has_completed_focus = ham_opposition_rise
+							has_country_flag = HAM_STAR_ELECTED
+						}
+						NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+					}
 				}
-				NOT = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
 				NOT = { has_country_flag = ham_amirchik_disable }
 			}
         }
@@ -346,6 +359,7 @@ characters = {
 			slot = political_advisor
 			idea_token = ham_nekrasova
 			allowed = {
+				original_tag = HAM
 				OR = {
 					has_completed_focus = ham_more_adult
 					has_completed_focus = ham_opposition_rise

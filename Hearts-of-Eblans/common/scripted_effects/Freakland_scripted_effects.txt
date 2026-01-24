@@ -15,6 +15,16 @@ country_leaves_freakland = {
     news_event = { id = freakland.7  days = 5 }
 }
 
+country_kicked_from_freakland = {
+	remove_from_array = {
+        global.freakland_members = THIS.id
+    }
+
+    clear_all_freakland_ideas = yes
+
+    news_event = { id = freakland.16  days = 5 }
+}
+
 clear_all_freakland_ideas = {
     if = {
         limit = { has_idea = freakland_start }
@@ -31,6 +41,30 @@ clear_all_freakland_ideas = {
     if = {
         limit = { has_idea = freakland_triumph }
         remove_ideas = freakland_triumph
+    }
+    if = {
+        limit = { has_idea = freakland_slowlyDrop }
+        remove_ideas = freakland_slowlyDrop
+    }
+    if = {
+        limit = { has_idea = freakland_emptiness }
+        remove_ideas = freakland_emptiness
+    }
+    if = {
+        limit = { has_idea = freakland_rebirth }
+        remove_ideas = freakland_rebirth
+    }
+    if = {
+        limit = { has_idea = freakland_wrongDecisions }
+        remove_ideas = freakland_wrongDecisions
+    }
+    if = {
+        limit = { has_idea = freakland_decay }
+        remove_ideas = freakland_decay
+    }
+    if = {
+        limit = { has_idea = freakland_decay2 }
+        remove_ideas = freakland_decay2
     }
 }
 
@@ -60,6 +94,42 @@ update_freakland_idea = {
             check_variable = { global.freakland_level = 4 }
         }
         add_ideas = freakland_triumph
+    }
+    else_if = {
+        limit = {
+            check_variable = { global.freakland_level = 5 }
+        }
+        add_ideas = freakland_slowlyDrop
+    }
+    else_if = {
+        limit = {
+            check_variable = { global.freakland_level = 6 }
+        }
+        add_ideas = freakland_emptiness
+    }
+    else_if = {
+        limit = {
+            check_variable = { global.freakland_level = 7 }
+        }
+        add_ideas = freakland_rebirth
+    }
+    else_if = {
+        limit = {
+            check_variable = { global.freakland_level = 8 }
+        }
+        add_ideas = freakland_wrongDecisions
+    }
+    else_if = {
+        limit = {
+            check_variable = { global.freakland_level = 9 }
+        }
+        add_ideas = freakland_decay
+    }
+    else_if = {
+        limit = {
+            check_variable = { global.freakland_level = 10 }
+        }
+        add_ideas = freakland_decay2
     }
 }
 

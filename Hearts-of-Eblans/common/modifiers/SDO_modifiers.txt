@@ -1,0 +1,3 @@
+SDO_ceasefire_speed_penalty = {
+	army_speed_factor = -100.0
+}

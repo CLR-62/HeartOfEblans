@@ -47,8 +47,8 @@ static const float MAP_SPECULAR_WIDTH			= 15.0;
 // ------------------    TERRAIN        -------------------------
 // --------------------------------------------------------------
 static const float CITY_LIGHTS_TILING 			= 0.09103;
-static const float CITY_LIGHTS_INTENSITY 		= 4.5;
-static const float CITY_LIGHTS_BLOOM_FACTOR 	= 0.45;
+static const float CITY_LIGHTS_INTENSITY 		= 6.5; // Brighter glow
+static const float CITY_LIGHTS_BLOOM_FACTOR 	= 0.65; // Softer spread
 
 static const float TERRAIN_TILE_FREQ 			= 128.0f;
 static const float MAP_NUM_TILES 				= 4.0f;
@@ -90,7 +90,7 @@ static const float 	ICE_NOISE_TILING  			= 0.1f; //0.068f;
 static const float WATER_COLOR_LIGHTNESS = 0.3;
 static const float WATER_RIPPLE_EFFECT = 0.0025;
 
-static const float COLORMAP_OVERLAY_STRENGTH 	= 0.75f;
+static const float COLORMAP_OVERLAY_STRENGTH 	= 0.95f; // Stronger terrain colors
 static const float COLORMAP_MUD_OVERLAY_STRENGTH = 0.5f;
 
 static const float3 FAKE_CUBEMAP_COLOR 			= float3(0.0f, 0.0f, 0.0f);

@@ -8,7 +8,7 @@ country_event = {
 	id = hametova.1
 	title = hametova.1.t
 	desc = hametova.1.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_milana_hametova
 	
 	is_triggered_only = yes
 	
@@ -26,7 +26,7 @@ country_event = {
 	id = hametova.2
 	title = hametova.2.t
 	desc = hametova.2.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_star_deport
 	
 	is_triggered_only = yes
 	
@@ -50,7 +50,7 @@ country_event = {
 	id = hametova.3
 	title = hametova.3.t
 	desc = hametova.3.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_generic_research_lab
 	
 	is_triggered_only = yes
 	
@@ -67,7 +67,7 @@ country_event = {
 	id = hametova.4
 	title = hametova.4.t
 	desc = hametova.4.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_generic_rally
 	
 	is_triggered_only = yes
 	
@@ -90,7 +90,7 @@ country_event = {
 	id = hametova.5
 	title = hametova.5.t
 	desc = hametova.5.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_milana_star
 	
 	is_triggered_only = yes
 	
@@ -112,7 +112,7 @@ country_event = {
 	id = hametova.6
 	title = hametova.6.t
 	desc = hametova.6.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_internet_block
 	
 	is_triggered_only = yes
 	
@@ -144,7 +144,7 @@ country_event = {
 	id = hametova.7
 	title = hametova.7.t
 	desc = hametova.7.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_AUS_political_rally
 	
 	is_triggered_only = yes
 	
@@ -164,7 +164,7 @@ country_event = {
 	id = hametova.8
 	title = hametova.8.t
 	desc = hametova.8.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_generic_sign_treaty1
 	
 	is_triggered_only = yes
 	
@@ -183,7 +183,7 @@ country_event = {
 	id = hametova.9
 	title = hametova.9.t
 	desc = hametova.9.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_generic_sign_treaty2
 	
 	is_triggered_only = yes
 	
@@ -212,7 +212,7 @@ country_event = {
 	id = hametova.10
 	title = hametova.10.t
 	desc = hametova.10.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_superlikes
 	
 	is_triggered_only = yes
 	
@@ -237,7 +237,7 @@ country_event = {
 	id = hametova.11
 	title = hametova.11.t
 	desc = hametova.11.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_star_deport
 	
 	is_triggered_only = yes
 	
@@ -251,16 +251,17 @@ country_event = {
 		star_opposition_ideas_change_state = yes
 	}
 
-	#NAHUY IZ STRANI
-	option = {
-		name = hametova.11.b
-		ai_chance = {
-			factor = 55
+		#NAHUY IZ STRANI
+		option = {
+			name = hametova.11.b
+			ai_chance = {
+				factor = 55
+			}
+			
+			set_variable = { star_opposition_ideas_new_state = 3}
+			star_opposition_ideas_change_state = yes
+			set_global_flag = HAM_OPPOSITION_EXILED
 		}
-		
-		set_variable = { star_opposition_ideas_new_state = 3}
-		star_opposition_ideas_change_state = yes
-	}
 }
 
 #Platform change
@@ -268,7 +269,7 @@ country_event = {
 	id = hametova.12
 	title = hametova.12.t
 	desc = hametova.12.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_phone
 	
 	is_triggered_only = yes
 	
@@ -287,7 +288,7 @@ country_event = {
 	id = hametova.13
 	title = hametova.13.t
 	desc = hametova.13.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_hambtk_coop
 	
 	is_triggered_only = yes
 	
@@ -344,7 +345,7 @@ country_event = {
 	id = hametova.14
 	title = hametova.14.t
 	desc = hametova.14.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_generic_sign_treaty2
 	
 	is_triggered_only = yes
 	
@@ -363,7 +364,7 @@ country_event = {
 	id = hametova.15
 	title = hametova.15.t
 	desc = hametova.15.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_canada_treaty
 	
 	is_triggered_only = yes
 	
@@ -388,7 +389,7 @@ country_event = {
 	id = hametova.16
 	title = hametova.16.t
 	desc = hametova.16.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_ITA_democratic_parlament
 	
 	is_triggered_only = yes
 	
@@ -423,7 +424,7 @@ country_event = {
 	id = hametova.17
 	title = hametova.17.t
 	desc = hametova.17.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_neNekrasova
 	
 	is_triggered_only = yes
 	
@@ -468,7 +469,7 @@ country_event = {
 	id = hametova.18
 	title = hametova.18.t
 	desc = hametova.18.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_ARG_coup_detat
 	
 	is_triggered_only = yes
 	
@@ -494,7 +495,7 @@ unit_leader_event = {
 	id = hametova.19
 	title = hametova.19.t
 	desc = hametova.19.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_milana_star
 	
 	is_triggered_only = yes
 	
@@ -519,7 +520,7 @@ unit_leader_event = {
 	id = hametova.20
 	title = hametova.20.t
 	desc = hametova.20.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_blogema
 	
 	is_triggered_only = yes
 	
@@ -543,7 +544,7 @@ country_event = {
 	id = hametova.21
 	title = hametova.21.t
 	desc = hametova.21.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_generic_sign_treaty3
 	
 	is_triggered_only = yes
 	
@@ -561,7 +562,7 @@ country_event = {
 	id = hametova.22
 	title = hametova.22.t
 	desc = hametova.22.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_generic_sign_treaty3
 	
 	is_triggered_only = yes
 	
@@ -584,7 +585,7 @@ country_event = {
 	id = hametova.23
 	title = hametova.23.t
 	desc = hametova.23.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_DEN_fascist_troops
 	
 	is_triggered_only = yes
 	
@@ -612,7 +613,7 @@ country_event = {
 	id = hametova.24
 	title = hametova.24.t
 	desc = hametova.24.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_FDR_speech
 	
 	is_triggered_only = yes
 	
@@ -635,7 +636,7 @@ country_event = {
 	id = hametova.25
 	title = hametova.25.t
 	desc = hametova.25.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_milana_hametova
 	
 	is_triggered_only = yes
 	
@@ -666,7 +667,7 @@ country_event = {
 	id = hametova.26
 	title = hametova.26.t
 	desc = hametova.26.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_brtf_event
 	
 	is_triggered_only = yes
 	
@@ -693,7 +694,7 @@ country_event = {
 	id = hametova.27
 	title = hametova.27.t
 	desc = hametova.27.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_brtf_event
 	
 	is_triggered_only = yes
 	
@@ -713,7 +714,7 @@ country_event = {
 	id = hametova.28
 	title = hametova.28.t
 	desc = hametova.28.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_milana_hametova
 	
 	is_triggered_only = yes
 	
@@ -744,7 +745,7 @@ country_event = {
 	id = hametova.29
 	title = hametova.29.t
 	desc = hametova.29.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_brtf_event
 	
 	is_triggered_only = yes
 	
@@ -766,7 +767,7 @@ country_event = {
 	id = hametova.30
 	title = hametova.30.t
 	desc = hametova.30.d
-	picture = GFX_report_event_CHL_chillan_earthquake
+	picture = GFX_report_event_brtf_event
 	
 	is_triggered_only = yes
 	
@@ -784,7 +785,7 @@ country_event = {
 	id = hametova.31
 	title = hametova.31.t
 	desc = hametova.31.d
-	picture = GFX_report_event_generic_diplomacy1
+	picture = GFX_report_event_gre_diplomacy
 	
 	is_triggered_only = yes
 	
@@ -809,7 +810,7 @@ country_event = {
 	id = hametova.32
 	title = hametova.32.t
 	desc = hametova.32.d
-	picture = GFX_report_event_generic_diplomacy2
+	picture = GFX_report_event_SWI_parliament_members
 	
 	is_triggered_only = yes
 	
@@ -854,13 +855,35 @@ country_event = {
 	#Okey
 	option = {
 		name = hametova.33.a
+		trigger = {
+			has_equipment = {
+				infantry_equipment > 1999
+			}
+		}
 		ai_chance = {
 			factor = 55
+		}
+		BTK = {
+			remove_equipment = {
+				type = infantry_equipment
+				amount = 2000
+			}
+		}
+		HAM = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = BTK
+			}
+			set_country_flag = HAM_promised_kru_to_btk
 		}
 		BTK = {
 			add_ideas = HAM_BTK_pact_idea
 		}
 	}
+
+	#No equipment but still want to agree? (User said "if they have it")
+	#Let's just make the main option require it, and a "No" option if they don't have it or don't want to.
 
 	#No
 	option = {
@@ -905,7 +928,7 @@ country_event = {
 	id = hametova.35
 	title = hametova.35.t
 	desc = hametova.35.d
-	picture = GFX_report_event_ITA_air_crash
+	picture = GFX_report_event_BOL_bolivian_socialist_revolution
 	
 	is_triggered_only = yes
 	
@@ -1173,11 +1196,17 @@ country_event = {
 
 	is_triggered_only = yes
 
-	# Победа Миланы Стар - доступно если популярность демократов > 35%
+	# Победа Миланы Стар
 	option = { 
 		name = hametova_elections.3.a
 		trigger = {
-			democratic > 0.35
+			# Democratic support must be strictly higher than Hypecratia
+			check_variable = { 
+				democratic > hypecratia 
+			}
+		}
+		ai_chance = {
+			factor = 100
 		}
 		HAM_star_elected = yes
 		hidden_effect = {
@@ -1185,10 +1214,12 @@ country_event = {
 		}
 	}
 
-	# Победа Хаметовой (фальсификации)
+	# Победа Хаметовой (фальсификации / Провал демократов)
 	option = { 
 		name = hametova_elections.3.b
 		HAM_hametova_elected = yes
+		set_country_flag = HAM_demo_failed_elections
+		unlock_national_focus = ham_new_doctrine
 		add_stability = -0.1
 		add_popularity = {
 			ideology = democratic
@@ -1315,6 +1346,7 @@ country_event = {
 		name = hametova_elections.21.a
 		ai_chance = { factor = 30 }
 		HAM_star_elected = yes
+		unlock_national_focus = ham_political_moves
 		hidden_effect = {
 			country_event = { id = hametova_elections.10 days = 3 }
 		}
@@ -1391,19 +1423,20 @@ country_event = {
 
 	is_triggered_only = yes
 
-	# Массовые аресты
-	option = { 
-		name = hametova_elections.30.a
-		add_stability = 0.03
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.05
+		# Массовые аресты
+		option = { 
+			name = hametova_elections.30.a
+			add_stability = 0.03
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
+			}
+			add_timed_idea = { idea = HAM_mass_repressions days = 180 }
+			set_global_flag = HAM_OPPOSITION_EXILED
+			hidden_effect = {
+				country_event = { id = hametova_elections.31 days = 30 }
+			}
 		}
-		add_timed_idea = { idea = HAM_mass_repressions days = 180 }
-		hidden_effect = {
-			country_event = { id = hametova_elections.31 days = 30 }
-		}
-	}
 
 	# Точечные репрессии
 	option = { 
@@ -1526,16 +1559,17 @@ country_event = {
 		}
 	}
 
-	# Репрессии
-	option = { 
-		name = hametova_opposition.2.a
-		add_political_power = -100
-		add_stability = -0.05
-		add_war_support = -0.02
-		star_opposition_ideas_decrease_activity = yes
-		set_variable = { star_opposition_ideas_new_state = 2 }
-		star_opposition_ideas_change_state = yes
-	}
+		# Репрессии
+		option = { 
+			name = hametova_opposition.2.a
+			add_political_power = -100
+			add_stability = -0.05
+			add_war_support = -0.02
+			star_opposition_ideas_decrease_activity = yes
+			set_variable = { star_opposition_ideas_new_state = 2 }
+			star_opposition_ideas_change_state = yes
+			set_global_flag = HAM_OPPOSITION_EXILED
+		}
 
 	# Частичные уступки
 	option = { 
@@ -1852,7 +1886,7 @@ country_event = {
 	id = hametova.42
 	title = hametova.42.t
 	desc = hametova.42.d
-	picture = GFX_report_event_generic_diplomacy1
+	picture = GFX_report_event_SWE_defense_act
 	
 	is_triggered_only = yes
 	
@@ -2115,7 +2149,7 @@ country_event = {
 	id = hametova.46
 	title = hametova.46.t
 	desc = hametova.46.d
-	picture = GFX_report_event_generic_air_raid
+	picture = GFX_report_event_airplane_factory
 	
 	is_triggered_only = yes
 	
@@ -2136,7 +2170,7 @@ country_event = {
 	id = hametova.47
 	title = hametova.47.t
 	desc = hametova.47.d
-	picture = GFX_report_event_generic_bombing
+	picture = GFX_report_event_generic_bombers
 	
 	is_triggered_only = yes
 	
@@ -2156,7 +2190,7 @@ country_event = {
 	id = hametova.48
 	title = hametova.48.t
 	desc = hametova.48.d
-	picture = GFX_report_event_generic_diplomacy2
+	picture = GFX_report_event_FIN_motti_tactics
 	
 	is_triggered_only = yes
 	
@@ -2264,7 +2298,7 @@ country_event = {
 	id = hametova.53
 	title = hametova.53.t
 	desc = hametova.53.d
-	picture = GFX_report_event_generic_diplomacy3
+	picture = GFX_report_event_canada_treaty
 	
 	is_triggered_only = yes
 	
@@ -2383,7 +2417,7 @@ country_event = {
 	id = hametova.59
 	title = hametova.59.t
 	desc = hametova.59.d
-	picture = GFX_report_event_generic_diplomacy1
+	picture = GFX_report_event_tur_inonu_diplomacy
 	
 	is_triggered_only = yes
 	
@@ -2400,7 +2434,7 @@ country_event = {
 	id = hametova.60
 	title = hametova.60.t
 	desc = hametova.60.d
-	picture = GFX_report_event_generic_diplomacy2
+	picture = GFX_report_event_AUS_political_rally
 	
 	is_triggered_only = yes
 	
@@ -2626,7 +2660,7 @@ country_event = {
 	id = hametova.74
 	title = hametova.74.t
 	desc = hametova.74.d
-	picture = GFX_report_event_generic_diplomacy3
+	picture = GFX_report_event_generic_siloviki
 	
 	is_triggered_only = yes
 	
@@ -2801,6 +2835,26 @@ country_event = {
 			type = alliance
 			id = DRE
 			value = -200
+		}
+	}
+}
+
+#Cvadrobers Liberation
+country_event = {
+	id = hametova.100
+	title = hametova.100.t
+	desc = hametova.100.d
+	picture = GFX_report_event_cvadrobers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hametova.100.a
+		set_autonomy = {
+    		target = CVD
+    		autonomous_state = autonomy_free
+    		end_wars = no
+    		end_civil_wars = no
 		}
 	}
 }

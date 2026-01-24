@@ -620,9 +620,22 @@ focus_tree = {
 		icon = GFX_goal_GON_shelter_likers
 		prerequisite = { focus = GON_expand_trand_heart }
 		cost = 10
+
+		bypass = {
+			HAM = { has_completed_focus = ham_star_opposition_start }
+		}
+
+		available = {
+			OR = {
+				has_global_flag = HAM_OPPOSITION_EXILED
+				HAM = { has_completed_focus = ham_new_military_doctrine }
+			}
+		}
+
 		completion_reward = {
 			custom_effect_tooltip = shelter_likers_appear
 			set_country_flag = sheltered_likers
+			add_ideas = GON_exile_government_host
 			country_event = { id = gonduras.15 days = 1 }
 		}
 

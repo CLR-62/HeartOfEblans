@@ -74,5 +74,119 @@ ideas = {
                 research_speed_factor = 0.03
 			}
 		}
+
+        freakland_slowlyDrop = {
+			allowed = {
+				always = no
+				is_in_array = {
+    		        array = global.freakland_members
+    		        value = THIS.id
+		        }
+			}
+			
+			picture = PYA_freakland
+
+			modifier = {
+				stability_factor = 0.03
+				war_support_factor = 0.025
+                political_power_factor = 0.02
+                army_morale_factor = 0.02
+                research_speed_factor = 0.01
+			}
+		}
+
+        freakland_emptiness = {
+			allowed = {
+				always = no
+				is_in_array = {
+    		        array = global.freakland_members
+    		        value = THIS.id
+		        }
+			}
+			
+			picture = PYA_freakland
+
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.02
+                political_power_factor = -0.05
+                army_morale_factor = -0.02
+			}
+		}
+
+        freakland_rebirth = {
+			allowed = {
+				always = no
+				is_in_array = {
+    		        array = global.freakland_members
+    		        value = THIS.id
+		        }
+			}
+			
+			picture = PYA_freakland
+
+			modifier = {
+				production_speed_buildings_factor = 0.02
+				consumer_goods_factor = -0.01
+				agency_upgrade_time = -0.05
+			}
+		}
+
+        freakland_wrongDecisions = {
+			allowed = {
+				always = no
+				is_in_array = {
+    		        array = global.freakland_members
+    		        value = THIS.id
+		        }
+			}
+			
+			picture = PYA_freakland
+
+			modifier = {
+				production_speed_buildings_factor = -0.01
+				consumer_goods_factor = 0.03
+				war_support_factor = -0.01
+			}
+		}
+
+        freakland_decay = {
+			allowed = {
+				always = no
+				is_in_array = {
+    		        array = global.freakland_members
+    		        value = THIS.id
+		        }
+			}
+			
+			picture = PYA_freakland
+
+			modifier = {
+				production_speed_buildings_factor = -0.04
+				consumer_goods_factor = 0.05
+				war_support_factor = -0.03
+				stability_factor = -0.05
+			}
+		}
+
+        freakland_decay2 = {
+			allowed = {
+				always = no
+				is_in_array = {
+    		        array = global.freakland_members
+    		        value = THIS.id
+		        }
+			}
+			
+			picture = PYA_freakland
+
+			modifier = {
+				production_speed_buildings_factor = -0.05
+				consumer_goods_factor = 0.05
+				war_support_factor = -0.05
+				stability_factor = -0.05
+				army_morale_factor = -0.03
+			}
+		}
     }
 }

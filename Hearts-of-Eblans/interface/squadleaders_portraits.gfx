@@ -132,10 +132,20 @@ SpriteTypes = {
 		name = "GFX_lin_night_small"
 		texturefile = "gfx/interface/ideas/lin_night.dds"
 	}	
+
+	SpriteType = {
+		name = "GFX_chb_jumper_small"
+		texturefile = "gfx/interface/ideas/chb_jumper_small.dds"
+	}	
 	
 	SpriteType = {
 		name = "GFX_portrait_aratoss_fuhrer"
 		texturefile = "gfx/leaders/ARA/Aratoss.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_portrait_cacto_big"
+		texturefile = "gfx/leaders/CAC/cacto.dds"
 	}	
 	
 	SpriteType = {

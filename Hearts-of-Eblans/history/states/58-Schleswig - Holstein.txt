@@ -8,6 +8,7 @@ state = {
 
 		owner = MPK
 		add_core_of = MPK
+		add_core_of = CAC
 
 		victory_points = {
 			6389 10 # Kiel

@@ -25,4 +25,19 @@ characters = {
 			}
 		}
 	}
+
+	cacto_leader = {
+		name = "Какту"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_cacto_big
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+			traits = {
+				#
+			}
+		}
+	}
 }

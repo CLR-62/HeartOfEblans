@@ -7,12 +7,24 @@ hametova_work_opposition_category = {
 
 	visible = {
 		original_tag = HAM
-		OR = {
+		AND = {
 			has_country_flag = HAM_star_opposition_way
-			has_country_flag = HAM_STAR_ELECTED
+			NOT = { has_country_flag = HAM_STAR_ELECTED }
 		}
 	}
 	priority = 148
+}
+hametova_elections_category = {
+
+	icon = GFX_decision_category_border_conflicts
+	allowed = {
+		original_tag = HAM
+	}
+
+	visible = {
+		original_tag = HAM
+	}
+	priority = 400
 }
 hametova_opposition_category = {
 

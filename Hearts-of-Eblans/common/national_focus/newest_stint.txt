@@ -21,6 +21,126 @@ focus_tree = {
 
 	continuous_focus_position = { x = 50 y = 3000 }
 
+	focus = {
+		id = GON_hitandlera_album
+		icon = GFX_goal_GON_hitandlera
+		x = 0
+		y = 2
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			date > 2023.11.24
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		relative_position_id = STI_reign_of_shabani
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = tod_will_be_unlocked
+				ALBUM = "gon_hitandlera"
+			}
+
+			add_to_array = {
+    			array = opennedAlbums
+    			value = 12
+			}
+		}
+	}
+	focus = {
+		id = GON_hryas_album
+		icon = GFX_goal_GON_hryas
+		x = 0
+		y = 1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			date > 2024.8.23
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		relative_position_id = GON_hitandlera_album
+		prerequisite = { focus = GON_hitandlera_album }
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = tod_will_be_unlocked
+				ALBUM = "gon_hryas"
+			}
+
+			add_to_array = {
+    			array = opennedAlbums
+    			value = 13
+			}
+		}
+	}
+	focus = {
+		id = GON_notmyvibe_album
+		icon = GFX_goal_GON_notmyvibe
+		x = 0
+		y = 1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			date > 2025.8.1
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		relative_position_id = GON_hryas_album
+		prerequisite = { focus = GON_hryas_album }
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = tod_will_be_unlocked
+				ALBUM = "gon_notmyvibe"
+			}
+
+			add_to_array = {
+    			array = opennedAlbums
+    			value = 14
+			}
+		}
+	}
+
     focus = {
 		id = STI_reign_of_shabani
 		icon = GFX_goal_STI_reign_of_shabani
@@ -1627,22 +1747,26 @@ focus_tree = {
 			factor = 50
 		}
 
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
+		bypass = {
+			HAM = { has_country_flag = HAM_STAR_ELECTED }
+		}
+
+		available = {
+			OR = {
+				has_global_flag = HAM_OPPOSITION_EXILED
+				HAM = { has_country_flag = HAM_HAMETOVA_FINAL_VICTORY }
+			}
+		}
+
 		completion_reward = {
 			custom_effect_tooltip = shelter_likers_appear
 			set_country_flag = sheltered_likers
+			add_ideas = STI_exile_government_host
 			country_event = { id = gonduras.15 days = 1 }
 		}
 	}
@@ -1882,7 +2006,7 @@ focus_tree = {
 		}
 	}
 
-    focus = {
+	focus = {
 		id = STI_morphy_strike
 		icon = GFX_goal_STI_moy_annex
 		x = 1
@@ -2527,7 +2651,7 @@ focus_tree = {
 		}
 	}
 
-    focus = {
+	focus = {
 		id = STI_claim_stintler_rights
 		icon = GFX_goal_STI_stintler
 		x = 6
@@ -2557,9 +2681,10 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY }
 		completion_reward = {
 			increase_taxes_law = yes
+			add_ideas = STI_stintler_rights_spirit
 			custom_effect_tooltip = STI_claim_stintler_rights_tt
 		}
 	}
@@ -2848,7 +2973,7 @@ focus_tree = {
 		}
 	}
 
-    focus = {
+	focus = {
 		id = STI_political_interference
 		icon = GFX_goal_STI_stintler_expansion
 		x = 0
@@ -2877,11 +3002,14 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_EXPANSION }
 		completion_reward = {
 			add_political_power = 150
-			add_war_support = 0.03
-			remove_ideas = GON_unfinished_army_reform
+			add_war_support = 0.05
+			create_wargoal = {
+				target = ARA
+				type = annex_everything
+			}
 		}
 	}
 
@@ -2999,9 +3127,13 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_EXPANSION }
 		completion_reward = {
-			custom_effect_tooltip = GON_nel_influecne_tt
+			create_wargoal = {
+				target = NEL
+				type = annex_everything
+			}
+			add_war_support = 0.05
 		}
 	}
 
@@ -3039,9 +3171,13 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_EXPANSION }
 		completion_reward = {
-			custom_effect_tooltip = GON_moy_influecne_tt
+			create_wargoal = {
+				target = MOY
+				type = annex_everything
+			}
+			add_war_support = 0.05
 		}
 	}
 
@@ -3092,7 +3228,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 10
+		cost = 5
 
         prerequisite = {
             focus = STI_pressure_on_Zolo
@@ -3127,7 +3263,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 10
+		cost = 5
 
         prerequisite = {
             focus = STI_arrest_royal_family
@@ -3153,6 +3289,52 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			remove_ideas = GON_mobilized_king_army_fas
+		}
+	}
+
+	focus = {
+		id = STI_stintler_guard
+		icon = GFX_goal_STI_stintler
+		x = -1
+		y = 1
+		cost = 10
+		prerequisite = { focus = STI_dissolution_of_royal_guard }
+		relative_position_id = STI_dissolution_of_royal_guard
+		completion_reward = {
+			add_ideas = STI_stintler_guard_spirit
+			#custom_effect_tooltip = STI_stintler_guard_tt
+		}
+	}
+
+	focus = {
+		id = STI_challenge_the_federation
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 1
+		y = 1
+		cost = 10
+		prerequisite = { focus = STI_dissolution_of_royal_guard }
+		relative_position_id = STI_dissolution_of_royal_guard
+		completion_reward = {
+			create_wargoal = {
+				target = DPN
+				type = annex_everything
+			}
+			add_war_support = 0.15
+		}
+	}
+
+	focus = {
+		id = STI_the_great_stintler_order
+		icon = GFX_goal_GON_absolute_meme
+		x = 0
+		y = 2
+		cost = 10
+		prerequisite = { focus = STI_stintler_guard focus = STI_challenge_the_federation }
+		relative_position_id = STI_dissolution_of_royal_guard
+		completion_reward = {
+			add_ideas = STI_great_stintler_order_spirit
+			add_stability = 0.15
+			add_political_power = 300
 		}
 	}
 

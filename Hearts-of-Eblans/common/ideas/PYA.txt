@@ -54,6 +54,22 @@ ideas = {
 			}
 		}
 
+		CAC_fishburger_problem_idea = {
+			allowed = {
+				always = no
+				original_tag = CAC
+			}
+			
+			picture = CAC_fishburger_problem
+
+			modifier = {
+				stability_factor = 0.03
+				monthly_population = 0.02
+				army_strength_factor = -0.02
+				army_attack_speed_factor = -0.02
+			}
+		}
+
 		PYA_fugabots_attack = {
 			allowed = {
 				always = no

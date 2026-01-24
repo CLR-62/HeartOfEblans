@@ -47,6 +47,19 @@ ideas = {
 			}
 		}
 
+		interpol_melstroy = {
+		
+			removal_cost = -1
+
+			picture = MEL_interpol
+		
+			modifier = {
+				naval_defense_factor = -0.5
+				naval_morale_factor = -0.5
+				navy_visibility = 1
+			}
+		}
+
 	
 		soc_propaganda = {
 		

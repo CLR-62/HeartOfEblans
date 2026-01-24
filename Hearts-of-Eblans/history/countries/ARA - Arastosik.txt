@@ -8,11 +8,12 @@ starting_train_buffer = 2
 set_fuel_ratio = 0.8
 set_research_slots = 4
 
-add_ideas = { defeted_at_wwone 
+add_ideas = { 
+	defeted_at_wwone 
 	ARA_gos_apparat_idea 
 	ARA_massive_opposition 
 	ARA_slabie_zakoni 
-	
+	twitch_platform
 }
 
 # Starting tech

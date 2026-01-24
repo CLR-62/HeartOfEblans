@@ -17,6 +17,7 @@ add_ideas = {
 	high_taxes
 	high_corruption
 	pro_gov_media
+	twitch_platform
 }
 
 set_technology = {

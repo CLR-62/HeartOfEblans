@@ -20,7 +20,7 @@ set_politics = {
 }
 
 add_ideas = {
-	
+	twitch_platform
 }
 
 set_popularities = {

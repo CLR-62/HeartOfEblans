@@ -71,4 +71,16 @@ GON_influence_cat = {
 		original_tag = GON
 	}
 }
+gon_integration_states_cat = {
+	priority = 20
+	icon = GFX_decision_category_generic_propaganda
+	
+	allowed = {
+		original_tag = GON
+	}
+	
+	visible = {
+		original_tag = GON
+	}
+}
 

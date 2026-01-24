@@ -17,7 +17,7 @@ add_ideas = {
 }
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = communism
 	last_election = "2022.1.1"
 	elections_allowed = no
 }
@@ -25,9 +25,9 @@ set_politics = {
 set_popularities = {
 	hypecratia = 6
 	democratic = 4
-	communism = 10
+	communism = 69
 	fascism = 11
-	neutrality = 69
+	neutrality = 10
 }
 
 create_country_leader = {
@@ -79,7 +79,7 @@ create_country_leader = {
 	desc = "POLITICS_PRINCE_PAUL_DESC"
 	picture = "lix.dds"
 	
-	ideology = leninism
+	ideology = anti_revisionism
 	traits = {
 		
 	}

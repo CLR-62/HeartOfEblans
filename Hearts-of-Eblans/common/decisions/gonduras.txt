@@ -1835,3 +1835,30 @@ GON_influence_cat = {
 		}
 	}
 }
+
+gon_integration_states_cat = {
+	integrate_iberian_pov = {
+		icon = generic_prepare_for_war
+		allowed = { tag = GON }
+		visible = { tag = GON }
+		available = { 
+			controls_state = 794
+			controls_state = 177
+			controls_state = 172
+			controls_state = 167
+			controls_state = 166
+			controls_state = 165
+		}
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			794 = { add_core_of = ROOT }
+			177 = { add_core_of = ROOT }
+			172 = { add_core_of = ROOT }
+			167 = { add_core_of = ROOT }
+			166 = { add_core_of = ROOT }
+			165 = { add_core_of = ROOT }
+		}
+		ai_will_do = { factor = 1 }
+	}
+}

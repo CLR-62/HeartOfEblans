@@ -22,6 +22,10 @@ parliament_gui_decision_category = {
 		complete_effect = {
 			
 		}
+
+		modifier = {
+			political_power_gain = -0.75
+		}
 	
 		remove_effect = {
 			custom_effect_tooltip = "low_parliament_popularity_increase"

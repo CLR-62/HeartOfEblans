@@ -532,7 +532,7 @@ country_event = {
 	option = {
 		name = gonduras.15.a
 		
-		
+		custom_effect_tooltip = GON_ham_refugees_tt
 
 		ai_chance = {
 			base = 50

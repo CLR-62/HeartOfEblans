@@ -1,0 +1,246 @@
+# Решения для Дипинсовской Федерации - Реформы президента Дипинса
+
+DPN_reforms_category = {
+
+	# === АДМИНИСТРАТИВНАЯ РЕФОРМА ===
+	
+	DPN_administrative_reform = {
+		icon = generic_political_discourse
+
+		cost = 75
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = DPN
+		}
+
+		available = {
+			has_country_flag = DPN_reforms_started
+			NOT = { has_country_flag = DPN_admin_reform_started }
+			NOT = { has_country_flag = DPN_admin_reform_complete }
+		}
+
+		visible = {
+			has_country_flag = DPN_reforms_started
+			NOT = { has_country_flag = DPN_admin_reform_complete }
+		}
+
+		days_remove = 60
+
+		complete_effect = {
+			set_country_flag = DPN_admin_reform_started
+			add_stability = -0.02
+			country_event = { id = dipins.20 days = 30 }
+			custom_effect_tooltip = DPN_reform_in_progress_tt
+		}
+
+		remove_effect = {
+			set_country_flag = DPN_admin_reform_complete
+			clr_country_flag = DPN_admin_reform_started
+			add_stability = 0.03
+			add_political_power = 50
+			country_event = { id = dipins.25 days = 1 }
+		}
+	}
+
+	# === АНТИКОРРУПЦИОННАЯ КАМПАНИЯ ===
+
+	DPN_corruption_reform = {
+		icon = generic_civil_support
+
+		cost = 100
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = DPN
+		}
+
+		available = {
+			has_country_flag = DPN_reforms_started
+			NOT = { has_country_flag = DPN_corruption_reform_started }
+			NOT = { has_country_flag = DPN_corruption_reform_complete }
+		}
+
+		visible = {
+			has_country_flag = DPN_reforms_started
+			NOT = { has_country_flag = DPN_corruption_reform_complete }
+		}
+
+		days_remove = 90
+
+		complete_effect = {
+			set_country_flag = DPN_corruption_reform_started
+			add_stability = -0.05
+			add_political_power = -50
+			country_event = { id = dipins.21 days = 45 }
+			custom_effect_tooltip = DPN_reform_in_progress_tt
+		}
+
+		remove_effect = {
+			set_country_flag = DPN_corruption_reform_complete
+			clr_country_flag = DPN_corruption_reform_started
+			add_stability = 0.08
+			add_political_power = 75
+			country_event = { id = dipins.26 days = 1 }
+		}
+	}
+
+	# === СУДЕБНАЯ РЕФОРМА ===
+
+	DPN_judicial_reform = {
+		icon = generic_political_discourse
+
+		cost = 75
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = DPN
+		}
+
+		available = {
+			has_country_flag = DPN_reforms_started
+			NOT = { has_country_flag = DPN_judicial_reform_started }
+			NOT = { has_country_flag = DPN_judicial_reform_complete }
+		}
+
+		visible = {
+			has_country_flag = DPN_reforms_started
+			NOT = { has_country_flag = DPN_judicial_reform_complete }
+		}
+
+		days_remove = 75
+
+		complete_effect = {
+			set_country_flag = DPN_judicial_reform_started
+			add_stability = -0.03
+			country_event = { id = dipins.22 days = 40 }
+			custom_effect_tooltip = DPN_reform_in_progress_tt
+		}
+
+		remove_effect = {
+			set_country_flag = DPN_judicial_reform_complete
+			clr_country_flag = DPN_judicial_reform_started
+			add_stability = 0.05
+			add_political_power = 50
+			country_event = { id = dipins.27 days = 1 }
+		}
+	}
+
+	# === СОЦИАЛЬНАЯ РЕФОРМА ===
+
+	DPN_social_reform = {
+		icon = generic_civil_support
+
+		cost = 100
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = DPN
+		}
+
+		available = {
+			has_country_flag = DPN_reforms_started
+			has_country_flag = DPN_admin_reform_complete
+			NOT = { has_country_flag = DPN_social_reform_started }
+			NOT = { has_country_flag = DPN_social_reform_complete }
+		}
+
+		visible = {
+			has_country_flag = DPN_reforms_started
+			has_country_flag = DPN_admin_reform_complete
+			NOT = { has_country_flag = DPN_social_reform_complete }
+		}
+
+		days_remove = 90
+
+		complete_effect = {
+			set_country_flag = DPN_social_reform_started
+			add_stability = -0.02
+			country_event = { id = dipins.23 days = 45 }
+			custom_effect_tooltip = DPN_reform_in_progress_tt
+		}
+
+		remove_effect = {
+			set_country_flag = DPN_social_reform_complete
+			clr_country_flag = DPN_social_reform_started
+			add_stability = 0.05
+			add_war_support = 0.05
+			country_event = { id = dipins.28 days = 1 }
+		}
+	}
+
+	# === ОБРАЗОВАТЕЛЬНАЯ РЕФОРМА ===
+
+	DPN_education_reform = {
+		icon = generic_research
+
+		cost = 125
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = DPN
+		}
+
+		available = {
+			has_country_flag = DPN_reforms_started
+			has_country_flag = DPN_judicial_reform_complete
+			NOT = { has_country_flag = DPN_education_reform_started }
+			NOT = { has_country_flag = DPN_education_reform_complete }
+		}
+
+		visible = {
+			has_country_flag = DPN_reforms_started
+			has_country_flag = DPN_judicial_reform_complete
+			NOT = { has_country_flag = DPN_education_reform_complete }
+		}
+
+		days_remove = 120
+
+		complete_effect = {
+			set_country_flag = DPN_education_reform_started
+			add_political_power = -75
+			country_event = { id = dipins.24 days = 60 }
+			custom_effect_tooltip = DPN_reform_in_progress_tt
+		}
+
+		remove_effect = {
+			set_country_flag = DPN_education_reform_complete
+			clr_country_flag = DPN_education_reform_started
+			add_stability = 0.03
+			country_event = { id = dipins.29 days = 1 }
+		}
+	}
+
+	# === МОНИТОРИНГ РЕФОРМ ===
+
+	DPN_reform_progress_report = {
+		icon = generic_form_nation
+
+		cost = 25
+		fire_only_once = no
+		days_re_enable = 30
+
+		allowed = {
+			original_tag = DPN
+		}
+
+		available = {
+			has_country_flag = DPN_reforms_started
+			OR = {
+				has_country_flag = DPN_admin_reform_started
+				has_country_flag = DPN_corruption_reform_started
+				has_country_flag = DPN_judicial_reform_started
+				has_country_flag = DPN_social_reform_started
+				has_country_flag = DPN_education_reform_started
+			}
+		}
+
+		visible = {
+			has_country_flag = DPN_reforms_started
+		}
+
+		complete_effect = {
+			country_event = { id = dipins.30 days = 1 }
+		}
+	}
+}

@@ -66,6 +66,36 @@ defined_text = {
         }
         localization_key = "GFX_tod_album_chb_anemone"
     }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 10 }
+        }
+        localization_key = "GFX_tod_album_chb_coldness"
+    }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 11 }
+        }
+        localization_key = "GFX_tod_album_chb_brightside"
+    }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 12 }
+        }
+        localization_key = "GFX_tod_album_gon_hitandlera"
+    }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 13 }
+        }
+        localization_key = "GFX_tod_album_gon_hryas"
+    }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 14 }
+        }
+        localization_key = "GFX_tod_album_gon_notmyvibe"
+    }
 }
 
 #        ALBUMS/TRACKS ID
@@ -145,6 +175,36 @@ defined_text = {
             check_variable = { selected_album = 9 }
         }
         localization_key = "chb_anemone"
+    }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 10 }
+        }
+        localization_key = "chb_coldness"
+    }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 11 }
+        }
+        localization_key = "chb_brightside"
+    }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 12 }
+        }
+        localization_key = "gon_hitandlera"
+    }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 13 }
+        }
+        localization_key = "gon_hryas"
+    }
+    text = {
+        trigger = {
+            check_variable = { selected_album = 14 }
+        }
+        localization_key = "gon_notmyvibe"
     }
 }
 
@@ -295,5 +355,57 @@ defined_text = {
             AND = { check_variable = {  selected_album = 9 } check_variable = {  selected_track = 1 } }
         }
         localization_key = "chb_moles"
+    }
+
+    text = {
+        trigger = {
+            AND = { check_variable = {  selected_album = 10 } check_variable = {  selected_track = 0 } }
+        }
+        localization_key = "chb_anabios"
+    }
+    text = {
+        trigger = {
+            AND = { check_variable = {  selected_album = 10 } check_variable = {  selected_track = 1 } }
+        }
+        localization_key = "chb_sneshinka"
+    }
+
+    text = {
+        trigger = {
+            AND = { check_variable = {  selected_album = 11 } check_variable = {  selected_track = 0 } }
+        }
+        localization_key = "chb_porovnu"
+    }
+    text = {
+        trigger = {
+            AND = { check_variable = {  selected_album = 11 } check_variable = {  selected_track = 1 } }
+        }
+        localization_key = "chb_crates"
+    }
+    text = {
+        trigger = {
+            AND = { check_variable = {  selected_album = 11 } check_variable = {  selected_track = 2 } }
+        }
+        localization_key = "chb_pryanik"
+    }
+
+
+    text = {
+        trigger = {
+            AND = { check_variable = {  selected_album = 12 } check_variable = {  selected_track = 0 } }
+        }
+        localization_key = "gon_hitandlera"
+    }
+    text = {
+        trigger = {
+            AND = { check_variable = {  selected_album = 13 } check_variable = {  selected_track = 0 } }
+        }
+        localization_key = "gon_hryas"
+    }
+    text = {
+        trigger = {
+            AND = { check_variable = {  selected_album = 14 } check_variable = {  selected_track = 0 } }
+        }
+        localization_key = "gon_notmyvibe"
     }
 }

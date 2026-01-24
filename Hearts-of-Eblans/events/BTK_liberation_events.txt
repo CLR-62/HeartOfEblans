@@ -1,0 +1,53 @@
+add_namespace = BTK_liberation
+
+# Hidden event for HAM to release KRU as puppet of BTK
+country_event = {
+	id = BTK_liberation.1
+	title = BTK_liberation.1.t
+	desc = BTK_liberation.1.d
+	
+	is_triggered_only = no
+	hidden = yes
+	
+	trigger = {
+		tag = HAM
+		has_country_flag = HAM_promised_kru_to_btk
+		# Control the capital of KRU
+		controls_state = 9
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		# Release KRU
+		# First HAM must own the states to release them properly or transfer them
+		9 = { transfer_state_to = HAM } 
+		75 = { if = { limit = { is_controlled_by = HAM } transfer_state_to = HAM } }
+		74 = { if = { limit = { is_controlled_by = HAM } transfer_state_to = HAM } }
+		69 = { if = { limit = { is_controlled_by = HAM } transfer_state_to = HAM } }
+		972 = { if = { limit = { is_controlled_by = HAM } transfer_state_to = HAM } }
+
+		release = KRU
+		
+		# Set as puppet of BTK
+		BTK = {
+			puppet = KRU
+		}
+		
+		# Transfer all controlled cores to the new KRU
+		every_state = {
+			limit = {
+				is_core_of = KRU
+				is_controlled_by = HAM
+			}
+			transfer_state_to = KRU
+		}
+
+		clr_country_flag = HAM_promised_kru_to_btk
+		
+		# Logic to ensure KRU is at peace or in the right war?
+		# Usually release copies wars if released during war.
+	}
+}

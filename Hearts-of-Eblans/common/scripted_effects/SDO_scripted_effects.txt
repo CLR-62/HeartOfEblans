@@ -1,0 +1,36 @@
+SDO_peace_allies_effect = {
+	# ROOT is the initiator of peace (usually CHB)
+	# Target should be DRE
+	DRE = {
+		every_enemy_country = {
+			limit = {
+				OR = {
+					is_in_faction_with = CHB
+					has_country_flag = SDO_ally_of_chb
+				}
+			}
+			white_peace = DRE
+		}
+	}
+}
+
+SDO_frontline_territory_transfer = {
+	
+	# Part 1: CHB gains states owned by DRE but controlled by CHB (>50%)
+	every_state = {
+		limit = {
+			is_owned_by = DRE
+			is_controlled_by = CHB
+		}
+		transfer_state_to = CHB
+	}
+	
+	# Part 2: DRE gains states owned by CHB but controlled by DRE (>50%)
+	every_state = {
+		limit = {
+			is_owned_by = CHB
+			is_controlled_by = DRE
+		}
+		transfer_state_to = DRE
+	}
+}

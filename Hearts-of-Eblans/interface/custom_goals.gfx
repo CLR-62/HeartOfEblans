@@ -42,6 +42,24 @@ spriteTypes = {
 	}
 
 	SpriteType = {
+	name = "GFX_goal_CHB_brightside"
+	texturefile = "gfx/interface/goals/focus_CHB_brightside.dds"
+	}
+
+	SpriteType = {
+	name = "GFX_goal_GON_hitandlera"
+	texturefile = "gfx/interface/goals/GON_hitandlera.dds"
+	}
+	SpriteType = {
+	name = "GFX_goal_GON_hryas"
+	texturefile = "gfx/interface/goals/GON_hryas.dds"
+	}
+	SpriteType = {
+	name = "GFX_goal_GON_notmyvibe"
+	texturefile = "gfx/interface/goals/GON_notmyvibe.dds"
+	}
+
+	SpriteType = {
 	name = "GFX_goal_HAM_drake_coop_svo"
 	texturefile = "gfx/interface/goals/focus_HAM_drake_coop_svo.dds"
 	}
@@ -897,6 +915,15 @@ spriteTypes = {
 	SpriteType = {
 	name = "GFX_goal_CHB_anemone"
 	texturefile = "gfx/interface/goals/focus_CHB_anemone.dds"			
+	}
+	SpriteType = {
+	name = "GFX_goal_HAM_chb_prepare"
+	texturefile = "gfx/interface/goals/focus_HAM_chb_prepare.dds"			
+	}
+	
+	SpriteType = {
+	name = "GFX_goal_CHB_coldness"
+	texturefile = "gfx/interface/goals/focus_CHB_coldness.dds"			
 	}
 
 	SpriteType = {

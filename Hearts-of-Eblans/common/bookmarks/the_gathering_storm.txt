@@ -145,12 +145,14 @@ bookmarks = {
 		"HAM" = {
 			minor = yes
 			history = ""
-			ideology = fascism
+			ideology = hypecratia
 			ideas = {
-				dva_disa
-				sp_crisis
+				
 			}
 			focuses = {
+				ham_western_threats
+				ham_new_doctrine
+				ham_endless_detstvo
 			}
 		}
 		

@@ -31,14 +31,14 @@ CHB_SDO_management_cat = {
 		cost = 50
 		available = {
 			has_political_power > 50
-			has_stability > 0.4
+			has_stability > 0.2
 		}
 		visible = {
 			has_war_with = DRE
 		}
 		complete_effect = {
 			add_to_variable = { global.SDO_peace_progress = 0.08 }
-			add_stability = -0.05
+			add_stability = -0.02
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -65,14 +65,14 @@ CHB_SDO_management_cat = {
 
 	# --- PEACE OPTIONS ---
 
-	# White Peace Proposal (50% progress required)
-	CHB_SDO_propose_white_peace = {
+	# Peace at Frontline Proposal (50% progress required)
+	CHB_SDO_propose_frontline_peace = {
 		icon = generic_closure
 		cost = 100
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = CHB_SDO_progress_50_tooltip
-				check_variable = { var = global.SDO_peace_progress value > 0.49 }
+				check_variable = { var = global.SDO_peace_progress value > 0.499 }
 			}
 			has_political_power > 100
 		}
@@ -85,8 +85,8 @@ CHB_SDO_management_cat = {
 		ai_will_do = { factor = 0 }
 	}
 
-	# Forced Retreat / Reparations (75% progress required)
-	CHB_SDO_demand_reparations = {
+	# White Peace Proposal (75% progress required)
+	CHB_SDO_propose_white_peace = {
 		icon = generic_reparation
 		cost = 150
 		available = {
@@ -105,8 +105,8 @@ CHB_SDO_management_cat = {
 		ai_will_do = { factor = 0 }
 	}
 
-	# Final Settlement (100% progress required)
-	CHB_SDO_final_victory = {
+	# Vitaly's Treaty (100% progress required)
+	CHB_SDO_vitaly_treaty = {
 		icon = generic_victory
 		cost = 0
 		available = {

@@ -1,0 +1,32 @@
+state={
+	id=1050
+	name="STATE_1050"
+	resources={
+		oil = 1
+	}
+
+	history={
+		owner = MLS
+		add_core_of = MLS
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+
+			7193 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			7193 3
+		}
+	}
+
+	provinces={
+		7193
+	}
+	manpower = 93000
+	buildings_max_level_factor = 1.000
+	state_category = town
+
+	local_supplies=0.0 
+}

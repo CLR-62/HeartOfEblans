@@ -24,7 +24,7 @@ freakland_decisions_category = {
             always = no
         }
 
-		days_mission_timeout = 150
+		days_mission_timeout = 80
 
 		fire_only_once = yes
 
@@ -33,6 +33,7 @@ freakland_decisions_category = {
 		is_good = no
 
 		timeout_effect = {
+			custom_effect_tooltip = freak_idea_will_change_tt
             news_event = { id = freakland.13 days = 3 }
 		}
 	}

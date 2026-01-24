@@ -1154,31 +1154,11 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
-
-
-
-
-	focus = {
-		id = chb_musical_effort
-		icon = GFX_goal_generic_music_effort
-		cost = 10
-
-		relative_position_id = chb_policits_effort
-
-		completion_reward = {
-
-		}
-		x = 11
-		y = 0
-	}
 	
 	focus = {
-		id = chb_anemone
+		id = CHB_anemone_album
 		icon = GFX_goal_CHB_anemone
 		cost = 10
-
-		relative_position_id = chb_musical_effort
-		prerequisite = { focus = chb_musical_effort }
 
 		available = {
 			date > 2023.04.21
@@ -1193,6 +1173,60 @@ focus_tree = {
 			add_to_array = {
     			array = opennedAlbums
     			value = 9
+			}
+		}
+		x = 26
+		y = 0
+	}
+
+	focus = {
+		id = CHB_coldness_album
+		icon = GFX_goal_CHB_coldness
+		cost = 10
+
+		relative_position_id = CHB_anemone_album
+		prerequisite = { focus = CHB_anemone_album }
+
+		available = {
+			date > 2023.10.18
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = tod_will_be_unlocked
+				ALBUM = "chb_coldness"
+			}
+
+			add_to_array = {
+    			array = opennedAlbums
+    			value = 10
+			}
+		}
+		x = 0
+		y = 1
+	}
+
+	focus = {
+		id = CHB_brightside_album
+		icon = GFX_goal_CHB_brightside
+		cost = 10
+
+		relative_position_id = CHB_coldness_album
+		prerequisite = { focus = CHB_coldness_album }
+
+		available = {
+			date > 2024.10.11
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = tod_will_be_unlocked
+				ALBUM = "chb_brightside"
+			}
+
+			add_to_array = {
+    			array = opennedAlbums
+    			value = 11
 			}
 		}
 		x = 0

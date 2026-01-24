@@ -45,6 +45,16 @@ music = {
 }
 
 music = {
+	name = "jumper_passed"
+	file = "SquadMusic/jumper.ogg"
+}
+
+music = {
+	name = "shukov"
+	file = "SquadMusic/shukov.ogg"
+}
+
+music = {
 	name = "lagoda_raspil"
 	file = "SquadMusic/lagoda_raspil.ogg"
 }

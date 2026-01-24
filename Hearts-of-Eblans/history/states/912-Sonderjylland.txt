@@ -12,6 +12,7 @@ state = {
 	history = {
 		owner = MPK
 		add_core_of = MPK
+		add_core_of = CAC
 		victory_points = {
 			13258 1 
 		}

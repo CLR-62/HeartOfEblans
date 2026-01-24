@@ -10,12 +10,17 @@ on_actions = {
 
             if = {
                 limit = {
-                    check_variable = { global.daysAfterFreakland = 150 }
+                    check_variable = { global.daysAfterFreakland = 250 }
                     NOT = { has_global_flag = freakland_disolated_flag }
                     has_global_flag = freakland_created
                 }
 
                 set_global_flag = freakland_disolated_flag
+
+                hidden_effect = {
+				    set_variable = { THIS.new_freakland_level = 6 }
+				    set_freakland_level = yes
+			    }
 
                 every_country = {
 				    limit = {
@@ -26,11 +31,13 @@ on_actions = {
 				    }
                     country_event = { id = freakland.2 days = 2 }
                 }
+
+                news_event = { id = freakland.18 days = 50 }
             }
 
             if = {
                 limit = {
-                    check_variable = { global.daysAfterFreakland = 80 }
+                    check_variable = { global.daysAfterFreakland = 140 }
                     #date = 2023.07.16
                     NOT = { has_global_flag = freakland_greatwar_flag }
                     has_global_flag = freakland_created
@@ -44,8 +51,32 @@ on_actions = {
 
             if = {
                 limit = {
+                    check_variable = { global.daysAfterFreakland = 445 }
+                    #date = 2023.07.16
+                    NOT = { has_global_flag = freakland_closed_event }
+                    has_global_flag = freakland_closed_event
+                }
+                set_global_flag = freakland_closed_event
+                news_event = { id = freakland.22 }
+                hidden_effect = {
+			        every_country = {
+			            limit = {
+			            	is_in_array = {
+    		                    array = global.freakland_members
+    		                    value = THIS.id
+		                    }
+			            }
+                        clear_all_freakland_ideas = yes
+                    }
+                
+			        clear_array = global.freakland_members
+		        }
+            }
+
+            if = {
+                limit = {
                     #date = 2023.07.20
-                    check_variable = { global.daysAfterFreakland = 90 }
+                    check_variable = { global.daysAfterFreakland = 150 }
                     NOT = { has_global_flag = freakland_triumph_flag }
                     has_global_flag = freakland_created
                 }
@@ -62,7 +93,7 @@ on_actions = {
 
             if = {
                 limit = {
-                    check_variable = { global.daysAfterFreakland = 105 }
+                    check_variable = { global.daysAfterFreakland = 165 }
                     NOT = { has_global_flag = freakland_mzlf_disagree }
                     has_global_flag = freakland_created
                 }
@@ -73,25 +104,25 @@ on_actions = {
 
             if = {
                 limit = {
-                    check_variable = { global.daysAfterFreakland = 45 }
+                    check_variable = { global.daysAfterFreakland = 70 }
                     NOT = { has_global_flag = freakland_mafanya_invitation }
                     has_global_flag = freakland_created
                 }
                 set_global_flag = freakland_mafanya_invitation
                 PYA = {
-                    news_event = { id = freakland.12 days = 2 }
+                    country_event = { id = freakland.12 days = 2 }
                 }
             }
 
             if = {
                 limit = {
-                    check_variable = { global.daysAfterFreakland = 60 }
+                    check_variable = { global.daysAfterFreakland = 90 }
                     NOT = { has_global_flag = freakland_brff_invitation }
                     has_global_flag = freakland_created
                 }
                 set_global_flag = freakland_brff_invitation
                 PYA = {
-                    news_event = { id = freakland.14 days = 2 }
+                    country_event = { id = freakland.14 days = 2 }
                 }
             }
         }

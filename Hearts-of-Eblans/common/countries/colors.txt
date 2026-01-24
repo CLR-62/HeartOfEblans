@@ -7,7 +7,13 @@ GCM = {
 	color = rgb { 65 83 87 }
 	color_ui = rgb { 65 83 87 }
 }
-MST = {
+CAC = {
+	color = rgb { 13 136 0 }
+	color_ui = rgb { 13 136 0 }
+}
+SOV = {
+}
+MLS = {
 	color = rgb { 227 200 138 }
 	color_ui = rgb { 227 200 138 }
 }
@@ -19,9 +25,21 @@ SEX = {
 	color = rgb { 80 86 89 }
 	color_ui = rgb { 80 86 89 }
 }
+MLS = {
+	color = rgb { 255 219 209 }
+	color_ui = rgb { 255 219 209 }
+}
 LID = {
 	color = rgb { 189 74 212 }
 	color_ui = rgb { 189 74 212 }
+}
+SBG = {
+	color = rgb { 171 171 171 }
+	color_ui = rgb { 171 171 171 }
+}
+EPS = {
+	color = rgb { 140 255 237}
+	color_ui = rgb { 140 255 237}
 }
 SBG = {
 	color = rgb { 171 171 171 }

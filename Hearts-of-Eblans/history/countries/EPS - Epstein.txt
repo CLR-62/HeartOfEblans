@@ -1,0 +1,88 @@
+capital = 686
+
+set_stability = 0.1
+set_war_support = 1
+
+set_research_slots = 1
+
+add_ideas = {
+	no_main_platform
+}
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	tech_recon = 1	
+	tech_engineers = 1
+	motorised_infantry = 1
+	paratroopers = 1
+	gw_artillery = 1
+}
+
+set_politics = {
+	ruling_party = fascism
+	last_election = "2022.1.1"
+	election_frequency = 67
+	elections_allowed = no
+}
+
+set_popularities = {
+	fascism = 100
+}
+
+create_country_leader = {
+	name = "Дядюшка Эпштейн"
+	desc = "POLITICS_PRINCE_PAUL_DESC"
+	picture = "eps.dds"
+	
+	ideology = hypetiktok
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Дядюшка Эпштейн"
+	desc = "POLITICS_PRINCE_PAUL_DESC"
+	picture = "eps.dds"
+	
+	ideology = falangism
+	traits = {
+		
+	}
+}
+	
+create_country_leader = {
+	name = "Дядюшка Эпштейн"
+	desc = "POLITICS_PRINCE_PAUL_DESC"
+	picture = "eps.dds"
+	
+	ideology = moderatism
+	traits = {
+		
+	}
+}
+	
+create_country_leader = {
+	name = "Дядюшка Эпштейн"
+	desc = "POLITICS_PRINCE_PAUL_DESC"
+	picture = "eps.dds"
+	
+	ideology = liberalism
+	traits = {
+		
+	}
+}
+	
+create_country_leader = {
+	name = "Дядюшка Эпштейн"
+	desc = "POLITICS_PRINCE_PAUL_DESC"
+	picture = "bat.dds"
+	
+	ideology = leninism
+	traits = {
+		
+	}
+}
+
+

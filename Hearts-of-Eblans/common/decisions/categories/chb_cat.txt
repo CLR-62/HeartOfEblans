@@ -10,12 +10,13 @@ CHB_peace_deals_category = {
 	}
 
 	visible = {
-		original_tag = CHB
-		CHB = { NOT = { has_country_flag = peace_started } }
-		DRE = {
-			has_country_flag = SDO_started_chb
-		}
-		has_war_with = DRE
+		always = no
+		#original_tag = CHB
+		#CHB = { NOT = { has_country_flag = peace_started } }
+		#DRE = {
+		#	has_country_flag = SDO_started_chb
+		#}
+		#has_war_with = DRE
 	}
 }
 

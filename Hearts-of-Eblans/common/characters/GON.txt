@@ -39,6 +39,7 @@ characters = {
 			slot = political_advisor
 			idea_token = MilanaStar
 			allowed = {
+				original_tag = GON
 				has_country_flag = sheltered_likers
 				NOT = { has_country_flag = star_country }
 			}	
@@ -64,27 +65,65 @@ characters = {
        }
 	}
 
-	MilanaNecrasova = {
-		name = MilanaNecrasova
+	gon_filimonova = {
+		name = "Милана Филимонова"
 		portraits = {
 			army = {
-				small = GFX_portrait_GON_necrasova_small
-				large = GFX_portrait_GON_milana_star
+				small = GFX_portrait_filimonova_small
+				large = GFX_portrait_filimonova_big
 			}
 		}
 		
 		advisor = {
 			slot = political_advisor
-			idea_token = MilanaNecrasova
+			idea_token = gon_filimonova
 			allowed = {
-				has_country_flag = sheltered_likers
-				NOT = { has_country_flag = necrasova_country }
-			}	
+				OR = {
+					AND = {
+						original_tag = GON
+						has_country_flag = sheltered_likers
+					}
+				}
+			}
+			available = {
+				if = {
+					limit = { original_tag = GON }
+					has_country_flag = sheltered_likers
+				}
+			}
 			traits  = {
-				the_young_magnate
+				
 			}	
-			cost = 120
+			cost = 65
 		}
+	}
+
+    gon_amirchik = {
+		name = "Amirchik"
+		portraits = {
+			army = {
+				small = GFX_portrait_amirchik_small
+				large = GFX_portrait_amirchik_big
+			}
+		}
+		
+		corps_commander = {
+			traits = { media_personality trait_reckless }
+            skill = 2
+            attack_skill = 2
+            defense_skill = 2
+            planning_skill = 2
+            logistics_skill = 1
+            legacy_id = -1
+			visible = { 
+				OR = {
+					AND = {
+						original_tag = GON
+						has_country_flag = sheltered_likers
+					}
+				}
+			}
+        }
 	}
 	
 	afsygga ={ 

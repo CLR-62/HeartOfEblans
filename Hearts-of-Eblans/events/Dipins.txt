@@ -1,0 +1,530 @@
+add_namespace = dipins
+
+# Внутренний кризис - начало
+country_event = {
+	id = dipins.1
+	title = dipins.1.t
+	desc = dipins.1.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.1.a
+		ai_chance = { factor = 100 }
+		add_political_power = 25
+	}
+}
+
+# Чрезвычайная сессия Конгресса
+country_event = {
+	id = dipins.2
+	title = dipins.2.t
+	desc = dipins.2.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.2.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.02
+	}
+}
+
+# Конгресс не справляется
+country_event = {
+	id = dipins.3
+	title = dipins.3.t
+	desc = dipins.3.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.3.a
+		ai_chance = { factor = 100 }
+		add_stability = -0.05
+	}
+}
+
+# Избрание Ивана Дипинса
+country_event = {
+	id = dipins.4
+	title = dipins.4.t
+	desc = dipins.4.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.4.a
+		ai_chance = { factor = 100 }
+		add_political_power = 50
+		add_stability = 0.05
+		hidden_effect = {
+			recruit_character = DPN_ivan_dipins
+			recruit_character = DPN_congress_speaker
+			recruit_character = DPN_economy_minister
+			recruit_character = DPN_general_frost
+			recruit_character = DPN_admiral_wave
+			recruit_character = DPN_intelligence_chief
+			recruit_character = DPN_chief_of_army
+		}
+	}
+}
+
+# Переименование Конгресса
+country_event = {
+	id = dipins.5
+	title = dipins.5.t
+	desc = dipins.5.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.5.a
+		ai_chance = { factor = 100 }
+		add_political_power = 25
+	}
+}
+
+# Успехи Дипинса
+country_event = {
+	id = dipins.6
+	title = dipins.6.t
+	desc = dipins.6.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.6.a
+		ai_chance = { factor = 100 }
+		add_war_support = 0.05
+	}
+}
+
+# Расширение полномочий президента
+country_event = {
+	id = dipins.7
+	title = dipins.7.t
+	desc = dipins.7.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.7.a
+		ai_chance = { factor = 100 }
+		add_political_power = 50
+	}
+}
+
+# Конгресс становится номинальным
+country_event = {
+	id = dipins.8
+	title = dipins.8.t
+	desc = dipins.8.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.8.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.03
+	}
+}
+
+# Провозглашение хранителем мира
+country_event = {
+	id = dipins.9
+	title = dipins.9.t
+	desc = dipins.9.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.9.a
+		ai_chance = { factor = 100 }
+		add_political_power = 75
+		every_other_country = {
+			limit = {
+				is_in_europe = yes
+				NOT = { tag = ROOT }
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = DPN_guardian_of_peace_opinion
+			}
+		}
+	}
+}
+
+# Созыв ООН
+country_event = {
+	id = dipins.10
+	title = dipins.10.t
+	desc = dipins.10.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.10.a
+		ai_chance = { factor = 100 }
+		add_political_power = 100
+		add_war_support = 0.1
+		# Здесь будет запуск системы ООН
+	}
+}
+
+###########################################
+###   ДОПОЛНИТЕЛЬНЫЕ ПОЛИТИЧЕСКИЕ      ###
+###########################################
+
+# Бесконечные дебаты
+country_event = {
+	id = dipins.11
+	title = dipins.11.t
+	desc = dipins.11.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.11.a
+		ai_chance = { factor = 100 }
+		add_stability = -0.02
+	}
+}
+
+# Поиск лидера
+country_event = {
+	id = dipins.12
+	title = dipins.12.t
+	desc = dipins.12.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.12.a
+		ai_chance = { factor = 100 }
+		add_political_power = 25
+	}
+}
+
+# Ограниченные полномочия
+country_event = {
+	id = dipins.13
+	title = dipins.13.t
+	desc = dipins.13.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.13.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.02
+	}
+}
+
+# Начало программы реформ
+country_event = {
+	id = dipins.14
+	title = dipins.14.t
+	desc = dipins.14.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.14.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.03
+		custom_effect_tooltip = DPN_reform_decisions_unlocked_tt
+	}
+}
+
+# Результаты реформ
+country_event = {
+	id = dipins.15
+	title = dipins.15.t
+	desc = dipins.15.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.15.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.03
+		add_war_support = 0.03
+	}
+}
+
+# Растущая популярность
+country_event = {
+	id = dipins.16
+	title = dipins.16.t
+	desc = dipins.16.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.16.a
+		ai_chance = { factor = 100 }
+		add_political_power = 50
+	}
+}
+
+# Запрос больше полномочий
+country_event = {
+	id = dipins.17
+	title = dipins.17.t
+	desc = dipins.17.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.17.a
+		ai_chance = { factor = 100 }
+		add_political_power = 25
+	}
+}
+
+###########################################
+###      ИВЕНТЫ РЕФОРМ - НАЧАЛО        ###
+###########################################
+
+# Административная реформа - прогресс
+country_event = {
+	id = dipins.20
+	title = dipins.20.t
+	desc = dipins.20.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = dipins.20.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.01
+	}
+}
+
+# Антикоррупционная кампания - прогресс
+country_event = {
+	id = dipins.21
+	title = dipins.21.t
+	desc = dipins.21.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = dipins.21.a
+		ai_chance = { factor = 70 }
+		add_stability = 0.02
+		add_political_power = 25
+	}
+	option = {
+		name = dipins.21.b
+		ai_chance = { factor = 30 }
+		add_political_power = -25
+		add_stability = 0.03
+	}
+}
+
+# Судебная реформа - прогресс
+country_event = {
+	id = dipins.22
+	title = dipins.22.t
+	desc = dipins.22.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = dipins.22.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.01
+	}
+}
+
+# Социальная реформа - прогресс
+country_event = {
+	id = dipins.23
+	title = dipins.23.t
+	desc = dipins.23.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = dipins.23.a
+		ai_chance = { factor = 100 }
+		add_war_support = 0.02
+	}
+}
+
+# Образовательная реформа - прогресс
+country_event = {
+	id = dipins.24
+	title = dipins.24.t
+	desc = dipins.24.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = dipins.24.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.01
+	}
+}
+
+###########################################
+###    ИВЕНТЫ РЕФОРМ - ЗАВЕРШЕНИЕ      ###
+###########################################
+
+# Административная реформа завершена
+country_event = {
+	id = dipins.25
+	title = dipins.25.t
+	desc = dipins.25.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.25.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.03
+		add_political_power = 50
+		add_timed_idea = {
+			idea = DPN_admin_reform_bonus
+			days = 180
+		}
+	}
+}
+
+# Антикоррупционная кампания завершена
+country_event = {
+	id = dipins.26
+	title = dipins.26.t
+	desc = dipins.26.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.26.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.05
+		add_political_power = 75
+	}
+}
+
+# Судебная реформа завершена
+country_event = {
+	id = dipins.27
+	title = dipins.27.t
+	desc = dipins.27.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.27.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_timed_idea = {
+			idea = DPN_judicial_reform_bonus
+			days = 180
+		}
+	}
+}
+
+# Социальная реформа завершена
+country_event = {
+	id = dipins.28
+	title = dipins.28.t
+	desc = dipins.28.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.28.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.05
+		add_war_support = 0.05
+	}
+}
+
+# Образовательная реформа завершена
+country_event = {
+	id = dipins.29
+	title = dipins.29.t
+	desc = dipins.29.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = dipins.29.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.03
+		add_timed_idea = {
+			idea = DPN_education_reform_bonus
+			days = 365
+		}
+	}
+}
+
+# Отчёт о ходе реформ
+country_event = {
+	id = dipins.30
+	title = dipins.30.t
+	desc = dipins.30.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = dipins.30.a
+		ai_chance = { factor = 100 }
+		custom_effect_tooltip = DPN_reform_progress_tt
+	}
+}

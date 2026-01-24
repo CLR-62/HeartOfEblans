@@ -1158,5 +1158,451 @@ trackOfDay_cat = {
 		}
 	}
 
+
+
+	chb_music_10_anabios_decision = {
+		icon = GFX_tod_decision_chb_coldness
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+			custom_trigger_tooltip = {
+				tooltip = tod_disabled_for
+				check_variable = { tod_cooldown = 0 }
+			}
+
+			surrender_progress < 0.1
+			has_war = no
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = CHB
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 10
+            	}
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = -0.08
+			production_speed_industrial_complex_factor = 0.1
+			production_speed_armament_factory_factor = 0.1
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				scoped_sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 10 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			clear_tod_track = yes
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	chb_music_10_sneshinka_decision = {
+		icon = GFX_tod_decision_chb_coldness
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+			custom_trigger_tooltip = {
+				tooltip = tod_disabled_for
+				check_variable = { tod_cooldown = 0 }
+			}
+
+			surrender_progress < 0.1
+			has_war = yes
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = CHB
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 10
+            	}
+			}
+		}
+
+		modifier = {
+			winter_attrition_factor = -0.25
+			army_attack_factor = 0.05
+			army_defense_factor = 0.1
+			acclimatization_cold_speed_factor = 0.2
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				scoped_sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 10 }
+			set_variable = { selected_track = 1 }
+		}
+
+		remove_effect = {
+			clear_tod_track = yes
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+
+	chb_music_11_porovnu_decision = {
+		icon = GFX_tod_decision_chb_brightside
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+			custom_trigger_tooltip = {
+				tooltip = tod_disabled_for
+				check_variable = { tod_cooldown = 0 }
+			}
+
+			surrender_progress < 0.1
+			stability < 0.95
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = CHB
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 11
+            	}
+			}
+		}
+
+		modifier = {
+			stability_weekly = 0.005
+			political_power_factor = 0.1
+			compliance_growth = 0.05
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				scoped_sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 11 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			clear_tod_track = yes
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	chb_music_11_crates_decision = {
+		icon = GFX_tod_decision_chb_brightside
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+			custom_trigger_tooltip = {
+				tooltip = tod_disabled_for
+				check_variable = { tod_cooldown = 0 }
+			}
+
+			surrender_progress < 0.1
+			has_war = yes
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = CHB
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 11
+            	}
+			}
+		}
+
+		modifier = {
+			supply_consumption_factor = -0.15
+			army_speed_factor = 0.1
+			max_fuel_factor = 0.1
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				scoped_sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 11 }
+			set_variable = { selected_track = 1 }
+		}
+
+		remove_effect = {
+			clear_tod_track = yes
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+
+	chb_music_11_pryanik_decision = {
+		icon = GFX_tod_decision_chb_brightside
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+			custom_trigger_tooltip = {
+				tooltip = tod_disabled_for
+				check_variable = { tod_cooldown = 0 }
+			}
+
+			surrender_progress < 0.1
+			war_support < 0.95
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = CHB
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 11
+            	}
+			}
+		}
+
+		modifier = {
+			war_support_weekly = 0.005
+			experience_gain_army_factor = 0.1
+			weekly_manpower = 250
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				scoped_sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 11 }
+			set_variable = { selected_track = 2 }
+		}
+
+		remove_effect = {
+			clear_tod_track = yes
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+
+	gon_music_12_hitandlera_decision = {
+		icon = GFX_tod_decision_gon_hitandlera
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+			custom_trigger_tooltip = {
+				tooltip = tod_disabled_for
+				check_variable = { tod_cooldown = 0 }
+			}
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = GON
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 12
+            	}
+			}
+		}
+
+		modifier = {
+			stability_factor = 0.05
+			army_core_defence_factor = 0.1
+			drift_defence_factor = 0.15
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				scoped_sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 12 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			clear_tod_track = yes
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	gon_music_13_hryas_decision = {
+		icon = GFX_tod_decision_gon_hryas
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			NOT = { has_country_flag = TOD_already_activated }
+			custom_trigger_tooltip = {
+				tooltip = tod_disabled_for
+				check_variable = { tod_cooldown = 0 }
+			}
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = GON
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 13
+            	}
+			}
+		}
+
+		modifier = {
+			army_org_factor = 0.05
+			army_attack_factor = 0.05
+			experience_gain_army_factor = 0.1
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				scoped_sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 13 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			clear_tod_track = yes
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	gon_music_14_notmyvibe_decision = {
+		icon = GFX_tod_decision_gon_notmyvibe
+		
+		cost = 10
+	
+		allowed = {
+			always = yes
+		}
+	
+		available = {
+			has_war = yes
+			NOT = { has_country_flag = TOD_already_activated }
+			custom_trigger_tooltip = {
+				tooltip = tod_disabled_for
+				check_variable = { tod_cooldown = 0 }
+			}
+		}
+
+		days_remove = 90
+	
+		visible = {
+			AND = {
+				original_tag = GON
+            	is_in_array = {
+            	    array = opennedAlbums
+            	    value = 14
+            	}
+			}
+		}
+
+		modifier = {
+			political_power_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			industrial_capacity_factory = 0.05
+        }
+	
+		complete_effect = {
+			hidden_effect = {
+				scoped_sound_effect = "tod_set_sound_sfx"
+				set_country_flag = TOD_already_activated
+			}
+			set_variable = { selected_album = 14 }
+			set_variable = { selected_track = 0 }
+		}
+
+		remove_effect = {
+			clear_tod_track = yes
+		}
+	
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
 	
 }

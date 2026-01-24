@@ -1,11 +1,14 @@
 on_actions = {
 	on_startup = {
         effect = {
-			every_country = {
-				limit = {
-					is_ai = no
-				}
-				country_event = { id = welcome.3 }
+			#every_country = {
+			#	limit = {
+			#		is_ai = no
+			#	}
+			#	country_event = { id = welcome.3 }
+			#}
+			HAM = {
+				country_event = { id = hametova.100 days = 160 }
 			}
         }
     }
@@ -74,6 +77,24 @@ on_actions = {
 				SBG = {
 					every_core_state = {
 						add_core_of = PYA
+					}
+				}
+			}
+			# ARA annexes SVE
+			if = {
+				limit = {
+					tag = SVE
+					has_war_with = ARA
+				}
+				ARA = {
+					annex_country = {
+						target = SVE
+						transfer_troops = yes
+					}
+				}
+				SVE = {
+					every_owned_state = {
+						transfer_state_to = ARA
 					}
 				}
 			}

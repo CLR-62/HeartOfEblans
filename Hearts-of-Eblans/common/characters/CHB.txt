@@ -67,6 +67,46 @@ characters = {
        }
     }
 
+	bogdan_tsymbal ={ 
+        name = "Богдан Цимбал"
+        portraits= {
+            army = {
+				small = "GFX_chb_bogdan"
+            }
+        }
+	   advisor = {
+           slot = political_advisor
+           idea_token = bogdan_tsymbal
+           cost = 100
+           allowed = { original_tag = CHB } # Optional, doesn't change anything.
+           traits = { eb_internal_affairs_minister }
+       }
+       advisor = {
+           slot = high_command
+           idea_token = bogdan_tsymbal
+           ledger = army
+           allowed = { original_tag = CHB } # Optional, doesn't change anything.
+           traits = { army_entrenchment_2 }
+       }
+    }
+
+	jumper_cube ={ 
+        name = "Джампер"
+        portraits= {
+            army = {
+				small = "GFX_chb_jumper_small"
+            }
+        }
+	   advisor = {
+           slot = political_advisor
+           idea_token = jumper_cube
+           cost = 100
+           allowed = { original_tag = CHB } # Optional, doesn't change anything.
+           available = { has_country_flag = CHB_JUMPER_PASSED }
+           traits = { jumper_trait }
+       }
+    }
+
     miramestinchortt ={ 
         name = "Miramestinchortt"
         portraits= {

@@ -14,9 +14,12 @@ add_ideas = {
 	mixed_media
 }
 
+set_country_flag = generic_trackofday_flag
+
 recruit_character = universal_hype_gon
-recruit_character = MilanaNecrasova
 recruit_character = MilanaStar
+recruit_character = gon_filimonova
+recruit_character = gon_amirchik
 recruit_character = neketondi
 recruit_character = afsygga
 recruit_character = cherepaxa_o5

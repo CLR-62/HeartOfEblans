@@ -1,5 +1,6 @@
 ﻿l_russian:
  cc_leader: "Генерал армии"
+ jumper_trait: "Целеустремленный куб"
  fm_leader: "Фельдмаршал"
  navy_leader: "Адмирал"
  operative_skill_1: "Завербовать"
@@ -1999,3 +2000,4 @@
  animeshnik: "Анимешник"
  ponilub: "Понилюб"
  disepticonmilitarist: "Десептикон-Миллитарист"
+ eb_internal_affairs_minister: "Министр Внутренних дел"

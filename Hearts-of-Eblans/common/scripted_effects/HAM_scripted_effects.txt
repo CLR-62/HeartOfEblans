@@ -1027,7 +1027,7 @@ HAM_star_elected = {
         # Смена правительства на демократическое
         set_politics = {
             ruling_party = democratic
-            elections_allowed = yes
+            elections_allowed = no
         }
         
         # Смена лидера на Милану Стар

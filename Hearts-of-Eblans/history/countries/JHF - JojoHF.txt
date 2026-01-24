@@ -62,6 +62,10 @@ set_politics = {
 	election_frequency = 34
 	elections_allowed = no
 }
+
+add_ideas = {
+	JHF_national_dislocated_economy
+}
 create_country_leader = {
 	name = "Товарищ Иоанн"
 	desc = "POLITICS_PRINCE_PAUL_DESC"

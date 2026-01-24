@@ -23,6 +23,18 @@ ideas = {
 				enemy_army_speed_factor = -0.03
 			}
 		}
+
+		STI_exile_government_host = {
+			picture = generic_intel_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = 0.05
+				intel_network_gain = 0.2
+			}
+		}
 		
 		GON_subdued_dissension = {
 			picture = ARG_subdue_dissension
@@ -1814,11 +1826,13 @@ ideas = {
 			}
 
 			on_add = {
-				add_offsite_building = { type = industrial_complex level = 1 }
+				add_offsite_building = { type = industrial_complex level = 3 }
+				add_offsite_building = { type = arms_factory level = 2 }
 			}
 
 			on_remove = {
-				add_offsite_building = { type = industrial_complex level = -1 }
+				add_offsite_building = { type = industrial_complex level = -3 }
+				add_offsite_building = { type = arms_factory level = -2 }
 				if = {
 					limit = {
 						has_opinion_modifier = GER_trading_partners
@@ -1830,10 +1844,18 @@ ideas = {
 				}
 			}
 
+			modifier = {
+				industrial_capacity_factory = 0.15
+				research_speed_factor = 0.1
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.15
+				trade_opinion_factor = 0.5
+			}
+
 			targeted_modifier = {
 				tag = GON
 
-				trade_cost_for_target_factor = -0.2
+				trade_cost_for_target_factor = -0.5
 				custom_modifier_tooltip = GER_german_trade_offshore_tt
 			}
 		}
@@ -2217,6 +2239,43 @@ ideas = {
 				send_volunteer_factor = 0.15
 			}
 
+		}
+
+		STI_stintler_rights_spirit = {
+			picture = generic_army_war_college
+			allowed = { always = no }
+			modifier = {
+				army_attack_factor = 0.05
+				division_recovery_rate_factor = 0.1
+			}
+		}
+
+		STI_archipelago_master = {
+			picture = generic_navy_bonus
+			allowed = { always = no }
+			modifier = {
+				navy_attack_factor = 0.1
+				amphibious_invasion_preparation_speed = 0.2
+			}
+		}
+
+		STI_stintler_guard_spirit = {
+			picture = generic_intel_bonus
+			allowed = { always = no }
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		STI_great_stintler_order_spirit = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			modifier = {
+				surrender_limit = 0.2
+				political_power_factor = 0.2
+				stability_factor = 0.1
+			}
 		}
 	}
 }

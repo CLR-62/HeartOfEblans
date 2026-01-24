@@ -1,0 +1,1327 @@
+# ДИПИНСОВСКАЯ ФЕДЕРАЦИЯ - Древо фокусов
+# Путь от Великого Конгресса к президентству Дипинса и созданию ООН
+
+focus_tree = {
+	id = dipins_focus
+	
+	country = {
+		factor = 0
+		#modifier = {
+		#	add = 100
+		#	tag = DPN
+		#}
+	}
+	default = no
+
+	continuous_focus_position = { x = 50 y = 2000 }
+
+	###########################################
+	###    ПОЛИТИЧЕСКАЯ ВЕТКА (ЦЕНТР)     ###
+	###########################################
+
+	### НАЧАЛО КРИЗИСА ###
+
+	focus = {
+		id = DPN_internal_crisis
+		icon = GFX_goal_generic_demand_territory
+		x = 10
+		y = 0
+		cost = 3
+
+		ai_will_do = { factor = 100 }
+
+		available = {
+			has_idea = DPN_accumulated_problems
+		}
+
+		completion_reward = {
+			add_political_power = -25
+			add_stability = -0.03
+			country_event = { id = dipins.1 days = 2 }
+		}
+	}
+
+	focus = {
+		id = DPN_emergency_session
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 0
+		y = 1
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_internal_crisis }
+		cost = 5
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DPN_accumulated_problems
+				add_idea = DPN_congress_in_action
+			}
+			country_event = { id = dipins.2 days = 3 }
+		}
+	}
+
+	focus = {
+		id = DPN_endless_debates
+		icon = GFX_focus_generic_strike
+		x = 0
+		y = 2
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_emergency_session }
+		cost = 7
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			add_political_power = -50
+			add_stability = -0.05
+			country_event = { id = dipins.11 days = 5 }
+		}
+	}
+
+	focus = {
+		id = DPN_congress_deadlock
+		icon = GFX_goal_generic_dangerous_deal
+		x = 0
+		y = 3
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_endless_debates }
+		cost = 7
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			add_stability = -0.08
+			add_political_power = -75
+			swap_ideas = {
+				remove_idea = DPN_congress_in_action
+				add_idea = DPN_congress_crisis
+			}
+			country_event = { id = dipins.3 days = 2 }
+		}
+	}
+
+	### ПРИХОД ПРЕЗИДЕНТА ###
+
+	focus = {
+		id = DPN_search_for_leader
+		icon = GFX_goal_generic_propaganda
+		x = 0
+		y = 4
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_congress_deadlock }
+		cost = 5
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			add_political_power = 25
+			country_event = { id = dipins.12 days = 3 }
+		}
+	}
+
+	focus = {
+		id = DPN_elect_president
+		icon = GFX_focus_generic_self_management
+		x = 0
+		y = 5
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_search_for_leader }
+		cost = 7
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DPN_congress_crisis
+				add_idea = DPN_president_under_congress
+			}
+			country_event = { id = dipins.4 days = 1 }
+			hidden_effect = {
+				set_country_flag = DPN_dipins_elected
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_limited_powers
+		icon = GFX_focus_generic_treaty
+		x = -3
+		y = 6
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_elect_president }
+		cost = 5
+
+		ai_will_do = { factor = 90 }
+
+		completion_reward = {
+			add_political_power = -25
+			country_event = { id = dipins.13 days = 2 }
+		}
+	}
+
+	focus = {
+		id = DPN_first_steps
+		icon = GFX_goal_generic_position_armies
+		x = 3
+		y = 6
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_elect_president }
+		cost = 5
+
+		ai_will_do = { factor = 85 }
+
+		completion_reward = {
+			add_stability = 0.02
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = DPN_rename_congress
+		icon = GFX_focus_por_luso_tropicalism
+		x = 0
+		y = 7
+		relative_position_id = DPN_internal_crisis
+		# The rename requires both political groundwork and initial reforms
+		prerequisite = { focus = DPN_limited_powers }
+		prerequisite = { focus = DPN_first_steps }
+		cost = 5
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.03
+			country_event = { id = dipins.5 days = 1 }
+		}
+	}
+
+	### ПРОГРАММА РЕФОРМ ###
+
+	focus = {
+		id = DPN_reform_program
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 8
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_rename_congress }
+		cost = 7
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			add_political_power = 50
+			country_event = { id = dipins.14 days = 1 }
+			set_country_flag = DPN_reforms_started
+			custom_effect_tooltip = DPN_reform_decisions_unlocked_tt
+		}
+	}
+
+	focus = {
+		id = DPN_administrative_initiative
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -2
+		y = 9
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_reform_program }
+		cost = 7
+
+		ai_will_do = { factor = 70 }
+
+		available = {
+			has_country_flag = DPN_admin_reform_complete
+		}
+
+		bypass = {
+			has_country_flag = DPN_admin_reform_complete
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = DPN_anti_corruption_campaign
+		icon = GFX_focus_generic_strike
+		x = 0
+		y = 9
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_reform_program }
+		cost = 7
+
+		ai_will_do = { factor = 80 }
+
+		available = {
+			has_country_flag = DPN_corruption_reform_complete
+		}
+
+		bypass = {
+			has_country_flag = DPN_corruption_reform_complete
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = DPN_clean_government
+		}
+	}
+
+	focus = {
+		id = DPN_judicial_initiative
+		icon = GFX_focus_generic_treaty
+		x = 2
+		y = 9
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_reform_program }
+		cost = 7
+
+		ai_will_do = { factor = 60 }
+
+		available = {
+			has_country_flag = DPN_judicial_reform_complete
+		}
+
+		bypass = {
+			has_country_flag = DPN_judicial_reform_complete
+		}
+
+		completion_reward = {
+			add_war_support = 0.03
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = DPN_social_reforms
+		icon = GFX_goal_generic_consumer_goods
+		x = -2
+		y = 10
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_administrative_initiative }
+		prerequisite = { focus = DPN_anti_corruption_campaign }
+		cost = 7
+
+		ai_will_do = { factor = 75 }
+
+		available = {
+			has_country_flag = DPN_social_reform_complete
+		}
+
+		bypass = {
+			has_country_flag = DPN_social_reform_complete
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = DPN_social_welfare
+		}
+	}
+
+	focus = {
+		id = DPN_education_initiative
+		icon = GFX_focus_research
+		x = 2
+		y = 10
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_anti_corruption_campaign }
+		prerequisite = { focus = DPN_judicial_initiative }
+		cost = 7
+
+		ai_will_do = { factor = 65 }
+
+		available = {
+			has_country_flag = DPN_education_reform_complete
+		}
+
+		bypass = {
+			has_country_flag = DPN_education_reform_complete
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	### УСПЕХИ И РОСТ ПОПУЛЯРНОСТИ ###
+
+	focus = {
+		id = DPN_reform_results
+		icon = GFX_goal_generic_production2
+		x = 0
+		y = 11
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_social_reforms }
+		prerequisite = { focus = DPN_education_initiative }
+		cost = 7
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 75
+			country_event = { id = dipins.15 days = 2 }
+		}
+	}
+
+	focus = {
+		id = DPN_growing_popularity
+		icon = GFX_goal_generic_propaganda
+		x = -2
+		y = 12
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_reform_results }
+		cost = 5
+
+		ai_will_do = { factor = 95 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.03
+			country_event = { id = dipins.16 days = 3 }
+		}
+	}
+
+	focus = {
+		id = DPN_peoples_support
+		icon = GFX_goal_generic_national_unity
+		x = 2
+		y = 12
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_reform_results }
+		cost = 5
+
+		ai_will_do = { factor = 90 }
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = DPN_dipins_popularity
+		icon = GFX_focus_generic_self_management
+		x = 0
+		y = 13
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_growing_popularity }
+		prerequisite = { focus = DPN_peoples_support }
+		cost = 7
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			add_stability = 0.08
+			add_war_support = 0.05
+			add_political_power = 100
+			swap_ideas = {
+				remove_idea = DPN_president_under_congress
+				add_idea = DPN_popular_president
+			}
+			country_event = { id = dipins.6 days = 2 }
+		}
+	}
+
+	### УСИЛЕНИЕ ВЛАСТИ ###
+
+	focus = {
+		id = DPN_request_more_powers
+		icon = GFX_goal_generic_forceful_treaty
+		x = -2
+		y = 14
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_dipins_popularity }
+		cost = 7
+
+		ai_will_do = { factor = 90 }
+
+		completion_reward = {
+			add_political_power = 25
+			country_event = { id = dipins.17 days = 3 }
+		}
+	}
+
+	focus = {
+		id = DPN_public_pressure
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 14
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_dipins_popularity }
+		cost = 7
+
+		ai_will_do = { factor = 85 }
+
+		completion_reward = {
+			add_stability = 0.03
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = DPN_congress_concessions
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 0
+		y = 15
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_request_more_powers }
+		prerequisite = { focus = DPN_public_pressure }
+		cost = 7
+
+		ai_will_do = { factor = 95 }
+
+		completion_reward = {
+			add_political_power = 75
+			swap_ideas = {
+				remove_idea = DPN_popular_president
+				add_idea = DPN_strong_president
+			}
+			country_event = { id = dipins.7 days = 1 }
+		}
+	}
+
+	focus = {
+		id = DPN_centralize_power
+		icon = GFX_goal_generic_major_alliance
+		x = -2
+		y = 16
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_congress_concessions }
+		cost = 7
+
+		ai_will_do = { factor = 85 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = DPN_emergency_powers
+		icon = GFX_focus_generic_military_mission
+		x = 0
+		y = 16
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_congress_concessions }
+		cost = 7
+
+		ai_will_do = { factor = 80 }
+
+		completion_reward = {
+			add_war_support = 0.1
+			add_ideas = DPN_emergency_authority
+		}
+	}
+
+	focus = {
+		id = DPN_loyal_apparatus
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 2
+		y = 16
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_congress_concessions }
+		cost = 7
+
+		ai_will_do = { factor = 75 }
+
+		completion_reward = {
+			add_political_power = 75
+			add_ideas = DPN_loyal_bureaucracy
+		}
+	}
+
+	focus = {
+		id = DPN_nominal_congress
+		icon = GFX_focus_generic_home_defense
+		x = 0
+		y = 17
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_centralize_power }
+		prerequisite = { focus = DPN_emergency_powers }
+		prerequisite = { focus = DPN_loyal_apparatus }
+		cost = 7
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			add_political_power = 100
+			swap_ideas = {
+				remove_idea = DPN_strong_president
+				add_idea = DPN_presidential_dominance
+			}
+			country_event = { id = dipins.8 days = 1 }
+		}
+	}
+
+	focus = {
+		id = DPN_absolute_authority
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
+		y = 18
+		relative_position_id = DPN_internal_crisis
+		prerequisite = { focus = DPN_nominal_congress }
+		cost = 10
+
+		ai_will_do = { factor = 100 }
+
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.05
+			add_war_support = 0.1
+			add_ideas = DPN_absolute_president
+			set_country_flag = DPN_dipins_absolute_power
+		}
+	}
+
+	###########################################
+	###    ЭКОНОМИЧЕСКАЯ ВЕТКА (СЛЕВА)     ###
+	###########################################
+
+	focus = {
+		id = DPN_economic_survey
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 0
+		cost = 5
+
+		ai_will_do = { factor = 70 }
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = DPN_tax_reform
+		icon = GFX_goal_generic_positive_trade_relations
+		x = -2
+		y = 1
+		relative_position_id = DPN_economic_survey
+		prerequisite = { focus = DPN_economic_survey }
+		cost = 7
+
+		ai_will_do = { factor = 60 }
+
+		completion_reward = {
+			add_ideas = DPN_efficient_taxation
+		}
+	}
+
+	focus = {
+		id = DPN_banking_reform
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 2
+		y = 1
+		relative_position_id = DPN_economic_survey
+		prerequisite = { focus = DPN_economic_survey }
+		cost = 7
+
+		ai_will_do = { factor = 55 }
+
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = DPN_infrastructure_plan
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 2
+		relative_position_id = DPN_economic_survey
+		prerequisite = { focus = DPN_tax_reform }
+		cost = 10
+
+		ai_will_do = { factor = 65 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_civilian_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 2
+		relative_position_id = DPN_economic_survey
+		prerequisite = { focus = DPN_tax_reform }
+		prerequisite = { focus = DPN_banking_reform }
+		cost = 10
+
+		ai_will_do = { factor = 75 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_trade_agreements
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 2
+		y = 2
+		relative_position_id = DPN_economic_survey
+		prerequisite = { focus = DPN_banking_reform }
+		cost = 7
+
+		ai_will_do = { factor = 50 }
+
+		completion_reward = {
+			add_ideas = DPN_trade_network
+		}
+	}
+
+	focus = {
+		id = DPN_industrial_expansion
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -1
+		y = 3
+		relative_position_id = DPN_economic_survey
+		prerequisite = { focus = DPN_infrastructure_plan }
+		prerequisite = { focus = DPN_civilian_industry }
+		cost = 10
+
+		ai_will_do = { factor = 80 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_resource_extraction
+		icon = GFX_goal_generic_oil_refinery
+		x = 1
+		y = 3
+		relative_position_id = DPN_economic_survey
+		prerequisite = { focus = DPN_civilian_industry }
+		prerequisite = { focus = DPN_trade_agreements }
+		cost = 10
+
+		ai_will_do = { factor = 55 }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_economic_powerhouse
+		icon = GFX_focus_generic_industry_3
+		x = 0
+		y = 4
+		relative_position_id = DPN_economic_survey
+		prerequisite = { focus = DPN_industrial_expansion }
+		prerequisite = { focus = DPN_resource_extraction }
+		cost = 10
+
+		ai_will_do = { factor = 70 }
+
+		completion_reward = {
+			add_ideas = DPN_industrial_giant
+			add_offsite_building = { type = industrial_complex level = 2 }
+		}
+	}
+
+	###########################################
+	###      ВОЕННАЯ ВЕТКА (СПРАВА)        ###
+	###########################################
+
+	focus = {
+		id = DPN_military_assessment
+		icon = GFX_goal_generic_army_doctrines
+		x = 30
+		y = 0
+		cost = 5
+
+		ai_will_do = { factor = 65 }
+
+		completion_reward = {
+			army_experience = 15
+		}
+	}
+
+	focus = {
+		id = DPN_officer_training
+		icon = GFX_focus_generic_military_academy
+		x = -2
+		y = 1
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_military_assessment }
+		cost = 7
+
+		ai_will_do = { factor = 60 }
+
+		completion_reward = {
+			army_experience = 25
+			add_ideas = DPN_professional_officers
+		}
+	}
+
+	focus = {
+		id = DPN_modernize_equipment
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_military_assessment }
+		cost = 7
+
+		ai_will_do = { factor = 70 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = DPN_modernize_equipment
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_logistics_overhaul
+		icon = GFX_goal_generic_production2
+		x = 2
+		y = 1
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_military_assessment }
+		cost = 7
+
+		ai_will_do = { factor = 55 }
+
+		completion_reward = {
+			add_ideas = DPN_efficient_logistics
+		}
+	}
+
+	focus = {
+		id = DPN_army_expansion
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -3
+		y = 2
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_officer_training }
+		cost = 10
+
+		ai_will_do = { factor = 65 }
+
+		completion_reward = {
+			add_manpower = 25000
+			army_experience = 15
+		}
+	}
+
+	focus = {
+		id = DPN_artillery_program
+		icon = GFX_goal_generic_army_artillery2
+		x = -3
+		y = 3
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_army_expansion }
+		cost = 10
+
+		ai_will_do = { factor = 50 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = DPN_artillery_program
+				bonus = 1.0
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_motorization
+		icon = GFX_goal_generic_army_motorized
+		x = -1
+		y = 2
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_officer_training }
+		prerequisite = { focus = DPN_modernize_equipment }
+		cost = 10
+
+		ai_will_do = { factor = 60 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = DPN_motorization
+				bonus = 1.0
+				uses = 2
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_armor_development
+		icon = GFX_goal_generic_army_tanks
+		x = -1
+		y = 3
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_motorization }
+		cost = 10
+
+		ai_will_do = { factor = 55 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = DPN_armor_development
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_air_force_expansion
+		icon = GFX_goal_generic_build_airforce
+		x = 1
+		y = 2
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_modernize_equipment }
+		prerequisite = { focus = DPN_logistics_overhaul }
+		cost = 10
+
+		ai_will_do = { factor = 60 }
+
+		completion_reward = {
+			air_experience = 25
+			add_equipment_to_stockpile = {
+				type = fighter_equipment
+				amount = 50
+				producer = DPN
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_fighter_program
+		icon = GFX_goal_generic_air_fighter2
+		x = 1
+		y = 3
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_air_force_expansion }
+		cost = 10
+
+		ai_will_do = { factor = 55 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = DPN_fighter_program
+				bonus = 1.0
+				uses = 2
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_naval_modernization
+		icon = GFX_goal_generic_build_navy
+		x = 3
+		y = 2
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_logistics_overhaul }
+		cost = 10
+
+		ai_will_do = { factor = 45 }
+
+		completion_reward = {
+			navy_experience = 25
+		}
+	}
+
+	focus = {
+		id = DPN_coastal_defense
+		icon = GFX_goal_generic_fortify_city
+		x = 3
+		y = 3
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_naval_modernization }
+		cost = 10
+
+		ai_will_do = { factor = 40 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = DPN_coastal_defense
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_doctrine_development
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 4
+		relative_position_id = DPN_military_assessment
+		prerequisite = { focus = DPN_artillery_program focus = DPN_armor_development }
+		prerequisite = { focus = DPN_fighter_program }
+		cost = 10
+
+		ai_will_do = { factor = 70 }
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = DPN_doctrine_development
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	###########################################
+	###   ВНЕШНЯЯ ПОЛИТИКА И ООН (НИЗ)     ###
+	###########################################
+
+	focus = {
+		id = DPN_foreign_ministry
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 18
+		y = 0
+		cost = 7
+
+		ai_will_do = { factor = 100 }
+
+		available = {
+			has_completed_focus = DPN_absolute_authority
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = DPN_diplomatic_corps
+		}
+	}
+
+	focus = {
+		id = DPN_regional_influence
+		icon = GFX_goal_generic_positive_trade_relations
+		x = -2
+		y = 1
+		relative_position_id = DPN_foreign_ministry
+		prerequisite = { focus = DPN_foreign_ministry }
+		cost = 7
+
+		ai_will_do = { factor = 55 }
+
+		completion_reward = {
+			every_neighbor_country = {
+				limit = { NOT = { has_war_with = ROOT } }
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = DPN_guardian_of_peace_opinion
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_intelligence_service
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = DPN_foreign_ministry
+		prerequisite = { focus = DPN_foreign_ministry }
+		cost = 7
+
+		ai_will_do = { factor = 50 }
+
+		completion_reward = {
+			add_ideas = DPN_intelligence_network
+		}
+	}
+
+	focus = {
+		id = DPN_international_standing
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 2
+		y = 1
+		relative_position_id = DPN_foreign_ministry
+		prerequisite = { focus = DPN_foreign_ministry }
+		cost = 7
+
+		ai_will_do = { factor = 60 }
+
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = DPN_guardian_proclamation
+		icon = GFX_focus_generic_little_entente
+		x = 0
+		y = 2
+		relative_position_id = DPN_foreign_ministry
+		prerequisite = { focus = DPN_regional_influence }
+		prerequisite = { focus = DPN_intelligence_service }
+		prerequisite = { focus = DPN_international_standing }
+		cost = 10
+
+		ai_will_do = { factor = 90 }
+
+		completion_reward = {
+			add_ideas = DPN_guardian_of_western_peace
+			country_event = { id = dipins.9 days = 1 }
+		}
+	}
+
+	focus = {
+		id = DPN_monitor_europe
+		icon = GFX_goal_generic_dangerous_deal
+		x = -2
+		y = 3
+		relative_position_id = DPN_foreign_ministry
+		prerequisite = { focus = DPN_guardian_proclamation }
+		cost = 7
+
+		ai_will_do = { factor = 55 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = DPN_peacekeeping_doctrine
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 3
+		relative_position_id = DPN_foreign_ministry
+		prerequisite = { focus = DPN_guardian_proclamation }
+		cost = 7
+
+		ai_will_do = { factor = 65 }
+
+		completion_reward = {
+			add_ideas = DPN_peacekeepers
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = DPN_crisis_management
+		icon = GFX_focus_generic_strike
+		x = 2
+		y = 3
+		relative_position_id = DPN_foreign_ministry
+		prerequisite = { focus = DPN_guardian_proclamation }
+		cost = 7
+
+		ai_will_do = { factor = 50 }
+
+		completion_reward = {
+			add_war_support = 0.1
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = DPN_convene_un
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 4
+		relative_position_id = DPN_foreign_ministry
+		prerequisite = { focus = DPN_monitor_europe }
+		prerequisite = { focus = DPN_peacekeeping_doctrine }
+		prerequisite = { focus = DPN_crisis_management }
+		cost = 10
+
+		ai_will_do = { factor = 100 }
+
+		available = {
+			has_idea = DPN_guardian_of_western_peace
+		}
+
+		completion_reward = {
+			country_event = { id = dipins.10 days = 1 }
+			set_country_flag = DPN_un_convened
+			add_political_power = 150
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = DPN_un_headquarters
+		icon = GFX_goal_generic_construct_civilian
+		x = -1
+		y = 5
+		relative_position_id = DPN_foreign_ministry
+		prerequisite = { focus = DPN_convene_un }
+		cost = 10
+
+		ai_will_do = { factor = 70 }
+
+		completion_reward = {
+			add_political_power = 100
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_international_court
+		icon = GFX_focus_generic_treaty
+		x = 1
+		y = 5
+		relative_position_id = DPN_foreign_ministry
+		prerequisite = { focus = DPN_convene_un }
+		cost = 10
+
+		ai_will_do = { factor = 60 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 75
+			add_ideas = DPN_international_arbitrator
+		}
+	}
+
+	focus = {
+		id = DPN_collective_security
+		icon = GFX_focus_generic_little_entente
+		x = 0
+		y = 6
+		relative_position_id = DPN_foreign_ministry
+		prerequisite = { focus = DPN_un_headquarters }
+		prerequisite = { focus = DPN_international_court }
+		cost = 10
+
+		ai_will_do = { factor = 80 }
+
+		completion_reward = {
+			add_ideas = DPN_collective_defense
+			add_war_support = 0.1
+		}
+	}
+
+	###########################################
+	###      ИССЛЕДОВАНИЯ (ВЕРХ СПРАВА)    ###
+	###########################################
+
+	focus = {
+		id = DPN_university_funding
+		icon = GFX_focus_research
+		x = 38
+		y = 0
+		cost = 7
+
+		ai_will_do = { factor = 70 }
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = DPN_technical_schools
+		icon = GFX_focus_research2
+		x = -1
+		y = 1
+		relative_position_id = DPN_university_funding
+		prerequisite = { focus = DPN_university_funding }
+		cost = 10
+
+		ai_will_do = { factor = 60 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = DPN_technical_schools
+				bonus = 0.75
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_research_grants
+		icon = GFX_focus_research
+		x = 1
+		y = 1
+		relative_position_id = DPN_university_funding
+		prerequisite = { focus = DPN_university_funding }
+		cost = 10
+
+		ai_will_do = { factor = 55 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = DPN_research_grants
+				bonus = 0.75
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = DPN_science_academy
+		icon = GFX_focus_research2
+		x = 0
+		y = 2
+		relative_position_id = DPN_university_funding
+		prerequisite = { focus = DPN_technical_schools }
+		prerequisite = { focus = DPN_research_grants }
+		cost = 10
+
+		ai_will_do = { factor = 75 }
+
+		completion_reward = {
+			add_ideas = DPN_scientific_advancement
+		}
+	}
+}

@@ -53,6 +53,31 @@ SpriteTypes = {
 		texturefile = "gfx/interface/custom_gui/TrackOfDay/Mzlff/CHB_anemone.png"
 	}
 
+	spriteType = {
+		name = "GFX_tod_album_chb_coldness_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Mzlff/CHB_coldness.png"
+	}
+
+	spriteType = {
+		name = "GFX_tod_album_chb_brightside_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Mzlff/CHB_brightside.png"
+	}
+
+	spriteType = {
+		name = "GFX_tod_album_gon_hitandlera_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Stint/GON_hitandlera.png"
+	}
+
+	spriteType = {
+		name = "GFX_tod_album_gon_hryas_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Stint/GON_hryas.png"
+	}
+
+	spriteType = {
+		name = "GFX_tod_album_gon_notmyvibe_icon"
+		texturefile = "gfx/interface/custom_gui/TrackOfDay/Stint/GON_notmyvibe.png"
+	}
+
 
 	spriteType = {
 		name = "GFX_music_disk_texticon"
@@ -106,5 +131,28 @@ SpriteTypes = {
 	spriteType = {
 		name = "GFX_tod_decision_chb_anemone"
 		texturefile = "gfx/interface/decisions/icons/CHB_anemone.dds"
+	}
+	spriteType = {
+		name = "GFX_tod_decision_chb_coldness"
+		texturefile = "gfx/interface/decisions/icons/CHB_coldness.dds"
+	}
+	spriteType = {
+		name = "GFX_tod_decision_chb_brightside"
+		texturefile = "gfx/interface/decisions/icons/CHB_brightside.dds"
+	}
+
+
+	#GON
+	spriteType = {
+		name = "GFX_tod_decision_gon_hitandlera"
+		texturefile = "gfx/interface/decisions/icons/GON_hitandlera.dds"
+	}
+	spriteType = {
+		name = "GFX_tod_decision_gon_hryas"
+		texturefile = "gfx/interface/decisions/icons/GON_hryas.dds"
+	}
+	spriteType = {
+		name = "GFX_tod_decision_gon_notmyvibe"
+		texturefile = "gfx/interface/decisions/icons/GON_notmyvibe.dds"
 	}
 }

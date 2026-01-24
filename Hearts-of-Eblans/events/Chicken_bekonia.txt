@@ -772,6 +772,9 @@ country_event = {
 		183 = {
 			transfer_state_to = CHB
 		}
+		CHB = {
+			annex_country = MLS
+		}
 	}	
 	
 	#No
@@ -926,6 +929,25 @@ country_event = {
 		swap_ideas = {
 			remove_idea = CHB_economic_strain
 			add_idea = CHB_economic_collapse
+		}
+	}
+}
+
+country_event = {
+	id = chicken.100
+	title = chicken.100.t
+	desc = chicken.100.d
+	picture = GFX_report_event_chicken_shukov
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = chicken.100.a
+	}
+
+	immediate = {
+		hidden_effect = {
+			play_song = "shukov"
 		}
 	}
 }

@@ -326,7 +326,7 @@ PixelShader =
 	static const float MOON_FEATHER_MIN = -0.01f;
 	static const float MOON_FEATHER_MAX = 0.01;
 	static const float NIGHT_OPACITY = 0.9f;
-	static const float NIGHT_DARKNESS = 0.5f;
+	static const float NIGHT_DARKNESS = 0.45f; // Even darker for better immersion
 	static const float SOUTH_POLE_OFFSET = 0.17f; // Our map is missing big parts of globe on north and south
 	static const float NORTH_POLE_OFFSET = 0.93f;
 	static const float GLOBE_NORMAL_LIMIT = 0.8f;
@@ -357,8 +357,9 @@ PixelShader =
 
 	float DayNightFactor( float3 vGlobeNormal, float vMin, float vMax )
 	{
-		float vDot = dot( vGlobeNormal, DayNight_Hour_SunDir.yzw );
-		return saturate( 1 - vFoWOpacity_FoWTime_SnowMudFade_MaxGameSpeed.w );
+		// float vDot = dot( vGlobeNormal, DayNight_Hour_SunDir.yzw );
+		// return Levels( vDot, vMin, vMax );
+		return 1.0f; // Eternal Night
 	}
 
 
@@ -369,11 +370,10 @@ PixelShader =
 
 	float3 NightifyColor( float3 vDayColor, float vBlend )
 	{
+		float vDesaturation = lerp(0.0f, 0.25f, vBlend * vBlend );	
 
-		float vDesaturation = lerp(0.0f, 0.8f, vBlend * vBlend * vBlend );	
-
-		float Grey = dot( vDayColor.rgb, float3( 0.4f, 0.3f, 0.05f ) );
-		float3 vNightColor = saturate(lerp(vec3(Grey), Grey * float3(0.2,0.7,1.2), vec3(0.25f) ));
+		float Grey = dot( vDayColor.rgb, float3( 0.2126f, 0.7152f, 0.0722f ) );
+		float3 vNightColor = saturate(lerp(vec3(Grey), Grey * float3(0.5, 1.1, 0.5), vec3(0.5f) )); // Softened Green Tint
 
 		float3 vColor = lerp(vDayColor, vNightColor, vec3(vDesaturation));
 

@@ -94,9 +94,7 @@
  stintik.31.t: "Новые IT-Уроки"
  stintik.31.d: "Если раньше максимумом уроков информатики в наших школах было - «Компьютер, мышь, записывайте», то сейчас, проведя ряд реформ, наше IT образование преобразилось, наша молодёжь умнеет! И это славно, мы близки к ликвидации проблемы утечки мозгов!"
  stintik.31.a: "Замечательно!"
-
-
-
+ 
  stintik_trade.1.t: "[FROM.GetNameDefCap] предлагает торговое партнерство"
  stintik_trade.1.d: "[FROM.GetNameDefCap] обращается к нам с предложением, выгодным для экономик обеих стран. Их промышленности нужны наши природные ресурсы, а нам нужны инвестиции для развития нашей промышленности. Заманчивое предложение, но не станет ли оно сделкой с дьяволом?"
  stintik_trade.1.a: "Обе стороны от этого выиграют"
@@ -113,9 +111,9 @@
  stintik_trade.5.t: "Дипинс отказался"
  stintik_trade.5.d: "Правительство Дипинсовской Федерации отказалось от инвестиций в нашу экономику"
  stintik_trade.5.a: "Ну и ладно"
-
- gon_mediterranean_research_name: "Средиземноморская сфера обмена исследованиями"
  
+ gon_mediterranean_research_name: "Средиземноморская сфера обмена исследованиями"
+  
  GON_strong_rules: "Строгие правила"
  GON_economic_crisis: "Экономический кризис"
  GON_brain_drain: "Утечка мозгов"
@@ -156,7 +154,7 @@
  GON_military_zeal_into_peaceful_way: "Возвращение военных в экономику страны"
  GON_totaler_sanctions: "Санкции от Демократов"
  GON_new_democracy_constitution: "Новая демократическая конституция"
- GON_pas_investments: "Инвестиции в Гондурассию"
+ GON_pas_investments: "Инвестиции в Гондурассии"
  GON_anti_corruption_politics: "Антикоррупционная политика"
  GON_police_reform: "Полицейская реформа"
  GON_liberations: "Программа освобождений"
@@ -164,9 +162,7 @@
  GON_indoctrination: "Идеологическая обработка"
  GON_peace_expansion: "Мирное расширение"
  GON_democratic_diplomats: "Демократические дипломаты"
- 
-
-
+  
  nelya_flirt_cat: "Флирт с Нелей"
  Nelya_flirt_title_text: "Флиртуйте с Нелей повышая очки взаимоотношения, чем больше очков - тем выше шанс того что Неля согласиться присоединиться к нам. Сила взаимоотношений показана в прогрессбаре снизу"
  STI_coop_strim: "Совместный стрим"
@@ -188,10 +184,7 @@
  nelya_flirt_tt: "§7Откроются решения о флирте с Нелей§!"
  STI_claim_stintler_rights_tt: "Фашизм станет правящей партией, Стинтлер станет Лидером"
  STI_heir_to_the_throne_tt: "Нейтралитет останется правящей партией, Наследник Шабани - Максильо Шабани де Лисий станет Лидером"
- 
-
-
-
+  
  STI_reign_of_shabani: "Правление Шабани"
  STI_stint_side: "Династия Шабановых"
  STI_limit_moders_power: "Ограничить полномочия модераторов"
@@ -212,18 +205,18 @@
  STI_bring_back_our_citizens: "Вернуть наших граждан"
  STI_demand_the_islands: "Потребовать острова"
  STI_path_to_mophi_for_guaranties: "Путь до Морфи в обмен на гарантии"
- STI_pressure_on_Morphi: "Влияние на Морфи"
- STI_pressure_on_Zolo: "Влияние на Золо"
+ STI_pressure_on_Morphi: "Конкиста Морфи"
+ STI_pressure_on_Zolo: "Конкиста Золо"
  STI_arrest_royal_family: "Арестовать королевскую семью"
  STI_dissolution_of_royal_guard: "Распустить королевскую охрану"
  STI_heraclion_for_guarantees: "Гераклион в обмен на гарантии"
  STI_discounts_at_aratoss: "Скидки у Аратосса"
- STI_chb_trade_agreement: "Торговое партнёрство с Чикен-Беконией"
+ STI_chb_trade_agreement: "Торговое партрнёрство с Чикен-Беконией"
  STI_mediterranean_axis: "Средиземноморская Ось"
  STI_chb_invite: "Пригласить Чикен-Беконию"
  STI_ara_invite: "Пригласить Аратосса"
  STI_heir_to_the_throne: "Наследника на престол"
- STI_royal_industry: "Королевская промыленность"
+ STI_royal_industry: "Королевская промысленность"
  STI_synthetic_industry: "Синтетическая индустрия"
  STI_expand_state_reservise: "Расширить государственные запасы"
  STI_metal_processing: "Обработка металлов"
@@ -240,7 +233,7 @@
  STI_flamethrower: "Огневая мощь"
  STI_self_determination: "Самоопределение"
  STI_aggresive_expansion: "Агрессивная экспансия"
- STI_europe_problem: "Европеская проблема"
+ STI_europe_problem: "Европейская проблема"
  STI_nelya_ultimatum: "Ультиматум Неле"
  STI_morphi_ultimatum: "Ультиматум Морфи"
  STI_intercontinental_problem: "Межконтинентальная проблема"
@@ -304,11 +297,11 @@
  STI_gbank: "Г-Банк"
  STI_gbank_desc: "Г-Банк, Г от слова Гондурассия конечно..."
  STI_project_bubel: "Проект «Бубель»"
- STI_pressure_on_Nelya: "Влияние на Нелю"
+ STI_pressure_on_Nelya: "Конкиста Нели"
  STI_mediterranean_sphere: "Средиземноморская сфера сотрудничества"
  STI_fight_fascist: "Уничтожить Фашиста"
  STI_dpn_friend: "Сотрудничество с Дипинсом"
-
+ 
  GON_limited_moders: "Модераторы ограничены в своих полномочиях"
  STI_extra_weapons_tt: "В момент начала Гражданской войны, вы получите дополнительное вооружение"
  STI_extra_industry_tt: "В момент начала Гражданской войны, вы получите дополнительные заводы"
@@ -318,11 +311,27 @@
  STI_vips_mobilize_tt: "Часть випов будет мобилизована, некоторые будут повышены до офицеров"
  STI_moders_gone_tt: "§YНа время гражданской войны модераторы исчезнут из офицерского состава, но после вашей победы они вернутся.§!"
  GON_fascism_influence_tt: "§OЕсли поддержка Фашизма превысит 45% - они станут правящей партией и мы станем марионеткой Гондурассии§!"
-
+ 
  nelya_flirt_add_15: "Добавиться 15 очков к взаимоотношениям с Нелей"
  nelya_flirt_add_10: "Добавиться 10 очков к взаимоотношениям с Нелей"
  nelya_flirt_add_5: "Добавиться 5 очков к взаимоотношениям с Нелей"
  nelya_need_100: "Заполните прогрессбар взаимоотношений на максимум"
-
+ 
  biggon_tt: "Все вышеперечисленные территории станут национальными."
  STI_moders_comeback: "§YМодераторы вернуться на свои должности§!"
+ 
+ STI_stintler_guard: "Гвардия Стинтлера"
+ STI_challenge_the_federation: "Вызов Федерации"
+ STI_the_great_stintler_order: "Великий Орден Стинтлера"
+ 
+STI_stintler_rights_spirit: "Права Стинтлера"
+STI_archipelago_master: "Хозяин Архипелага"
+STI_stintler_guard_spirit: "Гвардия Стинтлера"
+STI_great_stintler_order_spirit: "Великий Орден Стинтлера"
+ 
+STI_unite_the_archipelago_tt: "Мы получим претензии на все острова региона, а также бонусы для морской пехоты."
+STI_stintler_guard_tt: "Подразделения Гвардии Стинтлера будут готовы к бою."
+
+gon_integration_states_cat: "Интеграция западных территорий"
+gon_integration_states_cat_desc: "Эти земли исторически принадлежали нам. Мы должны интегрировать их в наш государственный аппарат."
+integrate_iberian_pov: "Интеграция Западной части Иберийского полуострова"

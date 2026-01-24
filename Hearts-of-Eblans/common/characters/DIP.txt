@@ -1,6 +1,8 @@
 characters = {
+
+	# Универсальный хайпократ
 	universal_hype_dip = {
-		name = "Хуесос какой-то"
+		name = "Хайпер Федерации"
 		portraits={
 			civilian={
 				large=GFX_unknown_char_small
@@ -20,9 +22,167 @@ characters = {
 			cost = 100
 			do_effect = {
 				NOT = {
-					has_government = hypecratia # You can only select it if your current ideology isn't your new one
+					has_government = hypecratia
 				}
 			}
 		}
 	}
+
+	# Президент Иван Дипинс
+	DPN_ivan_dipins = {
+		name = "Иван Дипинс"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_dpn_ivan_dipins
+				small = GFX_portrait_dpn_ivan_dipins_small
+			}
+			army = {
+				large = GFX_portrait_dpn_ivan_dipins
+				small = GFX_portrait_dpn_ivan_dipins_small
+			}
+		}
+
+		country_leader = {
+			ideology = liberalism
+			traits = { democratic_reformer }
+			expire = "1965.1.1"
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = DPN_ivan_dipins_advisor
+			allowed = {
+				original_tag = DPN
+			}
+			available = {
+				has_completed_focus = DPN_elect_president
+			}
+			traits = { popular_figurehead }
+			cost = 150
+		}
 	}
+
+	# Спикер Великого Конгресса
+	DPN_congress_speaker = {
+		name = "Спикер Конгресса"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_europe_generic_politician_1
+				small = GFX_portrait_europe_generic_politician_1_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = DPN_congress_speaker_advisor
+			allowed = {
+				original_tag = DPN
+			}
+			traits = { smooth_talking_charmer }
+			cost = 100
+		}
+	}
+
+	# Министр экономики
+	DPN_economy_minister = {
+		name = "Министр Экономики Ларсен"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_europe_generic_politician_2
+				small = GFX_portrait_europe_generic_politician_2_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = DPN_economy_minister_advisor
+			allowed = {
+				original_tag = DPN
+			}
+			traits = { captain_of_industry }
+			cost = 100
+		}
+	}
+
+	# Генерал армии
+	DPN_general_frost = {
+		name = "Генерал Фрост"
+		portraits = {
+			army = {
+				large = GFX_portrait_europe_generic_military_1
+				small = GFX_portrait_europe_generic_military_1_small
+			}
+		}
+
+		corps_commander = {
+			traits = { defensive_doctrine infantry_leader }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+
+	# Адмирал
+	DPN_admiral_wave = {
+		name = "Адмирал Вейв"
+		portraits = {
+			navy = {
+				large = GFX_portrait_europe_generic_navy_1
+				small = GFX_portrait_europe_generic_navy_1_small
+			}
+		}
+
+		navy_leader = {
+			traits = { superior_tactician }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+	}
+
+	# Начальник разведки
+	DPN_intelligence_chief = {
+		name = "Шеф Разведки Шадоу"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_europe_generic_politician_3
+				small = GFX_portrait_europe_generic_politician_3_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = DPN_intelligence_chief_advisor
+			allowed = {
+				original_tag = DPN
+			}
+			traits = { prince_of_terror }
+			cost = 100
+		}
+	}
+
+	# Военный стратег
+	DPN_chief_of_army = {
+		name = "Маршал Страйк"
+		portraits = {
+			army = {
+				large = GFX_portrait_europe_generic_military_2
+				small = GFX_portrait_europe_generic_military_2_small
+			}
+		}
+
+		advisor = {
+			slot = army_chief
+			idea_token = DPN_chief_of_army_advisor
+			allowed = {
+				original_tag = DPN
+			}
+			traits = { army_chief_defensive_2 }
+			cost = 100
+		}
+	}
+}

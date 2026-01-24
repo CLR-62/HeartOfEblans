@@ -29,6 +29,16 @@
   chb_anemone: "ANEMONE"
   chb_monopolarity: "однополярности"
   chb_moles: "родинки"
+  chb_coldness: "холода ветра"
+  chb_anabios: "анабиоз"
+  chb_sneshinka: "снежинка"
+  chb_brightside: "Светлая сторона"
+  chb_porovnu: "поровну"
+  chb_pryanik: "в пряничном домике"
+  chb_crates: "ящики"
+  gon_hitandlera: "Гид и Лера"
+  gon_hryas: "Хрясь"
+  gon_notmyvibe: "Это не мой вайб"
 
 
   tod_will_be_unlocked: "£GFX_music_disk_texticon Будет открыт альбом §Y$ALBUM$§!"
@@ -66,12 +76,34 @@
   chb_music_9_monopolarity_decision: "Выбрать: §Yоднополярности§!"
   chb_music_9_moles_decision: "Выбрать: §Yродинки§!"
 
+  chb_music_10_anabios_decision: "Выбрать: §Yанабиоз§!"
+  chb_music_10_sneshinka_decision: "Выбрать: §Yснежинка§!"
+
+
+  chb_music_11_porovnu_decision: "Выбрать: §Yпоровну§!"
+  chb_music_11_pryanik_decision: "Выбрать: §Yв пряничном домике§!"
+  chb_music_11_crates_decision: "Выбрать: §Yящики§!"
+
+
+  gon_music_12_hitandlera_decision: "Выбрать: §YГид и Лера§!"
+  gon_music_13_hryas_decision: "Выбрать: §YХрясь§!"
+  gon_music_14_notmyvibe_decision: "Выбрать: §YЭто не мой вайб§!"
+
+
+
   PYA_musical_effort: "Развитие музыки"
   PYA_thousand_lifes: "Выпустить «1000 Жизней»"
   PYA_supernova_album: "Выпустить «Supernova»"
   PYA_golovolomka_album: "Выпустить «Головоломка»"
   PYA_superpupernova_album: "Выпустить «Super puper nova»"
   PYA_zmishare_album: "Выпустить «Жми Share»"
+  CHB_anemone_album: "Выпустить «ANEMONE»"
+  CHB_coldness_album: "Выпустить «холода ветра»"
+  CHB_brightside_album: "Выпустить «Светлая сторона»"
+
+  GON_hitandlera_album: "Выпустить «Гид и Лера»"
+  GON_hryas_album: "Выпустить «Хрясь»"
+  GON_notmyvibe_album: "Выпустить «Это не мой вайб»"
 
 
 

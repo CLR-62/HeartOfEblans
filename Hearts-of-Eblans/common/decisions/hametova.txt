@@ -751,3 +751,44 @@ hametova_cvd_war_category = {
 		}
 	}
 }
+
+hametova_elections_category = {
+	HAM_union_elections_mission = {
+		icon = GFX_focus_generic_election
+		
+		# Hidden visibility, mission started by focus
+		visible = {
+			has_mission = HAM_union_elections_mission
+		}
+
+		available = {
+			always = no
+		}
+
+		activation = {
+			has_completed_focus = ham_second_hametova_term
+		}
+
+		days_mission_timeout = 730
+
+		timeout_effect = {
+			custom_effect_tooltip = ham_elections_tt
+			hidden_effect  = {
+				# Trigger the correct event based on path
+				if = {
+					limit = {
+						has_country_flag = HAM_star_opposition_way
+					}
+					country_event = { id = hametova_elections.3 }
+				}
+				else = {
+					country_event = { id = hametova_elections.20 }
+				}
+			}
+		}
+
+		on_add = {
+			# Reset flags or prep if needed
+		}
+	}
+}

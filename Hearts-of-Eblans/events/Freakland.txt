@@ -74,8 +74,10 @@ country_event = {
 				update_freakland_idea = yes
 			}
 
-			news_event = { id = freakland.4 days = 5 }
+			#news_event = { id = freakland.4 days = 5 }
         }
+
+		PYA = { country_event = { id = freakland.15 days = 20 random_days = 10 } }
 	}
 }
 
@@ -84,7 +86,7 @@ news_event = {
 	id = freakland.4
 	title = freakland.4.t
 	desc = freakland.4.d
-	picture = GFX_report_event_freakland
+	picture = GFX_report_event_freakland_new_player
 	
 	is_triggered_only = yes
 	major = yes
@@ -109,7 +111,32 @@ country_event = {
 	option = {
 		name = freakland.5.a
 		ai_chance = {
-			factor = 90
+			factor = 50
+			modifier = {
+				factor = 300
+        		tag = MNY
+			}
+			modifier = {
+				factor = 70
+        		tag = BTK
+			}
+		}
+
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = MNY
+				}
+				set_variable = { THIS.new_freakland_level = 2 }
+				set_freakland_level = yes
+			}
+			if = {
+				limit = {
+					tag = BTK
+				}
+				set_variable = { THIS.new_freakland_level = 3 }
+				set_freakland_level = yes
+			}
 		}
 
 		THIS = {
@@ -136,7 +163,7 @@ country_event = {
 	option = {
 		name = freakland.5.b
 		ai_chance = {
-			factor = 90
+			factor = 20
 		}
 		PYA = {
 			country_event = { id = freakland.6 days = 4 }
@@ -294,7 +321,10 @@ news_event = {
 		ai_chance = {
 			factor = 90
 		}
-
+		hidden_effect = {
+			set_variable = { THIS.new_freakland_level = 5 }
+			set_freakland_level = yes
+		}
 	}
 }
 
@@ -316,6 +346,198 @@ country_event = {
 		BTK = {
 			country_event = freakland.5
         }
+	}
+}
+
+#MPK cheater
+country_event = {
+	id = freakland.15
+	title = freakland.15.t
+	desc = freakland.15.d
+	picture = GFX_report_event_mpk_cheater
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.15.a
+		ai_chance = {
+			factor = 90
+		}
+
+		MPK = {
+			country_event = { id = freakland.17 days = 2 }
+        }
+	}
+}
+
+#Kicked for Cheats
+news_event = {
+	id = freakland.16
+	title = freakland.16.t
+	desc = freakland.16.d
+	picture = GFX_report_event_cheater_kicked
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = freakland.16.a
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#We are kicked
+country_event = {
+	id = freakland.17
+	title = freakland.17.t
+	desc = freakland.17.d
+	picture = GFX_report_event_freakland_country
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.17.a
+		ai_chance = {
+			factor = 90
+		}
+
+		MPK = {
+			country_kicked_from_freakland = yes
+        }
+
+		custom_effect_tooltip = MPK_we_are_lost
+
+		hidden_effect = {
+
+			CAC = {
+				annex_country = {
+    				target = MPK
+    				transfer_troops = yes
+				}
+				910 = {
+					transfer_state_to = MPK
+				}
+				add_to_array = {
+        	        array = global.freakland_members
+        	        value = THIS.id
+        	    }
+				update_freakland_idea = yes
+			}
+		}
+	}
+}
+
+#Superpowers
+news_event = {
+	id = freakland.18
+	title = freakland.18.t
+	desc = freakland.18.d
+	picture = GFX_report_event_freakland_superpower
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.18.a
+		ai_chance = {
+			factor = 90
+		}
+		hidden_effect = {
+			set_variable = { THIS.new_freakland_level = 7 }
+			set_freakland_level = yes
+			news_event = { id = freakland.19 days = 40 }
+		}
+		
+	}
+}
+
+#Superpowers weaning
+news_event = {
+	id = freakland.19
+	title = freakland.19.t
+	desc = freakland.19.d
+	picture = GFX_report_event_freakland_superpower_weaning
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.19.a
+		ai_chance = {
+			factor = 90
+		}
+		hidden_effect = {
+			set_variable = { THIS.new_freakland_level = 8 }
+			set_freakland_level = yes
+			PYA = { country_event = { id = freakland.20 days = 50 } }
+		}
+		
+	}
+}
+
+#Closing tumors
+country_event = {
+	id = freakland.20
+	title = freakland.20.t
+	desc = freakland.20.d
+	picture = GFX_report_event_freakland_end_is_near
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.20.a
+		ai_chance = {
+			factor = 90
+		}
+		custom_effect_tooltip = freak_idea_will_change_tt
+		hidden_effect = {
+			set_variable = { THIS.new_freakland_level = 9 }
+			set_freakland_level = yes
+			news_event = { id = freakland.21 days = 25 }
+		}
+		
+	}
+}
+
+#DNO
+news_event = {
+	id = freakland.21
+	title = freakland.21.t
+	desc = freakland.21.d
+	picture = GFX_report_event_freakland_dying
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.21.a
+		ai_chance = {
+			factor = 90
+		}
+		custom_effect_tooltip = freak_idea_will_change_tt
+		hidden_effect = {
+			set_variable = { THIS.new_freakland_level = 10 }
+			set_freakland_level = yes
+		}
+		
+	}
+}
+
+#CLOSING
+news_event = {
+	id = freakland.22
+	title = freakland.22.t
+	desc = freakland.22.d
+	picture = GFX_report_event_freakland_closed
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = freakland.21.a
+		ai_chance = {
+			factor = 90
+		}
+		custom_effect_tooltip = freakland_will_closed_tt
+		
 	}
 }
 

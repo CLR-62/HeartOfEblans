@@ -1,6 +1,6 @@
 add_namespace = SDO_event
 
-# White Peace Proposal (Triggered by CHB)
+# Peace at Frontline Proposal (50% progress - DRE accepts)
 country_event = {
 	id = SDO_event.1
 	title = SDO_event.1.t
@@ -9,32 +9,26 @@ country_event = {
 
 	is_triggered_only = yes
 
-	# Accept
+	# Accept (Border at front line)
 	option = {
 		name = SDO_event.1.a
 		ai_will_do = {
 			base = 50
-			modifier = {
-				factor = 2
-				has_war_support < 0.3
-			}
-			modifier = {
-				factor = 0.5
-				has_war_support > 0.7
-			}
+			modifier = { factor = 2 has_war_support < 0.3 }
 		}
+		SDO_frontline_territory_transfer = yes
 		CHB = { white_peace = DRE }
-		custom_effect_tooltip = CHB_SDO_white_peace_tt
+		SDO_peace_allies_effect = yes
+		custom_effect_tooltip = CHB_SDO_frontline_peace_tt
 	}
 
 	# Refuse
 	option = {
 		name = SDO_event.1.b
-		ai_will_do = {
-			base = 50
-		}
+		ai_will_do = { base = 50 }
 		CHB = {
 			add_political_power = 50
+			add_to_variable = { global.SDO_peace_progress = -0.05 }
 		}
 		custom_notification = {
 			type = peace_talks_failed
@@ -43,12 +37,12 @@ country_event = {
 	}
 }
 
-# Reparations and Demilitarization Proposal
+# White Peace Proposal (75% progress)
 country_event = {
 	id = SDO_event.2
 	title = SDO_event.2.t
 	desc = SDO_event.2.d
-	picture = GFX_report_event_reparations
+	picture = GFX_report_event_diplomatic_propose
 
 	is_triggered_only = yes
 
@@ -57,30 +51,25 @@ country_event = {
 		name = SDO_event.2.a
 		ai_will_do = {
 			base = 30
-			modifier = {
-				factor = 3
-				check_variable = { var = global.SDO_peace_progress value > 0.85 }
-			}
+			modifier = { factor = 3 check_variable = { var = global.SDO_peace_progress value > 0.85 } }
 		}
-		add_timed_idea = { idea = DRE_devastated_by_war days = 730 }
-		transfer_state = 155
-		white_peace = CHB
-		custom_effect_tooltip = CHB_SDO_reparations_tt
+		CHB = { white_peace = DRE }
+		SDO_peace_allies_effect = yes
+		custom_effect_tooltip = CHB_SDO_white_peace_tt
 	}
 
 	# Refuse
 	option = {
 		name = SDO_event.2.b
-		ai_will_do = {
-			base = 70
-		}
+		ai_will_do = { base = 70 }
 		CHB = {
 			add_political_power = 100
+			add_to_variable = { global.SDO_peace_progress = -0.05 }
 		}
 	}
 }
 
-# Final Capitulation Proposal
+# Vitaly's Treaty (100% progress)
 country_event = {
 	id = SDO_event.3
 	title = SDO_event.3.t
@@ -94,23 +83,35 @@ country_event = {
 		name = SDO_event.3.a
 		ai_will_do = {
 			base = 10
-			modifier = {
-				factor = 10
-				check_variable = { var = global.SDO_peace_progress value > 0.95 }
-			}
+			modifier = { factor = 10 check_variable = { var = global.SDO_peace_progress value > 0.95 } }
 		}
-		set_politics = { ruling_party = democratic }
-		white_peace = CHB
-		custom_effect_tooltip = CHB_SDO_final_victory_tt
+		# Status quo ante bellum
+		CHB = { white_peace = DRE }
+		
+		# Law restrictions
+		set_conscription_law = disarmed_nation
+		set_industrial_policy_law = civilian_economy
+		add_timed_idea = { idea = DRE_vitaly_treaty_restrictions days = 365 }
+		
+		# Demilitarization
+		4 = { set_demilitarized_zone = yes }
+		975 = { set_demilitarized_zone = yes }
+		976 = { set_demilitarized_zone = yes }
+		70 = { set_demilitarized_zone = yes }
+		71 = { set_demilitarized_zone = yes }
+		664 = { set_demilitarized_zone = yes }
+		73 = { set_demilitarized_zone = yes }
+		
+		# Final exit from all wars
+		end_war = yes
+		
+		custom_effect_tooltip = CHB_SDO_vitaly_treaty_tt
 	}
 
 	# Refuse (Last Stand)
 	option = {
 		name = SDO_event.3.b
-		ai_will_do = {
-			base = 90
-		}
-		# No effect on progress
+		ai_will_do = { base = 90 }
 		add_war_support = 0.1
 		add_stability = 0.1
 	}
