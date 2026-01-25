@@ -3006,10 +3006,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 150
 			add_war_support = 0.05
-			create_wargoal = {
-				target = ARA
-				type = annex_everything
-			}
 		}
 	}
 
@@ -3133,7 +3129,7 @@ focus_tree = {
 				target = NEL
 				type = annex_everything
 			}
-			add_war_support = 0.05
+			add_war_support = 0.02
 		}
 	}
 
@@ -3177,7 +3173,7 @@ focus_tree = {
 				target = MOY
 				type = annex_everything
 			}
-			add_war_support = 0.05
+			add_war_support = 0.02
 		}
 	}
 
@@ -3294,7 +3290,7 @@ focus_tree = {
 
 	focus = {
 		id = STI_stintler_guard
-		icon = GFX_goal_STI_stintler
+		icon = GFX_focus_AFG_royal_guard
 		x = -1
 		y = 1
 		cost = 10
@@ -3325,7 +3321,7 @@ focus_tree = {
 
 	focus = {
 		id = STI_the_great_stintler_order
-		icon = GFX_goal_GON_absolute_meme
+		icon = GFX_focus_spr_anarchism_knows_no_borders
 		x = 0
 		y = 2
 		cost = 10

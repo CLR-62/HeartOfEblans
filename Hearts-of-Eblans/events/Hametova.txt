@@ -554,7 +554,7 @@ country_event = {
 			factor = 55
 		}
 		set_country_leader_ideology = hypetiktok
-		add_ideas = youtube_platform
+		add_ideas = twitch_platform
 	}
 }
 #HAMETOVA DISAGREED TO CHANGE
@@ -1200,10 +1200,7 @@ country_event = {
 	option = { 
 		name = hametova_elections.3.a
 		trigger = {
-			# Democratic support must be strictly higher than Hypecratia
-			check_variable = { 
-				democratic > hypecratia 
-			}
+			democratic > hypecratia 
 		}
 		ai_chance = {
 			factor = 100
@@ -2853,7 +2850,7 @@ country_event = {
 		set_autonomy = {
     		target = CVD
     		autonomous_state = autonomy_free
-    		end_wars = no
+    		end_wars = yes
     		end_civil_wars = no
 		}
 	}

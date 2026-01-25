@@ -40,7 +40,6 @@ state={
 			}
 		}
 		add_core_of = DPN
-		add_core_of = MST
 	}
 
 	provinces={

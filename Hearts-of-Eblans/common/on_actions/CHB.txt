@@ -25,5 +25,32 @@ on_actions = {
 			set_country_flag = CHB_INCEDENT_SMART
 			news_event = { id = squad_news.30 days = 10 }
 		}
+
+		#if = {
+		#	limit = {
+		#		tag = CHB
+		#		NOT = {
+		#			155 = {
+		#				is_controlled_by = CHB
+		#			}
+		#			974 = {
+		#				is_controlled_by = CHB
+		#			}
+		#			973 = {
+		#				is_controlled_by = CHB
+		#			}
+		#			154 = {
+		#				is_controlled_by = CHB
+		#			}
+		#			43 = {
+		#				is_controlled_by = CHB
+		#			}
+		#		}
+		#		CHB = {
+		#			has_idea = CHB_hungary_problem
+		#		}
+		#	}
+		#	remove_ideas = CHB_hungary_problem
+		#}
 	}
 }

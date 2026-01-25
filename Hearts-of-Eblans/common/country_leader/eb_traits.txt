@@ -64,6 +64,13 @@ leader_traits = {
 		opinion_gain_monthly_factor = 0.05
 	}
 
+	neumeha = { 
+		political_power_gain = 0.05
+		opinion_gain_monthly_factor = -0.03
+		stability_factor = -0.02
+		hypecratia_drift = -0.01
+	}
+
 	producer = { 
 		max_planning_factor = 0.05
 		planning_speed = 0.05

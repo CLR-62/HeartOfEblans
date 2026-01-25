@@ -35,30 +35,30 @@ on_actions = {
 				}
 			} 
 
-			if = {
-				limit = {
-					GON = {
-						NOT = { has_country_flag = milanaStar_country }
-						has_country_flag = sheltered_likers
-					}
-					14 = {
-						is_owned_and_controlled_by = GON
-					}
-					15 = {
-						is_owned_and_controlled_by = GON
-					}
-					30 = {
-						is_owned_and_controlled_by = GON
-					}
-					1018 = {
-						is_owned_and_controlled_by = GON
-					}
-				}
-				GON = {
-					country_event = { id = gonduras.17 days = 2 }
-					set_country_flag = milanaStar_country
-				}
-			}
+			#if = {
+			#	limit = {
+			#		GON = {
+			#			NOT = { has_country_flag = milanaStar_country }
+			#			has_country_flag = sheltered_likers
+			#		}
+			#		14 = {
+			#			is_owned_and_controlled_by = GON
+			#		}
+			#		15 = {
+			#			is_owned_and_controlled_by = GON
+			#		}
+			#		30 = {
+			#			is_owned_and_controlled_by = GON
+			#		}
+			#		1018 = {
+			#			is_owned_and_controlled_by = GON
+			#		}
+			#	}
+			#	GON = {
+			#		country_event = { id = gonduras.17 days = 2 }
+			#		set_country_flag = milanaStar_country
+			#	}
+			#}
 		}
 	}
 	
@@ -80,11 +80,15 @@ on_actions = {
 					}
 				}
 			}
-			# ARA annexes SVE
+		}
+	}
+
+	on_peaceconference_ended = { 
+		effect = { 
 			if = {
 				limit = {
-					tag = SVE
-					has_war_with = ARA
+					ROOT = { tag = ARA }
+					FROM = { tag = SVE }
 				}
 				ARA = {
 					annex_country = {
@@ -93,12 +97,13 @@ on_actions = {
 					}
 				}
 				SVE = {
-					every_owned_state = {
+					every_core_state = {
+						add_core_of = ARA
 						transfer_state_to = ARA
 					}
 				}
 			}
-		}
+		} 
 	}
 	
 	

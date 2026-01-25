@@ -13,6 +13,12 @@ CAC = {
 }
 SOV = {
 }
+ITA = {
+}
+GER = {
+}
+BUL = {
+}
 MLS = {
 	color = rgb { 227 200 138 }
 	color_ui = rgb { 227 200 138 }

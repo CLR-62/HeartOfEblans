@@ -11,6 +11,7 @@ bookmarks = {
 			ideology = fascism
 			ideas = {
 				CHB_hungary_problem
+				CHB_outdated_industry
 			}
 			focuses = {
 				#

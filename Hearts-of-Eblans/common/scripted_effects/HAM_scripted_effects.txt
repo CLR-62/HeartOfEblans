@@ -1073,6 +1073,7 @@ HAM_star_elected = {
         set_country_flag = ham_lera_simka_disable
         set_country_flag = ham_amina_kikido_disable
         set_country_flag = ham_nastya_knyzeva_disable
+        set_country_flag = ham_nekrasova_disable
         
         # Убрать советников Хаметовой из правительства
         if = { limit = { has_idea = ham_dava } remove_ideas = ham_dava }

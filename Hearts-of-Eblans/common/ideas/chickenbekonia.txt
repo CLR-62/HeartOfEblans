@@ -700,7 +700,25 @@ ideas = {
 				always = no
 			}
 
-			
+			cancel = {
+				NOT = {
+					155 = {
+						is_controlled_by = CHB
+					}
+					974 = {
+						is_controlled_by = CHB
+					}
+					973 = {
+						is_controlled_by = CHB
+					}
+					154 = {
+						is_controlled_by = CHB
+					}
+					43 = {
+						is_controlled_by = CHB
+					}
+				}
+			}
 
 			removal_cost = -1
 			

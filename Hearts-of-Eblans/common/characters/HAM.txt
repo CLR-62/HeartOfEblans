@@ -370,8 +370,6 @@ characters = {
 				NOT = { has_country_flag = ham_nekrasova_disable }
 				# Доступна только для одной из сторон
 				OR = {
-					# Если победила Стар - нет ограничений
-					has_country_flag = HAM_STAR_ELECTED
 					# Если идём по пути оппозиции - тоже ок
 					has_completed_focus = ham_opposition_rise
 					# Если идём по взрослому пути Хаметовой и не победила Стар
@@ -382,7 +380,7 @@ characters = {
 				}
 			}
 			traits  = {
-				media_magnate
+				neumeha
 			}	
 			cost = 65
 		}

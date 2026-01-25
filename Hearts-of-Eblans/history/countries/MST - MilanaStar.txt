@@ -31,7 +31,7 @@ set_politics = {
 create_country_leader = {
 	name = "Генеральный Стар-Секретарь"
 	desc = "POLITICS_PRINCE_PAUL_DESC"
-	picture = "MST_com.dds"
+	picture = "MST_hype.dds"
 	
 	ideology = stalinism
 	traits = {
@@ -42,7 +42,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Гаупштурммил Стар"
 	desc = "POLITICS_PRINCE_PAUL_DESC"
-	picture = "MST_fas.dds"
+	picture = "MST_hype.dds"
 	
 	ideology = fascism_ideology
 	traits = {
@@ -53,7 +53,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Милана Маирко"
 	desc = "POLITICS_PRINCE_PAUL_DESC"
-	picture = "MST_dem.dds"
+	picture = "MST_hype.dds"
 	
 	ideology = despotism
 	traits = {
@@ -64,7 +64,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Милана Маирко"
 	desc = "POLITICS_PRINCE_PAUL_DESC"
-	picture = "MST_dem.dds"
+	picture = "MST_hype.dds"
 	
 	ideology = liberalism
 	traits = {

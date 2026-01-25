@@ -376,7 +376,10 @@ focus_tree = {
 		prerequisite = { focus = BTK_vovdrev }
 		prerequisite = { focus = BTK_agricultural_self_sufficiency }
 		completion_reward = {
-			add_ideas = BTK_economic_miracle
+			swap_ideas = {
+				remove_idea = BTK_dead_economy1
+				add_idea = BTK_economic_miracle
+			}
 			country_event = btk.207
 			hidden_effect = {
 				add_bratishkin_support_large = yes
@@ -920,7 +923,10 @@ focus_tree = {
 		y = 4
 		prerequisite = { focus = BTK_army_doctrine }
 		completion_reward = {
-			add_ideas = BTK_modern_army
+			swap_ideas = {
+				remove_idea = BTK_army_2
+				add_idea = BTK_modern_army
+			}
 			hidden_effect = {
 				add_bratishkin_support_medium = yes
 			}
@@ -1028,7 +1034,10 @@ focus_tree = {
 		prerequisite = { focus = BTK_general_staff }
 		prerequisite = { focus = BTK_air_doctrine }
 		completion_reward = {
-			add_ideas = BTK_cool_army
+			swap_ideas = {
+				remove_idea = BTK_modern_army
+				add_idea = BTK_cool_army
+			}
 			add_war_support = 0.15
 			hidden_effect = {
 				add_bratishkin_support_large = yes

@@ -767,6 +767,7 @@ hametova_elections_category = {
 
 		activation = {
 			has_completed_focus = ham_second_hametova_term
+			NOT = { has_country_flag = ELECTIONS_PASSED }
 		}
 
 		days_mission_timeout = 730
@@ -784,6 +785,7 @@ hametova_elections_category = {
 				else = {
 					country_event = { id = hametova_elections.20 }
 				}
+				set_country_flag = ELECTIONS_PASSED
 			}
 		}
 

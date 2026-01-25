@@ -94,6 +94,7 @@ create_country_leader = {
 	traits = {
 		#
 	}
+}
 	
 create_country_leader = {
 	name = "Морфи"
@@ -104,6 +105,7 @@ create_country_leader = {
 	traits = {
 		#
 	}
+}
 	
 create_country_leader = {
 	name = "Морфи"
@@ -114,6 +116,7 @@ create_country_leader = {
 	traits = {
 		#
 	}
+}
 	
 create_country_leader = {
 	name = "Морфи Высоцкая"
